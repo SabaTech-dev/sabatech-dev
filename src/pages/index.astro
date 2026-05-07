@@ -1,0 +1,111 @@
+---
+const description = "SabaTech - Desarrollo de software, seguridad informática y orquestación de IA";
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>SabaTech</title>
+		<style>
+			:root {
+				--color-black: #0a0a0a;
+				--color-red: #e63946;
+				--color-white: #ffffff;
+				--color-gray-light: #f5f5f5;
+			}
+			body {
+				font-family: system-ui, -apple-system, sans-serif;
+				background-color: var(--color-black);
+				color: var(--color-white);
+				margin: 0;
+				padding: 0;
+				line-height: 1.6;
+			}
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+			header {
+				padding: 20px 0;
+				border-bottom: 1px solid #333;
+			}
+			nav ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				gap: 20px;
+			}
+			nav a {
+				color: var(--color-white);
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+			nav a:hover {
+				color: var(--color-red);
+			}
+			.hero {
+				padding: 100px 0;
+				text-align: center;
+			}
+			h1 {
+				font-size: 3rem;
+				margin-bottom: 20px;
+			}
+			.hero h1 span {
+				color: var(--color-red);
+			}
+			.hero p {
+				font-size: 1.5rem;
+				color: #ccc;
+				max-width: 800px;
+				margin: 0 auto 40px;
+			}
+			.cta-button {
+				background-color: var(--color-red);
+				color: var(--color-white);
+				padding: 15px 40px;
+				border: none;
+				border-radius: 5px;
+				font-size: 1.2rem;
+				cursor: pointer;
+				text-decoration: none;
+				display: inline-block;
+				transition: background-color 0.3s;
+			}
+			.cta-button:hover {
+				background-color: #c62828;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<nav>
+					<ul>
+						<li><a href="/">Inicio</a></li>
+						<li><a href="/about">Sobre Nosotros</a></li>
+						<li><a href="/security">Seguridad</a></li>
+						<li><a href="/orquestacion">Orquestación IA</a></li>
+						<li><a href="/qa-framework">QA-FRAMEWORK</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="/contact">Contacto</a></li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<section class="hero">
+					<h1>Bienvenido a <span>SabaTech</span></h1>
+					<p>{description}</p>
+					<a href="/contact" class="cta-button">Hablemos de tu proyecto</a>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>
