@@ -1,43 +1,68 @@
-# Astro Starter Kit: Minimal
+# SabaTech.dev - Sitio Oficial
 
-```sh
-npm create astro@latest -- --template minimal
+Agencia de tecnología especializada en desarrollo de software, seguridad informática y orquestación de agentes de IA.
+
+## 🚀 Stack Tecnológico
+
+- **Framework:** [Astro](https://astro.build/) (Static Site Generator)
+- **Hosting:** [Cloudflare Pages](https://pages.cloudflare.com/)
+- **DNS:** Cloudflare
+- **Versión:** 0.0.1 (MVP)
+
+## 📂 Estructura del Sitio
+
+```
+/                   - Homepage
+/about             - Sobre Nosotros
+/security          - Servicios de Seguridad
+/orquestacion      - Orquestación de Agentes IA
+/qa-framework      - QA-FRAMEWORK (Plataforma SaaS)
+/team              - Nuestro Equipo
+/contact           - Contacto
+/blog              - Blog de Tecnología
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🎨 Branding
 
-## 🚀 Project Structure
+- **Color principal (fondo):** `#0a0a0a` (negro)
+- **Color acento:** `#e63946` (rojo)
+- **Nombre profesional:** SabaTech
+- **Gaming/Personal:** Joker
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Comandos de Desarrollo
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+| Comando | Acción |
+|---------|--------|
+| `npm install` | Instala dependencias |
+| `npm run dev` | Servidor local en `localhost:4321` |
+| `npm run build` | Build para producción |
+| `npm run preview` | Previsualizar build localmente |
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 📦 Deployment
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Automático
+Cada push a la rama `main` en GitHub desencadena un deploy automático en Cloudflare Pages.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Manual
+Ver documentación en `CLOUDFLARE_PAGES_SETUP.md` para configuración inicial.
 
-## 🧞 Commands
+## 🔧 Configuración
 
-All commands are run from the root of the project, from a terminal:
+### DNS Records (Cloudflare)
+- **Nameservers:** `marjory.ns.cloudflare.com`, `ganz.ns.cloudflare.com`
+- **SSL:** Full (Strict)
+- **Proxy:** ☑️ Proxied (orange cloud icon)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Build Settings (Cloudflare Pages)
+- **Framework preset:** Astro
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
 
-## 👀 Want to learn more?
+## 📄 Licencia
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2026 SabaTech. Todos los derechos reservados.
+
+---
+
+**Mantenido por:** DevOps Agent
+**Última actualización:** 2026-05-07
