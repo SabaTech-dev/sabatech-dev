@@ -1,15 +1,229 @@
 ---
-const description = "Orquestación de agentes de IA y automatización avanzada";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Orquestación | SabaTech</title>
-  </head>
-  <body>
-    <h1>Orquestación de Agentes IA</h1>
-    <p>{description}</p>
-    <p>Próximamente: detalles de nuestros servicios de orquestación.</p>
-  </body>
-</html>
+<Layout title="Orquestación IA - SabaTech">
+	<Section variant="gradient" padding="xl">
+		<div class="text-center">
+			<Badge variant="primary" class="mb-6">Multi-Agent Systems</Badge>
+			<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+				Orquestación IA
+			</h1>
+			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+				Diseño e implementación de arquitecturas de orquestación para sistemas de IA autónomos
+			</p>
+			<p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+				Gestión de workflows, coordinación de multi-agent systems y automatización de procesos con agentes especializados
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<Button variant="primary" size="lg" href="/contact">Consultoría Orquestación</Button>
+				<Button variant="outline" size="lg" href="#services">Ver Servicios</Button>
+			</div>
+		</div>
+	</Section>
+
+	<Section variant="dark" padding="lg" id="services">
+		<div class="text-center mb-16">
+			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Servicios de Orquestación</h2>
+			<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+				Arquitecturas escalables para coordinar múltiples agentes autónomos
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Architecture Design</h3>
+					<p class="text-gray-400 mb-6">Diseño de arquitecturas de orquestación para multi-agent systems. Pattern definition y topología de agentes.</p>
+					<Badge variant="primary">System Design</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Workflow Automation</h3>
+					<p class="text-gray-400 mb-6">Automatización de workflows complejos con agentes especializados. Parallel execution, dependency management.</p>
+					<Badge variant="success">Automation</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Agent Coordination</h3>
+					<p class="text-gray-400 mb-6">Coordinación de múltiples agentes con comunicación segura y sync. Event-driven architecture.</p>
+					<Badge variant="primary">Coordination</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Monitoring & Observability</h3>
+					<p class="text-gray-400 mb-6">Dashboard en tiempo real de agentes, workflows y métricas. Logging, tracing y alerting.</p>
+					<Badge variant="default">Observability</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Security Orchestration</h3>
+					<p class="text-gray-400 mb-6">Securización de comunicación inter-agente. Encryption, authentication y RBAC para sistemas distribuidos.</p>
+					<Badge variant="error">Security First</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Scaling & Performance</h3>
+					<p class="text-gray-400 mb-6">Horizontal scaling de agentes y workflows. Load balancing, caching y optimization.</p>
+					<Badge variant="success">Scalable</Badge>
+				</div>
+			</Card>
+		</div>
+	</Section>
+
+	<Section variant="light" padding="lg">
+		<div class="grid md:grid-cols-2 gap-12 items-center">
+			<div>
+				<Badge variant="primary" class="mb-6">Architecture Patterns</Badge>
+				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Patrones de Orquestación</h2>
+
+				<div class="space-y-6">
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">Sequential Workflows</h3>
+							<p class="text-gray-400">Agentes ejecutan tareas en secuencia definida. Step-by-step con dependencias.</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">Parallel Execution</h3>
+							<p class="text-gray-400">Múltiples agentes ejecutan tareas simultáneamente. Fan-out/fan-in patterns.</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">Multi-Agent Collaboration</h3>
+							<p class="text-gray-400">Coordinación de agentes especializados. Swarm intelligence y consensus mechanisms.</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">Event-Driven Architecture</h3>
+							<p class="text-gray-400">Reactividad a eventos en tiempo real. Pub/sub, message queues y event sourcing.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<Card variant="elevated" class="p-8">
+					<div class="mb-6">
+						<h3 class="text-2xl font-bold text-white mb-4">Tech Stack</h3>
+					</div>
+					<ul class="space-y-4 text-gray-400">
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">Orchestration:</strong> OpenProse, LangChain, Temporal</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">Messaging:</strong> Kafka, RabbitMQ, Redis Streams</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">Monitoring:</strong> Prometheus, Grafana, Jaeger</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">Security:</strong> mTLS, JWT, RBAC, End-to-end encryption</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">Scaling:</strong> Kubernetes, Docker Swarm, Serverless</span>
+						</li>
+					</ul>
+				</Card>
+			</div>
+		</div>
+	</Section>
+
+	<Section variant="gradient" padding="xl">
+		<div class="text-center max-w-3xl mx-auto">
+			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">¿Listo para orquestar tus sistemas de IA?</h2>
+			<p class="text-gray-300 text-lg mb-8 leading-relaxed">
+				Contáctanos para una consultoría gratuita sobre cómo diseñar e implementar arquitecturas de orquestación escalables y seguras.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<Button variant="primary" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
+				<Button variant="outline" size="lg" href="/contact">Formulario de contacto</Button>
+			</div>
+		</div>
+	</Section>
+</Layout>

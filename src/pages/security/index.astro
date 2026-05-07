@@ -1,15 +1,217 @@
 ---
-const description = "Servicios de seguridad informática y auditoría de código para empresas";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Seguridad | SabaTech</title>
-  </head>
-  <body>
-    <h1>Seguridad Informática</h1>
-    <p>{description}</p>
-    <p>Próximamente: detalles completos de nuestros servicios de seguridad.</p>
-  </body>
-</html>
+<Layout title="Security Audit - SabaTech">
+	<Section variant="gradient" padding="xl">
+		<div class="text-center">
+			<Badge variant="error" class="mb-6">OWASP AI ASI Compliance</Badge>
+			<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+				Security Audit
+			</h1>
+			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+				Auditorías de seguridad especializadas para sistemas de IA y agentes autónomos
+			</p>
+			<p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+				Compliance OWASP AI ASI, pentesting de agentes, evaluación de riesgos y hardening de infraestructura para AI systems
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<Button variant="primary" size="lg" href="/contact">Solicitar Auditoría</Button>
+				<Button variant="outline" size="lg" href="#services">Ver Servicios</Button>
+			</div>
+		</div>
+	</Section>
+
+	<Section variant="dark" padding="lg" id="services">
+		<div class="text-center mb-16">
+			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Servicios de Seguridad</h2>
+			<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+				Cobertura completa de seguridad para el ciclo de vida de sistemas de IA
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">OWASP AI ASI Compliance</h3>
+					<p class="text-gray-400 mb-6">Auditorías alineadas con el estándar de seguridad para sistemas de IA OWASP. Evaluación de los 10 riesgos principales.</p>
+					<Badge variant="error">10/10 Coverage</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Pentesting de Agentes</h3>
+					<p class="text-gray-400 mb-6">Testing de penetración especializado para agentes AI. Simulación de ataques adversarios y prompt injection.</p>
+					<Badge variant="warning">Adversarial AI</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Evaluación de Riesgos</h3>
+					<p class="text-gray-400 mb-6">Análisis de riesgos AI/ML con threat modeling. Identificación de vectores de ataque específicos.</p>
+					<Badge variant="primary">Risk Assessment</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Hardening de Infra</h3>
+					<p class="text-gray-400 mb-6">Securización de infraestructura para despliegues AI. Configuración de seguridad en Kubernetes, Docker y cloud.</p>
+					<Badge variant="success">DevSecOps</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Code Review AI</h3>
+					<p class="text-gray-400 mb-6">Review de código especializado en modelos ML y sistemas de IA. Detección de vulnerabilidades en implementaciones.</p>
+					<Badge variant="default">SAST/DAST</Badge>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-8">
+					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-3 text-white">Reportes de Compliance</h3>
+					<p class="text-gray-400 mb-6">Documentación de compliance para regulaciones AI. SOC 2, ISO 27001, GDPR AI Act preparation.</p>
+					<Badge variant="primary">Compliance</Badge>
+				</div>
+			</Card>
+		</div>
+	</Section>
+
+	<Section variant="light" padding="lg">
+		<div class="grid md:grid-cols-2 gap-12 items-center">
+			<div>
+				<Badge variant="success" class="mb-6">Why Choose Us</Badge>
+				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Por qué SabaTech</h2>
+
+				<div class="space-y-6">
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">OWASP AI ASI Expertise</h3>
+							<p class="text-gray-400">Evaluación completa de los 10 riesgos OWASP AI ASI con evidencias detalladas</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">Adversarial AI Testing</h3>
+							<p class="text-gray-400">Pentesting especializado en ataques adversarios y prompt injection</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-white">Comprehensive Reports</h3>
+							<p class="text-gray-400">Reportes detallados con evidencias, recomendaciones y roadmap de remediation</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<Card variant="elevated" class="p-8">
+					<div class="mb-6">
+						<h3 class="text-2xl font-bold text-white mb-4">OWASP AI ASI - 10 Riesgos</h3>
+					</div>
+					<ul class="space-y-3 text-gray-400">
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">ASI-01:</strong> Prompt Injection</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">ASI-02:</strong> Data Poisoning</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">ASI-03:</strong> Model Inversion</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-white">ASI-04:</strong> Model Extraction</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>...y 6 riesgos más</span>
+						</li>
+					</ul>
+				</Card>
+			</div>
+		</div>
+	</Section>
+
+	<Section variant="gradient" padding="xl">
+		<div class="text-center max-w-3xl mx-auto">
+			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">¿Listo para proteger tus sistemas de IA?</h2>
+			<p class="text-gray-300 text-lg mb-8 leading-relaxed">
+				Contáctanos para una consultoría gratuita sobre cómo podemos ayudarte a asegurar tus agentes y sistemas autónomos.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<Button variant="primary" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
+				<Button variant="outline" size="lg" href="/contact">Formulario de contacto</Button>
+			</div>
+		</div>
+	</Section>
+</Layout>
