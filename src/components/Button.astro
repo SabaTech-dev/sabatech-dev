@@ -1,0 +1,63 @@
+---
+interface Props {
+	variant?: "primary" | "secondary" | "outline" | "ghost";
+	size?: "sm" | "md" | "lg" | "xl";
+	href?: string;
+	type?: "button" | "submit" | "reset";
+	disabled?: boolean;
+	class?: string;
+}
+
+const {
+	variant = "primary",
+	size = "md",
+	href,
+	type = "button",
+	disabled = false,
+	class: className,
+} = Astro.props;
+
+const baseClasses = "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed";
+
+const variantClasses = {
+	primary: "bg-primary-red hover:bg-primary-red-hover text-white shadow-md hover:shadow-lg hover:-translate-y-0.5",
+	secondary: "bg-gray-800 hover:bg-gray-700 text-white border border-gray-700",
+	outline: "bg-transparent hover:bg-primary-red-light text-white border border-primary-red hover:border-primary-red",
+	ghost: "bg-transparent hover:bg-gray-800 text-white hover:text-white",
+};
+
+const sizeClasses = {
+	sm: "px-3 py-1.5 text-sm rounded-lg",
+	md: "px-5 py-2.5 text-base rounded-lg",
+	lg: "px-6 py-3 text-lg rounded-xl",
+	xl: "px-8 py-4 text-xl rounded-xl",
+};
+
+const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className || ""}`;
+
+{/*
+Usage:
+<Button variant="primary" size="lg">Click me</Button>
+<Button variant="outline" href="/contact">Contact</Button>
+*/}
+
+---
+
+{href ? (
+	<a
+		href={href}
+		class={combinedClasses}
+		aria-disabled={disabled ? "true" : undefined}
+		tabindex={disabled ? "-1" : undefined}
+	>
+		<slot />
+	</a>
+) : (
+	<button
+		type={type}
+		class={combinedClasses}
+		disabled={disabled}
+	>
+		<slot />
+	</button>
+)}

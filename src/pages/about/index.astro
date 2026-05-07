@@ -1,15 +1,107 @@
 ---
-const description = "Sobre SabaTech - Agencia de tecnología y soluciones de IA";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Badge from "../../components/Badge.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Sobre Nosotros | SabaTech</title>
-  </head>
-  <body>
-    <h1>Sobre SabaTech</h1>
-    <p>{description}</p>
-    <p>Próximamente: nuestra historia, misión y visión.</p>
-  </body>
-</html>
+<Layout title="Sobre Nosotros - SabaTech">
+	<Section variant="dark" padding="lg">
+		<div class="max-w-3xl mx-auto text-center mb-16">
+			<Badge variant="primary" class="mb-6">Sobre Nosotros</Badge>
+			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Conoce a SabaTech</h1>
+			<p class="text-gray-400 text-lg leading-relaxed">
+				Consultoría especializada en QA, DevSecOps e IA para la próxima generación de sistemas autónomos
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+			<div>
+				<div class="mb-8">
+					<h2 class="text-2xl font-bold mb-4 text-white">Saba - Founder & Director</h2>
+					<p class="text-gray-300 leading-relaxed mb-6">
+						Saba es un ingeniero de software con más de una década de experiencia en QA, DevSecOps e inteligencia artificial. Apasionado por crear sistemas seguros, escalables y de alta calidad.
+					</p>
+					<p class="text-gray-400 leading-relaxed mb-6">
+						Su trayectoria profesional incluye el diseño de frameworks de automatización QA para entornos críticos, implementación de pipelines de seguridad (DevSecOps) y desarrollo de arquitecturas de IA autónoma para multi-agent systems.
+					</p>
+					<p class="text-gray-400 leading-relaxed">
+						Como fundador de SabaTech, combina su experiencia técnica con una visión estratégica para ayudar a empresas a implementar prácticas de seguridad y calidad de vanguardia en sus sistemas de IA.
+					</p>
+				</div>
+
+				<div>
+					<h3 class="text-xl font-semibold mb-4 text-white">Áreas de Expertise</h3>
+					<div class="flex flex-wrap gap-3">
+						<Badge variant="primary">QA Automation</Badge>
+						<Badge variant="primary">DevSecOps</Badge>
+						<Badge variant="primary">AI Security</Badge>
+						<Badge variant="success">OWASP AI ASI</Badge>
+						<Badge variant="success">Multi-Agent Systems</Badge>
+						<Badge variant="success">CI/CD</Badge>
+						<Badge variant="warning">Penetration Testing</Badge>
+						<Badge variant="warning">Orquestación IA</Badge>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<Card variant="elevated" class="p-8">
+					<div class="mb-6">
+						<svg class="w-16 h-16 text-primary-red mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+						</svg>
+						<h3 class="text-2xl font-bold text-white mb-4">Visión de SabaTech</h3>
+					</div>
+					<p class="text-gray-400 leading-relaxed mb-6">
+						En SabaTech, creemos que la seguridad y la calidad de los sistemas de IA no son negociables. Nuestra misión es democratizar el acceso a prácticas de seguridad de nivel empresarial para organizaciones de todos los tamaños.
+					</p>
+					<p class="text-gray-400 leading-relaxed mb-6">
+						Combinamos lo mejor de la experiencia humana con la eficiencia de la IA para ofrecer servicios de consultoría rápidos, precisos y escalables. Alfred, nuestro AI Co-Founder, complementa nuestras capacidades humanas con procesamiento y análisis automatizado.
+					</p>
+					<p class="text-gray-400 leading-relaxed">
+						Trabajamos con empresas para implementar frameworks de QA automatizado, realizar auditorías de seguridad OWASP AI ASI y diseñar arquitecturas de orquestación para multi-agent systems.
+					</p>
+				</Card>
+			</div>
+		</div>
+	</Section>
+
+	<Section variant="light" padding="lg">
+		<div class="text-center mb-12">
+			<h2 class="text-3xl font-bold mb-4 text-white">Nuestros Valores</h2>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+			<div class="text-center">
+				<div class="w-16 h-16 rounded-full bg-primary-red-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+					</svg>
+				</div>
+				<h3 class="text-xl font-bold mb-3 text-white">Seguridad Primero</h3>
+				<p class="text-gray-400">La seguridad es el fundamento de todo lo que hacemos</p>
+			</div>
+
+			<div class="text-center">
+				<div class="w-16 h-16 rounded-full bg-primary-red-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+					</svg>
+				</div>
+				<h3 class="text-xl font-bold mb-3 text-white">Eficiencia</h3>
+				<p class="text-gray-400">Maximizamos resultados con recursos optimizados</p>
+			</div>
+
+			<div class="text-center">
+				<div class="w-16 h-16 rounded-full bg-primary-red-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+					</svg>
+				</div>
+				<h3 class="text-xl font-bold mb-3 text-white">Colaboración</h3>
+				<p class="text-gray-400">Trabajamos como partners, no como proveedores</p>
+			</div>
+		</div>
+	</Section>
+</Layout>

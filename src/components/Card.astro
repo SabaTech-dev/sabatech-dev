@@ -1,0 +1,44 @@
+---
+interface Props {
+	variant?: "default" | "elevated" | "bordered";
+	hover?: boolean;
+	class?: string;
+}
+
+const {
+	variant = "default",
+	hover = false,
+	class: className,
+} = Astro.props;
+
+const baseClasses = "rounded-lg overflow-hidden";
+
+const variantClasses = {
+	default: "bg-gray-900",
+	elevated: "bg-gray-900 shadow-xl",
+	bordered: "bg-gray-900 border border-gray-800",
+};
+
+const hoverClasses = hover
+	? "hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+	: "";
+
+const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${className || ""}`;
+
+{/*
+Usage:
+<Card>
+	<h3>Title</h3>
+	<p>Content</p>
+</Card>
+
+<Card variant="elevated" hover>
+	<h3>Hover Me</h3>
+</Card>
+*/}
+
+---
+
+<div class={combinedClasses}>
+	<slot />
+</div>

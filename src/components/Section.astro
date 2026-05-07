@@ -1,0 +1,49 @@
+---
+interface Props {
+	variant?: "default" | "light" | "dark" | "gradient";
+	padding?: "none" | "sm" | "md" | "lg" | "xl";
+	class?: string;
+	id?: string;
+}
+
+const {
+	variant = "default",
+	padding = "lg",
+	class: className,
+	id,
+} = Astro.props;
+
+const variantClasses = {
+	default: "bg-black",
+	light: "bg-gray-900",
+	dark: "bg-black",
+	gradient: "bg-gradient-to-b from-black via-gray-900 to-black",
+};
+
+const paddingClasses = {
+	none: "py-0",
+	sm: "py-8 md:py-12",
+	md: "py-12 md:py-16",
+	lg: "py-16 md:py-24",
+	xl: "py-20 md:py-32",
+};
+
+const combinedClasses = `${variantClasses[variant]} ${paddingClasses[padding]} ${className || ""}`;
+
+{/*
+Usage:
+<Section variant="gradient" padding="xl" id="services">
+	<h2>Services</h2>
+	<div class="grid md:grid-cols-3 gap-6">
+		<Card>...</Card>
+	</div>
+</Section>
+*/}
+
+---
+
+<section id={id} class={combinedClasses}>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+		<slot />
+	</div>
+</section>
