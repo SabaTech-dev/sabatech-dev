@@ -1,0 +1,58 @@
+---
+import Badge from "./Badge.astro";
+import Button from "./Button.astro";
+
+interface Props {
+	badge?: string;
+	headline: string;
+	subheadline?: string;
+	ctaText: string;
+	ctaHref: string;
+	secondaryCtaText?: string;
+	secondaryCtaHref?: string;
+	variant?: "default" | "gradient" | "dark";
+}
+
+const {
+	badge,
+	headline,
+	subheadline,
+	ctaText,
+	ctaHref,
+	secondaryCtaText,
+	secondaryCtaHref,
+	variant = "default",
+} = Astro.props;
+
+const variantClasses = {
+	default: "bg-black",
+	gradient: "bg-gradient-to-b from-black via-gray-900 to-black",
+	dark: "bg-black",
+};
+---
+
+<section class={`${variantClasses[variant]} py-20 md:py-32`}>
+	<div class="container mx-auto px-4 max-w-7xl">
+		<div class="text-center">
+			{badge && <Badge variant="primary" class="mb-6">{badge}</Badge>}
+			<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+				{headline}
+			</h1>
+			{subheadline && (
+				<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+					{subheadline}
+				</p>
+			)}
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+				<Button variant="primary" size="lg" href={ctaHref}>
+					{ctaText}
+				</Button>
+				{secondaryCtaText && secondaryCtaHref && (
+					<Button variant="outline" size="lg" href={secondaryCtaHref}>
+						{secondaryCtaText}
+					</Button>
+				)}
+			</div>
+		</div>
+	</div>
+</section>

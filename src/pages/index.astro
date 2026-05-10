@@ -4,28 +4,21 @@ import Section from "../components/Section.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
 import Badge from "../components/Badge.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout title="SabaTech - Consultoría QA & Security para Agentes IA">
 	<!-- Hero Section -->
-	<Section variant="gradient" padding="xl">
-		<div class="text-center">
-			<Badge variant="primary" class="mb-6">AI Security & QA Expertise</Badge>
-			<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-				SabaTech
-			</h1>
-			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-				Consultoría QA & Security para Agentes IA
-			</p>
-			<p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-				Auditorías de seguridad, orquestación de IA y framework de automatización QA para sistemas autónomos de alta confianza
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Hablemos de tu proyecto</Button>
-				<Button variant="outline" size="lg" href="/services">Ver Servicios</Button>
-			</div>
-		</div>
-	</Section>
+	<Hero
+		badge="AI Security & QA Expertise"
+		headline="SabaTech"
+		subheadline="Consultoría QA & Security para Agentes IA"
+		ctaText="Hablemos de tu proyecto"
+		ctaHref="/contact"
+		secondaryCtaText="Ver Servicios"
+		secondaryCtaHref="#services"
+		variant="gradient"
+	/>
 
 	<!-- Services Section -->
 	<Section variant="dark" padding="lg" id="services">
