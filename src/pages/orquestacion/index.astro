@@ -7,22 +7,88 @@ import Badge from "../../components/Badge.astro";
 ---
 
 <Layout title="AI Orchestration — SabaTech" description="Multi-agent orchestration for AI systems. Design, implement, and scale autonomous agent architectures with SabaTech's hybrid human-AI team.">
+  <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+    en: {
+      "orchestration.badge": "Multi-Agent Systems",
+      "orchestration.hero.title1": "AI",
+      "orchestration.hero.title2": "Orchestration",
+      "orchestration.hero.subtitle": "Your AI workforce for software quality & security",
+      "orchestration.hero.desc": "Alfred and his team of 5 specialized AI agents collaborate 24/7 — coordinated by AI, overseen by humans at every critical decision.",
+      "orchestration.hero.cta1": "Book Assessment",
+      "orchestration.hero.cta2": "See Architecture",
+      "orchestration.arch.badge": "Architecture",
+      "orchestration.arch.title": "Multi-Agent Topology",
+      "orchestration.arch.subtitle": "Alfred orchestrates 5 specialized agents in a hub-and-spoke pattern with real-time event-driven communication",
+      "orchestration.metrics.agents": "Agents Active",
+      "orchestration.metrics.operation": "Operation",
+      "orchestration.metrics.uptime": "Uptime",
+      "orchestration.metrics.response": "Response Time",
+      "orchestration.stack.badge": "Technology Stack",
+      "orchestration.stack.title": "Built With",
+      "orchestration.stack.subtitle": "Our orchestration layer is powered by purpose-built tools",
+      "orchestration.services.title": "Orchestration Services",
+      "orchestration.services.subtitle": "Scalable architectures to coordinate multiple autonomous agents",
+      "orchestration.process.badge": "How It Works",
+      "orchestration.process.title": "Our Process",
+      "orchestration.process.subtitle": "From discovery to continuous improvement — a proven engagement model",
+      "orchestration.pricing.title": "Orchestration Plans",
+      "orchestration.pricing.subtitle": "Choose the engagement level that fits your needs",
+      "orchestration.cases.badge": "Case Studies",
+      "orchestration.cases.title": "Client Stories",
+      "orchestration.cases.subtitle": "Real results from real engagements",
+      "orchestration.cta.title": "Ready to orchestrate your AI systems?",
+      "orchestration.cta.desc": "Get a free consultation on designing and implementing scalable, secure orchestration architectures.",
+      "orchestration.cta.cta1": "Book Assessment"
+    },
+    es: {
+      "orchestration.badge": "Sistemas Multiagente",
+      "orchestration.hero.title1": "Orquestación",
+      "orchestration.hero.title2": "IA",
+      "orchestration.hero.subtitle": "Tu fuerza laboral de IA para calidad y seguridad del software",
+      "orchestration.hero.desc": "Alfred y su equipo de 5 agentes de IA especializados colaboran 24/7 — coordinados por IA, supervisados por humanos en cada decisión crítica.",
+      "orchestration.hero.cta1": "Reservar Evaluación",
+      "orchestration.hero.cta2": "Ver Arquitectura",
+      "orchestration.arch.badge": "Arquitectura",
+      "orchestration.arch.title": "Topología Multiagente",
+      "orchestration.arch.subtitle": "Alfred orquesta 5 agentes especializados en un patrón hub-and-spoke con comunicación event-driven en tiempo real",
+      "orchestration.metrics.agents": "Agentes Activos",
+      "orchestration.metrics.operation": "Operación",
+      "orchestration.metrics.uptime": "Disponibilidad",
+      "orchestration.metrics.response": "Tiempo de Respuesta",
+      "orchestration.stack.badge": "Stack Tecnológico",
+      "orchestration.stack.title": "Construido Con",
+      "orchestration.stack.subtitle": "Nuestra capa de orquestación está impulsada por herramientas diseñadas a medida",
+      "orchestration.services.title": "Servicios de Orquestación",
+      "orchestration.services.subtitle": "Arquitecturas escalables para coordinar múltiples agentes autónomos",
+      "orchestration.process.badge": "Cómo Funciona",
+      "orchestration.process.title": "Nuestro Proceso",
+      "orchestration.process.subtitle": "Desde el descubrimiento hasta la mejora continua — un modelo de engagement probado",
+      "orchestration.pricing.title": "Planes de Orquestación",
+      "orchestration.pricing.subtitle": "Elige el nivel de engagement que mejor se adapte a tus necesidades",
+      "orchestration.cases.badge": "Casos de Uso",
+      "orchestration.cases.title": "Historias de Clientes",
+      "orchestration.cases.subtitle": "Resultados reales de proyectos reales",
+      "orchestration.cta.title": "¿Listo para orquestar tus sistemas de IA?",
+      "orchestration.cta.desc": "Obtén una consulta gratuita sobre diseño e implementación de arquitecturas de orquestación escalables y seguras.",
+      "orchestration.cta.cta1": "Reservar Evaluación"
+    }
+  })} />
   <!-- Hero -->
   <Section variant="gradient" padding="xl">
     <div class="text-center">
-      <Badge variant="primary" class="mb-6">Multi-Agent Systems</Badge>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50">
-        AI <span class="bg-clip-text text-transparent bg-saba-gradient">Orchestration</span>
+      <Badge variant="primary" class="mb-6" data-i18n="orchestration.badge">Multi-Agent Systems</Badge>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50" data-i18n="orchestration.hero.title1">
+        AI <span class="bg-clip-text text-transparent bg-saba-gradient" data-i18n="orchestration.hero.title2">Orchestration</span>
       </h1>
-      <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" data-i18n="orchestration.hero.subtitle">
         Your AI workforce for software quality & security
       </p>
-      <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
+      <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto" data-i18n="orchestration.hero.desc">
         Alfred and his team of 5 specialized AI agents collaborate 24/7 — coordinated by AI, overseen by humans at every critical decision.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="primary" size="lg" href="/contact">Book Assessment</Button>
-        <Button variant="outline" size="lg" href="#architecture">See Architecture</Button>
+        <Button variant="primary" size="lg" href="/contact" data-i18n="orchestration.hero.cta1">Book Assessment</Button>
+        <Button variant="outline" size="lg" href="#architecture" data-i18n="orchestration.hero.cta2">See Architecture</Button>
       </div>
     </div>
   </Section>
@@ -30,9 +96,9 @@ import Badge from "../../components/Badge.astro";
   <!-- 3.1 Architecture Visualization -->
   <Section variant="dark" padding="lg" id="architecture">
     <div class="text-center mb-16">
-      <Badge variant="primary" class="mb-6">Architecture</Badge>
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Multi-Agent Topology</h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <Badge variant="primary" class="mb-6" data-i18n="orchestration.arch.badge">Architecture</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="orchestration.arch.title">Multi-Agent Topology</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="orchestration.arch.subtitle">
         Alfred orchestrates 5 specialized agents in a hub-and-spoke pattern with real-time event-driven communication
       </p>
     </div>
@@ -100,19 +166,19 @@ import Badge from "../../components/Badge.astro";
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
       <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
         <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">6</div>
-        <p class="text-slate-400 text-sm">Agents Active</p>
+        <p class="text-slate-400 text-sm" data-i18n="orchestration.metrics.agents">Agents Active</p>
       </div>
       <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
         <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">24/7</div>
-        <p class="text-slate-400 text-sm">Operation</p>
+        <p class="text-slate-400 text-sm" data-i18n="orchestration.metrics.operation">Operation</p>
       </div>
       <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
         <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">99.9%</div>
-        <p class="text-slate-400 text-sm">Uptime</p>
+        <p class="text-slate-400 text-sm" data-i18n="orchestration.metrics.uptime">Uptime</p>
       </div>
       <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
         <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">&lt;30s</div>
-        <p class="text-slate-400 text-sm">Response Time</p>
+        <p class="text-slate-400 text-sm" data-i18n="orchestration.metrics.response">Response Time</p>
       </div>
     </div>
   </Section>
@@ -120,20 +186,21 @@ import Badge from "../../components/Badge.astro";
   <!-- 3.2 Technology Stack -->
   <Section variant="dark" padding="lg" id="stack">
     <div class="text-center mb-16">
-      <Badge variant="primary" class="mb-6">Technology Stack</Badge>
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Built With</h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <Badge variant="primary" class="mb-6" data-i18n="orchestration.stack.badge">Technology Stack</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="orchestration.stack.title">Built With</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="orchestration.stack.subtitle">
         Our orchestration layer is powered by purpose-built tools
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
       {[
         { name: "OpenClaw", desc: "Legal & compliance analysis engine", icon: "⚖️" },
         { name: "OpenProse", desc: "Natural language orchestration", icon: "📝" },
         { name: "Hindsight", desc: "Agent memory & learning system", icon: "🧠" },
         { name: "Mission Control", desc: "Real-time agent dashboard", icon: "🎛️" },
         { name: "Engram", desc: "Persistent memory across sessions", icon: "💾" },
+        { name: "OpenCode", desc: "External coding agent (SDD workflows)", icon: "💻" },
       ].map((tech) => (
         <Card variant="elevated" hover>
           <div class="p-6 text-center">
@@ -149,8 +216,8 @@ import Badge from "../../components/Badge.astro";
   <!-- Orchestration Services (existing) -->
   <Section variant="light" padding="lg" id="services">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Orchestration Services</h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="orchestration.services.title">Orchestration Services</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="orchestration.services.subtitle">
         Scalable architectures to coordinate multiple autonomous agents
       </p>
     </div>
@@ -239,9 +306,9 @@ import Badge from "../../components/Badge.astro";
   <!-- 3.6 Process Section -->
   <Section variant="dark" padding="lg" id="process">
     <div class="text-center mb-16">
-      <Badge variant="primary" class="mb-6">How It Works</Badge>
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Our Process</h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <Badge variant="primary" class="mb-6" data-i18n="orchestration.process.badge">How It Works</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="orchestration.process.title">Our Process</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="orchestration.process.subtitle">
         From discovery to continuous improvement — a proven engagement model
       </p>
     </div>
@@ -267,8 +334,8 @@ import Badge from "../../components/Badge.astro";
   <!-- 3.4 Service Pricing -->
   <Section variant="light" padding="lg" id="pricing">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Orchestration Plans</h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="orchestration.pricing.title">Orchestration Plans</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="orchestration.pricing.subtitle">
         Choose the engagement level that fits your needs
       </p>
     </div>
@@ -381,9 +448,9 @@ import Badge from "../../components/Badge.astro";
   <!-- 3.5 Case Studies -->
   <Section variant="dark" padding="lg" id="cases">
     <div class="text-center mb-16">
-      <Badge variant="primary" class="mb-6">Case Studies</Badge>
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Client Stories</h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <Badge variant="primary" class="mb-6" data-i18n="orchestration.cases.badge">Case Studies</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="orchestration.cases.title">Client Stories</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="orchestration.cases.subtitle">
         Real results from real engagements
       </p>
     </div>
@@ -409,12 +476,12 @@ import Badge from "../../components/Badge.astro";
   <!-- CTA -->
   <Section variant="gradient" padding="xl">
     <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to orchestrate your AI systems?</h2>
-      <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50" data-i18n="orchestration.cta.title">Ready to orchestrate your AI systems?</h2>
+      <p class="text-slate-300 text-lg mb-8 leading-relaxed" data-i18n="orchestration.cta.desc">
         Get a free consultation on designing and implementing scalable, secure orchestration architectures.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="primary" size="lg" href="/contact">Book Assessment</Button>
+        <Button variant="primary" size="lg" href="/contact" data-i18n="orchestration.cta.cta1">Book Assessment</Button>
         <Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
       </div>
     </div>

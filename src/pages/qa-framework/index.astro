@@ -7,29 +7,63 @@ import Badge from "../../components/Badge.astro";
 ---
 
 <Layout title="QA Framework — SabaTech" description="The first QA framework built for AI-assisted development. Automated E2E testing, quality gates, and agentic test generation.">
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"qa.badge": "SaaS Platform",
+			"qa.hero.title1": "QA",
+			"qa.hero.title2": "Framework",
+			"qa.hero.subtitle": "Ship with confidence. Every time.",
+			"qa.hero.desc": "The first QA framework built for AI-assisted development. Automated E2E testing, code quality gates, and agentic test generation — all from a single platform.",
+			"qa.hero.cta1": "Start Free Trial",
+			"qa.hero.cta2": "See Features",
+			"qa.features.title": "Features",
+			"qa.features.subtitle": "Advanced tooling to ensure quality in your AI systems",
+			"qa.workflow.badge": "How It Works",
+			"qa.workflow.title": "Workflow",
+			"qa.cta.title": "Interested in Early Access?",
+			"qa.cta.desc": "Join the early access program for exclusive discounts, priority support, and the opportunity to shape the product.",
+			"qa.cta.cta1": "Start Free Trial",
+		},
+		es: {
+			"qa.badge": "Plataforma SaaS",
+			"qa.hero.title1": "Framework",
+			"qa.hero.title2": "QA",
+			"qa.hero.subtitle": "Publica con confianza. Siempre.",
+			"qa.hero.desc": "El primer framework QA diseñado para desarrollo asistido por IA. Testing E2E automatizado, puertas de calidad de código y generación agenética de tests — todo desde una única plataforma.",
+			"qa.hero.cta1": "Iniciar Prueba Gratuita",
+			"qa.hero.cta2": "Ver Funcionalidades",
+			"qa.features.title": "Funcionalidades",
+			"qa.features.subtitle": "Herramientas avanzadas para garantizar la calidad en tus sistemas de IA",
+			"qa.workflow.badge": "Cómo Funciona",
+			"qa.workflow.title": "Flujo de Trabajo",
+			"qa.cta.title": "¿Interesado en el Acceso Anticipado?",
+			"qa.cta.desc": "Únete al programa de acceso anticipado para descuentos exclusivos, soporte prioritario y la oportunidad de dar forma al producto.",
+			"qa.cta.cta1": "Iniciar Prueba Gratuita",
+		},
+	})} />
 	<Section variant="gradient" padding="xl">
 		<div class="text-center">
-			<Badge variant="primary" class="mb-6">SaaS Platform</Badge>
+			<Badge variant="primary" class="mb-6" data-i18n="qa.badge">SaaS Platform</Badge>
 			<h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50">
-				QA <span class="bg-clip-text text-transparent bg-saba-gradient">Framework</span>
+				<span data-i18n="qa.hero.title1">QA</span> <span class="bg-clip-text text-transparent bg-saba-gradient" data-i18n="qa.hero.title2">Framework</span>
 			</h1>
-			<p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+			<p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" data-i18n="qa.hero.subtitle">
 				Ship with confidence. Every time.
 			</p>
-			<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
+			<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto" data-i18n="qa.hero.desc">
 				The first QA framework built for AI-assisted development. Automated E2E testing, code quality gates, and agentic test generation — all from a single platform.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Start Free Trial</Button>
-				<Button variant="outline" size="lg" href="#features">See Features</Button>
+				<Button variant="primary" size="lg" href="/contact" data-i18n="qa.hero.cta1">Start Free Trial</Button>
+				<Button variant="outline" size="lg" href="#features" data-i18n="qa.hero.cta2">See Features</Button>
 			</div>
 		</div>
 	</Section>
 
 	<Section variant="dark" padding="lg" id="features">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Features</h2>
-			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="qa.features.title">Features</h2>
+			<p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="qa.features.subtitle">
 				Advanced tooling to ensure quality in your AI systems
 			</p>
 		</div>
@@ -112,8 +146,8 @@ import Badge from "../../components/Badge.astro";
 	<Section variant="light" padding="lg">
 		<div class="grid md:grid-cols-2 gap-12 items-center">
 			<div>
-				<Badge variant="success" class="mb-6">How It Works</Badge>
-				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-50">Workflow</h2>
+				<Badge variant="success" class="mb-6" data-i18n="qa.workflow.badge">How It Works</Badge>
+				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-50" data-i18n="qa.workflow.title">Workflow</h2>
 				<div class="space-y-6">
 					<div class="flex gap-4">
 						<div class="w-10 h-10 rounded-full bg-saba-gradient text-white flex items-center justify-center shrink-0 font-bold">1</div>
@@ -182,12 +216,12 @@ import Badge from "../../components/Badge.astro";
 
 	<Section variant="dark" padding="xl">
 		<div class="text-center max-w-3xl mx-auto">
-			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Interested in Early Access?</h2>
-			<p class="text-slate-300 text-lg mb-8 leading-relaxed">
+			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50" data-i18n="qa.cta.title">Interested in Early Access?</h2>
+			<p class="text-slate-300 text-lg mb-8 leading-relaxed" data-i18n="qa.cta.desc">
 				Join the early access program for exclusive discounts, priority support, and the opportunity to shape the product.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Start Free Trial</Button>
+				<Button variant="primary" size="lg" href="/contact" data-i18n="qa.cta.cta1">Start Free Trial</Button>
 				<Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
 			</div>
 		</div>

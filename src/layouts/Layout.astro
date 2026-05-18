@@ -79,46 +79,65 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
 
           <!-- Desktop Nav -->
           <ul class="hidden lg:flex items-center gap-1">
-            <li><a href="/" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Home</a></li>
-            <li><a href="/qa-framework" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">QA Framework</a></li>
-            <li><a href="/security" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Security</a></li>
-            <li><a href="/orquestacion" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Orchestration</a></li>
-            <li><a href="/pricing" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Pricing</a></li>
-            <li><a href="/about" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">About</a></li>
-            <li><a href="/team" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Team</a></li>
-            <li><a href="/blog" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Blog</a></li>
-            <li>
-              <a href="/contact" class="ml-2 px-5 py-2 bg-teal-brand hover:bg-teal-hover text-midnight font-semibold rounded-lg transition-colors">
+            <li><a href="/" data-i18n="nav.home" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Home</a></li>
+            <li><a href="/qa-framework" data-i18n="nav.qa-framework" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">QA Framework</a></li>
+            <li><a href="/security" data-i18n="nav.security" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Security</a></li>
+            <li><a href="/orquestacion" data-i18n="nav.orchestration" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Orchestration</a></li>
+            <li><a href="/pricing" data-i18n="nav.pricing" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Pricing</a></li>
+            <li><a href="/about" data-i18n="nav.about" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">About</a></li>
+            <li><a href="/team" data-i18n="nav.team" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Team</a></li>
+            <li><a href="/blog" data-i18n="nav.blog" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Blog</a></li>
+            <li class="ml-2 flex items-center gap-2">
+              <!-- Language Toggle -->
+              <button
+                id="lang-toggle"
+                type="button"
+                class="px-2.5 py-1.5 text-xs font-bold text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors border border-slate-700"
+                aria-label="Switch language"
+              >
+                EN | ES
+              </button>
+              <a href="/contact" data-i18n="nav.startAudit" class="px-5 py-2 bg-teal-brand hover:bg-teal-hover text-midnight font-semibold rounded-lg transition-colors">
                 Start Free Audit
               </a>
             </li>
           </ul>
 
           <!-- Mobile Menu Button -->
-          <button
-            id="mobile-menu-button"
-            class="lg:hidden p-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg"
-            aria-label="Menu"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div class="lg:hidden flex items-center gap-2">
+            <button
+              id="lang-toggle-mobile"
+              type="button"
+              class="p-2 text-xs font-bold text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg border border-slate-700"
+              aria-label="Switch language"
+            >
+              EN | ES
+            </button>
+            <button
+              id="mobile-menu-button"
+              class="p-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg"
+              aria-label="Menu"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </nav>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-slate-800">
           <ul class="flex flex-col gap-1">
-            <li><a href="/" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Home</a></li>
-            <li><a href="/qa-framework" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">QA Framework</a></li>
-            <li><a href="/security" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Security</a></li>
-            <li><a href="/orquestacion" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Orchestration</a></li>
-            <li><a href="/pricing" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Pricing</a></li>
-            <li><a href="/about" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">About</a></li>
-            <li><a href="/team" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Team</a></li>
-            <li><a href="/blog" class="block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Blog</a></li>
+            <li><a href="/" data-i18n="nav.home" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Home</a></li>
+            <li><a href="/qa-framework" data-i18n="nav.qa-framework" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">QA Framework</a></li>
+            <li><a href="/security" data-i18n="nav.security" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Security</a></li>
+            <li><a href="/orquestacion" data-i18n="nav.orchestration" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Orchestration</a></li>
+            <li><a href="/pricing" data-i18n="nav.pricing" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Pricing</a></li>
+            <li><a href="/about" data-i18n="nav.about" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">About</a></li>
+            <li><a href="/team" data-i18n="nav.team" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Team</a></li>
+            <li><a href="/blog" data-i18n="nav.blog" class="mobile-nav-link block px-4 py-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Blog</a></li>
             <li>
-              <a href="/contact" class="block px-4 py-2 bg-teal-brand text-midnight font-semibold rounded-lg mt-2 text-center">
+              <a href="/contact" data-i18n="nav.startAudit" class="block px-4 py-2 bg-teal-brand text-midnight font-semibold rounded-lg mt-2 text-center">
                 Start Free Audit
               </a>
             </li>
@@ -138,7 +157,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
             <!-- Brand with Logo (stacked) -->
             <div class="md:col-span-2">
               <Logo variant="horizontal" href="/" class="mb-4" />
-              <p class="text-slate-400 mb-4 max-w-md leading-relaxed">
+              <p data-i18n="footer.desc" class="text-slate-400 mb-4 max-w-md leading-relaxed">
                 Agentic QA Automation & Security for the AI Era. AI-powered security audits, automated testing, and multi-agent orchestration — protected by our AI agents.
               </p>
               <div class="flex gap-4">
@@ -153,35 +172,35 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
 
             <!-- Links -->
             <div>
-              <h4 class="font-semibold text-slate-200 mb-4">Services</h4>
+              <h4 data-i18n="footer.services" class="font-semibold text-slate-200 mb-4">Services</h4>
               <ul class="space-y-2">
-                <li><a href="/qa-framework" class="text-slate-500 hover:text-teal-brand transition-colors">QA Framework</a></li>
-                <li><a href="/security" class="text-slate-500 hover:text-teal-brand transition-colors">Security Audit</a></li>
-                <li><a href="/orquestacion" class="text-slate-500 hover:text-teal-brand transition-colors">AI Orchestration</a></li>
-                <li><a href="/pricing" class="text-slate-500 hover:text-teal-brand transition-colors">Pricing</a></li>
+                <li><a href="/qa-framework" data-i18n="footer.services.qa" class="text-slate-500 hover:text-teal-brand transition-colors">QA Framework</a></li>
+                <li><a href="/security" data-i18n="footer.services.security" class="text-slate-500 hover:text-teal-brand transition-colors">Security Audit</a></li>
+                <li><a href="/orquestacion" data-i18n="footer.services.orchestration" class="text-slate-500 hover:text-teal-brand transition-colors">AI Orchestration</a></li>
+                <li><a href="/pricing" data-i18n="footer.services.pricing" class="text-slate-500 hover:text-teal-brand transition-colors">Pricing</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 class="font-semibold text-slate-200 mb-4">Company</h4>
+              <h4 data-i18n="footer.company" class="font-semibold text-slate-200 mb-4">Company</h4>
               <ul class="space-y-2">
-                <li><a href="/about" class="text-slate-500 hover:text-teal-brand transition-colors">About Us</a></li>
-                <li><a href="/team" class="text-slate-500 hover:text-teal-brand transition-colors">Team</a></li>
-                <li><a href="/blog" class="text-slate-500 hover:text-teal-brand transition-colors">Blog</a></li>
-                <li><a href="/contact" class="text-slate-500 hover:text-teal-brand transition-colors">Contact</a></li>
+                <li><a href="/about" data-i18n="footer.company.about" class="text-slate-500 hover:text-teal-brand transition-colors">About Us</a></li>
+                <li><a href="/team" data-i18n="footer.company.team" class="text-slate-500 hover:text-teal-brand transition-colors">Team</a></li>
+                <li><a href="/blog" data-i18n="footer.company.blog" class="text-slate-500 hover:text-teal-brand transition-colors">Blog</a></li>
+                <li><a href="/contact" data-i18n="footer.company.contact" class="text-slate-500 hover:text-teal-brand transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
 
           <!-- Bottom -->
           <div class="pt-8 mt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-slate-600 text-sm">
+            <p data-i18n="footer.copyright" class="text-slate-600 text-sm">
               &copy; 2026 SabaTech. All rights reserved.
             </p>
             <div class="flex gap-6 text-sm">
-              <a href="/privacy" class="text-slate-600 hover:text-slate-300 transition-colors">Privacy</a>
-              <a href="/terms" class="text-slate-600 hover:text-slate-300 transition-colors">Terms</a>
-              <a href="/cookies" class="text-slate-600 hover:text-slate-300 transition-colors">Cookies</a>
+              <a href="/privacy" data-i18n="footer.privacy" class="text-slate-600 hover:text-slate-300 transition-colors">Privacy</a>
+              <a href="/terms" data-i18n="footer.terms" class="text-slate-600 hover:text-slate-300 transition-colors">Terms</a>
+              <a href="/cookies" data-i18n="footer.cookies" class="text-slate-600 hover:text-slate-300 transition-colors">Cookies</a>
             </div>
           </div>
         </div>
@@ -189,12 +208,142 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     </footer>
 
     <script>
+      // Mobile menu toggle
       const mobileMenuButton = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
 
       mobileMenuButton?.addEventListener("click", () => {
         mobileMenu?.classList.toggle("hidden");
       });
+
+      // Close mobile menu when a nav link is clicked
+      document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.add("hidden");
+        });
+      });
+    </script>
+
+    <script>
+      // i18n client-side language switching
+      const LANG_KEY = "sabatech-lang";
+
+      const translations = {
+        en: {
+          "nav.home": "Home",
+          "nav.qa-framework": "QA Framework",
+          "nav.security": "Security",
+          "nav.orchestration": "Orchestration",
+          "nav.pricing": "Pricing",
+          "nav.about": "About",
+          "nav.team": "Team",
+          "nav.blog": "Blog",
+          "nav.startAudit": "Start Free Audit",
+          "footer.desc": "Agentic QA Automation & Security for the AI Era. AI-powered security audits, automated testing, and multi-agent orchestration — protected by our AI agents.",
+          "footer.services": "Services",
+          "footer.services.qa": "QA Framework",
+          "footer.services.security": "Security Audit",
+          "footer.services.orchestration": "AI Orchestration",
+          "footer.services.pricing": "Pricing",
+          "footer.company": "Company",
+          "footer.company.about": "About Us",
+          "footer.company.team": "Team",
+          "footer.company.blog": "Blog",
+          "footer.company.contact": "Contact",
+          "footer.copyright": "\u00a9 2026 SabaTech. All rights reserved.",
+          "footer.privacy": "Privacy",
+          "footer.terms": "Terms",
+          "footer.cookies": "Cookies",
+        },
+        es: {
+          "nav.home": "Inicio",
+          "nav.qa-framework": "Framework QA",
+          "nav.security": "Seguridad",
+          "nav.orchestration": "Orquestaci\u00f3n",
+          "nav.pricing": "Precios",
+          "nav.about": "Nosotros",
+          "nav.team": "Equipo",
+          "nav.blog": "Blog",
+          "nav.startAudit": "Auditor\u00eda Gratuita",
+          "footer.desc": "Automatizaci\u00f3n QA Agen\u00e9tica y Seguridad para la Era de la IA. Auditor\u00edas de seguridad con IA, testing automatizado y orquestaci\u00f3n multiagente — protegidos por nuestros agentes de IA.",
+          "footer.services": "Servicios",
+          "footer.services.qa": "Framework QA",
+          "footer.services.security": "Auditor\u00eda de Seguridad",
+          "footer.services.orchestration": "Orquestaci\u00f3n IA",
+          "footer.services.pricing": "Precios",
+          "footer.company": "Empresa",
+          "footer.company.about": "Sobre Nosotros",
+          "footer.company.team": "Equipo",
+          "footer.company.blog": "Blog",
+          "footer.company.contact": "Contacto",
+          "footer.copyright": "\u00a9 2026 SabaTech. Todos los derechos reservados.",
+          "footer.privacy": "Privacidad",
+          "footer.terms": "T\u00e9rminos",
+          "footer.cookies": "Cookies",
+        },
+      };
+
+      // Merge page-specific translations from the data-i18n-json script tag
+      const pageTranslationsEl = document.getElementById("i18n-page-translations");
+      let pageTranslations: Record<string, Record<string, string>> = {};
+      if (pageTranslationsEl) {
+        try {
+          pageTranslations = JSON.parse(pageTranslationsEl.textContent || "{}");
+        } catch { /* ignore */ }
+      }
+
+      // Merge page translations into main translations
+      for (const lang of Object.keys(pageTranslations)) {
+        if (!translations[lang as "en" | "es"]) continue;
+        Object.assign(translations[lang as "en" | "es"], pageTranslations[lang]);
+      }
+
+      function getCurrentLang(): string {
+        return localStorage.getItem(LANG_KEY) || "en";
+      }
+
+      function setLang(lang: string): void {
+        localStorage.setItem(LANG_KEY, lang);
+        applyTranslations(lang);
+        updateToggleButton(lang);
+      }
+
+      function applyTranslations(lang: string): void {
+        const dict = translations[lang as "en" | "es"] || translations.en;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+        // Also update the html lang attribute
+        document.documentElement.lang = lang;
+      }
+
+      function updateToggleButton(lang: string): void {
+        const btn = document.getElementById("lang-toggle");
+        const btnMobile = document.getElementById("lang-toggle-mobile");
+        const label = lang === "en" ? "EN | ES" : "ES | EN";
+        if (btn) btn.textContent = label;
+        if (btnMobile) btnMobile.textContent = label;
+      }
+
+      function toggleLang(): void {
+        const current = getCurrentLang();
+        const next = current === "en" ? "es" : "en";
+        setLang(next);
+      }
+
+      // Initialize on page load
+      const currentLang = getCurrentLang();
+      if (currentLang !== "en") {
+        applyTranslations(currentLang);
+      }
+      updateToggleButton(currentLang);
+
+      // Bind toggle buttons
+      document.getElementById("lang-toggle")?.addEventListener("click", toggleLang);
+      document.getElementById("lang-toggle-mobile")?.addEventListener("click", toggleLang);
     </script>
   </body>
 </html>

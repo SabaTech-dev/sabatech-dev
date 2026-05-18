@@ -8,12 +8,30 @@ import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Layout title="Contact — SabaTech" description="Contact SabaTech for AI-powered security audits, QA automation, and multi-agent orchestration. Start your free audit today.">
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"contact.title": "Let's Talk",
+			"contact.desc": "Got a project in mind? Start with a free security audit — our AI agents will scan your codebase and deliver a prioritized report.",
+			"contact.email.title": "Email",
+			"contact.email.cta": "Send Email",
+			"contact.twitter.title": "X / Twitter",
+			"contact.twitter.cta": "Send DM",
+		},
+		es: {
+			"contact.title": "Hablemos",
+			"contact.desc": "¿Tienes un proyecto en mente? Empieza con una auditoría de seguridad gratuita — nuestros agentes de IA escanearán tu codebase y entregarán un informe priorizado.",
+			"contact.email.title": "Correo Electrónico",
+			"contact.email.cta": "Enviar Correo",
+			"contact.twitter.title": "X / Twitter",
+			"contact.twitter.cta": "Enviar DM",
+		},
+	})} />
 	<Section variant="dark" padding="lg">
 		<Container>
 			<div class="max-w-3xl mx-auto">
 				<div class="text-center mb-12">
-					<h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4">Let's Talk</h1>
-					<p class="text-slate-400 text-lg mb-8 leading-relaxed">
+					<h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4" data-i18n="contact.title">Let's Talk</h1>
+					<p class="text-slate-400 text-lg mb-8 leading-relaxed" data-i18n="contact.desc">
 						Got a project in mind? Start with a free security audit — our AI agents will scan your codebase and deliver a prioritized report.
 					</p>
 				</div>
@@ -28,9 +46,9 @@ import ContactForm from "../components/ContactForm.astro";
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 								</svg>
 							</div>
-							<h3 class="text-xl font-bold text-slate-50 mb-2">Email</h3>
+							<h3 class="text-xl font-bold text-slate-50 mb-2" data-i18n="contact.email.title">Email</h3>
 							<p class="text-slate-400 mb-4">jmsabaris@sabatech.dev</p>
-							<Button variant="outline" href="mailto:jmsabaris@sabatech.dev" class="w-full">Send Email</Button>
+							<Button variant="outline" href="mailto:jmsabaris@sabatech.dev" class="w-full" data-i18n="contact.email.cta">Send Email</Button>
 						</div>
 					</Card>
 
@@ -41,9 +59,9 @@ import ContactForm from "../components/ContactForm.astro";
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
 								</svg>
 							</div>
-							<h3 class="text-xl font-bold text-slate-50 mb-2">X / Twitter</h3>
+							<h3 class="text-xl font-bold text-slate-50 mb-2" data-i18n="contact.twitter.title">X / Twitter</h3>
 							<p class="text-slate-400 mb-4">@LJokerL_TTV</p>
-							<Button variant="outline" href="https://twitter.com/LJokerL_TTV" target="_blank" rel="noopener noreferrer" class="w-full">Send DM</Button>
+							<Button variant="outline" href="https://twitter.com/LJokerL_TTV" target="_blank" rel="noopener noreferrer" class="w-full" data-i18n="contact.twitter.cta">Send DM</Button>
 						</div>
 					</Card>
 				</div>

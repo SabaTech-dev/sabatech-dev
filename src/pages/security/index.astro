@@ -7,29 +7,69 @@ import Badge from "../../components/Badge.astro";
 ---
 
 <Layout title="Security Audit — SabaTech" description="AI security audits for agentic applications. OWASP Agentic Apps 2026, EU AI Act, NIST AI RMF compliance. Pentesting and vulnerability assessment.">
+	<!-- Page-specific i18n translations -->
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"security.badge": "OWASP AI Security — Agentic Apps 2026 + EU AI Act",
+			"security.hero.title1": "Security",
+			"security.hero.title2": "Audit",
+			"security.hero.subtitle": "Security that ships with your code",
+			"security.hero.desc": "Our AI security agents scan every commit, every dependency, every container — catching vulnerabilities before they reach production. With human oversight from seasoned DevSecOps engineers.",
+			"security.hero.cta1": "Book Security Assessment",
+			"security.hero.cta2": "Explore Services",
+			"security.services.title": "Security Services",
+			"security.services.subtitle": "Full-spectrum security coverage for the AI system lifecycle",
+			"security.why.badge": "Why Choose Us",
+			"security.why.title": "Why SabaTech",
+			"security.auditPlans.title": "Audit Plans",
+			"security.auditPlans.subtitle": "Solutions tailored to your security and compliance needs",
+			"security.cta.title": "Ready to protect your AI systems?",
+			"security.cta.desc": "Get a free consultation on securing your agents and autonomous systems with OWASP Agentic Apps 2026, EU AI Act, and NIST AI RMF.",
+			"security.cta.cta1": "Book Security Assessment",
+		},
+		es: {
+			"security.badge": "OWASP Seguridad IA — Apps Agenéticas 2026 + EU AI Act",
+			"security.hero.title1": "Auditoría de",
+			"security.hero.title2": "Seguridad",
+			"security.hero.subtitle": "Seguridad que se integra con tu código",
+			"security.hero.desc": "Nuestros agentes de seguridad IA escanean cada commit, cada dependencia, cada contenedor — detectando vulnerabilidades antes de que lleguen a producción. Con supervisión humana de ingenieros DevSecOps experimentados.",
+			"security.hero.cta1": "Reservar Evaluación de Seguridad",
+			"security.hero.cta2": "Explorar Servicios",
+			"security.services.title": "Servicios de Seguridad",
+			"security.services.subtitle": "Cobertura de seguridad de espectro completo para el ciclo de vida de sistemas de IA",
+			"security.why.badge": "Por Qué Elegirnos",
+			"security.why.title": "Por Qué SabaTech",
+			"security.auditPlans.title": "Planes de Auditoría",
+			"security.auditPlans.subtitle": "Soluciones adaptadas a tus necesidades de seguridad y cumplimiento",
+			"security.cta.title": "¿Listo para proteger tus sistemas de IA?",
+			"security.cta.desc": "Obtén una consulta gratuita sobre la seguridad de tus agentes y sistemas autónomos con OWASP Apps Agenéticas 2026, EU AI Act y NIST AI RMF.",
+			"security.cta.cta1": "Reservar Evaluación de Seguridad",
+		}
+	})} />
+
 	<Section variant="gradient" padding="xl">
 		<div class="text-center">
-			<Badge variant="error" class="mb-6">OWASP AI Security — Agentic Apps 2026 + EU AI Act</Badge>
+			<Badge variant="error" class="mb-6"><span data-i18n="security.badge">OWASP AI Security — Agentic Apps 2026 + EU AI Act</span></Badge>
 			<h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50">
-				Security <span class="bg-clip-text text-transparent bg-saba-gradient">Audit</span>
+				<span data-i18n="security.hero.title1">Security</span> <span class="bg-clip-text text-transparent bg-saba-gradient" data-i18n="security.hero.title2">Audit</span>
 			</h1>
-			<p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+			<p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" data-i18n="security.hero.subtitle">
 				Security that ships with your code
 			</p>
-			<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
+			<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto" data-i18n="security.hero.desc">
 				Our AI security agents scan every commit, every dependency, every container — catching vulnerabilities before they reach production. With human oversight from seasoned DevSecOps engineers.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Book Security Assessment</Button>
-				<Button variant="outline" size="lg" href="#services">Explore Services</Button>
+				<Button variant="primary" size="lg" href="/contact" data-i18n="security.hero.cta1">Book Security Assessment</Button>
+				<Button variant="outline" size="lg" href="#services" data-i18n="security.hero.cta2">Explore Services</Button>
 			</div>
 		</div>
 	</Section>
 
 	<Section variant="dark" padding="lg" id="services">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Security Services</h2>
-			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+			<h2 data-i18n="security.services.title" class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Security Services</h2>
+			<p data-i18n="security.services.subtitle" class="text-slate-400 text-lg max-w-2xl mx-auto">
 				Full-spectrum security coverage for the AI system lifecycle
 			</p>
 		</div>
@@ -144,8 +184,8 @@ import Badge from "../../components/Badge.astro";
 	<Section variant="light" padding="lg">
 		<div class="grid md:grid-cols-2 gap-12 items-center">
 			<div>
-				<Badge variant="success" class="mb-6">Why Choose Us</Badge>
-				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-50">Why SabaTech</h2>
+				<Badge variant="success" class="mb-6"><span data-i18n="security.why.badge">Why Choose Us</span></Badge>
+				<h2 data-i18n="security.why.title" class="text-3xl md:text-4xl font-bold mb-6 text-slate-50">Why SabaTech</h2>
 
 				<div class="space-y-6">
 					<div class="flex gap-4">
@@ -250,8 +290,8 @@ import Badge from "../../components/Badge.astro";
 
 	<Section variant="dark" padding="xl" id="pricing">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Audit Plans</h2>
-			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+			<h2 data-i18n="security.auditPlans.title" class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Audit Plans</h2>
+			<p data-i18n="security.auditPlans.subtitle" class="text-slate-400 text-lg max-w-2xl mx-auto">
 				Solutions tailored to your security and compliance needs
 			</p>
 		</div>
@@ -400,12 +440,12 @@ import Badge from "../../components/Badge.astro";
 
 	<Section variant="gradient" padding="xl">
 		<div class="text-center max-w-3xl mx-auto">
-			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to protect your AI systems?</h2>
-			<p class="text-slate-300 text-lg mb-8 leading-relaxed">
+			<h2 data-i18n="security.cta.title" class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to protect your AI systems?</h2>
+			<p data-i18n="security.cta.desc" class="text-slate-300 text-lg mb-8 leading-relaxed">
 				Get a free consultation on securing your agents and autonomous systems with OWASP Agentic Apps 2026, EU AI Act, and NIST AI RMF.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Book Security Assessment</Button>
+				<Button variant="primary" size="lg" href="/contact" data-i18n="security.cta.cta1">Book Security Assessment</Button>
 				<Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
 			</div>
 		</div>

@@ -6,11 +6,73 @@ import Badge from "../../components/Badge.astro";
 ---
 
 <Layout title="About — SabaTech" description="SabaTech: Agentic QA Automation & Security for the AI Era. Meet the European boutique combining human expertise with AI agents.">
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"about.badge": "About Us",
+			"about.hero.title": "Where AI Secures AI",
+			"about.hero.desc": "We accelerate the safe adoption of AI in software development, combining human expertise with autonomous AI agents to deliver quality, security, and trust at the speed the AI era demands.",
+			"about.founder.title": "Saba — Founder & Director",
+			"about.founder.p1": 'Software engineer with over a decade of experience in QA, DevSecOps, and AI. Known in the community as "Joker," he is deeply passionate about AI security and multi-agent orchestration — building systems where autonomous AI agents and human expertise work in concert.',
+			"about.founder.p2": "His career spans designing QA automation frameworks for critical environments, implementing DevSecOps pipelines for enterprise systems, and developing autonomous AI architectures for multi-agent orchestration. He has led security audits, penetration tests, and quality assurance strategies across industries where reliability is non-negotiable.",
+			"about.founder.p3": "As founder of SabaTech, he combines hands-on technical expertise with strategic vision to help companies implement cutting-edge security and quality practices for their AI systems — ensuring that as AI adoption accelerates, it does so safely and responsibly.",
+			"about.expertise.title": "Areas of Expertise",
+			"about.mission.title": "Our Mission",
+			"about.mission.p1": "To accelerate the safe adoption of AI in software development by combining human expertise with autonomous AI agents.",
+			"about.mission.p2": "We believe AI-powered development teams need AI-powered quality and security. Our mission is to make that accessible, transparent, and trustworthy for every organization.",
+			"about.vision.title": "Our Vision",
+			"about.vision.p1": "To be the European reference in Agentic DevSecOps — where every line of code is reviewed by a hybrid human-AI team before reaching production.",
+			"about.vision.p2": "We combine the best of human expertise with the efficiency of AI to deliver fast, precise, and scalable consulting services. Alfred, our AI Co-Founder, complements our human capabilities with automated processing and analysis. OpenCode, our external coding agent, enables rapid implementation through spec-driven development (SDD) workflows.",
+			"about.values.badge": "Our Values",
+			"about.values.title": "What We Stand For",
+			"about.values.precision.title": "Technical Precision",
+			"about.values.precision.desc": "No concessions on quality. Every audit, every test, every line counts. Zero false positives as our goal.",
+			"about.values.innovation.title": "Innovation with Purpose",
+			"about.values.innovation.desc": "AI is not a buzzword, it's our tool. A team of AI agents working 24/7. We don't sell smoke.",
+			"about.values.sovereignty.title": "European Sovereignty",
+			"about.values.sovereignty.desc": "Data and operations under EU standards. Native GDPR compliance. European AI regulation alignment.",
+			"about.values.security.title": "Security by Design",
+			"about.values.security.desc": "Security isn't an add-on, it's the foundation. DevSecOps integrated from day 1 in every project.",
+			"about.values.transparency.title": "Radical Transparency",
+			"about.values.transparency.desc": "No surprises, no lock-in. Clear pricing, visible reports, auditable code.",
+			"about.values.speed.title": "Speed with Confidence",
+			"about.values.speed.desc": "Fast doesn't have to be insecure. CI/CD-native. Results in minutes, not days."
+		},
+		es: {
+			"about.badge": "Sobre Nosotros",
+			"about.hero.title": "Donde la IA Protege la IA",
+			"about.hero.desc": "Aceleramos la adopción segura de la IA en el desarrollo de software, combinando experiencia humana con agentes de IA autónomos para ofrecer calidad, seguridad y confianza a la velocidad que la era de la IA exige.",
+			"about.founder.title": "Saba — Fundador y Director",
+			"about.founder.p1": 'Ingeniero de software con más de una década de experiencia en QA, DevSecOps e IA. Conocido en la comunidad como "Joker", es un apasionado de la seguridad en IA y la orquestación multiagente — construyendo sistemas donde agentes de IA autónomos y experiencia humana trabajan en conjunto.',
+			"about.founder.p2": "Su trayectoria abarca el diseño de frameworks de automatización QA para entornos críticos, la implementación de pipelines DevSecOps para sistemas enterprise y el desarrollo de arquitecturas de IA autónoma para orquestación multiagente. Ha liderado auditorías de seguridad, tests de penetración y estrategias de aseguramiento de calidad en sectores donde la fiabilidad es innegociable.",
+			"about.founder.p3": "Como fundador de SabaTech, combina experiencia técnica hands-on con visión estratégica para ayudar a las empresas a implementar prácticas de seguridad y calidad vanguardistas para sus sistemas de IA — asegurando que, a medida que se acelera la adopción de IA, lo haga de forma segura y responsable.",
+			"about.expertise.title": "Áreas de Especialización",
+			"about.mission.title": "Nuestra Misión",
+			"about.mission.p1": "Acelerar la adopción segura de la IA en el desarrollo de software combinando experiencia humana con agentes de IA autónomos.",
+			"about.mission.p2": "Creemos que los equipos de desarrollo impulsados por IA necesitan calidad y seguridad impulsadas por IA. Nuestra misión es hacer esto accesible, transparente y fiable para cada organización.",
+			"about.vision.title": "Nuestra Visión",
+			"about.vision.p1": "Ser la referencia europea en DevSecOps Agenético — donde cada línea de código es revisada por un equipo híbrido humano-IA antes de llegar a producción.",
+			"about.vision.p2": "Combinamos lo mejor de la experiencia humana con la eficiencia de la IA para ofrecer servicios de consultoría rápidos, precisos y escalables. Alfred, nuestro Co-Fundador IA, complementa nuestras capacidades humanas con procesamiento y análisis automatizados. OpenCode, nuestro agente de código externo, permite implementación rápida mediante flujos de trabajo de desarrollo guiado por especificaciones (SDD).",
+			"about.values.badge": "Nuestros Valores",
+			"about.values.title": "Lo Que Defendemos",
+			"about.values.precision.title": "Precisión Técnica",
+			"about.values.precision.desc": "Sin concesiones en calidad. Cada auditoría, cada test, cada línea cuenta. Cero falsos positivos como objetivo.",
+			"about.values.innovation.title": "Innovación con Propósito",
+			"about.values.innovation.desc": "La IA no es una palabra de moda, es nuestra herramienta. Un equipo de agentes de IA trabajando 24/7. No vendemos humo.",
+			"about.values.sovereignty.title": "Soberanía Europea",
+			"about.values.sovereignty.desc": "Datos y operaciones bajo estándares de la UE. Cumplimiento GDPR nativo. Alineados con la regulación europea de IA.",
+			"about.values.security.title": "Seguridad por Diseño",
+			"about.values.security.desc": "La seguridad no es un añadido, es el cimiento. DevSecOps integrado desde el día 1 en cada proyecto.",
+			"about.values.transparency.title": "Transparencia Radical",
+			"about.values.transparency.desc": "Sin sorpresas, sin lock-in. Precios claros, informes visibles, código auditable.",
+			"about.values.speed.title": "Velocidad con Confianza",
+			"about.values.speed.desc": "Rápido no tiene por qué ser inseguro. Nativo CI/CD. Resultados en minutos, no días."
+		}
+	})} />
 	<Section variant="dark" padding="lg">
 		<div class="max-w-3xl mx-auto text-center mb-16">
-			<Badge variant="primary" class="mb-6">About Us</Badge>
-			<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-50">Where AI Secures AI</h1>
-			<p class="text-slate-400 text-lg leading-relaxed">
+			<Badge variant="primary" class="mb-6" data-i18n="about.badge">About Us</Badge>
+			<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-50" data-i18n="about.hero.title">Where AI Secures AI</h1>
+			<p class="text-slate-400 text-lg leading-relaxed" data-i18n="about.hero.desc">
 				We accelerate the safe adoption of AI in software development, combining human expertise with autonomous AI agents to deliver quality, security, and trust at the speed the AI era demands.
 			</p>
 		</div>
@@ -18,20 +80,20 @@ import Badge from "../../components/Badge.astro";
 		<div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
 			<div>
 				<div class="mb-8">
-					<h2 class="text-2xl font-bold mb-4 text-slate-50">Saba — Founder & Director</h2>
-					<p class="text-slate-300 leading-relaxed mb-6">
+					<h2 class="text-2xl font-bold mb-4 text-slate-50" data-i18n="about.founder.title">Saba — Founder & Director</h2>
+					<p class="text-slate-300 leading-relaxed mb-6" data-i18n="about.founder.p1">
 						Software engineer with over a decade of experience in QA, DevSecOps, and AI. Known in the community as "Joker," he is deeply passionate about AI security and multi-agent orchestration — building systems where autonomous AI agents and human expertise work in concert.
 					</p>
-					<p class="text-slate-400 leading-relaxed mb-6">
+					<p class="text-slate-400 leading-relaxed mb-6" data-i18n="about.founder.p2">
 						His career spans designing QA automation frameworks for critical environments, implementing DevSecOps pipelines for enterprise systems, and developing autonomous AI architectures for multi-agent orchestration. He has led security audits, penetration tests, and quality assurance strategies across industries where reliability is non-negotiable.
 					</p>
-					<p class="text-slate-400 leading-relaxed">
+					<p class="text-slate-400 leading-relaxed" data-i18n="about.founder.p3">
 						As founder of SabaTech, he combines hands-on technical expertise with strategic vision to help companies implement cutting-edge security and quality practices for their AI systems — ensuring that as AI adoption accelerates, it does so safely and responsibly.
 					</p>
 				</div>
 
 				<div>
-					<h3 class="text-xl font-semibold mb-4 text-slate-50">Areas of Expertise</h3>
+					<h3 class="text-xl font-semibold mb-4 text-slate-50" data-i18n="about.expertise.title">Areas of Expertise</h3>
 					<div class="flex flex-wrap gap-3">
 						<Badge variant="primary">QA Automation</Badge>
 						<Badge variant="primary">DevSecOps</Badge>
@@ -55,12 +117,12 @@ import Badge from "../../components/Badge.astro";
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
 							</svg>
 						</div>
-						<h3 class="text-2xl font-bold text-slate-50 mb-4">Our Mission</h3>
+						<h3 class="text-2xl font-bold text-slate-50 mb-4" data-i18n="about.mission.title">Our Mission</h3>
 					</div>
-					<p class="text-slate-300 leading-relaxed font-medium">
+					<p class="text-slate-300 leading-relaxed font-medium" data-i18n="about.mission.p1">
 						To accelerate the safe adoption of AI in software development by combining human expertise with autonomous AI agents.
 					</p>
-					<p class="text-slate-400 leading-relaxed mt-4">
+					<p class="text-slate-400 leading-relaxed mt-4" data-i18n="about.mission.p2">
 						We believe AI-powered development teams need AI-powered quality and security. Our mission is to make that accessible, transparent, and trustworthy for every organization.
 					</p>
 				</Card>
@@ -73,14 +135,14 @@ import Badge from "../../components/Badge.astro";
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 							</svg>
 						</div>
-						<h3 class="text-2xl font-bold text-slate-50 mb-4">Our Vision</h3>
+						<h3 class="text-2xl font-bold text-slate-50 mb-4" data-i18n="about.vision.title">Our Vision</h3>
 					</div>
-					<p class="text-slate-400 leading-relaxed mb-4">
+					<p class="text-slate-400 leading-relaxed mb-4" data-i18n="about.vision.p1">
 						To be the European reference in Agentic DevSecOps — where every line of code is reviewed by a hybrid human-AI team before reaching production.
 					</p>
-					<p class="text-slate-400 leading-relaxed">
-						We combine the best of human expertise with the efficiency of AI to deliver fast, precise, and scalable consulting services. Alfred, our AI Co-Founder, complements our human capabilities with automated processing and analysis.
-					</p>
+				<p class="text-slate-400 leading-relaxed" data-i18n="about.vision.p2">
+					We combine the best of human expertise with the efficiency of AI to deliver fast, precise, and scalable consulting services. Alfred, our AI Co-Founder, complements our human capabilities with automated processing and analysis. OpenCode, our external coding agent, enables rapid implementation through spec-driven development (SDD) workflows.
+				</p>
 				</Card>
 			</div>
 		</div>
@@ -88,8 +150,8 @@ import Badge from "../../components/Badge.astro";
 
 	<Section variant="light" padding="lg">
 		<div class="text-center mb-12">
-			<Badge variant="primary" class="mb-6">Our Values</Badge>
-			<h2 class="text-3xl font-bold mb-4 text-slate-50">What We Stand For</h2>
+			<Badge variant="primary" class="mb-6" data-i18n="about.values.badge">Our Values</Badge>
+			<h2 class="text-3xl font-bold mb-4 text-slate-50" data-i18n="about.values.title">What We Stand For</h2>
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -99,8 +161,8 @@ import Badge from "../../components/Badge.astro";
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-slate-50">Technical Precision</h3>
-				<p class="text-slate-400">No concessions on quality. Every audit, every test, every line counts. Zero false positives as our goal.</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50" data-i18n="about.values.precision.title">Technical Precision</h3>
+				<p class="text-slate-400" data-i18n="about.values.precision.desc">No concessions on quality. Every audit, every test, every line counts. Zero false positives as our goal.</p>
 			</div>
 
 			<div class="text-center">
@@ -109,8 +171,8 @@ import Badge from "../../components/Badge.astro";
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-slate-50">Innovation with Purpose</h3>
-				<p class="text-slate-400">AI is not a buzzword, it's our tool. A team of AI agents working 24/7. We don't sell smoke.</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50" data-i18n="about.values.innovation.title">Innovation with Purpose</h3>
+				<p class="text-slate-400" data-i18n="about.values.innovation.desc">AI is not a buzzword, it's our tool. A team of AI agents working 24/7. We don't sell smoke.</p>
 			</div>
 
 			<div class="text-center">
@@ -119,8 +181,8 @@ import Badge from "../../components/Badge.astro";
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-slate-50">European Sovereignty</h3>
-				<p class="text-slate-400">Data and operations under EU standards. Native GDPR compliance. European AI regulation alignment.</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50" data-i18n="about.values.sovereignty.title">European Sovereignty</h3>
+				<p class="text-slate-400" data-i18n="about.values.sovereignty.desc">Data and operations under EU standards. Native GDPR compliance. European AI regulation alignment.</p>
 			</div>
 		</div>
 
@@ -131,8 +193,8 @@ import Badge from "../../components/Badge.astro";
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-slate-50">Security by Design</h3>
-				<p class="text-slate-400">Security isn't an add-on, it's the foundation. DevSecOps integrated from day 1 in every project.</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50" data-i18n="about.values.security.title">Security by Design</h3>
+				<p class="text-slate-400" data-i18n="about.values.security.desc">Security isn't an add-on, it's the foundation. DevSecOps integrated from day 1 in every project.</p>
 			</div>
 
 			<div class="text-center">
@@ -142,8 +204,8 @@ import Badge from "../../components/Badge.astro";
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-slate-50">Radical Transparency</h3>
-				<p class="text-slate-400">No surprises, no lock-in. Clear pricing, visible reports, auditable code.</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50" data-i18n="about.values.transparency.title">Radical Transparency</h3>
+				<p class="text-slate-400" data-i18n="about.values.transparency.desc">No surprises, no lock-in. Clear pricing, visible reports, auditable code.</p>
 			</div>
 
 			<div class="text-center">
@@ -152,8 +214,8 @@ import Badge from "../../components/Badge.astro";
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-slate-50">Speed with Confidence</h3>
-				<p class="text-slate-400">Fast doesn't have to be insecure. CI/CD-native. Results in minutes, not days.</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50" data-i18n="about.values.speed.title">Speed with Confidence</h3>
+				<p class="text-slate-400" data-i18n="about.values.speed.desc">Fast doesn't have to be insecure. CI/CD-native. Results in minutes, not days.</p>
 			</div>
 		</div>
 	</Section>

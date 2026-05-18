@@ -7,11 +7,61 @@ import Button from "../../components/Button.astro";
 ---
 
 <Layout title="Team — SabaTech" description="Meet the SabaTech hybrid human-AI team. Saba (Founder) + Alfred (AI Co-Founder) and 5 specialized AI agents for QA & Security.">
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"team.badge": "Our Team",
+			"team.hero.title": "The Hybrid Team",
+			"team.hero.desc": "A hybrid human-AI team dedicated to the security and quality of AI systems. 6 specialized AI agents + human oversight at every critical decision.",
+			"team.agents.badge": "AI Agent Team",
+			"team.agents.title": "5 Specialized AI Agents",
+			"team.agents.subtitle": "Meet the team that works 24/7 — coordinated by Alfred, overseen by Saba.",
+			"team.how.badge": "How It Works",
+			"team.how.title": "How the Hybrid Team Works",
+			"team.how.subtitle": "From task arrival to human review — a transparent, repeatable workflow that combines AI speed with human judgment.",
+			"team.how.step1.title": "Task Arrives",
+			"team.how.step1.desc": "Whether it's a security audit, QA run, or code review, the task enters the system and is queued for analysis.",
+			"team.how.step2.title": "Alfred Assigns",
+			"team.how.step2.desc": "The CEO agent analyzes requirements, determines the right specialist, and routes the task with full context and priority.",
+			"team.how.step3.title": "Agent Executes",
+			"team.how.step3.desc": "The specialist agent works on the task with full tool access — running scans, writing code, or executing test suites autonomously.",
+			"team.how.step4.title": "Human Reviews",
+			"team.how.step4.desc": "Saba reviews critical decisions, approves deliverables, and ensures quality standards are met before anything ships.",
+			"team.join.badge": "Join Us",
+			"team.join.title": "Want to join the team?",
+			"team.join.desc": "We're always looking for talent passionate about AI security and quality automation. If you're interested in collaborating with SabaTech, reach out.",
+			"team.join.cta1": "Get in Touch",
+			"team.join.cta2": "Learn More About Us"
+		},
+		es: {
+			"team.badge": "Nuestro Equipo",
+			"team.hero.title": "El Equipo Híbrido",
+			"team.hero.desc": "Un equipo híbrido humano-IA dedicado a la seguridad y calidad de los sistemas de IA. 6 agentes de IA especializados + supervisión humana en cada decisión crítica.",
+			"team.agents.badge": "Equipo de Agentes IA",
+			"team.agents.title": "5 Agentes de IA Especializados",
+			"team.agents.subtitle": "Conoce al equipo que trabaja 24/7 — coordinado por Alfred, supervisado por Saba.",
+			"team.how.badge": "Cómo Funciona",
+			"team.how.title": "Cómo Funciona el Equipo Híbrido",
+			"team.how.subtitle": "Desde la llegada de la tarea hasta la revisión humana — un flujo de trabajo transparente y repetible que combina velocidad IA con juicio humano.",
+			"team.how.step1.title": "Llega la Tarea",
+			"team.how.step1.desc": "Ya sea una auditoría de seguridad, ejecución de QA o revisión de código, la tarea entra al sistema y se encola para su análisis.",
+			"team.how.step2.title": "Alfred Asigna",
+			"team.how.step2.desc": "El agente CEO analiza los requisitos, determina el especialista adecuado y enruta la tarea con contexto completo y prioridad.",
+			"team.how.step3.title": "El Agente Ejecuta",
+			"team.how.step3.desc": "El agente especialista trabaja en la tarea con acceso completo a herramientas — ejecutando escaneos, escribiendo código o ejecutando suites de tests de forma autónoma.",
+			"team.how.step4.title": "Revisión Humana",
+			"team.how.step4.desc": "Saba revisa las decisiones críticas, aprueba los entregables y asegura que se cumplan los estándares de calidad antes de que nada se publique.",
+			"team.join.badge": "Únete",
+			"team.join.title": "¿Quieres unirte al equipo?",
+			"team.join.desc": "Siempre buscamos talento apasionado por la seguridad en IA y la automatización de calidad. Si te interesa colaborar con SabaTech, ponte en contacto.",
+			"team.join.cta1": "Contactar",
+			"team.join.cta2": "Más Sobre Nosotros"
+		}
+	})} />
 	<Section variant="dark" padding="lg">
 		<div class="max-w-3xl mx-auto text-center mb-16">
-			<Badge variant="primary" class="mb-6">Our Team</Badge>
-			<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-50">The Hybrid Team</h1>
-			<p class="text-slate-400 text-lg leading-relaxed">
+			<Badge variant="primary" class="mb-6" data-i18n="team.badge">Our Team</Badge>
+			<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-50" data-i18n="team.hero.title">The Hybrid Team</h1>
+			<p class="text-slate-400 text-lg leading-relaxed" data-i18n="team.hero.desc">
 				A hybrid human-AI team dedicated to the security and quality of AI systems. 6 specialized AI agents + human oversight at every critical decision.
 			</p>
 		</div>
@@ -149,9 +199,9 @@ import Button from "../../components/Button.astro";
 
 		<!-- AI Agent Team -->
 		<div class="text-center mb-12">
-			<Badge variant="primary" class="mb-6">AI Agent Team</Badge>
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-50">5 Specialized AI Agents</h2>
-			<p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">
+			<Badge variant="primary" class="mb-6" data-i18n="team.agents.badge">AI Agent Team</Badge>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50" data-i18n="team.agents.title">5 Specialized AI Agents</h2>
+			<p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto" data-i18n="team.agents.subtitle">
 				Meet the team that works 24/7 — coordinated by Alfred, overseen by Saba.
 			</p>
 		</div>
@@ -234,14 +284,37 @@ import Button from "../../components/Button.astro";
 				</div>
 			</Card>
 		</div>
+
+		<!-- External Agent -->
+		<div class="mt-8 max-w-md mx-auto">
+			<div class="text-center mb-6">
+				<Badge variant="default" class="mb-3">External Agent</Badge>
+			</div>
+			<Card variant="elevated" hover>
+				<div class="p-6 text-center">
+					<div class="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-4">
+						<span class="text-2xl">💻</span>
+					</div>
+					<h3 class="text-lg font-bold text-slate-50 mb-2">OpenCode</h3>
+					<p class="text-xs text-teal-brand font-medium mb-3">External Coding Agent</p>
+					<p class="text-slate-400 text-sm mb-4">External coding agent powered by deepseek-v4-flash. Used for rapid code implementation, security review, and QA testing via spec-driven development (SDD). Integrates with OpenSpec for structured workflows.</p>
+					<div class="flex flex-wrap gap-1.5 justify-center">
+						<Badge variant="primary" size="sm">SDD</Badge>
+						<Badge variant="default" size="sm">OpenSpec</Badge>
+						<Badge variant="success" size="sm">Code Review</Badge>
+						<Badge variant="warning" size="sm">QA Testing</Badge>
+					</div>
+				</div>
+			</Card>
+		</div>
 	</Section>
 
 	<!-- How the Hybrid Team Works -->
 	<Section variant="light" padding="lg">
 		<div class="text-center mb-12">
-			<Badge variant="primary" class="mb-6">How It Works</Badge>
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">How the Hybrid Team Works</h2>
-			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+			<Badge variant="primary" class="mb-6" data-i18n="team.how.badge">How It Works</Badge>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4" data-i18n="team.how.title">How the Hybrid Team Works</h2>
+			<p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="team.how.subtitle">
 				From task arrival to human review — a transparent, repeatable workflow that combines AI speed with human judgment.
 			</p>
 		</div>
@@ -250,29 +323,29 @@ import Button from "../../components/Button.astro";
 			<!-- Step 1 -->
 			<div class="relative text-center">
 				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-				<h3 class="text-lg font-bold text-slate-50 mb-2">Task Arrives</h3>
-				<p class="text-slate-400 text-sm">Whether it's a security audit, QA run, or code review, the task enters the system and is queued for analysis.</p>
+				<h3 class="text-lg font-bold text-slate-50 mb-2" data-i18n="team.how.step1.title">Task Arrives</h3>
+				<p class="text-slate-400 text-sm" data-i18n="team.how.step1.desc">Whether it's a security audit, QA run, or code review, the task enters the system and is queued for analysis.</p>
 			</div>
 
 			<!-- Step 2 -->
 			<div class="relative text-center">
 				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-				<h3 class="text-lg font-bold text-slate-50 mb-2">Alfred Assigns</h3>
-				<p class="text-slate-400 text-sm">The CEO agent analyzes requirements, determines the right specialist, and routes the task with full context and priority.</p>
+				<h3 class="text-lg font-bold text-slate-50 mb-2" data-i18n="team.how.step2.title">Alfred Assigns</h3>
+				<p class="text-slate-400 text-sm" data-i18n="team.how.step2.desc">The CEO agent analyzes requirements, determines the right specialist, and routes the task with full context and priority.</p>
 			</div>
 
 			<!-- Step 3 -->
 			<div class="relative text-center">
 				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-				<h3 class="text-lg font-bold text-slate-50 mb-2">Agent Executes</h3>
-				<p class="text-slate-400 text-sm">The specialist agent works on the task with full tool access — running scans, writing code, or executing test suites autonomously.</p>
+				<h3 class="text-lg font-bold text-slate-50 mb-2" data-i18n="team.how.step3.title">Agent Executes</h3>
+				<p class="text-slate-400 text-sm" data-i18n="team.how.step3.desc">The specialist agent works on the task with full tool access — running scans, writing code, or executing test suites autonomously.</p>
 			</div>
 
 			<!-- Step 4 -->
 			<div class="relative text-center">
 				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
-				<h3 class="text-lg font-bold text-slate-50 mb-2">Human Reviews</h3>
-				<p class="text-slate-400 text-sm">Saba reviews critical decisions, approves deliverables, and ensures quality standards are met before anything ships.</p>
+				<h3 class="text-lg font-bold text-slate-50 mb-2" data-i18n="team.how.step4.title">Human Reviews</h3>
+				<p class="text-slate-400 text-sm" data-i18n="team.how.step4.desc">Saba reviews critical decisions, approves deliverables, and ensures quality standards are met before anything ships.</p>
 			</div>
 		</div>
 
@@ -289,16 +362,16 @@ import Button from "../../components/Button.astro";
 
 	<Section variant="dark" padding="lg">
 		<div class="text-center max-w-3xl mx-auto">
-			<Badge variant="primary" class="mb-6">Join Us</Badge>
-			<h2 class="text-3xl font-bold mb-6 text-slate-50">Want to join the team?</h2>
-			<p class="text-slate-400 text-lg mb-8 leading-relaxed">
+			<Badge variant="primary" class="mb-6" data-i18n="team.join.badge">Join Us</Badge>
+			<h2 class="text-3xl font-bold mb-6 text-slate-50" data-i18n="team.join.title">Want to join the team?</h2>
+			<p class="text-slate-400 text-lg mb-8 leading-relaxed" data-i18n="team.join.desc">
 				We're always looking for talent passionate about AI security and quality automation. If you're interested in collaborating with SabaTech, reach out.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="mailto:jmsabaris@sabatech.dev">
+				<Button variant="primary" size="lg" href="mailto:jmsabaris@sabatech.dev" data-i18n="team.join.cta1">
 					Get in Touch
 				</Button>
-				<Button variant="outline" size="lg" href="/about">
+				<Button variant="outline" size="lg" href="/about" data-i18n="team.join.cta2">
 					Learn More About Us
 				</Button>
 			</div>

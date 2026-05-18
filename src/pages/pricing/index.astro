@@ -8,13 +8,99 @@ import PricingCard from "../../components/PricingCard.astro";
 ---
 
 <Layout title="Pricing — SabaTech | QA & Security Plans">
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"pricing.hero.title1": "Simple, Transparent",
+			"pricing.hero.title2": "Pricing",
+			"pricing.hero.desc": "From open-source repos to enterprise pipelines — pick the plan that fits your team.",
+			"pricing.founding.badge": "Limited Offer",
+			"pricing.founding.text": "Founding Partners Program —",
+			"pricing.founding.highlight": "50% off",
+			"pricing.founding.end": "for the first 10 clients. Limited spots.",
+			"pricing.billing.monthly": "Monthly",
+			"pricing.billing.annual": "Annual",
+			"pricing.billing.discount": "-20%",
+			"pricing.qa.title": "QA Framework",
+			"pricing.qa.subtitle": "Everything you need to secure and test your AI-powered pipeline.",
+			"pricing.calc.title": "Cost Calculator",
+			"pricing.calc.subtitle": "Estimate your monthly and annual investment.",
+			"pricing.calc.teamLabel": "Team Size (developers)",
+			"pricing.calc.planLabel": "Plan",
+			"pricing.calc.monthlyCost": "Monthly cost",
+			"pricing.calc.annualCost": "Annual cost",
+			"pricing.calc.savings": "You save",
+			"pricing.calc.discountNote": "(20% off)",
+			"pricing.pro.title": "Professional Services",
+			"pricing.pro.subtitle": "Expert-led engagements to accelerate your security posture.",
+			"pricing.pro.assessment.badge": "One-time",
+			"pricing.pro.assessment.title": "Security Assessment",
+			"pricing.pro.assessment.desc": "Comprehensive security audit of your codebase, infrastructure, and AI pipeline with actionable findings report.",
+			"pricing.pro.assessment.cta": "Book Assessment",
+			"pricing.pro.pilot.badge": "3 Months",
+			"pricing.pro.pilot.title": "Pilot 90 Days",
+			"pricing.pro.pilot.desc": "Managed QA pilot program — we run your testing pipeline end-to-end for 90 days with full reporting and onboarding.",
+			"pricing.pro.pilot.cta": "Start Pilot",
+			"pricing.pro.managed.badge": "Annual",
+			"pricing.pro.managed.title": "Managed Security",
+			"pricing.pro.managed.desc": "Ongoing security operations with continuous monitoring, threat response, and quarterly reviews by our expert team.",
+			"pricing.pro.managed.cta": "Contact Sales",
+			"pricing.cta.title1": "Ready to secure your",
+			"pricing.cta.title2": "AI pipeline",
+			"pricing.cta.title3": "?",
+			"pricing.cta.desc": "Start with our free tier or book a call to find the right plan for your team.",
+			"pricing.cta.cta1": "Start Free Audit",
+			"pricing.cta.cta2": "Talk to Sales",
+		},
+		es: {
+			"pricing.hero.title1": "Precios",
+			"pricing.hero.title2": "Simples y Transparentes",
+			"pricing.hero.desc": "Desde repos open-source hasta pipelines enterprise — elige el plan que mejor se adapte a tu equipo.",
+			"pricing.founding.badge": "Oferta Limitada",
+			"pricing.founding.text": "Programa de Socios Fundadores —",
+			"pricing.founding.highlight": "50% de descuento",
+			"pricing.founding.end": "para los 10 primeros clientes. Plazas limitadas.",
+			"pricing.billing.monthly": "Mensual",
+			"pricing.billing.annual": "Anual",
+			"pricing.billing.discount": "-20%",
+			"pricing.qa.title": "Framework QA",
+			"pricing.qa.subtitle": "Todo lo que necesitas para asegurar y testear tu pipeline con IA.",
+			"pricing.calc.title": "Calculadora de Costes",
+			"pricing.calc.subtitle": "Estima tu inversión mensual y anual.",
+			"pricing.calc.teamLabel": "Tamaño del equipo (desarrolladores)",
+			"pricing.calc.planLabel": "Plan",
+			"pricing.calc.monthlyCost": "Coste mensual",
+			"pricing.calc.annualCost": "Coste anual",
+			"pricing.calc.savings": "Ahorras",
+			"pricing.calc.discountNote": "(20% dto.)",
+			"pricing.pro.title": "Servicios Profesionales",
+			"pricing.pro.subtitle": "Servicios dirigidos por expertos para acelerar tu postura de seguridad.",
+			"pricing.pro.assessment.badge": "Pago único",
+			"pricing.pro.assessment.title": "Evaluación de Seguridad",
+			"pricing.pro.assessment.desc": "Auditoría de seguridad integral de tu codebase, infraestructura y pipeline de IA con informe ejecutivo de hallazgos.",
+			"pricing.pro.assessment.cta": "Reservar Evaluación",
+			"pricing.pro.pilot.badge": "3 Meses",
+			"pricing.pro.pilot.title": "Piloto 90 Días",
+			"pricing.pro.pilot.desc": "Programa piloto de QA gestionado — gestionamos tu pipeline de testing end-to-end durante 90 días con informes completos y onboarding.",
+			"pricing.pro.pilot.cta": "Iniciar Piloto",
+			"pricing.pro.managed.badge": "Anual",
+			"pricing.pro.managed.title": "Seguridad Gestionada",
+			"pricing.pro.managed.desc": "Operaciones de seguridad continuas con monitorización, respuesta a amenazas y revisiones trimestrales por nuestro equipo de expertos.",
+			"pricing.pro.managed.cta": "Contactar Ventas",
+			"pricing.cta.title1": "¿Listo para asegurar tu",
+			"pricing.cta.title2": "pipeline de IA",
+			"pricing.cta.title3": "?",
+			"pricing.cta.desc": "Empieza con nuestro plan gratuito o reserva una llamada para encontrar el plan adecuado para tu equipo.",
+			"pricing.cta.cta1": "Iniciar Auditoría Gratuita",
+			"pricing.cta.cta2": "Hablar con Ventas",
+		}
+	})} />
 	<!-- Hero Section -->
 	<Section variant="gradient" padding="xl">
 		<div class="text-center max-w-3xl mx-auto">
 			<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-50 mb-6">
-				Simple, Transparent <span class="text-teal-brand">Pricing</span>
+				<span data-i18n="pricing.hero.title1">Simple, Transparent</span> <span class="text-teal-brand" data-i18n="pricing.hero.title2">Pricing</span>
 			</h1>
-			<p class="text-lg md:text-xl text-slate-400 leading-relaxed">
+			<p class="text-lg md:text-xl text-slate-400 leading-relaxed" data-i18n="pricing.hero.desc">
 				From open-source repos to enterprise pipelines — pick the plan that fits your team.
 			</p>
 		</div>
@@ -25,9 +111,9 @@ import PricingCard from "../../components/PricingCard.astro";
 		<div class="bg-ai-lime-light/10 border-y border-ai-lime-light/30">
 			<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-4 text-center">
 				<div class="flex items-center justify-center gap-3 flex-wrap">
-					<Badge variant="success" size="md">Limited Offer</Badge>
+					<Badge variant="success" size="md"><span data-i18n="pricing.founding.badge">Limited Offer</span></Badge>
 					<span class="text-slate-200 font-medium">
-						Founding Partners Program — <span class="text-lime-ai font-bold">50% off</span> for the first 10 clients. Limited spots.
+						<span data-i18n="pricing.founding.text">Founding Partners Program —</span> <span class="text-lime-ai font-bold" data-i18n="pricing.founding.highlight">50% off</span> <span data-i18n="pricing.founding.end">for the first 10 clients. Limited spots.</span>
 					</span>
 				</div>
 			</div>
@@ -37,7 +123,7 @@ import PricingCard from "../../components/PricingCard.astro";
 	<!-- Billing Toggle -->
 	<Section variant="default" padding="md">
 		<div class="flex items-center justify-center gap-4">
-			<span id="label-monthly" class="text-slate-200 font-semibold text-sm">Monthly</span>
+			<span id="label-monthly" class="text-slate-200 font-semibold text-sm" data-i18n="pricing.billing.monthly">Monthly</span>
 			<button
 				id="billing-toggle"
 				type="button"
@@ -52,8 +138,8 @@ import PricingCard from "../../components/PricingCard.astro";
 				></span>
 			</button>
 			<span id="label-annual" class="text-slate-400 font-semibold text-sm">
-				Annual
-				<Badge variant="primary" size="sm" class="ml-1">-20%</Badge>
+				<span data-i18n="pricing.billing.annual">Annual</span>
+				<Badge variant="primary" size="sm" class="ml-1"><span data-i18n="pricing.billing.discount">-20%</span></Badge>
 			</span>
 		</div>
 	</Section>
@@ -61,8 +147,8 @@ import PricingCard from "../../components/PricingCard.astro";
 	<!-- QA Framework Tiers -->
 	<Section variant="default" padding="lg">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">QA Framework</h2>
-			<p class="text-slate-400 text-lg">Everything you need to secure and test your AI-powered pipeline.</p>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4" data-i18n="pricing.qa.title">QA Framework</h2>
+			<p class="text-slate-400 text-lg" data-i18n="pricing.qa.subtitle">Everything you need to secure and test your AI-powered pipeline.</p>
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
@@ -126,15 +212,15 @@ import PricingCard from "../../components/PricingCard.astro";
 	<!-- Interactive Calculator -->
 	<Section variant="light" padding="lg" id="calculator">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">Cost Calculator</h2>
-			<p class="text-slate-400 text-lg">Estimate your monthly and annual investment.</p>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4" data-i18n="pricing.calc.title">Cost Calculator</h2>
+			<p class="text-slate-400 text-lg" data-i18n="pricing.calc.subtitle">Estimate your monthly and annual investment.</p>
 		</div>
 
 		<div class="max-w-xl mx-auto">
 			<Card variant="elevated" class="p-8">
 				<div class="space-y-6">
 					<div>
-						<label for="calc-team" class="block text-sm font-medium text-slate-300 mb-2">
+						<label for="calc-team" class="block text-sm font-medium text-slate-300 mb-2" data-i18n="pricing.calc.teamLabel">
 							Team Size (developers)
 						</label>
 						<input
@@ -148,7 +234,7 @@ import PricingCard from "../../components/PricingCard.astro";
 					</div>
 
 					<div>
-						<label for="calc-plan" class="block text-sm font-medium text-slate-300 mb-2">
+						<label for="calc-plan" class="block text-sm font-medium text-slate-300 mb-2" data-i18n="pricing.calc.planLabel">
 							Plan
 						</label>
 						<select
@@ -162,15 +248,15 @@ import PricingCard from "../../components/PricingCard.astro";
 
 					<div class="border-t border-slate-700 pt-6 space-y-3">
 						<div class="flex justify-between items-center">
-							<span class="text-slate-400">Monthly cost</span>
+							<span class="text-slate-400" data-i18n="pricing.calc.monthlyCost">Monthly cost</span>
 							<span id="calc-monthly" class="text-2xl font-bold text-slate-50">€145</span>
 						</div>
 						<div class="flex justify-between items-center">
-							<span class="text-slate-400">Annual cost <span class="text-teal-brand text-sm">(20% off)</span></span>
+							<span class="text-slate-400"><span data-i18n="pricing.calc.annualCost">Annual cost</span> <span class="text-teal-brand text-sm" data-i18n="pricing.calc.discountNote">(20% off)</span></span>
 							<span id="calc-annual" class="text-2xl font-bold text-teal-brand">€1,380</span>
 						</div>
 						<div class="flex justify-between items-center">
-							<span class="text-slate-400">You save</span>
+							<span class="text-slate-400" data-i18n="pricing.calc.savings">You save</span>
 							<span id="calc-savings" class="text-lg font-semibold text-code-green">€345/year</span>
 						</div>
 					</div>
@@ -182,49 +268,49 @@ import PricingCard from "../../components/PricingCard.astro";
 	<!-- Professional Services -->
 	<Section variant="default" padding="lg">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">Professional Services</h2>
-			<p class="text-slate-400 text-lg">Expert-led engagements to accelerate your security posture.</p>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4" data-i18n="pricing.pro.title">Professional Services</h2>
+			<p class="text-slate-400 text-lg" data-i18n="pricing.pro.subtitle">Expert-led engagements to accelerate your security posture.</p>
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 			<!-- Security Assessment -->
 			<Card variant="bordered" hover class="p-8 text-center">
 				<div class="mb-4">
-					<Badge variant="warning" size="sm">One-time</Badge>
+					<Badge variant="warning" size="sm"><span data-i18n="pricing.pro.assessment.badge">One-time</span></Badge>
 				</div>
-				<h3 class="text-xl font-bold text-slate-50 mb-2">Security Assessment</h3>
+				<h3 class="text-xl font-bold text-slate-50 mb-2" data-i18n="pricing.pro.assessment.title">Security Assessment</h3>
 				<div class="mb-4">
 					<span class="text-3xl font-bold text-teal-brand">€500</span>
 				</div>
-				<p class="text-slate-400 mb-6">Comprehensive security audit of your codebase, infrastructure, and AI pipeline with actionable findings report.</p>
-				<Button variant="outline" href="/contact" class="w-full">Book Assessment</Button>
+				<p class="text-slate-400 mb-6" data-i18n="pricing.pro.assessment.desc">Comprehensive security audit of your codebase, infrastructure, and AI pipeline with actionable findings report.</p>
+				<Button variant="outline" href="/contact" class="w-full"><span data-i18n="pricing.pro.assessment.cta">Book Assessment</span></Button>
 			</Card>
 
 			<!-- Pilot 90 Days -->
 			<Card variant="bordered" hover class="p-8 text-center border-teal-brand/50">
 				<div class="mb-4">
-					<Badge variant="primary" size="sm">3 Months</Badge>
+					<Badge variant="primary" size="sm"><span data-i18n="pricing.pro.pilot.badge">3 Months</span></Badge>
 				</div>
-				<h3 class="text-xl font-bold text-slate-50 mb-2">Pilot 90 Days</h3>
+				<h3 class="text-xl font-bold text-slate-50 mb-2" data-i18n="pricing.pro.pilot.title">Pilot 90 Days</h3>
 				<div class="mb-4">
 					<span class="text-3xl font-bold text-teal-brand">€999</span>
 				</div>
-				<p class="text-slate-400 mb-6">Managed QA pilot program — we run your testing pipeline end-to-end for 90 days with full reporting and onboarding.</p>
-				<Button variant="primary" href="/contact" class="w-full">Start Pilot</Button>
+				<p class="text-slate-400 mb-6" data-i18n="pricing.pro.pilot.desc">Managed QA pilot program — we run your testing pipeline end-to-end for 90 days with full reporting and onboarding.</p>
+				<Button variant="primary" href="/contact" class="w-full"><span data-i18n="pricing.pro.pilot.cta">Start Pilot</span></Button>
 			</Card>
 
 			<!-- Managed Security -->
 			<Card variant="bordered" hover class="p-8 text-center">
 				<div class="mb-4">
-					<Badge variant="success" size="sm">Annual</Badge>
+					<Badge variant="success" size="sm"><span data-i18n="pricing.pro.managed.badge">Annual</span></Badge>
 				</div>
-				<h3 class="text-xl font-bold text-slate-50 mb-2">Managed Security</h3>
+				<h3 class="text-xl font-bold text-slate-50 mb-2" data-i18n="pricing.pro.managed.title">Managed Security</h3>
 				<div class="mb-4">
 					<span class="text-3xl font-bold text-teal-brand">€497</span>
 					<span class="text-slate-400 ml-1">/dev/year</span>
 				</div>
-				<p class="text-slate-400 mb-6">Ongoing security operations with continuous monitoring, threat response, and quarterly reviews by our expert team.</p>
-				<Button variant="outline" href="/contact" class="w-full">Contact Sales</Button>
+				<p class="text-slate-400 mb-6" data-i18n="pricing.pro.managed.desc">Ongoing security operations with continuous monitoring, threat response, and quarterly reviews by our expert team.</p>
+				<Button variant="outline" href="/contact" class="w-full"><span data-i18n="pricing.pro.managed.cta">Contact Sales</span></Button>
 			</Card>
 		</div>
 	</Section>
@@ -233,14 +319,14 @@ import PricingCard from "../../components/PricingCard.astro";
 	<Section variant="gradient" padding="xl">
 		<div class="text-center max-w-2xl mx-auto">
 			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-6">
-				Ready to secure your <span class="text-teal-brand">AI pipeline</span>?
+				<span data-i18n="pricing.cta.title1">Ready to secure your</span> <span class="text-teal-brand" data-i18n="pricing.cta.title2">AI pipeline</span><span data-i18n="pricing.cta.title3">?</span>
 			</h2>
-			<p class="text-lg text-slate-400 mb-8">
+			<p class="text-lg text-slate-400 mb-8" data-i18n="pricing.cta.desc">
 				Start with our free tier or book a call to find the right plan for your team.
 			</p>
 			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-				<Button variant="primary" size="xl" href="/contact">Start Free Audit</Button>
-				<Button variant="outline" size="xl" href="/contact">Talk to Sales</Button>
+				<Button variant="primary" size="xl" href="/contact"><span data-i18n="pricing.cta.cta1">Start Free Audit</span></Button>
+				<Button variant="outline" size="xl" href="/contact"><span data-i18n="pricing.cta.cta2">Talk to Sales</span></Button>
 			</div>
 		</div>
 	</Section>

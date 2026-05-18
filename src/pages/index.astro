@@ -25,6 +25,128 @@ const organizationJsonLd = {
 ---
 
 <Layout title="SabaTech — Agentic QA Automation & Security for the AI Era" jsonLd={organizationJsonLd}>
+	<!-- Page-specific i18n translations -->
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"home.badge": "Agentic QA Automation & Security",
+			"home.hero.title1": "Agentic QA Automation & Security",
+			"home.hero.title2": "for the AI Era",
+			"home.hero.subtitle1": "Your code. Your cloud. Your AI agents.",
+			"home.hero.subtitle2": "Protected by our AI agents.",
+			"home.hero.description": "AI-powered security audits, automated QA testing, and multi-agent orchestration — a hybrid human-AI team that never sleeps.",
+			"home.hero.cta1": "Start Free Audit",
+			"home.hero.cta2": "Explore Services",
+			"home.services.title": "What We Build",
+			"home.services.subtitle": "Quality code, secure systems, and intelligent orchestration — powered by AI agents with human oversight",
+			"home.services.qa.title": "QA Framework",
+			"home.services.qa.desc": "Ship with confidence. Every time. The first QA framework built for AI-assisted development — automated E2E testing, quality gates, and agentic test generation.",
+			"home.services.qa.f1": "Auto-generated tests by AI agents",
+			"home.services.qa.f2": "CI/CD native integration",
+			"home.services.qa.f3": "Real-time quality dashboards",
+			"home.services.qa.cta": "Learn More",
+			"home.services.security.title": "Security Audit",
+			"home.services.security.desc": "Security that ships with your code. AI agents scan every commit, every dependency, every container — catching vulnerabilities before production.",
+			"home.services.security.f1": "OWASP Agentic Apps 2026",
+			"home.services.security.f2": "EU AI Act & NIST AI RMF",
+			"home.services.security.f3": "GDPR-first, EU data sovereignty",
+			"home.services.security.cta": "Learn More",
+			"home.services.orchestration.title": "AI Orchestration",
+			"home.services.orchestration.desc": "Your AI workforce for quality & security. Alfred and his team of 5 specialized agents collaborate 24/7 — with human oversight at every critical decision.",
+			"home.services.orchestration.f1": "Multi-agent coordination",
+			"home.services.orchestration.f2": "Workflow automation",
+			"home.services.orchestration.f3": "Event-driven architecture",
+			"home.services.orchestration.cta": "Learn More",
+			"home.why.badge": "Why SabaTech",
+			"home.why.title": "The team no one else has.",
+			"home.why.subtitle": "A hybrid human-AI team. Joker leads strategy. Alfred coordinates 5 specialized AI agents that code, test, audit, deploy, and research 24/7. No competitor offers this.",
+			"home.why.hybrid.title": "Hybrid Human-AI Team",
+			"home.why.hybrid.desc": "6 specialized AI agents + human oversight at every critical decision. Zero black-box operations.",
+			"home.why.owasp.title": "OWASP AI Security Experts",
+			"home.why.owasp.desc": "Full coverage of OWASP Top 10 for Agentic Applications 2026, EU AI Act, and NIST AI RMF.",
+			"home.why.sovereignty.title": "European Data Sovereignty",
+			"home.why.sovereignty.desc": "GDPR-native compliance. EU hosting. Aligned with European AI regulation. Your data stays in Europe.",
+			"home.why.speed.title": "Speed Without Compromise",
+			"home.why.speed.desc": "CI/CD-native results in minutes, not days. Fast doesn't have to be insecure.",
+			"home.agents.label": "AI Agents Active — 24/7",
+			"home.agents.alfred.title": "Alfred — CEO Agent",
+			"home.agents.alfred.desc": "Coordination & strategy",
+			"home.agents.coder.title": "Coder",
+			"home.agents.coder.desc": "Implementation & refactoring",
+			"home.agents.security.title": "Security",
+			"home.agents.security.desc": "Audits & pentesting",
+			"home.agents.qa.title": "QA Tester",
+			"home.agents.qa.desc": "E2E testing & coverage",
+			"home.agents.devops.title": "DevOps",
+			"home.agents.devops.desc": "CI/CD & deployment",
+			"home.agents.research.title": "Research",
+			"home.agents.research.desc": "Analysis & benchmarks",
+			"home.agents.opencode.title": "OpenCode",
+			"home.agents.opencode.desc": "External coding agent (SDD)",
+			"home.cta.title": "Ready to ship secure code at AI speed?",
+			"home.cta.desc": "Get a free security audit of your AI systems. Our agents will scan your codebase, identify vulnerabilities, and deliver a prioritized remediation plan — in minutes.",
+			"home.cta.cta1": "Start Free Audit",
+		},
+		es: {
+			"home.badge": "Automatización QA Agenética & Seguridad",
+			"home.hero.title1": "Automatización QA Agenética & Seguridad",
+			"home.hero.title2": "para la Era de la IA",
+			"home.hero.subtitle1": "Tu código. Tu nube. Tus agentes de IA.",
+			"home.hero.subtitle2": "Protegidos por nuestros agentes de IA.",
+			"home.hero.description": "Auditorías de seguridad con IA, testing QA automatizado y orquestación multiagente — un equipo híbrido humano-IA que nunca duerme.",
+			"home.hero.cta1": "Iniciar Auditoría Gratuita",
+			"home.hero.cta2": "Explorar Servicios",
+			"home.services.title": "Lo Que Construimos",
+			"home.services.subtitle": "Código de calidad, sistemas seguros y orquestación inteligente — impulsados por agentes de IA con supervisión humana",
+			"home.services.qa.title": "Framework QA",
+			"home.services.qa.desc": "Publica con confianza. Siempre. El primer framework QA diseñado para desarrollo asistido por IA — testing E2E automatizado, puertas de calidad y generación agenética de tests.",
+			"home.services.qa.f1": "Tests autogenerados por agentes de IA",
+			"home.services.qa.f2": "Integración nativa CI/CD",
+			"home.services.qa.f3": "Dashboards de calidad en tiempo real",
+			"home.services.qa.cta": "Más Información",
+			"home.services.security.title": "Auditoría de Seguridad",
+			"home.services.security.desc": "Seguridad que se integra con tu código. Los agentes de IA escanean cada commit, cada dependencia, cada contenedor — detectando vulnerabilidades antes de producción.",
+			"home.services.security.f1": "OWASP Apps Agenéticas 2026",
+			"home.services.security.f2": "EU AI Act & NIST AI RMF",
+			"home.services.security.f3": "GDPR-first, soberanía de datos en la UE",
+			"home.services.security.cta": "Más Información",
+			"home.services.orchestration.title": "Orquestación IA",
+			"home.services.orchestration.desc": "Tu fuerza laboral de IA para calidad y seguridad. Alfred y su equipo de 5 agentes especializados colaboran 24/7 — con supervisión humana en cada decisión crítica.",
+			"home.services.orchestration.f1": "Coordinación multiagente",
+			"home.services.orchestration.f2": "Automatización de flujos",
+			"home.services.orchestration.f3": "Arquitectura event-driven",
+			"home.services.orchestration.cta": "Más Información",
+			"home.why.badge": "Por Qué SabaTech",
+			"home.why.title": "El equipo que nadie más tiene.",
+			"home.why.subtitle": "Un equipo híbrido humano-IA. Joker lidera la estrategia. Alfred coordina 5 agentes de IA especializados que programan, testean, auditan, despliegan e investigan 24/7. Ningún competidor ofrece esto.",
+			"home.why.hybrid.title": "Equipo Híbrido Humano-IA",
+			"home.why.hybrid.desc": "6 agentes de IA especializados + supervisión humana en cada decisión crítica. Cero operaciones opacas.",
+			"home.why.owasp.title": "Expertos en Seguridad OWASP AI",
+			"home.why.owasp.desc": "Cobertura completa del OWASP Top 10 para Aplicaciones Agenéticas 2026, EU AI Act y NIST AI RMF.",
+			"home.why.sovereignty.title": "Soberanía de Datos Europea",
+			"home.why.sovereignty.desc": "Cumplimiento GDPR nativo. Hosting en la UE. Alineado con la regulación europea de IA. Tus datos se quedan en Europa.",
+			"home.why.speed.title": "Velocidad Sin Compromiso",
+			"home.why.speed.desc": "Resultados nativos CI/CD en minutos, no días. Rápido no tiene por qué ser inseguro.",
+			"home.agents.label": "Agentes IA Activos — 24/7",
+			"home.agents.alfred.title": "Alfred — Agente CEO",
+			"home.agents.alfred.desc": "Coordinación y estrategia",
+			"home.agents.coder.title": "Coder",
+			"home.agents.coder.desc": "Implementación y refactorización",
+			"home.agents.security.title": "Security",
+			"home.agents.security.desc": "Auditorías y pentesting",
+			"home.agents.qa.title": "QA Tester",
+			"home.agents.qa.desc": "Testing E2E y cobertura",
+			"home.agents.devops.title": "DevOps",
+			"home.agents.devops.desc": "CI/CD y despliegue",
+			"home.agents.research.title": "Research",
+			"home.agents.research.desc": "Análisis y benchmarks",
+			"home.agents.opencode.title": "OpenCode",
+			"home.agents.opencode.desc": "Agente de código externo (SDD)",
+			"home.cta.title": "¿Listo para publicar código seguro a la velocidad de la IA?",
+			"home.cta.desc": "Obtén una auditoría de seguridad gratuita de tus sistemas de IA. Nuestros agentes escanearán tu codebase, identificarán vulnerabilidades y entregarán un plan de remediación priorizado — en minutos.",
+			"home.cta.cta1": "Iniciar Auditoría Gratuita",
+		}
+	})} />
+
 	<!-- Hero Section -->
 	<section class="bg-dark-depth py-20 md:py-32 relative overflow-hidden">
 		<!-- Subtle grid pattern -->
@@ -34,20 +156,20 @@ const organizationJsonLd = {
 
 		<div class="container mx-auto px-4 max-w-7xl relative">
 			<div class="text-center">
-				<Badge variant="primary" class="mb-6">Agentic QA Automation & Security</Badge>
+				<Badge variant="primary" class="mb-6" data-i18n="home.badge">Agentic QA Automation & Security</Badge>
 				<h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50 leading-tight">
-					Agentic QA Automation & Security<br />
-					<span class="bg-clip-text text-transparent bg-saba-gradient">for the AI Era</span>
+					<span data-i18n="home.hero.title1">Agentic QA Automation & Security</span><br />
+					<span class="bg-clip-text text-transparent bg-saba-gradient" data-i18n="home.hero.title2">for the AI Era</span>
 				</h1>
 				<p class="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed">
-					Your code. Your cloud. Your AI agents.<br class="hidden sm:block" /> Protected by our AI agents.
+					<span data-i18n="home.hero.subtitle1">Your code. Your cloud. Your AI agents.</span><br class="hidden sm:block" /> <span data-i18n="home.hero.subtitle2">Protected by our AI agents.</span>
 				</p>
-				<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
+				<p data-i18n="home.hero.description" class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
 					AI-powered security audits, automated QA testing, and multi-agent orchestration — a hybrid human-AI team that never sleeps.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<Button variant="primary" size="lg" href="/contact">Start Free Audit</Button>
-					<Button variant="outline" size="lg" href="#services">Explore Services</Button>
+					<Button variant="primary" size="lg" href="/contact" data-i18n="home.hero.cta1">Start Free Audit</Button>
+					<Button variant="outline" size="lg" href="#services" data-i18n="home.hero.cta2">Explore Services</Button>
 				</div>
 			</div>
 		</div>
@@ -56,8 +178,8 @@ const organizationJsonLd = {
 	<!-- Services Section -->
 	<Section variant="dark" padding="lg" id="services">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">What We Build</h2>
-			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+			<h2 data-i18n="home.services.title" class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">What We Build</h2>
+			<p data-i18n="home.services.subtitle" class="text-slate-400 text-lg max-w-2xl mx-auto">
 				Quality code, secure systems, and intelligent orchestration — powered by AI agents with human oversight
 			</p>
 		</div>
@@ -70,25 +192,25 @@ const organizationJsonLd = {
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-slate-50">QA Framework</h3>
-					<p class="text-slate-400 mb-4 leading-relaxed">
+					<h3 data-i18n="home.services.qa.title" class="text-2xl font-bold mb-3 text-slate-50">QA Framework</h3>
+					<p data-i18n="home.services.qa.desc" class="text-slate-400 mb-4 leading-relaxed">
 						Ship with confidence. Every time. The first QA framework built for AI-assisted development — automated E2E testing, quality gates, and agentic test generation.
 					</p>
 					<ul class="space-y-2 text-sm text-slate-400 mb-6">
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							Auto-generated tests by AI agents
+							<span data-i18n="home.services.qa.f1">Auto-generated tests by AI agents</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							CI/CD native integration
+							<span data-i18n="home.services.qa.f2">CI/CD native integration</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							Real-time quality dashboards
+							<span data-i18n="home.services.qa.f3">Real-time quality dashboards</span>
 						</li>
 					</ul>
-					<Button variant="outline" href="/qa-framework" class="w-full">Learn More</Button>
+					<Button variant="outline" href="/qa-framework" data-i18n="home.services.qa.cta" class="w-full">Learn More</Button>
 				</div>
 			</Card>
 
@@ -99,25 +221,25 @@ const organizationJsonLd = {
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-slate-50">Security Audit</h3>
-					<p class="text-slate-400 mb-4 leading-relaxed">
+					<h3 data-i18n="home.services.security.title" class="text-2xl font-bold mb-3 text-slate-50">Security Audit</h3>
+					<p data-i18n="home.services.security.desc" class="text-slate-400 mb-4 leading-relaxed">
 						Security that ships with your code. AI agents scan every commit, every dependency, every container — catching vulnerabilities before production.
 					</p>
 					<ul class="space-y-2 text-sm text-slate-400 mb-6">
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							OWASP Agentic Apps 2026
+							<span data-i18n="home.services.security.f1">OWASP Agentic Apps 2026</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							EU AI Act & NIST AI RMF
+							<span data-i18n="home.services.security.f2">EU AI Act & NIST AI RMF</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							GDPR-first, EU data sovereignty
+							<span data-i18n="home.services.security.f3">GDPR-first, EU data sovereignty</span>
 						</li>
 					</ul>
-					<Button variant="outline" href="/security" class="w-full">Learn More</Button>
+					<Button variant="outline" href="/security" data-i18n="home.services.security.cta" class="w-full">Learn More</Button>
 				</div>
 			</Card>
 
@@ -128,25 +250,25 @@ const organizationJsonLd = {
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-slate-50">AI Orchestration</h3>
-					<p class="text-slate-400 mb-4 leading-relaxed">
+					<h3 data-i18n="home.services.orchestration.title" class="text-2xl font-bold mb-3 text-slate-50">AI Orchestration</h3>
+					<p data-i18n="home.services.orchestration.desc" class="text-slate-400 mb-4 leading-relaxed">
 						Your AI workforce for quality & security. Alfred and his team of 5 specialized agents collaborate 24/7 — with human oversight at every critical decision.
 					</p>
 					<ul class="space-y-2 text-sm text-slate-400 mb-6">
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							Multi-agent coordination
+							<span data-i18n="home.services.orchestration.f1">Multi-agent coordination</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							Workflow automation
+							<span data-i18n="home.services.orchestration.f2">Workflow automation</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							Event-driven architecture
+							<span data-i18n="home.services.orchestration.f3">Event-driven architecture</span>
 						</li>
 					</ul>
-					<Button variant="outline" href="/orquestacion" class="w-full">Learn More</Button>
+					<Button variant="outline" href="/orquestacion" data-i18n="home.services.orchestration.cta" class="w-full">Learn More</Button>
 				</div>
 			</Card>
 		</div>
@@ -156,11 +278,11 @@ const organizationJsonLd = {
 	<Section variant="light" padding="lg" id="why-sabatech">
 		<div class="grid md:grid-cols-2 gap-12 items-center">
 			<div>
-				<Badge variant="primary" class="mb-6">Why SabaTech</Badge>
-				<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">
+				<Badge variant="primary" class="mb-6" data-i18n="home.why.badge">Why SabaTech</Badge>
+				<h2 data-i18n="home.why.title" class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">
 					The team no one else has.
 				</h2>
-				<p class="text-slate-400 text-lg mb-8 leading-relaxed">
+				<p data-i18n="home.why.subtitle" class="text-slate-400 text-lg mb-8 leading-relaxed">
 					A hybrid human-AI team. Joker leads strategy. Alfred coordinates 5 specialized AI agents that code, test, audit, deploy, and research 24/7. No competitor offers this.
 				</p>
 
@@ -172,8 +294,8 @@ const organizationJsonLd = {
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-slate-50">Hybrid Human-AI Team</h3>
-							<p class="text-slate-400">6 specialized AI agents + human oversight at every critical decision. Zero black-box operations.</p>
+							<h3 data-i18n="home.why.hybrid.title" class="text-xl font-semibold mb-2 text-slate-50">Hybrid Human-AI Team</h3>
+							<p data-i18n="home.why.hybrid.desc" class="text-slate-400">6 specialized AI agents + human oversight at every critical decision. Zero black-box operations.</p>
 						</div>
 					</div>
 
@@ -184,8 +306,8 @@ const organizationJsonLd = {
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-slate-50">OWASP AI Security Experts</h3>
-							<p class="text-slate-400">Full coverage of OWASP Top 10 for Agentic Applications 2026, EU AI Act, and NIST AI RMF.</p>
+							<h3 data-i18n="home.why.owasp.title" class="text-xl font-semibold mb-2 text-slate-50">OWASP AI Security Experts</h3>
+							<p data-i18n="home.why.owasp.desc" class="text-slate-400">Full coverage of OWASP Top 10 for Agentic Applications 2026, EU AI Act, and NIST AI RMF.</p>
 						</div>
 					</div>
 
@@ -196,8 +318,8 @@ const organizationJsonLd = {
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-slate-50">European Data Sovereignty</h3>
-							<p class="text-slate-400">GDPR-native compliance. EU hosting. Aligned with European AI regulation. Your data stays in Europe.</p>
+							<h3 data-i18n="home.why.sovereignty.title" class="text-xl font-semibold mb-2 text-slate-50">European Data Sovereignty</h3>
+							<p data-i18n="home.why.sovereignty.desc" class="text-slate-400">GDPR-native compliance. EU hosting. Aligned with European AI regulation. Your data stays in Europe.</p>
 						</div>
 					</div>
 
@@ -208,8 +330,8 @@ const organizationJsonLd = {
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-slate-50">Speed Without Compromise</h3>
-							<p class="text-slate-400">CI/CD-native results in minutes, not days. Fast doesn't have to be insecure.</p>
+							<h3 data-i18n="home.why.speed.title" class="text-xl font-semibold mb-2 text-slate-50">Speed Without Compromise</h3>
+							<p data-i18n="home.why.speed.desc" class="text-slate-400">CI/CD-native results in minutes, not days. Fast doesn't have to be insecure.</p>
 						</div>
 					</div>
 				</div>
@@ -222,15 +344,15 @@ const organizationJsonLd = {
 					<div class="relative">
 						<div class="flex items-center gap-3 mb-6">
 							<div class="w-3 h-3 rounded-full bg-code-green animate-pulse"></div>
-							<span class="font-mono text-sm text-slate-400">AI Agents Active — 24/7</span>
+							<span data-i18n="home.agents.label" class="font-mono text-sm text-slate-400">AI Agents Active — 24/7</span>
 						</div>
 
 						<div class="space-y-4">
 							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
 								<span class="text-lg">🎯</span>
 								<div>
-									<p class="text-sm font-semibold text-slate-200">Alfred — CEO Agent</p>
-									<p class="text-xs text-slate-500">Coordination & strategy</p>
+									<p data-i18n="home.agents.alfred.title" class="text-sm font-semibold text-slate-200">Alfred — CEO Agent</p>
+									<p data-i18n="home.agents.alfred.desc" class="text-xs text-slate-500">Coordination & strategy</p>
 								</div>
 								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
 							</div>
@@ -238,8 +360,8 @@ const organizationJsonLd = {
 							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
 								<span class="text-lg">🔧</span>
 								<div>
-									<p class="text-sm font-semibold text-slate-200">Coder</p>
-									<p class="text-xs text-slate-500">Implementation & refactoring</p>
+									<p data-i18n="home.agents.coder.title" class="text-sm font-semibold text-slate-200">Coder</p>
+									<p data-i18n="home.agents.coder.desc" class="text-xs text-slate-500">Implementation & refactoring</p>
 								</div>
 								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
 							</div>
@@ -247,8 +369,8 @@ const organizationJsonLd = {
 							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
 								<span class="text-lg">🛡️</span>
 								<div>
-									<p class="text-sm font-semibold text-slate-200">Security</p>
-									<p class="text-xs text-slate-500">Audits & pentesting</p>
+									<p data-i18n="home.agents.security.title" class="text-sm font-semibold text-slate-200">Security</p>
+									<p data-i18n="home.agents.security.desc" class="text-xs text-slate-500">Audits & pentesting</p>
 								</div>
 								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
 							</div>
@@ -256,8 +378,8 @@ const organizationJsonLd = {
 							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
 								<span class="text-lg">🧪</span>
 								<div>
-									<p class="text-sm font-semibold text-slate-200">QA Tester</p>
-									<p class="text-xs text-slate-500">E2E testing & coverage</p>
+									<p data-i18n="home.agents.qa.title" class="text-sm font-semibold text-slate-200">QA Tester</p>
+									<p data-i18n="home.agents.qa.desc" class="text-xs text-slate-500">E2E testing & coverage</p>
 								</div>
 								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
 							</div>
@@ -265,8 +387,8 @@ const organizationJsonLd = {
 							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
 								<span class="text-lg">🚀</span>
 								<div>
-									<p class="text-sm font-semibold text-slate-200">DevOps</p>
-									<p class="text-xs text-slate-500">CI/CD & deployment</p>
+									<p data-i18n="home.agents.devops.title" class="text-sm font-semibold text-slate-200">DevOps</p>
+									<p data-i18n="home.agents.devops.desc" class="text-xs text-slate-500">CI/CD & deployment</p>
 								</div>
 								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
 							</div>
@@ -274,8 +396,17 @@ const organizationJsonLd = {
 							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
 								<span class="text-lg">📚</span>
 								<div>
-									<p class="text-sm font-semibold text-slate-200">Research</p>
-									<p class="text-xs text-slate-500">Analysis & benchmarks</p>
+									<p data-i18n="home.agents.research.title" class="text-sm font-semibold text-slate-200">Research</p>
+									<p data-i18n="home.agents.research.desc" class="text-xs text-slate-500">Analysis & benchmarks</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">💻</span>
+								<div>
+									<p data-i18n="home.agents.opencode.title" class="text-sm font-semibold text-slate-200">OpenCode</p>
+									<p data-i18n="home.agents.opencode.desc" class="text-xs text-slate-500">External coding agent (SDD)</p>
 								</div>
 								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
 							</div>
@@ -289,12 +420,12 @@ const organizationJsonLd = {
 	<!-- CTA Section -->
 	<Section variant="gradient" padding="xl">
 		<div class="text-center max-w-3xl mx-auto">
-			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to ship secure code at AI speed?</h2>
-			<p class="text-slate-300 text-lg mb-8 leading-relaxed">
+			<h2 data-i18n="home.cta.title" class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to ship secure code at AI speed?</h2>
+			<p data-i18n="home.cta.desc" class="text-slate-300 text-lg mb-8 leading-relaxed">
 				Get a free security audit of your AI systems. Our agents will scan your codebase, identify vulnerabilities, and deliver a prioritized remediation plan — in minutes.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Start Free Audit</Button>
+				<Button variant="primary" size="lg" href="/contact" data-i18n="home.cta.cta1">Start Free Audit</Button>
 				<Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
 			</div>
 		</div>
