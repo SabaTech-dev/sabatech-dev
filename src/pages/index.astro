@@ -4,148 +4,282 @@ import Section from "../components/Section.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
 import Badge from "../components/Badge.astro";
-import Hero from "../components/Hero.astro";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SabaTech",
+  "url": "https://sabatech.dev",
+  "logo": "https://sabatech.dev/favicon.svg",
+  "description": "Agentic QA Automation & Security for the AI Era. AI-powered security audits, automated QA testing, and multi-agent orchestration.",
+  "sameAs": [
+    "https://github.com/SabaTech-dev",
+    "https://twitter.com/LJokerL_TTV",
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "jmsabaris@sabatech.dev",
+    "contactType": "customer service",
+  },
+};
 ---
 
-<Layout title="SabaTech - Consultoría QA & Security para Agentes IA">
+<Layout title="SabaTech — Agentic QA Automation & Security for the AI Era" jsonLd={organizationJsonLd}>
 	<!-- Hero Section -->
-	<Hero
-		badge="AI Security & QA Expertise"
-		headline="SabaTech"
-		subheadline="Consultoría QA & Security para Agentes IA"
-		ctaText="Hablemos de tu proyecto"
-		ctaHref="/contact"
-		secondaryCtaText="Ver Servicios"
-		secondaryCtaHref="#services"
-		variant="gradient"
-	/>
+	<section class="bg-dark-depth py-20 md:py-32 relative overflow-hidden">
+		<!-- Subtle grid pattern -->
+		<div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#94A3B8 1px, transparent 1px), linear-gradient(90deg, #94A3B8 1px, transparent 1px); background-size: 60px 60px;"></div>
+		<!-- AI Glow -->
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-ai-glow pointer-events-none"></div>
+
+		<div class="container mx-auto px-4 max-w-7xl relative">
+			<div class="text-center">
+				<Badge variant="primary" class="mb-6">Agentic QA Automation & Security</Badge>
+				<h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50 leading-tight">
+					Agentic QA Automation & Security<br />
+					<span class="bg-clip-text text-transparent bg-saba-gradient">for the AI Era</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+					Your code. Your cloud. Your AI agents.<br class="hidden sm:block" /> Protected by our AI agents.
+				</p>
+				<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
+					AI-powered security audits, automated QA testing, and multi-agent orchestration — a hybrid human-AI team that never sleeps.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button variant="primary" size="lg" href="/contact">Start Free Audit</Button>
+					<Button variant="outline" size="lg" href="#services">Explore Services</Button>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Services Section -->
 	<Section variant="dark" padding="lg" id="services">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Nuestros Servicios</h2>
-			<p class="text-gray-400 text-lg max-w-2xl mx-auto">
-				Soluciones integrales para seguridad, calidad y orquestación de sistemas de IA autónomos
+			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">What We Build</h2>
+			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+				Quality code, secure systems, and intelligent orchestration — powered by AI agents with human oversight
 			</p>
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8">
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-white">QA-Framework</h3>
-					<p class="text-gray-400 mb-6 leading-relaxed">
-						Framework de automatización QA para testing de agentes IA. Suite de pruebas E2E, integración continua y métricas de calidad.
+					<h3 class="text-2xl font-bold mb-3 text-slate-50">QA Framework</h3>
+					<p class="text-slate-400 mb-4 leading-relaxed">
+						Ship with confidence. Every time. The first QA framework built for AI-assisted development — automated E2E testing, quality gates, and agentic test generation.
 					</p>
-					<Button variant="outline" href="/qa-framework" class="w-full">Saber más</Button>
+					<ul class="space-y-2 text-sm text-slate-400 mb-6">
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							Auto-generated tests by AI agents
+						</li>
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							CI/CD native integration
+						</li>
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							Real-time quality dashboards
+						</li>
+					</ul>
+					<Button variant="outline" href="/qa-framework" class="w-full">Learn More</Button>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-white">Security Audit</h3>
-					<p class="text-gray-400 mb-6 leading-relaxed">
-						Auditorías de seguridad para sistemas de IA. OWASP AI ASI compliance, pentesting de agentes y evaluación de riesgos.
+					<h3 class="text-2xl font-bold mb-3 text-slate-50">Security Audit</h3>
+					<p class="text-slate-400 mb-4 leading-relaxed">
+						Security that ships with your code. AI agents scan every commit, every dependency, every container — catching vulnerabilities before production.
 					</p>
-					<Button variant="outline" href="/security" class="w-full">Saber más</Button>
+					<ul class="space-y-2 text-sm text-slate-400 mb-6">
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							OWASP Agentic Apps 2026
+						</li>
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							EU AI Act & NIST AI RMF
+						</li>
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							GDPR-first, EU data sovereignty
+						</li>
+					</ul>
+					<Button variant="outline" href="/security" class="w-full">Learn More</Button>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-white">Orquestación IA</h3>
-					<p class="text-gray-400 mb-6 leading-relaxed">
-						Diseño e implementación de arquitecturas de orquestación para multi-agent systems. Gestión de workflows y coordinación autónoma.
+					<h3 class="text-2xl font-bold mb-3 text-slate-50">AI Orchestration</h3>
+					<p class="text-slate-400 mb-4 leading-relaxed">
+						Your AI workforce for quality & security. Alfred and his team of 5 specialized agents collaborate 24/7 — with human oversight at every critical decision.
 					</p>
-					<Button variant="outline" href="/orquestacion" class="w-full">Saber más</Button>
+					<ul class="space-y-2 text-sm text-slate-400 mb-6">
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							Multi-agent coordination
+						</li>
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							Workflow automation
+						</li>
+						<li class="flex items-center gap-2">
+							<svg class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+							Event-driven architecture
+						</li>
+					</ul>
+					<Button variant="outline" href="/orquestacion" class="w-full">Learn More</Button>
 				</div>
 			</Card>
 		</div>
 	</Section>
 
-	<!-- Why SabaTech Section -->
+	<!-- Why SabaTech / Differentiators -->
 	<Section variant="light" padding="lg" id="why-sabatech">
 		<div class="grid md:grid-cols-2 gap-12 items-center">
 			<div>
-				<Badge variant="success" class="mb-6">Why SabaTech</Badge>
-				<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">¿Por qué elegirnos?</h2>
-				<p class="text-gray-400 text-lg mb-8 leading-relaxed">
-					Combinamos experiencia en QA, DevSecOps e IA para ofrecer soluciones de seguridad y calidad de vanguardia para sistemas autónomos.
+				<Badge variant="primary" class="mb-6">Why SabaTech</Badge>
+				<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">
+					The team no one else has.
+				</h2>
+				<p class="text-slate-400 text-lg mb-8 leading-relaxed">
+					A hybrid human-AI team. Joker leads strategy. Alfred coordinates 5 specialized AI agents that code, test, audit, deploy, and research 24/7. No competitor offers this.
 				</p>
 
 				<div class="space-y-6">
 					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">OWASP AI ASI Compliance</h3>
-							<p class="text-gray-400">Auditorías alineadas con el estándar de seguridad para sistemas de IA OWASP</p>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">Hybrid Human-AI Team</h3>
+							<p class="text-slate-400">6 specialized AI agents + human oversight at every critical decision. Zero black-box operations.</p>
 						</div>
 					</div>
 
 					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">OWASP AI Security Experts</h3>
+							<p class="text-slate-400">Full coverage of OWASP Top 10 for Agentic Applications 2026, EU AI Act, and NIST AI RMF.</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">European Data Sovereignty</h3>
+							<p class="text-slate-400">GDPR-native compliance. EU hosting. Aligned with European AI regulation. Your data stays in Europe.</p>
+						</div>
+					</div>
+
+					<div class="flex gap-4">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">Rapidez y Eficiencia</h3>
-							<p class="text-gray-400">Entregas ágiles con metodologías de prueba automatizada y CI/CD</p>
-						</div>
-					</div>
-
-					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-							</svg>
-						</div>
-						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">Métricas y Reporting</h3>
-							<p class="text-gray-400">Dashboards en tiempo real y reportes detallados de calidad y seguridad</p>
-						</div>
-					</div>
-
-					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-							</svg>
-						</div>
-						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">Equipo Híbrido Humano-IA</h3>
-							<p class="text-gray-400">Saba + Alfred (AI Co-Founder) para máxima eficiencia y especialización</p>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">Speed Without Compromise</h3>
+							<p class="text-slate-400">CI/CD-native results in minutes, not days. Fast doesn't have to be insecure.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<!-- AI Agents Visual -->
 			<div class="relative">
-				<div class="aspect-square rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-8 border border-gray-700">
-					<div class="h-full flex flex-col justify-center items-center text-center">
-						<svg class="w-32 h-32 text-primary-red mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-						</svg>
-						<h3 class="text-3xl font-bold text-white mb-4">Seguridad Garantizada</h3>
-						<p class="text-gray-400 text-lg">Protección de primer nivel para tus sistemas de IA</p>
+				<div class="rounded-2xl bg-slate-800/50 border border-slate-700 p-8 relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-40 h-40 bg-ai-glow rounded-full -translate-y-1/2 translate-x-1/2"></div>
+					<div class="relative">
+						<div class="flex items-center gap-3 mb-6">
+							<div class="w-3 h-3 rounded-full bg-code-green animate-pulse"></div>
+							<span class="font-mono text-sm text-slate-400">AI Agents Active — 24/7</span>
+						</div>
+
+						<div class="space-y-4">
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">🎯</span>
+								<div>
+									<p class="text-sm font-semibold text-slate-200">Alfred — CEO Agent</p>
+									<p class="text-xs text-slate-500">Coordination & strategy</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">🔧</span>
+								<div>
+									<p class="text-sm font-semibold text-slate-200">Coder</p>
+									<p class="text-xs text-slate-500">Implementation & refactoring</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">🛡️</span>
+								<div>
+									<p class="text-sm font-semibold text-slate-200">Security</p>
+									<p class="text-xs text-slate-500">Audits & pentesting</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">🧪</span>
+								<div>
+									<p class="text-sm font-semibold text-slate-200">QA Tester</p>
+									<p class="text-xs text-slate-500">E2E testing & coverage</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">🚀</span>
+								<div>
+									<p class="text-sm font-semibold text-slate-200">DevOps</p>
+									<p class="text-xs text-slate-500">CI/CD & deployment</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+
+							<div class="flex items-center gap-3 p-3 bg-slate-800 rounded-lg border border-slate-700">
+								<span class="text-lg">📚</span>
+								<div>
+									<p class="text-sm font-semibold text-slate-200">Research</p>
+									<p class="text-xs text-slate-500">Analysis & benchmarks</p>
+								</div>
+								<div class="ml-auto w-2 h-2 rounded-full bg-code-green"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -155,13 +289,13 @@ import Hero from "../components/Hero.astro";
 	<!-- CTA Section -->
 	<Section variant="gradient" padding="xl">
 		<div class="text-center max-w-3xl mx-auto">
-			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">¿Listo para mejorar la seguridad y calidad de tus agentes IA?</h2>
-			<p class="text-gray-300 text-lg mb-8 leading-relaxed">
-				Contáctanos para una consultoría gratuita sobre cómo podemos ayudarte a implementar frameworks de QA, seguridad y orquestación en tus sistemas de IA.
+			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to ship secure code at AI speed?</h2>
+			<p class="text-slate-300 text-lg mb-8 leading-relaxed">
+				Get a free security audit of your AI systems. Our agents will scan your codebase, identify vulnerabilities, and deliver a prioritized remediation plan — in minutes.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="mailto:josemsabaris@gmail.com">josemsabaris@gmail.com</Button>
-				<Button variant="outline" size="lg" href="/contact">Formulario de contacto</Button>
+				<Button variant="primary" size="lg" href="/contact">Start Free Audit</Button>
+				<Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
 			</div>
 		</div>
 	</Section>

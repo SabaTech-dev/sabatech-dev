@@ -1,0 +1,38 @@
+---
+interface Props {
+	variant?: "icon-only" | "horizontal" | "stacked";
+	class?: string;
+	href?: string;
+}
+
+const {
+	variant = "horizontal",
+	class: className,
+	href,
+} = Astro.props;
+
+const svgClass = variant === "stacked" ? "h-12 w-12" : "h-8 w-8";
+const wrapperClass = variant === "stacked"
+	? "inline-flex flex-col items-center gap-2"
+	: "inline-flex items-center gap-2";
+const isLink = href !== undefined;
+const Tag = isLink ? "a" : "div";
+const linkProps = isLink ? { href, "aria-label": "SabaTech - Home" } : {};
+---
+
+<Tag
+	class:list={[wrapperClass, "hover:opacity-90 transition-opacity", className]}
+	{...linkProps}
+>
+	<svg class={svgClass} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+		<rect x="2" y="2" width="36" height="36" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="2.5"/>
+		<path d="M14 14.5C14 12.5 15.5 11 17.5 11H22.5C23.3 11 24 11.7 24 12.5V15L18 18C16.5 18.8 15.5 20.3 15.5 22V25.5C15.5 27.5 17 29 19 29H24C25.5 29 26.5 28 26.5 26.5V21L20.5 17.5C19.5 16.8 19 15.8 19 14.5V13.5C19.5 12.7 20 12 20.5 12H24" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		<circle cx="14" cy="14.5" r="1.5" fill="#06B6D4"/>
+		<circle cx="26.5" cy="26.5" r="1.5" fill="#06B6D4"/>
+	</svg>
+	{variant !== "icon-only" && (
+		<span class="text-2xl font-bold text-slate-50">
+			Saba<span class="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">Tech</span>
+		</span>
+	)}
+</Tag>

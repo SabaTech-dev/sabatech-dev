@@ -4,138 +4,137 @@ import Section from "../../components/Section.astro";
 import Card from "../../components/Card.astro";
 import Button from "../../components/Button.astro";
 import Badge from "../../components/Badge.astro";
-import Container from "../components/Container.astro";
 ---
 
-<Layout title="Security Audit - SabaTech">
+<Layout title="Security Audit — SabaTech" description="AI security audits for agentic applications. OWASP Agentic Apps 2026, EU AI Act, NIST AI RMF compliance. Pentesting and vulnerability assessment.">
 	<Section variant="gradient" padding="xl">
 		<div class="text-center">
 			<Badge variant="error" class="mb-6">OWASP AI Security — Agentic Apps 2026 + EU AI Act</Badge>
-			<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-				Security Audit
+			<h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50">
+				Security <span class="bg-clip-text text-transparent bg-saba-gradient">Audit</span>
 			</h1>
-			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-				Auditorías de seguridad especializadas para sistemas de IA y agentes autónomos
+			<p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+				Security that ships with your code
 			</p>
-			<p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-				Compliance OWASP Top 10 for Agentic Applications 2026, EU AI Act, NIST AI RMF. Pentesting de agentes, evaluación de riesgos y hardening de infraestructura para AI systems.
+			<p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
+				Our AI security agents scan every commit, every dependency, every container — catching vulnerabilities before they reach production. With human oversight from seasoned DevSecOps engineers.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="/contact">Solicitar Auditoría</Button>
-				<Button variant="outline" size="lg" href="#services">Ver Servicios</Button>
+				<Button variant="primary" size="lg" href="/contact">Book Security Assessment</Button>
+				<Button variant="outline" size="lg" href="#services">Explore Services</Button>
 			</div>
 		</div>
 	</Section>
 
 	<Section variant="dark" padding="lg" id="services">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Servicios de Seguridad</h2>
-			<p class="text-gray-400 text-lg max-w-2xl mx-auto">
-				Cobertura completa de seguridad para el ciclo de vida de sistemas de IA
+			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Security Services</h2>
+			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+				Full-spectrum security coverage for the AI system lifecycle
 			</p>
 		</div>
 
 		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">OWASP Agentic Apps 2026</h3>
-					<p class="text-gray-400 mb-6">Auditorías alineadas con OWASP Top 10 for Agentic Applications 2026. Evaluación de los 10 riesgos críticos para agentes autónomos.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">OWASP Agentic Apps 2026</h3>
+					<p class="text-slate-400 mb-6">Full evaluation of the 10 critical OWASP Top 10 risks for autonomous agents with detailed evidence.</p>
 					<Badge variant="error">10/10 Coverage</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">EU AI Act Compliance</h3>
-					<p class="text-gray-400 mb-6">Evaluación de riesgo AI Act (alto/medio/bajo), documentación de compliance, preparación para AI sandbox y reporting obligatorio.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">EU AI Act Compliance</h3>
+					<p class="text-slate-400 mb-6">Risk assessment, compliance documentation, AI sandbox preparation, and mandatory reporting.</p>
 					<Badge variant="warning">EU Regulation</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">NIST AI RMF Evaluation</h3>
-					<p class="text-gray-400 mb-6">Evaluación completa según NIST AI Risk Management Framework: Govern, Map, Measure, Manage. Métricas y tracking continuo.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">NIST AI RMF Evaluation</h3>
+					<p class="text-slate-400 mb-6">Complete NIST AI Risk Management Framework evaluation: Govern, Map, Measure, Manage. Continuous tracking.</p>
 					<Badge variant="primary">NIST Framework</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">Pentesting de Agentes</h3>
-					<p class="text-gray-400 mb-6">Testing de penetración especializado para agentes AI. Simulación de ataques adversarios, prompt injection y tool abuse.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">Agent Pentesting</h3>
+					<p class="text-slate-400 mb-6">Specialized penetration testing for AI agents. Adversarial attack simulation, prompt injection, and tool abuse.</p>
 					<Badge variant="warning">Adversarial AI</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">Evaluación de Riesgos</h3>
-					<p class="text-gray-400 mb-6">Análisis de riesgos AI/ML con threat modeling. Identificación de vectores de ataque específicos para agentic workflows.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">Risk Assessment</h3>
+					<p class="text-slate-400 mb-6">AI/ML risk analysis with threat modeling. Identification of attack vectors specific to agentic workflows.</p>
 					<Badge variant="primary">Risk Assessment</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">Hardening de Infra</h3>
-					<p class="text-gray-400 mb-6">Securización de infraestructura para despliegues AI. Configuración de seguridad en Kubernetes, Docker y cloud environments.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">Infrastructure Hardening</h3>
+					<p class="text-slate-400 mb-6">Security hardening for AI deployments. Kubernetes, Docker, and cloud environment configuration.</p>
 					<Badge variant="success">DevSecOps</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">Code Review AI</h3>
-					<p class="text-gray-400 mb-6">Review de código especializado en modelos ML y sistemas de IA. Detección de vulnerabilidades en implementaciones agentic.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">AI Code Review</h3>
+					<p class="text-slate-400 mb-6">Code review specialized in ML models and AI systems. Vulnerability detection in agentic implementations.</p>
 					<Badge variant="default">SAST/DAST</Badge>
 				</div>
 			</Card>
 
 			<Card variant="elevated" hover>
 				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-primary-red-light flex items-center justify-center mb-6">
-						<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-bold mb-3 text-white">Reportes de Compliance</h3>
-					<p class="text-gray-400 mb-6">Documentación de compliance para regulaciones AI. EU AI Act documentation, NIST AI RMF reports, SOC 2 preparation.</p>
+					<h3 class="text-xl font-bold mb-3 text-slate-50">Compliance Reports</h3>
+					<p class="text-slate-400 mb-6">Compliance documentation for AI regulations. EU AI Act documentation, NIST AI RMF reports, SOC 2 preparation.</p>
 					<Badge variant="primary">Compliance</Badge>
 				</div>
 			</Card>
@@ -146,54 +145,54 @@ import Container from "../components/Container.astro";
 		<div class="grid md:grid-cols-2 gap-12 items-center">
 			<div>
 				<Badge variant="success" class="mb-6">Why Choose Us</Badge>
-				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Por qué SabaTech</h2>
+				<h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-50">Why SabaTech</h2>
 
 				<div class="space-y-6">
 					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">OWASP Agentic Apps 2026</h3>
-							<p class="text-gray-400">Evaluación completa de los 10 riesgos OWASP Top 10 for Agentic Applications con evidencias detalladas</p>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">OWASP Agentic Apps 2026</h3>
+							<p class="text-slate-400">Complete evaluation of all 10 OWASP risks for Agentic Applications with detailed evidence</p>
 						</div>
 					</div>
 
 					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">EU AI Act Ready</h3>
-							<p class="text-gray-400">Preparación completa para compliance EU AI Act: clasificación de riesgo, documentación y sandbox</p>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">EU AI Act Ready</h3>
+							<p class="text-slate-400">Complete EU AI Act compliance preparation: risk classification, documentation, and sandbox</p>
 						</div>
 					</div>
 
 					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">NIST AI RMF Aligned</h3>
-							<p class="text-gray-400">Evaluación y tracking según NIST AI Risk Management Framework: Govern, Map, Measure, Manage</p>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">NIST AI RMF Aligned</h3>
+							<p class="text-slate-400">Evaluation and tracking per NIST AI Risk Management Framework: Govern, Map, Measure, Manage</p>
 						</div>
 					</div>
 
 					<div class="flex gap-4">
-						<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center shrink-0">
-							<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center shrink-0">
+							<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-xl font-semibold mb-2 text-white">Adversarial AI Testing</h3>
-							<p class="text-gray-400">Pentesting especializado en ataques adversarios, prompt injection y tool abuse en agentes</p>
+							<h3 class="text-xl font-semibold mb-2 text-slate-50">Adversarial AI Testing</h3>
+							<p class="text-slate-400">Specialized pentesting for adversarial attacks, prompt injection, and tool abuse in agents</p>
 						</div>
 					</div>
 				</div>
@@ -202,43 +201,43 @@ import Container from "../components/Container.astro";
 			<div>
 				<Card variant="elevated" class="p-8">
 					<div class="mb-6">
-						<h3 class="text-2xl font-bold text-white mb-4">OWASP Top 10 for Agentic Applications 2026</h3>
+						<h3 class="text-2xl font-bold text-slate-50 mb-4">OWASP Top 10 for Agentic Applications 2026</h3>
 					</div>
-					<ul class="space-y-3 text-gray-400">
+					<ul class="space-y-3 text-slate-400">
 						<li class="flex items-start gap-3">
-							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 							</svg>
-							<span><strong class="text-white">AA01:</strong> Agentic Control Failure</span>
+							<span><strong class="text-slate-200">AA01:</strong> Agentic Control Failure</span>
 						</li>
 						<li class="flex items-start gap-3">
-							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 							</svg>
-							<span><strong class="text-white">AA02:</strong> Unrestricted Tool Use</span>
+							<span><strong class="text-slate-200">AA02:</strong> Unrestricted Tool Use</span>
 						</li>
 						<li class="flex items-start gap-3">
-							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 							</svg>
-							<span><strong class="text-white">AA03:</strong> Environment Bypass</span>
+							<span><strong class="text-slate-200">AA03:</strong> Environment Bypass</span>
 						</li>
 						<li class="flex items-start gap-3">
-							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 							</svg>
-							<span><strong class="text-white">AA04:</strong> Memory Manipulation</span>
+							<span><strong class="text-slate-200">AA04:</strong> Memory Manipulation</span>
 						</li>
 						<li class="flex items-start gap-3">
-							<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 							</svg>
-							<span>...y 6 riesgos más críticos</span>
+							<span>...and 6 more critical risks</span>
 						</li>
 					</ul>
-					<div class="mt-6 pt-6 border-t border-gray-700">
-						<a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener noreferrer" class="text-primary-red hover:text-primary-red-hover transition-colors font-medium flex items-center gap-2">
-							Leer sobre OWASP Agentic Apps 2026
+					<div class="mt-6 pt-6 border-t border-slate-700">
+						<a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener noreferrer" class="text-teal-brand hover:text-teal-hover transition-colors font-medium flex items-center gap-2">
+							Read about OWASP Agentic Apps 2026
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
 							</svg>
@@ -251,163 +250,163 @@ import Container from "../components/Container.astro";
 
 	<Section variant="dark" padding="xl" id="pricing">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Planes de Auditoría</h2>
-			<p class="text-gray-400 text-lg max-w-2xl mx-auto">
-				Soluciones adaptadas a tus necesidades de seguridad y compliance
+			<h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Audit Plans</h2>
+			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+				Solutions tailored to your security and compliance needs
 			</p>
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 			<Card variant="elevated" class="p-8 flex flex-col">
 				<div class="mb-6">
-					<h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
-					<p class="text-gray-400 mb-4">Para开始 / POCs</p>
+					<h3 class="text-2xl font-bold text-slate-50 mb-2">Starter</h3>
+					<p class="text-slate-400 mb-4">For startups / POCs</p>
 					<div class="flex items-baseline gap-1 mb-6">
-						<span class="text-4xl font-bold text-white">€499</span>
-						<span class="text-gray-400">/auditoría</span>
+						<span class="text-4xl font-bold text-slate-50">€499</span>
+						<span class="text-slate-400">/audit</span>
 					</div>
 				</div>
 				<ul class="space-y-3 mb-8 flex-grow">
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>OWASP scan básico (top 5 riesgos)</span>
+						<span>Basic OWASP scan (top 5 risks)</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Reporte PDF con findings</span>
+						<span>PDF report with findings</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>1 target / auditoría</span>
+						<span>1 target per audit</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Recomendaciones básicas</span>
+						<span>Basic recommendations</span>
 					</li>
 				</ul>
-				<Button variant="outline" href="/contact" class="w-full">Solicitar Starter</Button>
+				<Button variant="outline" href="/contact" class="w-full">Get Started</Button>
 			</Card>
 
-			<Card variant="elevated" class="p-8 flex flex-col border-2 border-primary-red">
+			<Card variant="elevated" class="p-8 flex flex-col border-2 border-teal-brand shadow-teal">
 				<div class="mb-6">
-					<Badge variant="error" class="mb-2 inline-block">Más Popular</Badge>
-					<h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
-					<p class="text-gray-400 mb-4">Para producción</p>
+					<Badge variant="error" class="mb-2 inline-block">Most Popular</Badge>
+					<h3 class="text-2xl font-bold text-slate-50 mb-2">Professional</h3>
+					<p class="text-slate-400 mb-4">For production systems</p>
 					<div class="flex items-baseline gap-1 mb-6">
-						<span class="text-4xl font-bold text-white">€1.499</span>
-						<span class="text-gray-400">/auditoría</span>
+						<span class="text-4xl font-bold text-slate-50">€1,499</span>
+						<span class="text-slate-400">/audit</span>
 					</div>
 				</div>
 				<ul class="space-y-3 mb-8 flex-grow">
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
 						<span>Full OWASP Agentic Apps 2026 (10/10)</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
 						<span>EU AI Act Compliance Assessment</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
 						<span>NIST AI RMF Evaluation</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Threat intelligence básica</span>
+						<span>Basic threat intelligence</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>5 targets / auditoría</span>
+						<span>5 targets per audit</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Reporte completo + roadmap</span>
+						<span>Full report + remediation roadmap</span>
 					</li>
 				</ul>
-				<Button variant="primary" href="/contact" class="w-full">Solicitar Professional</Button>
+				<Button variant="primary" href="/contact" class="w-full">Book Professional</Button>
 			</Card>
 
 			<Card variant="elevated" class="p-8 flex flex-col">
 				<div class="mb-6">
-					<h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
-					<p class="text-gray-400 mb-4">Para compliance continuo</p>
+					<h3 class="text-2xl font-bold text-slate-50 mb-2">Enterprise</h3>
+					<p class="text-slate-400 mb-4">For continuous compliance</p>
 					<div class="flex items-baseline gap-1 mb-6">
-						<span class="text-4xl font-bold text-white">€3.999</span>
-						<span class="text-gray-400">/mes</span>
+						<span class="text-4xl font-bold text-slate-50">€3,999</span>
+						<span class="text-slate-400">/month</span>
 					</div>
 				</div>
 				<ul class="space-y-3 mb-8 flex-grow">
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Auditorías ilimitadas mensuales</span>
+						<span>Unlimited monthly audits</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Pentesting de agentes profundo</span>
+						<span>Deep agent pentesting</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Compliance continuo (OWASP + EU AI Act + NIST)</span>
+						<span>Continuous compliance (OWASP + EU AI Act + NIST)</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Threat intelligence avanzada</span>
+						<span>Advanced threat intelligence</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Soporte dedicado 24/7</span>
+						<span>Dedicated 24/7 support</span>
 					</li>
-					<li class="flex items-start gap-3 text-gray-400">
-						<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<li class="flex items-start gap-3 text-slate-400">
+						<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span>Integración con CI/CD</span>
+						<span>CI/CD integration</span>
 					</li>
 				</ul>
-				<Button variant="outline" href="/contact" class="w-full">Contactar Enterprise</Button>
+				<Button variant="outline" href="/contact" class="w-full">Contact Enterprise</Button>
 			</Card>
 		</div>
 	</Section>
 
 	<Section variant="gradient" padding="xl">
 		<div class="text-center max-w-3xl mx-auto">
-			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">¿Listo para proteger tus sistemas de IA?</h2>
-			<p class="text-gray-300 text-lg mb-8 leading-relaxed">
-				Contáctanos para una consultoría gratuita sobre cómo podemos ayudarte a asegurar tus agentes y sistemas autónomos con OWASP Agentic Apps 2026, EU AI Act y NIST AI RMF.
+			<h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">Ready to protect your AI systems?</h2>
+			<p class="text-slate-300 text-lg mb-8 leading-relaxed">
+				Get a free consultation on securing your agents and autonomous systems with OWASP Agentic Apps 2026, EU AI Act, and NIST AI RMF.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button variant="primary" size="lg" href="mailto:josemsabaris@gmail.com">josemsabaris@gmail.com</Button>
-				<Button variant="outline" size="lg" href="/contact">Formulario de contacto</Button>
+				<Button variant="primary" size="lg" href="/contact">Book Security Assessment</Button>
+				<Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
 			</div>
 		</div>
 	</Section>

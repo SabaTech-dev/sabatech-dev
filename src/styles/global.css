@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Brand Primary */
+  --color-midnight: #0F172A;
+  --color-midnight-deep: #1E3A5F;
+  --color-saba-teal: #06B6D4;
+  --color-saba-teal-hover: #0891B2;
+  --color-saba-teal-light: rgba(6, 182, 212, 0.1);
+  --color-saba-teal-muted: rgba(6, 182, 212, 0.2);
+  --color-saba-teal-glow: rgba(6, 182, 212, 0.25);
+  --color-white: #F8FAFC;
+
+  /* Colors - Brand Secondary */
+  --color-ai-lime: #84CC16;
+  --color-ai-lime-light: rgba(132, 204, 22, 0.1);
+  --color-alert-amber: #F59E0B;
+  --color-sec-red: #EF4444;
+  --color-code-green: #22C55E;
+
+  /* Brand color aliases for Tailwind utility classes */
+  --color-teal-brand: #06B6D4;
+  --color-teal-hover: #0891B2;
+  --color-teal-light: rgba(6, 182, 212, 0.1);
+  --color-teal-muted: rgba(6, 182, 212, 0.2);
+  --color-teal-glow: rgba(6, 182, 212, 0.25);
+  --color-lime-ai: #84CC16;
+  --color-lime-light: rgba(132, 204, 22, 0.1);
+
+  /* Font families */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Shadows */
+  --shadow-teal: 0 4px 20px rgba(6, 182, 212, 0.3);
+  --shadow-teal-lg: 0 8px 40px rgba(6, 182, 212, 0.2);
+
+  /* Background images */
+  --bg-saba-gradient: linear-gradient(135deg, #06B6D4, #3B82F6);
+  --bg-dark-depth: linear-gradient(180deg, #0F172A, #1E3A5F);
+  --bg-ai-glow: radial-gradient(circle, rgba(6, 182, 212, 0.25), transparent);
+}
+
+/* Design token CSS variables for non-Tailwind usage */
+:root {
+  --gradient-saba: linear-gradient(135deg, #06B6D4, #3B82F6);
+  --gradient-dark-depth: linear-gradient(180deg, #0F172A, #1E3A5F);
+  --gradient-ai-glow: radial-gradient(circle, rgba(6, 182, 212, 0.25), transparent);
+}

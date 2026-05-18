@@ -14,29 +14,16 @@ const {
 const baseClasses = "rounded-lg overflow-hidden";
 
 const variantClasses = {
-	default: "bg-gray-900",
-	elevated: "bg-gray-900 shadow-xl",
-	bordered: "bg-gray-900 border border-gray-800",
+	default: "bg-slate-800",
+	elevated: "bg-slate-800/80 shadow-xl border border-slate-700/50",
+	bordered: "bg-slate-800 border border-slate-700",
 };
 
 const hoverClasses = hover
-	? "hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+	? "hover:shadow-2xl hover:-translate-y-1 hover:border-teal-brand/30 transition-all duration-300"
 	: "";
 
 const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${className || ""}`;
-
-{/*
-Usage:
-<Card>
-	<h3>Title</h3>
-	<p>Content</p>
-</Card>
-
-<Card variant="elevated" hover>
-	<h3>Hover Me</h3>
-</Card>
-*/}
-
 ---
 
 <div class={combinedClasses}>

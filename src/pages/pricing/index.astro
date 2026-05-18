@@ -1,0 +1,328 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
+import PricingCard from "../../components/PricingCard.astro";
+---
+
+<Layout title="Pricing — SabaTech | QA & Security Plans">
+	<!-- Hero Section -->
+	<Section variant="gradient" padding="xl">
+		<div class="text-center max-w-3xl mx-auto">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-50 mb-6">
+				Simple, Transparent <span class="text-teal-brand">Pricing</span>
+			</h1>
+			<p class="text-lg md:text-xl text-slate-400 leading-relaxed">
+				From open-source repos to enterprise pipelines — pick the plan that fits your team.
+			</p>
+		</div>
+	</Section>
+
+	<!-- Founding Partners Banner -->
+	<Section variant="default" padding="none">
+		<div class="bg-ai-lime-light/10 border-y border-ai-lime-light/30">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-4 text-center">
+				<div class="flex items-center justify-center gap-3 flex-wrap">
+					<Badge variant="success" size="md">Limited Offer</Badge>
+					<span class="text-slate-200 font-medium">
+						Founding Partners Program — <span class="text-lime-ai font-bold">50% off</span> for the first 10 clients. Limited spots.
+					</span>
+				</div>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Billing Toggle -->
+	<Section variant="default" padding="md">
+		<div class="flex items-center justify-center gap-4">
+			<span id="label-monthly" class="text-slate-200 font-semibold text-sm">Monthly</span>
+			<button
+				id="billing-toggle"
+				type="button"
+				role="switch"
+				aria-checked="false"
+				aria-label="Toggle annual billing"
+				class="relative inline-flex h-7 w-14 items-center rounded-full bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-brand focus:ring-offset-2 focus:ring-offset-midnight"
+			>
+				<span
+					id="billing-toggle-dot"
+					class="inline-block h-5 w-5 transform rounded-full bg-slate-400 transition-transform duration-200 translate-x-1"
+				></span>
+			</button>
+			<span id="label-annual" class="text-slate-400 font-semibold text-sm">
+				Annual
+				<Badge variant="primary" size="sm" class="ml-1">-20%</Badge>
+			</span>
+		</div>
+	</Section>
+
+	<!-- QA Framework Tiers -->
+	<Section variant="default" padding="lg">
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">QA Framework</h2>
+			<p class="text-slate-400 text-lg">Everything you need to secure and test your AI-powered pipeline.</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
+			<!-- Free -->
+			<PricingCard
+				title="Free"
+				price="€0"
+				description="Get started with essential QA tooling."
+				features={["1 repository", "5 tests/month", "Basic SAST scanning", "CI quality gating", "Community support"]}
+				ctaText="Get Started Free"
+				ctaHref="/contact"
+			/>
+
+			<!-- Starter -->
+			<PricingCard
+				title="Starter"
+				price="€29"
+				period="/dev/month"
+				description="For growing teams that need full coverage."
+				features={["10 repositories", "Unlimited tests", "SAST + SCA scanning", "CI/CD integration", "Slack alerts"]}
+				ctaText="Start Free Trial"
+				ctaHref="/contact"
+			/>
+
+			<!-- Pro (Featured) -->
+			<div class="relative">
+				<div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+					<Badge variant="primary" size="md">Most Popular</Badge>
+				</div>
+				<PricingCard
+					title="Pro"
+					price="€59"
+					period="/dev/month"
+					description="Advanced security for serious engineering teams."
+					features={["Unlimited repositories", "Secrets detection", "Custom rules engine", "Advanced reporting", "AI triage & remediation"]}
+					ctaText="Start Free Trial"
+					ctaHref="/contact"
+					variant="featured"
+				/>
+			</div>
+
+			<!-- Enterprise -->
+			<PricingCard
+				title="Enterprise"
+				price="Custom"
+				description="Tailored solutions for large organizations."
+				features={["DAST scanning", "On-premise option", "SSO & SAML", "Dedicated support", "SLA guarantees"]}
+				ctaText="Contact Sales"
+				ctaHref="/contact"
+				variant="secondary"
+			/>
+		</div>
+
+		<!-- Price overrides for billing toggle -->
+		<div class="hidden">
+			<span data-monthly="€29" data-annual="€23" class="price-starter"></span>
+			<span data-monthly="€59" data-annual="€47" class="price-pro"></span>
+		</div>
+	</Section>
+
+	<!-- Interactive Calculator -->
+	<Section variant="light" padding="lg" id="calculator">
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">Cost Calculator</h2>
+			<p class="text-slate-400 text-lg">Estimate your monthly and annual investment.</p>
+		</div>
+
+		<div class="max-w-xl mx-auto">
+			<Card variant="elevated" class="p-8">
+				<div class="space-y-6">
+					<div>
+						<label for="calc-team" class="block text-sm font-medium text-slate-300 mb-2">
+							Team Size (developers)
+						</label>
+						<input
+							id="calc-team"
+							type="number"
+							min="1"
+							max="500"
+							value="5"
+							class="w-full bg-midnight border border-slate-700 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-brand focus:border-transparent"
+						/>
+					</div>
+
+					<div>
+						<label for="calc-plan" class="block text-sm font-medium text-slate-300 mb-2">
+							Plan
+						</label>
+						<select
+							id="calc-plan"
+							class="w-full bg-midnight border border-slate-700 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-brand focus:border-transparent"
+						>
+							<option value="29" data-annual="23">Starter — €29/dev/month</option>
+							<option value="59" data-annual="47">Pro — €59/dev/month</option>
+						</select>
+					</div>
+
+					<div class="border-t border-slate-700 pt-6 space-y-3">
+						<div class="flex justify-between items-center">
+							<span class="text-slate-400">Monthly cost</span>
+							<span id="calc-monthly" class="text-2xl font-bold text-slate-50">€145</span>
+						</div>
+						<div class="flex justify-between items-center">
+							<span class="text-slate-400">Annual cost <span class="text-teal-brand text-sm">(20% off)</span></span>
+							<span id="calc-annual" class="text-2xl font-bold text-teal-brand">€1,380</span>
+						</div>
+						<div class="flex justify-between items-center">
+							<span class="text-slate-400">You save</span>
+							<span id="calc-savings" class="text-lg font-semibold text-code-green">€345/year</span>
+						</div>
+					</div>
+				</div>
+			</Card>
+		</div>
+	</Section>
+
+	<!-- Professional Services -->
+	<Section variant="default" padding="lg">
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">Professional Services</h2>
+			<p class="text-slate-400 text-lg">Expert-led engagements to accelerate your security posture.</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+			<!-- Security Assessment -->
+			<Card variant="bordered" hover class="p-8 text-center">
+				<div class="mb-4">
+					<Badge variant="warning" size="sm">One-time</Badge>
+				</div>
+				<h3 class="text-xl font-bold text-slate-50 mb-2">Security Assessment</h3>
+				<div class="mb-4">
+					<span class="text-3xl font-bold text-teal-brand">€500</span>
+				</div>
+				<p class="text-slate-400 mb-6">Comprehensive security audit of your codebase, infrastructure, and AI pipeline with actionable findings report.</p>
+				<Button variant="outline" href="/contact" class="w-full">Book Assessment</Button>
+			</Card>
+
+			<!-- Pilot 90 Days -->
+			<Card variant="bordered" hover class="p-8 text-center border-teal-brand/50">
+				<div class="mb-4">
+					<Badge variant="primary" size="sm">3 Months</Badge>
+				</div>
+				<h3 class="text-xl font-bold text-slate-50 mb-2">Pilot 90 Days</h3>
+				<div class="mb-4">
+					<span class="text-3xl font-bold text-teal-brand">€999</span>
+				</div>
+				<p class="text-slate-400 mb-6">Managed QA pilot program — we run your testing pipeline end-to-end for 90 days with full reporting and onboarding.</p>
+				<Button variant="primary" href="/contact" class="w-full">Start Pilot</Button>
+			</Card>
+
+			<!-- Managed Security -->
+			<Card variant="bordered" hover class="p-8 text-center">
+				<div class="mb-4">
+					<Badge variant="success" size="sm">Annual</Badge>
+				</div>
+				<h3 class="text-xl font-bold text-slate-50 mb-2">Managed Security</h3>
+				<div class="mb-4">
+					<span class="text-3xl font-bold text-teal-brand">€497</span>
+					<span class="text-slate-400 ml-1">/dev/year</span>
+				</div>
+				<p class="text-slate-400 mb-6">Ongoing security operations with continuous monitoring, threat response, and quarterly reviews by our expert team.</p>
+				<Button variant="outline" href="/contact" class="w-full">Contact Sales</Button>
+			</Card>
+		</div>
+	</Section>
+
+	<!-- CTA Section -->
+	<Section variant="gradient" padding="xl">
+		<div class="text-center max-w-2xl mx-auto">
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-6">
+				Ready to secure your <span class="text-teal-brand">AI pipeline</span>?
+			</h2>
+			<p class="text-lg text-slate-400 mb-8">
+				Start with our free tier or book a call to find the right plan for your team.
+			</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+				<Button variant="primary" size="xl" href="/contact">Start Free Audit</Button>
+				<Button variant="outline" size="xl" href="/contact">Talk to Sales</Button>
+			</div>
+		</div>
+	</Section>
+</Layout>
+
+<script>
+	const toggle = document.getElementById("billing-toggle") as HTMLButtonElement | null;
+	const dot = document.getElementById("billing-toggle-dot") as HTMLSpanElement | null;
+	const labelMonthly = document.getElementById("label-monthly");
+	const labelAnnual = document.getElementById("label-annual");
+
+	function updateToggle(isAnnual: boolean) {
+		if (!toggle || !dot) return;
+		toggle.setAttribute("aria-checked", String(isAnnual));
+
+		if (isAnnual) {
+			toggle.classList.remove("bg-slate-700");
+			toggle.classList.add("bg-teal-brand");
+			dot.classList.remove("translate-x-1", "bg-slate-400");
+			dot.classList.add("translate-x-7", "bg-midnight");
+		} else {
+			toggle.classList.remove("bg-teal-brand");
+			toggle.classList.add("bg-slate-700");
+			dot.classList.remove("translate-x-7", "bg-midnight");
+			dot.classList.add("translate-x-1", "bg-slate-400");
+		}
+
+		if (labelMonthly) {
+			labelMonthly.classList.toggle("text-slate-200", !isAnnual);
+			labelMonthly.classList.toggle("text-slate-400", isAnnual);
+		}
+		if (labelAnnual) {
+			labelAnnual.classList.toggle("text-slate-200", isAnnual);
+			labelAnnual.classList.toggle("text-slate-400", !isAnnual);
+		}
+
+		updatePrices(isAnnual);
+	}
+
+	function updatePrices(isAnnual: boolean) {
+		const cards = document.querySelectorAll("[data-monthly]");
+		cards.forEach((el) => {
+			const monthly = el.getAttribute("data-monthly");
+			const annual = el.getAttribute("data-annual");
+			if (el instanceof HTMLElement) {
+				el.textContent = isAnnual ? annual : monthly;
+			}
+		});
+	}
+
+	toggle?.addEventListener("click", () => {
+		const isAnnual = toggle.getAttribute("aria-checked") !== "true";
+		updateToggle(isAnnual);
+	});
+</script>
+
+<script>
+	const teamInput = document.getElementById("calc-team") as HTMLInputElement | null;
+	const planSelect = document.getElementById("calc-plan") as HTMLSelectElement | null;
+	const monthlyEl = document.getElementById("calc-monthly");
+	const annualEl = document.getElementById("calc-annual");
+	const savingsEl = document.getElementById("calc-savings");
+
+	function calculate() {
+		if (!teamInput || !planSelect || !monthlyEl || !annualEl || !savingsEl) return;
+
+		const team = Math.max(1, parseInt(teamInput.value) || 1);
+		const monthlyPerDev = parseInt(planSelect.value) || 29;
+		const selectedOption = planSelect.options[planSelect.selectedIndex];
+		const annualPerDev = parseInt(selectedOption.getAttribute("data-annual") || "23");
+
+		const monthlyTotal = team * monthlyPerDev;
+		const annualTotal = team * annualPerDev * 12;
+		const monthlyAnnualized = monthlyTotal * 12;
+		const savings = monthlyAnnualized - annualTotal;
+
+		monthlyEl.textContent = `€${monthlyTotal.toLocaleString()}`;
+		annualEl.textContent = `€${annualTotal.toLocaleString()}`;
+		savingsEl.textContent = `€${savings.toLocaleString()}/year`;
+	}
+
+	teamInput?.addEventListener("input", calculate);
+	planSelect?.addEventListener("change", calculate);
+	calculate();
+</script>

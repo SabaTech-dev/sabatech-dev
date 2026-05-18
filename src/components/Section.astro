@@ -14,10 +14,10 @@ const {
 } = Astro.props;
 
 const variantClasses = {
-	default: "bg-black",
-	light: "bg-gray-900",
-	dark: "bg-black",
-	gradient: "bg-gradient-to-b from-black via-gray-900 to-black",
+	default: "bg-midnight",
+	light: "bg-slate-800",
+	dark: "bg-midnight",
+	gradient: "bg-dark-depth",
 };
 
 const paddingClasses = {
@@ -29,17 +29,6 @@ const paddingClasses = {
 };
 
 const combinedClasses = `${variantClasses[variant]} ${paddingClasses[padding]} ${className || ""}`;
-
-{/*
-Usage:
-<Section variant="gradient" padding="xl" id="services">
-	<h2>Services</h2>
-	<div class="grid md:grid-cols-3 gap-6">
-		<Card>...</Card>
-	</div>
-</Section>
-*/}
-
 ---
 
 <section id={id} class={combinedClasses}>

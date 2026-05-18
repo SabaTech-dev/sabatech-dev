@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+const shareUrl = encodeURIComponent(`https://sabatech.dev/blog/${post.id}`);
+const shareTitle = encodeURIComponent(post.data.title);
+---
+
+<Layout title={`${post.data.title} — SabaTech Blog`} description={post.data.description}>
+  <Section variant="dark" padding="lg">
+    <Container>
+      <article class="max-w-3xl mx-auto">
+        <header class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <time datetime={post.data.pubDate.toISOString()} class="text-slate-500 text-sm">
+              {formatDate(post.data.pubDate)}
+            </time>
+            <span class="text-slate-600">·</span>
+            <span class="text-slate-500 text-sm">By {post.data.author}</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold text-slate-50 mb-4 leading-tight">
+            {post.data.title}
+          </h1>
+          <p class="text-xl text-slate-400 mb-6">{post.data.description}</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            {post.data.tags.map((tag: string) => (
+              <Badge variant="primary" size="sm">{tag}</Badge>
+            ))}
+          </div>
+        </header>
+
+        <div class="prose prose-invert prose-slate max-w-none
+          prose-headings:text-slate-50 prose-headings:font-bold
+          prose-p:text-slate-300 prose-p:leading-relaxed
+          prose-a:text-teal-brand prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-200
+          prose-code:text-teal-brand prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+          prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700
+          prose-li:text-slate-300
+          prose-blockquote:text-slate-400 prose-blockquote:border-teal-brand">
+          <Content />
+        </div>
+
+        <footer class="mt-12 pt-8 border-t border-slate-700">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="/blog" class="text-teal-brand hover:text-teal-hover transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back to Blog
+            </a>
+            <div class="flex gap-3">
+              <a
+                href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg border border-slate-700 transition-colors"
+              >
+                Share on X
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg border border-slate-700 transition-colors"
+              >
+                Share on LinkedIn
+              </a>
+            </div>
+          </div>
+        </footer>
+      </article>
+    </Container>
+  </Section>
+</Layout>

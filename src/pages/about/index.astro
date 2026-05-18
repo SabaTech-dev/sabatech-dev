@@ -5,62 +5,81 @@ import Card from "../../components/Card.astro";
 import Badge from "../../components/Badge.astro";
 ---
 
-<Layout title="Sobre Nosotros - SabaTech">
+<Layout title="About — SabaTech" description="SabaTech: Agentic QA Automation & Security for the AI Era. Meet the European boutique combining human expertise with AI agents.">
 	<Section variant="dark" padding="lg">
 		<div class="max-w-3xl mx-auto text-center mb-16">
-			<Badge variant="primary" class="mb-6">Sobre Nosotros</Badge>
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Conoce a SabaTech</h1>
-			<p class="text-gray-400 text-lg leading-relaxed">
-				Consultoría especializada en QA, DevSecOps e IA para la próxima generación de sistemas autónomos
+			<Badge variant="primary" class="mb-6">About Us</Badge>
+			<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-50">Where AI Secures AI</h1>
+			<p class="text-slate-400 text-lg leading-relaxed">
+				We accelerate the safe adoption of AI in software development, combining human expertise with autonomous AI agents to deliver quality, security, and trust at the speed the AI era demands.
 			</p>
 		</div>
 
 		<div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
 			<div>
 				<div class="mb-8">
-					<h2 class="text-2xl font-bold mb-4 text-white">Saba - Founder & Director</h2>
-					<p class="text-gray-300 leading-relaxed mb-6">
-						Saba es un ingeniero de software con más de una década de experiencia en QA, DevSecOps e inteligencia artificial. Apasionado por crear sistemas seguros, escalables y de alta calidad.
+					<h2 class="text-2xl font-bold mb-4 text-slate-50">Saba — Founder & Director</h2>
+					<p class="text-slate-300 leading-relaxed mb-6">
+						Software engineer with over a decade of experience in QA, DevSecOps, and AI. Known in the community as "Joker," he is deeply passionate about AI security and multi-agent orchestration — building systems where autonomous AI agents and human expertise work in concert.
 					</p>
-					<p class="text-gray-400 leading-relaxed mb-6">
-						Su trayectoria profesional incluye el diseño de frameworks de automatización QA para entornos críticos, implementación de pipelines de seguridad (DevSecOps) y desarrollo de arquitecturas de IA autónoma para multi-agent systems.
+					<p class="text-slate-400 leading-relaxed mb-6">
+						His career spans designing QA automation frameworks for critical environments, implementing DevSecOps pipelines for enterprise systems, and developing autonomous AI architectures for multi-agent orchestration. He has led security audits, penetration tests, and quality assurance strategies across industries where reliability is non-negotiable.
 					</p>
-					<p class="text-gray-400 leading-relaxed">
-						Como fundador de SabaTech, combina su experiencia técnica con una visión estratégica para ayudar a empresas a implementar prácticas de seguridad y calidad de vanguardia en sus sistemas de IA.
+					<p class="text-slate-400 leading-relaxed">
+						As founder of SabaTech, he combines hands-on technical expertise with strategic vision to help companies implement cutting-edge security and quality practices for their AI systems — ensuring that as AI adoption accelerates, it does so safely and responsibly.
 					</p>
 				</div>
 
 				<div>
-					<h3 class="text-xl font-semibold mb-4 text-white">Áreas de Expertise</h3>
+					<h3 class="text-xl font-semibold mb-4 text-slate-50">Areas of Expertise</h3>
 					<div class="flex flex-wrap gap-3">
 						<Badge variant="primary">QA Automation</Badge>
 						<Badge variant="primary">DevSecOps</Badge>
 						<Badge variant="primary">AI Security</Badge>
-						<Badge variant="success">OWASP AI ASI</Badge>
+						<Badge variant="success">OWASP Agentic Apps</Badge>
 						<Badge variant="success">Multi-Agent Systems</Badge>
 						<Badge variant="success">CI/CD</Badge>
 						<Badge variant="warning">Penetration Testing</Badge>
-						<Badge variant="warning">Orquestación IA</Badge>
+						<Badge variant="warning">AI Orchestration</Badge>
+						<Badge variant="warning">Threat Modeling</Badge>
 					</div>
 				</div>
 			</div>
 
 			<div>
-				<Card variant="elevated" class="p-8">
-					<div class="mb-6">
-						<svg class="w-16 h-16 text-primary-red mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-						</svg>
-						<h3 class="text-2xl font-bold text-white mb-4">Visión de SabaTech</h3>
+				<!-- Mission Card -->
+				<Card variant="elevated" class="p-8 mb-6">
+					<div class="mb-4">
+						<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+							<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-slate-50 mb-4">Our Mission</h3>
 					</div>
-					<p class="text-gray-400 leading-relaxed mb-6">
-						En SabaTech, creemos que la seguridad y la calidad de los sistemas de IA no son negociables. Nuestra misión es democratizar el acceso a prácticas de seguridad de nivel empresarial para organizaciones de todos los tamaños.
+					<p class="text-slate-300 leading-relaxed font-medium">
+						To accelerate the safe adoption of AI in software development by combining human expertise with autonomous AI agents.
 					</p>
-					<p class="text-gray-400 leading-relaxed mb-6">
-						Combinamos lo mejor de la experiencia humana con la eficiencia de la IA para ofrecer servicios de consultoría rápidos, precisos y escalables. Alfred, nuestro AI Co-Founder, complementa nuestras capacidades humanas con procesamiento y análisis automatizado.
+					<p class="text-slate-400 leading-relaxed mt-4">
+						We believe AI-powered development teams need AI-powered quality and security. Our mission is to make that accessible, transparent, and trustworthy for every organization.
 					</p>
-					<p class="text-gray-400 leading-relaxed">
-						Trabajamos con empresas para implementar frameworks de QA automatizado, realizar auditorías de seguridad OWASP AI ASI y diseñar arquitecturas de orquestación para multi-agent systems.
+				</Card>
+
+				<!-- Vision Card -->
+				<Card variant="elevated" class="p-8">
+					<div class="mb-4">
+						<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+							<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-slate-50 mb-4">Our Vision</h3>
+					</div>
+					<p class="text-slate-400 leading-relaxed mb-4">
+						To be the European reference in Agentic DevSecOps — where every line of code is reviewed by a hybrid human-AI team before reaching production.
+					</p>
+					<p class="text-slate-400 leading-relaxed">
+						We combine the best of human expertise with the efficiency of AI to deliver fast, precise, and scalable consulting services. Alfred, our AI Co-Founder, complements our human capabilities with automated processing and analysis.
 					</p>
 				</Card>
 			</div>
@@ -69,38 +88,72 @@ import Badge from "../../components/Badge.astro";
 
 	<Section variant="light" padding="lg">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl font-bold mb-4 text-white">Nuestros Valores</h2>
+			<Badge variant="primary" class="mb-6">Our Values</Badge>
+			<h2 class="text-3xl font-bold mb-4 text-slate-50">What We Stand For</h2>
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
 			<div class="text-center">
-				<div class="w-16 h-16 rounded-full bg-primary-red-light flex items-center justify-center mx-auto mb-6">
-					<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<div class="w-16 h-16 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-white">Seguridad Primero</h3>
-				<p class="text-gray-400">La seguridad es el fundamento de todo lo que hacemos</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50">Technical Precision</h3>
+				<p class="text-slate-400">No concessions on quality. Every audit, every test, every line counts. Zero false positives as our goal.</p>
 			</div>
 
 			<div class="text-center">
-				<div class="w-16 h-16 rounded-full bg-primary-red-light flex items-center justify-center mx-auto mb-6">
-					<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<div class="w-16 h-16 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-white">Eficiencia</h3>
-				<p class="text-gray-400">Maximizamos resultados con recursos optimizados</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50">Innovation with Purpose</h3>
+				<p class="text-slate-400">AI is not a buzzword, it's our tool. A team of AI agents working 24/7. We don't sell smoke.</p>
 			</div>
 
 			<div class="text-center">
-				<div class="w-16 h-16 rounded-full bg-primary-red-light flex items-center justify-center mx-auto mb-6">
-					<svg class="w-8 h-8 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+				<div class="w-16 h-16 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
 					</svg>
 				</div>
-				<h3 class="text-xl font-bold mb-3 text-white">Colaboración</h3>
-				<p class="text-gray-400">Trabajamos como partners, no como proveedores</p>
+				<h3 class="text-xl font-bold mb-3 text-slate-50">European Sovereignty</h3>
+				<p class="text-slate-400">Data and operations under EU standards. Native GDPR compliance. European AI regulation alignment.</p>
+			</div>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-8">
+			<div class="text-center">
+				<div class="w-16 h-16 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+					</svg>
+				</div>
+				<h3 class="text-xl font-bold mb-3 text-slate-50">Security by Design</h3>
+				<p class="text-slate-400">Security isn't an add-on, it's the foundation. DevSecOps integrated from day 1 in every project.</p>
+			</div>
+
+			<div class="text-center">
+				<div class="w-16 h-16 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+					</svg>
+				</div>
+				<h3 class="text-xl font-bold mb-3 text-slate-50">Radical Transparency</h3>
+				<p class="text-slate-400">No surprises, no lock-in. Clear pricing, visible reports, auditable code.</p>
+			</div>
+
+			<div class="text-center">
+				<div class="w-16 h-16 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+					</svg>
+				</div>
+				<h3 class="text-xl font-bold mb-3 text-slate-50">Speed with Confidence</h3>
+				<p class="text-slate-400">Fast doesn't have to be insecure. CI/CD-native. Results in minutes, not days.</p>
 			</div>
 		</div>
 	</Section>

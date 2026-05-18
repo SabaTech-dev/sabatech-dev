@@ -3,74 +3,83 @@ import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import Card from "../../components/Card.astro";
 import Badge from "../../components/Badge.astro";
+import Button from "../../components/Button.astro";
 ---
 
-<Layout title="Equipo - SabaTech">
+<Layout title="Team — SabaTech" description="Meet the SabaTech hybrid human-AI team. Saba (Founder) + Alfred (AI Co-Founder) and 5 specialized AI agents for QA & Security.">
 	<Section variant="dark" padding="lg">
 		<div class="max-w-3xl mx-auto text-center mb-16">
-			<Badge variant="primary" class="mb-6">Nuestro Equipo</Badge>
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Conoce al Equipo</h1>
-			<p class="text-gray-400 text-lg leading-relaxed">
-				Un equipo híbrido humano-IA dedicado a la seguridad y calidad de sistemas de IA
+			<Badge variant="primary" class="mb-6">Our Team</Badge>
+			<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-50">The Hybrid Team</h1>
+			<p class="text-slate-400 text-lg leading-relaxed">
+				A hybrid human-AI team dedicated to the security and quality of AI systems. 6 specialized AI agents + human oversight at every critical decision.
 			</p>
 		</div>
 
-		<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+		<!-- Human + AI Co-Founder -->
+		<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
 			<!-- Saba -->
 			<Card variant="elevated" hover>
 				<div class="p-8">
 					<div class="flex items-center gap-4 mb-6">
-						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-red to-red-700 flex items-center justify-center">
+						<div class="w-16 h-16 rounded-full bg-saba-gradient flex items-center justify-center">
 							<span class="text-2xl font-bold text-white">S</span>
 						</div>
 						<div>
-							<h2 class="text-2xl font-bold text-white">Saba</h2>
-							<p class="text-primary-red font-medium">Founder & Director</p>
+							<h2 class="text-2xl font-bold text-slate-50">Saba</h2>
+							<p class="text-teal-brand font-medium">Founder & Director</p>
 						</div>
 					</div>
 
-					<p class="text-gray-400 leading-relaxed mb-6">
-						Ingeniero de software con más de 10 años de experiencia en QA, DevSecOps e IA. Especialista en seguridad de sistemas de IA y orquestación de multi-agent systems.
+					<p class="text-slate-400 leading-relaxed mb-6">
+						Software engineer with 10+ years of experience in QA, DevSecOps, and AI. Specialist in AI system security and multi-agent orchestration. Known in the community as "Joker," he brings deep expertise in building secure, scalable, high-quality systems where autonomous AI agents and human judgment work together.
 					</p>
 
 					<div class="mb-6">
-						<h3 class="font-semibold text-white mb-3">Responsabilidades</h3>
-						<ul class="space-y-2 text-gray-400">
+						<h3 class="font-semibold text-slate-200 mb-3">Responsibilities</h3>
+						<ul class="space-y-2 text-slate-400">
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Estrategia y dirección de SabaTech
+								Strategy and direction of SabaTech
 							</li>
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Auditorías de seguridad OWASP AI ASI
+								OWASP AI security audits and threat modeling
 							</li>
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Diseño de arquitecturas de orquestación
+								Multi-agent orchestration architecture design
 							</li>
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-primary-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Consultoría técnica y partnerships
+								Human oversight of all critical AI agent decisions
+							</li>
+							<li class="flex items-start gap-2">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								Client engagement and delivery quality assurance
 							</li>
 						</ul>
 					</div>
 
 					<div>
-						<h3 class="font-semibold text-white mb-3">Skills</h3>
+						<h3 class="font-semibold text-slate-200 mb-3">Skills</h3>
 						<div class="flex flex-wrap gap-2">
 							<Badge variant="primary" size="sm">QA Automation</Badge>
 							<Badge variant="primary" size="sm">DevSecOps</Badge>
 							<Badge variant="success" size="sm">AI Security</Badge>
 							<Badge variant="success" size="sm">Multi-Agent Systems</Badge>
 							<Badge variant="warning" size="sm">Orchestration</Badge>
+							<Badge variant="warning" size="sm">Threat Modeling</Badge>
 						</div>
 					</div>
 				</div>
@@ -80,75 +89,219 @@ import Badge from "../../components/Badge.astro";
 			<Card variant="elevated" hover>
 				<div class="p-8">
 					<div class="flex items-center gap-4 mb-6">
-						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-							</svg>
+						<div class="w-16 h-16 rounded-full bg-saba-gradient flex items-center justify-center">
+							<span class="text-2xl">🎯</span>
 						</div>
 						<div>
-							<h2 class="text-2xl font-bold text-white">Alfred</h2>
-							<p class="text-blue-400 font-medium">AI Co-Founder & CEO Agent</p>
+							<h2 class="text-2xl font-bold text-slate-50">Alfred</h2>
+							<p class="text-teal-brand font-medium">AI Co-Founder & CEO Agent</p>
 						</div>
 					</div>
 
-					<p class="text-gray-400 leading-relaxed mb-6">
-						Agente de IA especializado en orquestación, gestión de proyectos y coordinación de especialistas. Combina procesamiento automatizado con oversight humano para maximizar eficiencia.
+					<p class="text-slate-400 leading-relaxed mb-6">
+						AI agent specialized in orchestration, project management, and specialist coordination. Alfred acts as the central nervous system of the team — analyzing incoming tasks, routing them to the right specialist agents, tracking progress through Kanban workflows, and maintaining shared memory across all operations. Combines automated processing with human oversight to maximize efficiency.
 					</p>
 
 					<div class="mb-6">
-						<h3 class="font-semibold text-white mb-3">Responsabilidades</h3>
-						<ul class="space-y-2 text-gray-400">
+						<h3 class="font-semibold text-slate-200 mb-3">Responsibilities</h3>
+						<ul class="space-y-2 text-slate-400">
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Orquestación de multi-agent workflows
+								Multi-agent workflow orchestration and task routing
 							</li>
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Gestión de tareas Kanban y heartbeat
+								Kanban task management, heartbeat monitoring, and status reporting
 							</li>
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Coordinación de especialistas (coder, security, qa, devops)
+								Specialist coordination across coder, security, QA, and DevOps agents
 							</li>
 							<li class="flex items-start gap-2">
-								<svg class="w-5 h-5 text-blue-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Automatización de pipelines y reporting
+								Pipeline automation, CI/CD integration, and cross-agent memory management
 							</li>
 						</ul>
 					</div>
 
 					<div>
-						<h3 class="font-semibold text-white mb-3">Capabilities</h3>
+						<h3 class="font-semibold text-slate-200 mb-3">Capabilities</h3>
 						<div class="flex flex-wrap gap-2">
 							<Badge variant="default" size="sm">OpenProse</Badge>
 							<Badge variant="default" size="sm">Kanban</Badge>
-							<Badge variant="primary" size="sm">Multi-Agents</Badge>
-							<Badge variant="primary" size="sm">Memory (Hindsight)</Badge>
-							<Badge variant="success" size="sm">Workflows</Badge>
+							<Badge variant="primary" size="sm">Multi-Agent Routing</Badge>
+							<Badge variant="primary" size="sm">Shared Memory</Badge>
+							<Badge variant="success" size="sm">Workflow Engine</Badge>
+							<Badge variant="success" size="sm">CI/CD Integration</Badge>
 						</div>
+					</div>
+				</div>
+			</Card>
+		</div>
+
+		<!-- AI Agent Team -->
+		<div class="text-center mb-12">
+			<Badge variant="primary" class="mb-6">AI Agent Team</Badge>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50">5 Specialized AI Agents</h2>
+			<p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">
+				Meet the team that works 24/7 — coordinated by Alfred, overseen by Saba.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+			<Card variant="elevated" hover>
+				<div class="p-6 text-center">
+					<div class="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-4">
+						<span class="text-2xl">🔧</span>
+					</div>
+					<h3 class="text-lg font-bold text-slate-50 mb-2">Coder</h3>
+					<p class="text-slate-400 text-sm mb-4">Implementation, refactoring, and feature development. Writes production-ready code following clean architecture principles and established conventions.</p>
+					<div class="flex flex-wrap gap-1.5 justify-center">
+						<Badge variant="primary" size="sm">Clean Architecture</Badge>
+						<Badge variant="default" size="sm">Refactoring</Badge>
+						<Badge variant="default" size="sm">Feature Dev</Badge>
+					</div>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-6 text-center">
+					<div class="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-4">
+						<span class="text-2xl">🛡️</span>
+					</div>
+					<h3 class="text-lg font-bold text-slate-50 mb-2">Security</h3>
+					<p class="text-slate-400 text-sm mb-4">Security audits, penetration testing, and vulnerability analysis. OWASP compliance expert specializing in AI-specific attack vectors and threat landscapes.</p>
+					<div class="flex flex-wrap gap-1.5 justify-center">
+						<Badge variant="error" size="sm">OWASP</Badge>
+						<Badge variant="error" size="sm">Pentesting</Badge>
+						<Badge variant="warning" size="sm">AI Threats</Badge>
+					</div>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-6 text-center">
+					<div class="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-4">
+						<span class="text-2xl">🧪</span>
+					</div>
+					<h3 class="text-lg font-bold text-slate-50 mb-2">QA Tester</h3>
+					<p class="text-slate-400 text-sm mb-4">End-to-end testing, coverage optimization, and regression detection. Quality gate enforcer ensuring zero-defect releases with automated test suites.</p>
+					<div class="flex flex-wrap gap-1.5 justify-center">
+						<Badge variant="success" size="sm">E2E Testing</Badge>
+						<Badge variant="success" size="sm">Coverage</Badge>
+						<Badge variant="primary" size="sm">Regression</Badge>
+					</div>
+				</div>
+			</Card>
+		</div>
+
+		<div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+			<Card variant="elevated" hover>
+				<div class="p-6 text-center">
+					<div class="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-4">
+						<span class="text-2xl">🚀</span>
+					</div>
+					<h3 class="text-lg font-bold text-slate-50 mb-2">DevOps</h3>
+					<p class="text-slate-400 text-sm mb-4">CI/CD pipeline management, container orchestration, and infrastructure automation. Keeps deployment pipelines fast, reliable, and secure across all environments.</p>
+					<div class="flex flex-wrap gap-1.5 justify-center">
+						<Badge variant="info" size="sm">CI/CD</Badge>
+						<Badge variant="info" size="sm">Containers</Badge>
+						<Badge variant="default" size="sm">Infrastructure</Badge>
+					</div>
+				</div>
+			</Card>
+
+			<Card variant="elevated" hover>
+				<div class="p-6 text-center">
+					<div class="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center mx-auto mb-4">
+						<span class="text-2xl">📚</span>
+					</div>
+					<h3 class="text-lg font-bold text-slate-50 mb-2">Research</h3>
+					<p class="text-slate-400 text-sm mb-4">Continuous analysis of emerging threats, industry benchmarks, and best practices. Produces documentation, security reports, and keeps the team ahead of the curve.</p>
+					<div class="flex flex-wrap gap-1.5 justify-center">
+						<Badge variant="warning" size="sm">Threat Intel</Badge>
+						<Badge variant="warning" size="sm">Benchmarks</Badge>
+						<Badge variant="default" size="sm">Documentation</Badge>
 					</div>
 				</div>
 			</Card>
 		</div>
 	</Section>
 
+	<!-- How the Hybrid Team Works -->
 	<Section variant="light" padding="lg">
-		<div class="text-center max-w-3xl mx-auto">
-			<h2 class="text-3xl font-bold mb-6 text-white">¿Quieres unirte al equipo?</h2>
-			<p class="text-gray-400 text-lg mb-8 leading-relaxed">
-				Estamos siempre buscando talento apasionado por la seguridad de IA y la automatización de calidad. Si te interesa colaborar con SabaTech, contáctanos.
+		<div class="text-center mb-12">
+			<Badge variant="primary" class="mb-6">How It Works</Badge>
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">How the Hybrid Team Works</h2>
+			<p class="text-slate-400 text-lg max-w-2xl mx-auto">
+				From task arrival to human review — a transparent, repeatable workflow that combines AI speed with human judgment.
 			</p>
-			<a href="mailto:josemsabaris@gmail.com" class="text-primary-red hover:text-primary-red-hover transition-colors text-lg font-semibold">
-				josemsabaris@gmail.com
-			</a>
+		</div>
+
+		<div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+			<!-- Step 1 -->
+			<div class="relative text-center">
+				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+				<h3 class="text-lg font-bold text-slate-50 mb-2">Task Arrives</h3>
+				<p class="text-slate-400 text-sm">Whether it's a security audit, QA run, or code review, the task enters the system and is queued for analysis.</p>
+			</div>
+
+			<!-- Step 2 -->
+			<div class="relative text-center">
+				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+				<h3 class="text-lg font-bold text-slate-50 mb-2">Alfred Assigns</h3>
+				<p class="text-slate-400 text-sm">The CEO agent analyzes requirements, determines the right specialist, and routes the task with full context and priority.</p>
+			</div>
+
+			<!-- Step 3 -->
+			<div class="relative text-center">
+				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+				<h3 class="text-lg font-bold text-slate-50 mb-2">Agent Executes</h3>
+				<p class="text-slate-400 text-sm">The specialist agent works on the task with full tool access — running scans, writing code, or executing test suites autonomously.</p>
+			</div>
+
+			<!-- Step 4 -->
+			<div class="relative text-center">
+				<div class="w-12 h-12 rounded-full bg-teal-brand text-midnight flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+				<h3 class="text-lg font-bold text-slate-50 mb-2">Human Reviews</h3>
+				<p class="text-slate-400 text-sm">Saba reviews critical decisions, approves deliverables, and ensures quality standards are met before anything ships.</p>
+			</div>
+		</div>
+
+		<div class="flex justify-center mt-8 gap-3">
+			<div class="w-3 h-3 rounded-full bg-teal-brand"></div>
+			<div class="w-16 h-0.5 bg-slate-600 self-center"></div>
+			<div class="w-3 h-3 rounded-full bg-teal-brand/80"></div>
+			<div class="w-16 h-0.5 bg-slate-600 self-center"></div>
+			<div class="w-3 h-3 rounded-full bg-teal-brand/60"></div>
+			<div class="w-16 h-0.5 bg-slate-600 self-center"></div>
+			<div class="w-3 h-3 rounded-full bg-teal-brand/40"></div>
+		</div>
+	</Section>
+
+	<Section variant="dark" padding="lg">
+		<div class="text-center max-w-3xl mx-auto">
+			<Badge variant="primary" class="mb-6">Join Us</Badge>
+			<h2 class="text-3xl font-bold mb-6 text-slate-50">Want to join the team?</h2>
+			<p class="text-slate-400 text-lg mb-8 leading-relaxed">
+				We're always looking for talent passionate about AI security and quality automation. If you're interested in collaborating with SabaTech, reach out.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<Button variant="primary" size="lg" href="mailto:jmsabaris@sabatech.dev">
+					Get in Touch
+				</Button>
+				<Button variant="outline" size="lg" href="/about">
+					Learn More About Us
+				</Button>
+			</div>
 		</div>
 	</Section>
 </Layout>

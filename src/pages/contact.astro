@@ -4,52 +4,48 @@ import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
-<Layout title="Contacto | SabaTech" description="Contacta con SabaTech para consultorías de QA y seguridad para agentes IA. Auditorías, frameworks y orquestación de sistemas autónomos.">
+<Layout title="Contact — SabaTech" description="Contact SabaTech for AI-powered security audits, QA automation, and multi-agent orchestration. Start your free audit today.">
 	<Section variant="dark" padding="lg">
 		<Container>
 			<div class="max-w-3xl mx-auto">
 				<div class="text-center mb-12">
-					<h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Contacto</h1>
-					<p class="text-gray-400 text-lg mb-8 leading-relaxed">
-						¿Tienes un proyecto en mente? Contáctanos y hablemos de cómo podemos ayudarte.
+					<h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4">Let's Talk</h1>
+					<p class="text-slate-400 text-lg mb-8 leading-relaxed">
+						Got a project in mind? Start with a free security audit — our AI agents will scan your codebase and deliver a prioritized report.
 					</p>
 				</div>
 
-				<div class="grid md:grid-cols-2 gap-8 mb-12">
+				<ContactForm />
+
+				<div class="grid md:grid-cols-2 gap-8 mt-12">
 					<Card variant="elevated">
 						<div class="p-8">
-							<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center mb-4">
-								<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+								<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 								</svg>
 							</div>
-							<h3 class="text-xl font-bold text-white mb-2">Email</h3>
-							<p class="text-gray-400 mb-4">josemsabaris@gmail.com</p>
-							<Button variant="outline" href="mailto:josemsabaris@gmail.com" class="w-full">Enviar email</Button>
+							<h3 class="text-xl font-bold text-slate-50 mb-2">Email</h3>
+							<p class="text-slate-400 mb-4">jmsabaris@sabatech.dev</p>
+							<Button variant="outline" href="mailto:jmsabaris@sabatech.dev" class="w-full">Send Email</Button>
 						</div>
 					</Card>
 
 					<Card variant="elevated">
 						<div class="p-8">
-							<div class="w-12 h-12 rounded-lg bg-primary-red-light flex items-center justify-center mb-4">
-								<svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+								<svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
 								</svg>
 							</div>
-							<h3 class="text-xl font-bold text-white mb-2">Twitter</h3>
-							<p class="text-gray-400 mb-4">@LJokerL_TTV</p>
-							<Button variant="outline" href="https://twitter.com/LJokerL_TTV" target="_blank" rel="noopener noreferrer" class="w-full">Enviar DM</Button>
+							<h3 class="text-xl font-bold text-slate-50 mb-2">X / Twitter</h3>
+							<p class="text-slate-400 mb-4">@LJokerL_TTV</p>
+							<Button variant="outline" href="https://twitter.com/LJokerL_TTV" target="_blank" rel="noopener noreferrer" class="w-full">Send DM</Button>
 						</div>
 					</Card>
-				</div>
-
-				<div class="text-center">
-					<p class="text-gray-400 mb-4">Próximamente: formulario de contacto completo con validación server-side.</p>
-					<Button variant="primary" size="lg" href="mailto:josemsabaris@gmail.com">
-						Contactar directamente
-					</Button>
 				</div>
 			</div>
 		</Container>
