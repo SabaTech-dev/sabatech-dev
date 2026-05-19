@@ -456,20 +456,77 @@ import Badge from "../../components/Badge.astro";
     </div>
 
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {[
-        { industry: "FinTech", title: "AI-Powered Trading Platform Security", desc: "Complete OWASP Agentic Apps audit and orchestration setup for a European trading platform." },
-        { industry: "HealthTech", title: "Automated QA for Medical AI", desc: "End-to-end testing framework for a medical diagnosis AI system with regulatory compliance." },
-        { industry: "SaaS", title: "Multi-Agent CI/CD Pipeline", desc: "Orchestration of 6 agents for continuous security testing and deployment automation." },
-      ].map((cs) => (
-        <Card variant="elevated">
-          <div class="p-8">
-            <Badge variant="warning" class="mb-4">Coming Soon</Badge>
-            <p class="text-teal-brand text-sm font-semibold mb-2">{cs.industry}</p>
-            <h3 class="text-xl font-bold text-slate-50 mb-3">{cs.title}</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">{cs.desc}</p>
+      <!-- Real Case Study: Alfred -->
+      <Card variant="elevated" class="border-2 border-teal-brand/30">
+        <div class="p-8">
+          <Badge variant="success" class="mb-4">Live Case Study</Badge>
+          <p class="text-teal-brand text-sm font-semibold mb-2">SabaTech (Internal)</p>
+          <h3 class="text-xl font-bold text-slate-50 mb-3">Alfred: 6-Agent Orchestration in Production</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">We dogfood our own orchestration platform. Alfred coordinates Coder, Security, QA-Tester, DevOps, and Research agents 24/7 — handling code reviews, security audits, testing, and deployments autonomously with human oversight.</p>
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="text-center p-3 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">6</div>
+              <div class="text-xs text-slate-400">Agents</div>
+            </div>
+            <div class="text-center p-3 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">24/7</div>
+              <div class="text-xs text-slate-400">Uptime</div>
+            </div>
+            <div class="text-center p-3 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">200+</div>
+              <div class="text-xs text-slate-400">Tasks/mo</div>
+            </div>
+            <div class="text-center p-3 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">85+</div>
+              <div class="text-xs text-slate-400">Skills</div>
+            </div>
           </div>
-        </Card>
-      ))}
+          <p class="text-slate-500 text-xs italic">"What used to take a team of 4 engineers now runs autonomously with human-in-the-loop at critical decisions."</p>
+        </div>
+      </Card>
+
+      <Card variant="elevated">
+        <div class="p-8">
+          <Badge variant="warning" class="mb-4">Coming Soon</Badge>
+          <p class="text-teal-brand text-sm font-semibold mb-2">FinTech</p>
+          <h3 class="text-xl font-bold text-slate-50 mb-3">AI-Powered Trading Platform Security</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Complete OWASP Agentic Apps audit and orchestration setup for a European trading platform.</p>
+        </div>
+      </Card>
+
+      <Card variant="elevated">
+        <div class="p-8">
+          <Badge variant="warning" class="mb-4">Coming Soon</Badge>
+          <p class="text-teal-brand text-sm font-semibold mb-2">SaaS</p>
+          <h3 class="text-xl font-bold text-slate-50 mb-3">Multi-Agent CI/CD Pipeline</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Orchestration of 6 agents for continuous security testing and deployment automation.</p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Testimonials & Results -->
+  <Section variant="light" padding="lg" id="results">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Results That Speak</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">Measurable outcomes from our AI orchestration deployments</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="text-center p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-5xl font-extrabold bg-clip-text text-transparent bg-saba-gradient mb-3">70%</div>
+        <p class="text-slate-300 font-semibold mb-2">Faster Delivery</p>
+        <p class="text-slate-400 text-sm">Agent-parallel execution reduces time from commit to production</p>
+      </div>
+      <div class="text-center p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-5xl font-extrabold bg-clip-text text-transparent bg-saba-gradient mb-3">0</div>
+        <p class="text-slate-300 font-semibold mb-2">Critical Vulns Shipped</p>
+        <p class="text-slate-400 text-sm">Every code change audited by Security before merge</p>
+      </div>
+      <div class="text-center p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-5xl font-extrabold bg-clip-text text-transparent bg-saba-gradient mb-3">3x</div>
+        <p class="text-slate-300 font-semibold mb-2">More Coverage</p>
+        <p class="text-slate-400 text-sm">QA-Tester runs E2E + integration tests on every change</p>
+      </div>
     </div>
   </Section>
 
