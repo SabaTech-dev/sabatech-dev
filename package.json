@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "npm run build && rsync -a --delete dist/ /srv/sabatech.dev/www/ && sudo systemctl reload nginx",
     "astro": "astro"
   },
   "dependencies": {
