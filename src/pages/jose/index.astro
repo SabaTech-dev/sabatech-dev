@@ -1,0 +1,374 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Badge from "../../components/Badge.astro";
+import Button from "../../components/Button.astro";
+import Container from "../../components/Container.astro";
+---
+
+<Layout
+  title="Jose Manuel Sabarís García — Tech Lead IA Agéntica | SabaTech"
+  description="Tech Lead en IA Agéntica e IA Generativa | QA Lead Automation | DevSecOps en Minsait. 5+ años liderando proyectos críticos de automatización, seguridad e IA."
+>
+  <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+    en: {
+      "jose.badge": "Profile",
+      "jose.hero.title": "Jose Manuel Sabarís García",
+      "jose.hero.subtitle": "Tech Lead AI Agentic & Generative AI | QA Lead Automation | DevSecOps",
+      "jose.hero.company": "Minsait — by Indra",
+      "jose.hero.desc": "Tech Lead at Minsait, leading AI Enablement, multi-agent innovation, Tech Scouting, and DevSecOps governance. 5+ years leading critical projects for Defense, Equality Ministry, ADESLAS, and banking.",
+      "jose.hero.cta1": "View Projects",
+      "jose.hero.cta2": "Contact Me",
+      "jose.about.title": "Professional Profile",
+      "jose.about.p1": "Tech Lead in AI Agentic & Generative AI | QA Lead Automation | DevSecOps at Minsait.",
+      "jose.about.p2": "Self-taught and proactive, leading the strategy of AI Enablement, multi-agent innovation, Tech Scouting, and DevSecOps Governance.",
+      "jose.about.p3": "Expert in designing robust test architectures, autonomous multi-agent systems, and ensuring system resilience in critical environments such as Defense, Equality Ministry, and banking.",
+      "jose.pillars.title": "The 4 Pillars",
+      "jose.pillars.subtitle": "My strategic focus areas as Tech Lead",
+      "jose.pillars.p1.title": "🎓 AI Enablement",
+      "jose.pillars.p1.desc": "Evangelizing AI at all organizational levels. Optimizing workflows with advanced Generative AI and agentic systems.",
+      "jose.pillars.p2.title": "🌟 Innovation & Co-creation",
+      "jose.pillars.p2.desc": "Disruptive PoCs with Generative AI and autonomous multi-agent systems. Co-creating innovative solutions for complex problems.",
+      "jose.pillars.p3.title": "👁️ Tech Scouting",
+      "jose.pillars.p3.desc": "Constant radar of AI and global technology trends. Early identification of opportunities and innovation.",
+      "jose.pillars.p4.title": "🛡️ DevSecOps Governance",
+      "jose.pillars.p4.desc": "Quality, predictability, and Secure-by-Design. QA and security strategies integrated throughout the development lifecycle.",
+      "jose.experience.title": "Experience & Clients",
+      "jose.certs.title": "Certifications",
+      "jose.certs.item1": "Higher Technician in Web Application Development (QA & DevSecOps)",
+      "jose.certs.item2": "Security & Ethical Hacking Certification (DevSecOps)",
+      "jose.certs.item3": "ISTQB Foundation Level",
+      "jose.languages": "Languages",
+      "jose.contact.title": "Get in Touch",
+      "jose.contact.desc": "Open to collaborations, consulting, and opportunities in AI, DevSecOps, and QA.",
+    },
+    es: {
+      "jose.badge": "Perfil",
+      "jose.hero.title": "Jose Manuel Sabarís García",
+      "jose.hero.subtitle": "Tech Lead IA Agéntica e IA Generativa | QA Lead Automation | DevSecOps",
+      "jose.hero.company": "Minsait — by Indra",
+      "jose.hero.desc": "Tech Lead en Minsait, liderando AI Enablement, innovación multi-agente, Tech Scouting y gobernanza DevSecOps. 5+ años liderando proyectos críticos para Defensa, Ministerio de Igualdad, ADESLAS y banca.",
+      "jose.hero.cta1": "Ver Proyectos",
+      "jose.hero.cta2": "Contáctame",
+      "jose.about.title": "Perfil Profesional",
+      "jose.about.p1": "Tech Lead en IA Agéntica e IA Generativa | QA Lead Automation | DevSecOps en Minsait.",
+      "jose.about.p2": "Autodidacta y proactivo, liderando la estrategia de AI Enablement, innovación multi-agente, Tech Scouting y gobernanza DevSecOps.",
+      "jose.about.p3": "Experto en diseñar arquitecturas de pruebas robustas, sistemas multi-agente autónomos y asegurar la resiliencia de sistemas en entornos críticos como Defensa, Ministerio de Igualdad y banca.",
+      "jose.pillars.title": "Los 4 Pilares",
+      "jose.pillars.subtitle": "Mis áreas estratégicas como Tech Lead",
+      "jose.pillars.p1.title": "🎓 AI Enablement",
+      "jose.pillars.p1.desc": "Evangelización de IA en todos los niveles organizativos. Optimización de flujos con herramientas avanzadas de IA Generativa y sistemas agénticos.",
+      "jose.pillars.p2.title": "🌟 Innovación & Co-creación",
+      "jose.pillars.p2.desc": "PoCs disruptivas con IA Generativa y sistemas multi-agente autónomos. Co-creación de soluciones innovadoras para problemas complejos.",
+      "jose.pillars.p3.title": "👁️ Tech Scouting",
+      "jose.pillars.p3.desc": "Radar constante de novedades en IA y tecnología global. Identificación temprana de tendencias y oportunidades de innovación.",
+      "jose.pillars.p4.title": "🛡️ Gobernanza DevSecOps",
+      "jose.pillars.p4.desc": "Calidad, predictibilidad y Secure-by-Design. Estrategias de QA y seguridad integradas en todo el ciclo de vida del desarrollo.",
+      "jose.experience.title": "Experiencia & Clientes",
+      "jose.certs.title": "Certificaciones",
+      "jose.certs.item1": "Técnico Superior en Desarrollo de Aplicaciones Web (QA & DevSecOps)",
+      "jose.certs.item2": "Certificación de Seguridad Informática y Ethical Hacking (DevSecOps)",
+      "jose.certs.item3": "Diploma de Fundamentos en Testing ISTQB",
+      "jose.languages": "Idiomas",
+      "jose.contact.title": "Contacto",
+      "jose.contact.desc": "Abierto a colaboraciones, consultoría y oportunidades en IA, DevSecOps y QA.",
+    }
+  })} />
+  
+  <!-- Hero Section -->
+  <Section variant="dark" padding="lg">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="primary" class="mb-6" data-i18n="jose.badge">Perfil</Badge>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+          <span class="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent bg-[length:200%_auto]">
+            Jose Manuel Sabarís García
+          </span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-slate-300 mb-4 font-medium" data-i18n="jose.hero.subtitle">
+          Tech Lead IA Agéntica e IA Generativa | QA Lead Automation | DevSecOps
+        </p>
+        <p class="text-lg text-cyan-400 mb-8 font-semibold" data-i18n="jose.hero.company">
+          Minsait — by Indra
+        </p>
+
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="jose.hero.desc">
+          Tech Lead en Minsait, liderando AI Enablement, innovación multi-agente, Tech Scouting y gobernanza DevSecOps. 5+ años liderando proyectos críticos para Defensa, Ministerio de Igualdad, ADESLAS y banca.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <Button variant="primary" size="lg" href="#projects" data-i18n="jose.hero.cta1">
+            Ver Proyectos
+          </Button>
+          <Button variant="outline" size="lg" href="#contact" data-i18n="jose.hero.cta2">
+            Contáctame
+          </Button>
+        </div>
+
+        <!-- Social links -->
+        <div class="flex justify-center gap-4">
+          <a href="https://github.com/SabaTech-dev" target="_blank" rel="noopener noreferrer" 
+             class="p-3 bg-slate-800 hover:bg-slate-700 rounded-xl border border-slate-700 hover:border-slate-500 transition-all" title="GitHub">
+            <svg class="w-6 h-6 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/josemanuelsabarisgarcia" target="_blank" rel="noopener noreferrer"
+             class="p-3 bg-slate-800 hover:bg-slate-700 rounded-xl border border-slate-700 hover:border-slate-500 transition-all" title="LinkedIn">
+            <svg class="w-6 h-6 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:jmsabaris@sabatech.dev"
+             class="p-3 bg-slate-800 hover:bg-slate-700 rounded-xl border border-slate-700 hover:border-slate-500 transition-all" title="Email">
+            <svg class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- About Section -->
+  <Section variant="light" padding="lg" id="about">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-8 text-center" data-i18n="jose.about.title">
+          Perfil Profesional
+        </h2>
+
+        <div class="text-slate-400 text-lg space-y-6 max-w-3xl mx-auto mb-12">
+          <p data-i18n="jose.about.p1">
+            <span class="text-blue-400 font-semibold">Tech Lead en IA Agéntica e IA Generativa</span> | 
+            <span class="text-purple-400 font-semibold">QA Lead Automation</span> | 
+            <span class="text-pink-400 font-semibold">DevSecOps</span> en 
+            <span class="text-cyan-400 font-semibold">Minsait</span>.
+          </p>
+          <p data-i18n="jose.about.p2">
+            <span class="text-green-400 font-semibold">Autodidacta y proactivo</span>, liderando la estrategia de 
+            <span class="text-blue-400 font-semibold">AI Enablement</span>, 
+            <span class="text-purple-400 font-semibold">innovación multi-agente</span>, 
+            <span class="text-pink-400 font-semibold">Tech Scouting</span> y 
+            <span class="text-cyan-400 font-semibold">gobernanza DevSecOps</span>.
+          </p>
+          <p data-i18n="jose.about.p3">
+            Experto en diseñar arquitecturas de pruebas robustas, sistemas multi-agente autónomos y asegurar la resiliencia de sistemas en entornos críticos como Defensa, Ministerio de Igualdad y banca.
+          </p>
+        </div>
+
+        <!-- Quick Info Grid -->
+        <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
+            <div class="text-2xl mb-2">📍</div>
+            <p class="text-slate-300 font-semibold">España</p>
+          </div>
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
+            <div class="text-2xl mb-2">📅</div>
+            <p class="text-slate-300 font-semibold">5+ años experiencia</p>
+          </div>
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
+            <div class="text-2xl mb-2">🎯</div>
+            <p class="text-slate-300 font-semibold">Tech Lead</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- 4 Pillars Section -->
+  <Section variant="dark" padding="lg" id="pillars">
+    <Container>
+      <div class="text-center mb-12">
+        <Badge variant="primary" class="mb-6" data-i18n="jose.pillars.title">Los 4 Pilares</Badge>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4" data-i18n="jose.pillars.subtitle">
+          Mis áreas estratégicas como Tech Lead
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <Card variant="elevated" hover>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="jose.pillars.p1.title">🎓 AI Enablement</h3>
+            <p class="text-slate-400" data-i18n="jose.pillars.p1.desc">
+              Evangelización de IA en todos los niveles organizativos. Optimización de flujos con herramientas avanzadas de IA Generativa y sistemas agénticos.
+            </p>
+          </div>
+        </Card>
+
+        <Card variant="elevated" hover>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="jose.pillars.p2.title">🌟 Innovación & Co-creación</h3>
+            <p class="text-slate-400" data-i18n="jose.pillars.p2.desc">
+              PoCs disruptivas con IA Generativa y sistemas multi-agente autónomos. Co-creación de soluciones innovadoras para problemas complejos.
+            </p>
+          </div>
+        </Card>
+
+        <Card variant="elevated" hover>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="jose.pillars.p3.title">👁️ Tech Scouting</h3>
+            <p class="text-slate-400" data-i18n="jose.pillars.p3.desc">
+              Radar constante de novedades en IA y tecnología global. Identificación temprana de tendencias y oportunidades de innovación.
+            </p>
+          </div>
+        </Card>
+
+        <Card variant="elevated" hover>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="jose.pillars.p4.title">🛡️ Gobernanza DevSecOps</h3>
+            <p class="text-slate-400" data-i18n="jose.pillars.p4.desc">
+              Calidad, predictibilidad y Secure-by-Design. Estrategias de QA y seguridad integradas en todo el ciclo de vida del desarrollo.
+            </p>
+          </div>
+        </Card>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Experience & Clients -->
+  <Section variant="light" padding="lg" id="projects">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-8 text-center" data-i18n="jose.experience.title">
+          Experiencia & Clientes
+        </h2>
+
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-blue-500/50 transition-all">
+            <h3 class="text-lg font-bold text-blue-400 mb-2">🛡️ Defensa</h3>
+            <p class="text-slate-400 text-sm">Proyectos críticos de QA, seguridad y automatización</p>
+          </div>
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-purple-500/50 transition-all">
+            <h3 class="text-lg font-bold text-purple-400 mb-2">⚖️ Min. Igualdad</h3>
+            <p class="text-slate-400 text-sm">Arquitecturas de pruebas y calidad de software</p>
+          </div>
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-pink-500/50 transition-all">
+            <h3 class="text-lg font-bold text-pink-400 mb-2">🏥 ADESLAS</h3>
+            <p class="text-slate-400 text-sm">Automatización de pruebas y CI/CD</p>
+          </div>
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-cyan-500/50 transition-all">
+            <h3 class="text-lg font-bold text-cyan-400 mb-2">🏦 Banca</h3>
+            <p class="text-slate-400 text-sm">Sistemas críticos y resiliencia</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Certifications & Languages -->
+  <Section variant="dark" padding="lg">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Left: Certifications -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-3xl">🏆</span>
+              <h2 class="text-3xl font-bold text-slate-50" data-i18n="jose.certs.title">Certificaciones</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <h3 class="font-semibold text-blue-400 mb-2" data-i18n="jose.certs.item1">
+                  Técnico Superior en Desarrollo de Aplicaciones Web (QA & DevSecOps)
+                </h3>
+                <p class="text-slate-400 text-sm">Especialización en QA & DevSecOps</p>
+              </div>
+              <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <h3 class="font-semibold text-purple-400 mb-2" data-i18n="jose.certs.item2">
+                  Certificación de Seguridad Informática y Ethical Hacking (DevSecOps)
+                </h3>
+                <p class="text-slate-400 text-sm">DevSecOps specialization</p>
+              </div>
+              <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <h3 class="font-semibold text-pink-400 mb-2" data-i18n="jose.certs.item3">
+                  Diploma de Fundamentos en Testing ISTQB
+                </h3>
+                <p class="text-slate-400 text-sm">International Software Testing Qualifications Board</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Languages -->
+          <div>
+            <h2 class="text-3xl font-bold text-slate-50 mb-6" data-i18n="jose.languages">Idiomas</h2>
+            <div class="space-y-4">
+              <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-slate-200">Español</span>
+                  <span class="text-sm text-green-400">Nativo</span>
+                </div>
+                <div class="w-full bg-slate-700 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-blue-400 to-green-400 h-2 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-slate-200">Gallego</span>
+                  <span class="text-sm text-green-400">Nativo</span>
+                </div>
+                <div class="w-full bg-slate-700 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-blue-400 to-green-400 h-2 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-slate-200">Inglés</span>
+                  <span class="text-sm text-blue-400">B2</span>
+                </div>
+                <div class="w-full bg-slate-700 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-blue-400 to-purple-400 h-2 rounded-full" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skills badges -->
+            <div class="mt-8">
+              <h3 class="font-semibold text-slate-200 mb-3">Skills</h3>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="primary" size="sm">Tech Lead Minsait</Badge>
+                <Badge variant="primary" size="sm">AI Enablement</Badge>
+                <Badge variant="success" size="sm">Multi-Agent Systems</Badge>
+                <Badge variant="success" size="sm">DevSecOps</Badge>
+                <Badge variant="warning" size="sm">Tech Scouting</Badge>
+                <Badge variant="warning" size="sm">Innovation</Badge>
+                <Badge variant="info" size="sm">QA Automation</Badge>
+                <Badge variant="info" size="sm">Orchestration</Badge>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Contact Section -->
+  <Section variant="dark" padding="lg" id="contact">
+    <Container>
+      <div class="text-center max-w-2xl mx-auto">
+        <Badge variant="primary" class="mb-6" data-i18n="jose.contact.title">Contacto</Badge>
+        <h2 class="text-3xl font-bold text-slate-50 mb-4" data-i18n="jose.contact.title">Contacto</h2>
+        <p class="text-slate-400 text-lg mb-8" data-i18n="jose.contact.desc">
+          Abierto a colaboraciones, consultoría y oportunidades en IA, DevSecOps y QA.
+        </p>
+
+        <div class="space-y-4">
+          <a href="mailto:jmsabaris@sabatech.dev"
+             class="flex items-center justify-center gap-3 text-lg text-slate-300 hover:text-white transition-colors">
+            <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            jmsabaris@sabatech.dev
+          </a>
+          <a href="https://linkedin.com/in/josemanuelsabarisgarcia" target="_blank" rel="noopener noreferrer"
+             class="flex items-center justify-center gap-3 text-lg text-slate-300 hover:text-white transition-colors">
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            linkedin.com/in/josemanuelsabarisgarcia
+          </a>
+          <a href="https://github.com/SabaTech-dev" target="_blank" rel="noopener noreferrer"
+             class="flex items-center justify-center gap-3 text-lg text-slate-300 hover:text-white transition-colors">
+            <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            github.com/SabaTech-dev
+          </a>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>
