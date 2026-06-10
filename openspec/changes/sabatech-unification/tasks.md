@@ -54,14 +54,14 @@
 - [x] 7.1 Add build command and output directory to astro.config.mjs for Cloudflare Pages compatibility
 - [x] 7.2 Create DEPLOY.md documenting Cloudflare Pages setup, subdomain DNS, and rollback procedure
 - [x] 7.3 Verify `npm run build` succeeds with no errors
-- [ ] 7.4 Commit and push all changes to GitHub `SabaTech-dev/sabatech-dev`
-- [ ] 7.5 Verify auto-deploy on Cloudflare Pages completes successfully
-- [ ] 7.6 Verify sabatech.dev loads with HTTPS and all pages work
-- [ ] 7.7 Run Lighthouse audit and document scores (target: >90 all categories)
+- [x] 7.4 Commit and push all changes to GitHub `SabaTech-dev/sabatech-dev` (8fb038e, main)
+- [~] 7.5 ~~Verify auto-deploy on Cloudflare Pages completes~~ — **OBSOLETE: migrated from CF Pages to self-hosted (nginx + Cloudflare Tunnel)**
+- [x] 7.6 Verify sabatech.dev loads with HTTPS and all pages work
+- [~] 7.7 Run Lighthouse audit (desktop: P97, A88, BP100, S92 — accessibility 88 needs contrast/heading fixes)
 
 ## 8. Cleanup
 
 - [x] 8.1 Archive `~/proyectos/saba-agentic-orchestration` repo (move to archive folder or delete)
 - [x] 8.2 Remove any hardcoded placeholder content replaced by real content
 - [x] 8.3 Verify all internal links work (header nav, footer links, CTAs)
-- [ ] 8.4 Update Kanban task to done with deploy URL
+- [x] 8.4 Update Kanban task — deployed at https://sabatech.dev (self-hosted, nginx + Cloudflare Tunnel)

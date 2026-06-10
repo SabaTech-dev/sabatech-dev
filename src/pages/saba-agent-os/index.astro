@@ -1,0 +1,379 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
+---
+
+<Layout title="Saba-Agent-OS — AI Orchestration OS" description="Saba-Agent-OS is an open-source operating system for AI agents. Multi-agent orchestration, persistent memory, security pipelines, and feedback loops for your AI workforce.">
+  <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+    en: {
+      "sabaos.badge": "Agent OS — v1.0",
+      "sabaos.hero.title1": "Saba-Agent-OS",
+      "sabaos.hero.title2": "The Operating System for Your AI Workforce",
+      "sabaos.hero.subtitle": "Open-source, self-hosted orchestration for 6 specialized AI agents — memory, security, CI/CD, and feedback loops.",
+      "sabaos.hero.desc": "Alfred leads 5 specialized agents in a 7-layer architecture. Code → Security → QA → Deploy — all autonomous, with human oversight at every critical decision.",
+      "sabaos.hero.cta1": "Download Free",
+      "sabaos.hero.cta2": "See Architecture",
+      "sabaos.arch.badge": "7-Layer Blueprint",
+      "sabaos.arch.title": "From Foundation to Feedback Loop",
+      "sabaos.arch.subtitle": "Inspired by Julian Goldie's blueprint — adapted as 100% open-source, self-hosted, with security pipeline and memory-first architecture.",
+      "sabaos.layer1.title": "Layer 1: Foundation",
+      "sabaos.layer1.desc": "Self-hosted GPU server (V100, 62GB RAM). No cloud dependencies. Your hardware, your control.",
+      "sabaos.layer2.title": "Layer 2: Memory",
+      "sabaos.layer2.desc": "Engram + Hindsight + QMD — persistent memory across sessions. Agents remember every decision.",
+      "sabaos.layer3.title": "Layer 3: Brain",
+      "sabaos.layer3.desc": "GLM-5, Mistral, Qwen — multi-model fallback chain. Never blocked by a single vendor.",
+      "sabaos.layer4.title": "Layer 4: Agents",
+      "sabaos.layer4.desc": "6 specialized agents (Coder, Security, QA, DevOps, Research, Alfred). Each with domain expertise.",
+      "sabaos.layer5.title": "Layer 5: Command Center",
+      "sabaos.layer5.desc": "Real-time dashboard. Pipeline visualization. Agent status. Task queue. Everything in one place.",
+      "sabaos.layer6.title": "Layer 6: Production",
+      "sabaos.layer6.desc": "Coolify + GitHub Actions + self-hosted runners. One-click deploy with SLSA L1 provenance.",
+      "sabaos.layer7.title": "Layer 7: Feedback Loop",
+      "sabaos.layer7.desc": "Every output → Engram → Continuous improvement. The system gets better every cycle.",
+      "sabaos.metrics.agents": "Agents",
+      "sabaos.metrics.tasks": "Tasks/Month",
+      "sabaos.metrics.uptime": "Uptime",
+      "sabaos.metrics.layers": "Layers",
+      "sabaos.features.title": "What Makes Saba-Agent-OS Different",
+      "sabaos.features.subtitle": "Not just an orchestrator — a complete agent operating system",
+      "sabaos.features.memory.title": "Memory First",
+      "sabaos.features.memory.desc": "Persistent semantic memory across sessions. Engram graph database + Hindsight auto-recall. Agents don't forget.",
+      "sabaos.features.security.title": "Security Pipeline",
+      "sabaos.features.security.desc": "Every code change passes through Security agent before merge. OWASP Top 10, SLSA L1, supply chain verification.",
+      "sabaos.features.loop.title": "Feedback Loop",
+      "sabaos.features.loop.desc": "Every task output feeds back into Engram. Continuous improvement baked into the architecture.",
+      "sabaos.features.selfhosted.title": "100% Self-Hosted",
+      "sabaos.features.selfhosted.desc": "Your GPU, your cloud, your data. No vendor lock-in. Full European data sovereignty.",
+      "sabaos.pricing.title": "Saba-Agent-OS Pricing",
+      "sabaos.pricing.subtitle": "Open-source core, premium pack for advanced features",
+      "sabaos.pricing.free.title": "Core (MIT)",
+      "sabaos.pricing.free.desc": "Full agent orchestration",
+      "sabaos.pricing.free.price": "Free",
+      "sabaos.pricing.free.features": ["6 AI agents", "Workflow automation", "Task pipeline", "Basic memory", "CLI tools"],
+      "sabaos.pricing.premium.title": "Premium Pack",
+      "sabaos.pricing.premium.desc": "Production-ready",
+      "sabaos.pricing.premium.price": "$199",
+      "sabaos.pricing.premium.features": ["Everything in Core", "Security audit pipeline", "Advanced memory (Engram)", "CI/CD integration", "Command Center dashboard", "Priority support"],
+      "sabaos.pricing.enterprise.title": "Enterprise",
+      "sabaos.pricing.enterprise.desc": "Custom deployment",
+      "sabaos.pricing.enterprise.price": "Custom",
+      "sabaos.pricing.enterprise.features": ["Everything in Premium", "Dedicated agent training", "Custom integrations", "SLA guarantees", "On-premise deployment", "24/7 support"],
+      "sabaos.cta.title": "Ready to run your own AI agent OS?",
+      "sabaos.cta.desc": "Self-hosted. Open-source. European. Download the MIT core for free, upgrade to Premium when you need production features.",
+      "sabaos.cta.cta1": "Download Core (MIT)",
+      "sabaos.cta.cta2": "Get Premium Pack"
+    },
+    es: {
+      "sabaos.badge": "Sistema Operativo de Agentes — v1.0",
+      "sabaos.hero.title1": "Saba-Agent-OS",
+      "sabaos.hero.title2": "El Sistema Operativo para tu Fuerza Laboral de IA",
+      "sabaos.hero.subtitle": "Orquestación open-source y auto-gestionada para 6 agentes de IA especializados — memoria, seguridad, CI/CD y bucles de mejora continua.",
+      "sabaos.hero.desc": "Alfred lidera 5 agentes especializados en una arquitectura de 7 capas. Código → Seguridad → QA → Deploy — todo autónomo, con supervisión humana en cada decisión crítica.",
+      "sabaos.hero.cta1": "Descargar Gratis",
+      "sabaos.hero.cta2": "Ver Arquitectura",
+      "sabaos.arch.badge": "Blueprint de 7 Capas",
+      "sabaos.arch.title": "Desde los Cimientos hasta el Bucle de Mejora",
+      "sabaos.arch.subtitle": "Inspirado en el blueprint de Julian Goldie — adaptado como 100% open-source, auto-gestionado, con pipeline de seguridad y arquitectura memory-first.",
+      "sabaos.layer1.title": "Capa 1: Foundation",
+      "sabaos.layer1.desc": "Servidor GPU auto-gestionado (V100, 62GB RAM). Sin dependencias cloud. Tu hardware, tu control.",
+      "sabaos.layer2.title": "Capa 2: Memory",
+      "sabaos.layer2.desc": "Engram + Hindsight + QMD — memoria persistente entre sesiones. Los agentes recuerdan cada decisión.",
+      "sabaos.layer3.title": "Capa 3: Brain",
+      "sabaos.layer3.desc": "GLM-5, Mistral, Qwen — cadena multi-modelo. Nunca bloqueado por un solo proveedor.",
+      "sabaos.layer4.title": "Capa 4: Agents",
+      "sabaos.layer4.desc": "6 agentes especializados (Coder, Security, QA, DevOps, Research, Alfred). Cada uno con expertise de dominio.",
+      "sabaos.layer5.title": "Capa 5: Command Center",
+      "sabaos.layer5.desc": "Dashboard en tiempo real. Visualización de pipelines. Estado de agentes. Cola de tareas. Todo en un lugar.",
+      "sabaos.layer6.title": "Capa 6: Production",
+      "sabaos.layer6.desc": "Coolify + GitHub Actions + runners auto-gestionados. Deploy con un click con procedencia SLSA L1.",
+      "sabaos.layer7.title": "Capa 7: Feedback Loop",
+      "sabaos.layer7.desc": "Cada output → Engram → Mejora continua. El sistema mejora con cada ciclo.",
+      "sabaos.metrics.agents": "Agentes",
+      "sabaos.metrics.tasks": "Tareas/Mes",
+      "sabaos.metrics.uptime": "Disponibilidad",
+      "sabaos.metrics.layers": "Capas",
+      "sabaos.features.title": "Qué Hace Diferente a Saba-Agent-OS",
+      "sabaos.features.subtitle": "No es solo un orquestador — es un sistema operativo completo de agentes",
+      "sabaos.features.memory.title": "Memory First",
+      "sabaos.features.memory.desc": "Memoria semántica persistente entre sesiones. Grafo Engram + auto-recall Hindsight. Los agentes no olvidan.",
+      "sabaos.features.security.title": "Pipeline de Seguridad",
+      "sabaos.features.security.desc": "Cada cambio de código pasa por el agente Security antes del merge. OWASP Top 10, SLSA L1, verificación de supply chain.",
+      "sabaos.features.loop.title": "Feedback Loop",
+      "sabaos.features.loop.desc": "Cada output de tarea se realimenta a Engram. Mejora continua integrada en la arquitectura.",
+      "sabaos.features.selfhosted.title": "100% Auto-Gestionado",
+      "sabaos.features.selfhosted.desc": "Tu GPU, tu nube, tus datos. Sin dependencia de proveedores. Soberanía de datos europea total.",
+      "sabaos.pricing.title": "Precios de Saba-Agent-OS",
+      "sabaos.pricing.subtitle": "Core open-source, premium pack para funciones avanzadas",
+      "sabaos.pricing.free.title": "Core (MIT)",
+      "sabaos.pricing.free.desc": "Orquestación completa de agentes",
+      "sabaos.pricing.free.price": "Gratis",
+      "sabaos.pricing.free.features": ["6 agentes de IA", "Automatización de flujos", "Pipeline de tareas", "Memoria básica", "Herramientas CLI"],
+      "sabaos.pricing.premium.title": "Premium Pack",
+      "sabaos.pricing.premium.desc": "Listo para producción",
+      "sabaos.pricing.premium.price": "$199",
+      "sabaos.pricing.premium.features": ["Todo en Core", "Pipeline de auditoría de seguridad", "Memoria avanzada (Engram)", "Integración CI/CD", "Dashboard Command Center", "Soporte prioritario"],
+      "sabaos.pricing.enterprise.title": "Enterprise",
+      "sabaos.pricing.enterprise.desc": "Despliegue personalizado",
+      "sabaos.pricing.enterprise.price": "Personalizado",
+      "sabaos.pricing.enterprise.features": ["Todo en Premium", "Entrenamiento dedicado de agentes", "Integraciones personalizadas", "Garantías SLA", "Despliegue on-premise", "Soporte 24/7"],
+      "sabaos.cta.title": "¿Listo para ejecutar tu propio sistema operativo de agentes?",
+      "sabaos.cta.desc": "Auto-gestionado. Open-source. Europeo. Descarga el core MIT gratis, actualiza a Premium cuando necesites funciones de producción.",
+      "sabaos.cta.cta1": "Descargar Core (MIT)",
+      "sabaos.cta.cta2": "Conseguir Premium Pack"
+    }
+  })} />
+
+  <!-- Hero -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center">
+      <Badge variant="primary" class="mb-6" data-i18n="sabaos.badge">Agent OS — v1.0</Badge>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50" data-i18n="sabaos.hero.title1">
+        Saba-Agent-OS
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" data-i18n="sabaos.hero.title2">
+        The Operating System for Your AI Workforce
+      </p>
+      <p class="text-lg text-slate-400 mb-6 max-w-2xl mx-auto" data-i18n="sabaos.hero.subtitle">
+        Open-source, self-hosted orchestration for 6 specialized AI agents — memory, security, CI/CD, and feedback loops.
+      </p>
+      <p class="text-md text-slate-500 mb-12 max-w-2xl mx-auto" data-i18n="sabaos.hero.desc">
+        Alfred leads 5 specialized agents in a 7-layer architecture. Code → Security → QA → Deploy — all autonomous, with human oversight at every critical decision.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="https://github.com/SabaTech-dev/Saba-Agent-Os" data-i18n="sabaos.hero.cta1">Download Free</Button>
+        <Button variant="outline" size="lg" href="#architecture" data-i18n="sabaos.hero.cta2">See Architecture</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 7-Layer Blueprint -->
+  <Section variant="dark" padding="lg" id="architecture">
+    <div class="text-center mb-16">
+      <Badge variant="primary" class="mb-6" data-i18n="sabaos.arch.badge">7-Layer Blueprint</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="sabaos.arch.title">From Foundation to Feedback Loop</h2>
+      <p class="text-slate-400 text-lg max-w-3xl mx-auto" data-i18n="sabaos.arch.subtitle">
+        Inspired by Julian Goldie's blueprint — adapted as 100% open-source, self-hosted, with security pipeline and memory-first architecture.
+      </p>
+    </div>
+
+    <!-- 7 Layers Visual -->
+    <div class="max-w-5xl mx-auto">
+      {[
+        { l: 7, title: "sabaos.layer7.title", desc: "sabaos.layer7.desc", icon: "🔄", color: "from-purple-500 to-pink-500", status: "Live" },
+        { l: 6, title: "sabaos.layer6.title", desc: "sabaos.layer6.desc", icon: "🚀", color: "from-blue-500 to-cyan-500", status: "Live" },
+        { l: 5, title: "sabaos.layer5.title", desc: "sabaos.layer5.desc", icon: "🎛️", color: "from-indigo-500 to-blue-500", status: "Live" },
+        { l: 4, title: "sabaos.layer4.title", desc: "sabaos.layer4.desc", icon: "🤖", color: "from-green-500 to-teal-500", status: "Live" },
+        { l: 3, title: "sabaos.layer3.title", desc: "sabaos.layer3.desc", icon: "🧠", color: "from-yellow-500 to-orange-500", status: "Live" },
+        { l: 2, title: "sabaos.layer2.title", desc: "sabaos.layer2.desc", icon: "💾", color: "from-red-500 to-pink-500", status: "Live" },
+        { l: 1, title: "sabaos.layer1.title", desc: "sabaos.layer1.desc", icon: "🏗️", color: "from-slate-500 to-slate-400", status: "Live" },
+      ].map((layer) => (
+        <div class={`flex items-center gap-6 p-5 mb-3 rounded-xl bg-gradient-to-r ${layer.color} bg-opacity-10 border border-slate-700/50 hover:border-slate-500 transition-all`}>
+          <div class="w-12 h-12 rounded-lg bg-slate-800/80 flex items-center justify-center text-2xl shrink-0">
+            {layer.icon}
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <span class="text-sm font-mono text-slate-400">L{layer.l}</span>
+              <h3 class="text-lg font-bold text-slate-50" data-i18n={layer.title}>Layer {layer.l}</h3>
+              <Badge variant="success" class="text-xs">{layer.status}</Badge>
+            </div>
+            <p class="text-slate-400 text-sm" data-i18n={layer.desc}>{layer.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Metrics -->
+  <Section variant="light" padding="lg">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">6</div>
+        <p class="text-slate-400 text-sm" data-i18n="sabaos.metrics.agents">Agents</p>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">200+</div>
+        <p class="text-slate-400 text-sm" data-i18n="sabaos.metrics.tasks">Tasks/Month</p>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">99.9%</div>
+        <p class="text-slate-400 text-sm" data-i18n="sabaos.metrics.uptime">Uptime</p>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">7</div>
+        <p class="text-slate-400 text-sm" data-i18n="sabaos.metrics.layers">Layers</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Features -->
+  <Section variant="dark" padding="lg" id="features">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="sabaos.features.title">What Makes Saba-Agent-OS Different</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="sabaos.features.subtitle">Not just an orchestrator — a complete agent operating system</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🧠</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="sabaos.features.memory.title">Memory First</h3>
+          <p class="text-slate-400 text-sm" data-i18n="sabaos.features.memory.desc">Persistent semantic memory across sessions. Engram graph database + Hindsight auto-recall. Agents don't forget.</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="sabaos.features.security.title">Security Pipeline</h3>
+          <p class="text-slate-400 text-sm" data-i18n="sabaos.features.security.desc">Every code change passes through Security agent before merge. OWASP Top 10, SLSA L1, supply chain verification.</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🔄</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="sabaos.features.loop.title">Feedback Loop</h3>
+          <p class="text-slate-400 text-sm" data-i18n="sabaos.features.loop.desc">Every task output feeds back into Engram. Continuous improvement baked into the architecture.</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🏠</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="sabaos.features.selfhosted.title">100% Self-Hosted</h3>
+          <p class="text-slate-400 text-sm" data-i18n="sabaos.features.selfhosted.desc">Your GPU, your cloud, your data. No vendor lock-in. Full European data sovereignty.</p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Pricing -->
+  <Section variant="light" padding="lg" id="pricing">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="sabaos.pricing.title">Saba-Agent-OS Pricing</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="sabaos.pricing.subtitle">Open-source core, premium pack for advanced features</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Core (MIT) -->
+      <Card variant="elevated">
+        <div class="p-8 flex flex-col h-full">
+          <h3 class="text-2xl font-bold text-slate-50 mb-2" data-i18n="sabaos.pricing.free.title">Core (MIT)</h3>
+          <p class="text-slate-400 mb-4" data-i18n="sabaos.pricing.free.desc">Full agent orchestration</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-slate-50" data-i18n="sabaos.pricing.free.price">Free</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            {(JSON.parse(`["sabaos.pricing.free.features"]`).length > 0 ? [] : []).map((f, i) => (
+              <li class="flex items-start gap-3 text-slate-400" key={i}>
+                <svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>6 AI agents</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Workflow automation</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Task pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Basic memory</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CLI tools</span></li>
+          </ul>
+          <Button variant="outline" href="https://github.com/SabaTech-dev/Saba-Agent-Os" class="w-full">Get Core (MIT)</Button>
+        </div>
+      </Card>
+
+      <!-- Premium Pack (Featured) -->
+      <Card variant="elevated" class="border-2 border-teal-brand shadow-teal">
+        <div class="p-8 flex flex-col h-full">
+          <Badge variant="primary" class="mb-2 inline-block w-fit">Best Value</Badge>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2">Premium Pack</h3>
+          <p class="text-slate-400 mb-4">Production-ready</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-slate-50">$199</span>
+            <span class="text-slate-400">/one-time</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Core</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Security audit pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Advanced memory (Engram)</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CI/CD integration</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Command Center dashboard</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Priority support</span></li>
+          </ul>
+          <Button variant="primary" href="/contact" class="w-full">Get Premium Pack</Button>
+        </div>
+      </Card>
+
+      <!-- Enterprise -->
+      <Card variant="elevated">
+        <div class="p-8 flex flex-col h-full">
+          <h3 class="text-2xl font-bold text-slate-50 mb-2">Enterprise</h3>
+          <p class="text-slate-400 mb-4">Custom deployment</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-slate-50">Custom</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Premium</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Dedicated agent training</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Custom integrations</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>SLA guarantees</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>On-premise deployment</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>24/7 support</span></li>
+          </ul>
+          <Button variant="outline" href="/contact" class="w-full">Contact Sales</Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Architecture SVG: Agent Topology (from orquestacion) -->
+  <Section variant="dark" padding="lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="rounded-2xl bg-slate-800/50 border border-slate-700 p-8 md:p-12">
+        <svg viewBox="0 0 600 400" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <line x1="300" y1="120" x2="120" y2="260" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+          <line x1="300" y1="120" x2="240" y2="300" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+          <line x1="300" y1="120" x2="360" y2="300" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+          <line x1="300" y1="120" x2="480" y2="260" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+          <line x1="300" y1="120" x2="300" y2="320" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+          <circle cx="300" cy="80" r="45" fill="#0F172A" stroke="#06B6D4" stroke-width="3"/>
+          <text x="300" y="74" text-anchor="middle" fill="#06B6D4" font-size="24">🎯</text>
+          <text x="300" y="94" text-anchor="middle" fill="#F8FAFC" font-size="10" font-weight="600">Alfred</text>
+          <text x="300" y="140" text-anchor="middle" fill="#94A3B8" font-size="10">CEO Agent</text>
+          <circle cx="120" cy="260" r="38" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+          <text x="120" y="255" text-anchor="middle" fill="#06B6D4" font-size="20">🔧</text>
+          <text x="120" y="275" text-anchor="middle" fill="#F8FAFC" font-size="9" font-weight="600">Coder</text>
+          <circle cx="240" cy="300" r="38" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+          <text x="240" y="295" text-anchor="middle" fill="#06B6D4" font-size="20">🛡️</text>
+          <text x="240" y="315" text-anchor="middle" fill="#F8FAFC" font-size="9" font-weight="600">Security</text>
+          <circle cx="360" cy="300" r="38" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+          <text x="360" y="295" text-anchor="middle" fill="#06B6D4" font-size="20">🧪</text>
+          <text x="360" y="315" text-anchor="middle" fill="#F8FAFC" font-size="9" font-weight="600">QA</text>
+          <circle cx="480" cy="260" r="38" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+          <text x="480" y="255" text-anchor="middle" fill="#06B6D4" font-size="20">🚀</text>
+          <text x="480" y="275" text-anchor="middle" fill="#F8FAFC" font-size="9" font-weight="600">DevOps</text>
+          <circle cx="300" cy="330" r="38" fill="#0F172A" stroke="#06B6D4" stroke-width="2"/>
+          <text x="300" y="325" text-anchor="middle" fill="#06B6D4" font-size="20">📚</text>
+          <text x="300" y="345" text-anchor="middle" fill="#F8FAFC" font-size="9" font-weight="600">Research</text>
+          <rect x="440" y="150" width="130" height="30" rx="6" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+          <text x="505" y="170" text-anchor="middle" fill="#06B6D4" font-size="10">Event-Driven</text>
+          <rect x="30" y="150" width="130" height="30" rx="6" fill="rgba(132,204,22,0.1)" stroke="rgba(132,204,22,0.3)" stroke-width="1"/>
+          <text x="95" y="170" text-anchor="middle" fill="#84CC16" font-size="10">Human Oversight</text>
+        </svg>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50" data-i18n="sabaos.cta.title">Ready to run your own AI agent OS?</h2>
+      <p class="text-slate-300 text-lg mb-8 leading-relaxed" data-i18n="sabaos.cta.desc">
+        Self-hosted. Open-source. European. Download the MIT core for free, upgrade to Premium when you need production features.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="https://github.com/SabaTech-dev/Saba-Agent-Os" data-i18n="sabaos.cta.cta1">Download Core (MIT)</Button>
+        <Button variant="outline" size="lg" href="/contact" data-i18n="sabaos.cta.cta2">Get Premium Pack</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>
