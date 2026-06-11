@@ -1,0 +1,340 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Saba LLM Auto-Train",
+  description: "Automated fine-tuning pipelines for LLMs. Optimize model performance with SabaTech's proprietary training system.",
+  provider: {
+    "@type": "Organization",
+    name: "SabaTech",
+    url: "https://sabatech.dev",
+  },
+  areaServed: ["Worldwide"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "LLM Auto-Train Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Model Fine-Tuning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Benchmark Optimization" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Training Pipeline" } },
+    ],
+  },
+};
+---
+
+<Layout
+  title="LLM Auto-Train — SabaTech"
+  description="Automated LLM fine-tuning. Optimize your models with SabaTech's Auto-Train pipelines — from base model to production-ready in hours."
+  jsonLd={jsonLd}
+>
+  <script define:vars={{ jsonLd }}>
+    const LANG_KEY = "sabatech-lang";
+    const translations = {
+      en: {
+        "llm-autotrain.badge": "LLM Fine-Tuning",
+        "llm-autotrain.hero.title1": "Saba",
+        "llm-autotrain.hero.title2": "LLM Auto-Train",
+        "llm-autotrain.hero.subtitle": "Train smarter, not harder",
+        "llm-autotrain.hero.desc": "Automated fine-tuning pipelines that transform base LLMs into production-ready models. From dataset preparation to deployment — fully automated, measurable results.",
+        "llm-autotrain.hero.cta1": "Train Your Model",
+        "llm-autotrain.hero.cta2": "See Benchmarks",
+        "llm-autotrain.benchmark.badge": "Benchmark Results",
+        "llm-autotrain.benchmark.title": "Real Performance Gains",
+        "llm-autotrain.benchmark.subtitle": "Measured improvements from our internal fine-tuning pipeline on Gemma 4 2B",
+        "llm-autotrain.process.badge": "Training Pipeline",
+        "llm-autotrain.process.title": "From Base to Production",
+        "llm-autotrain.process.subtitle": "A streamlined 4-step pipeline that automates the entire fine-tuning journey",
+        "llm-autotrain.stack.badge": "Technology Stack",
+        "llm-autotrain.stack.title": "Built With",
+        "llm-autotrain.stack.subtitle": "Powered by industry-leading tools and models",
+        "llm-autotrain.case.badge": "Case Study",
+        "llm-autotrain.case.title": "SabaTech Internal: Gemma 4 2B Fine-Tune",
+        "llm-autotrain.case.subtitle": "How we used our own pipeline to build a faster, cheaper inference model",
+        "llm-autotrain.cta.title": "Ready to optimize your models?",
+        "llm-autotrain.cta.desc": "Get a free consultation on setting up an automated fine-tuning pipeline for your use case.",
+        "llm-autotrain.cta.cta1": "Start Training",
+      },
+      es: {
+        "llm-autotrain.badge": "Fine-Tuning de LLMs",
+        "llm-autotrain.hero.title1": "Saba",
+        "llm-autotrain.hero.title2": "LLM Auto-Train",
+        "llm-autotrain.hero.subtitle": "Entrena más inteligente, no más difícil",
+        "llm-autotrain.hero.desc": "Pipelines automatizados de fine-tuning que transforman LLMs base en modelos listos para producción. Desde preparación del dataset hasta despliegue — totalmente automatizado, resultados medibles.",
+        "llm-autotrain.hero.cta1": "Entrena tu Modelo",
+        "llm-autotrain.hero.cta2": "Ver Benchmarks",
+        "llm-autotrain.benchmark.badge": "Resultados de Benchmark",
+        "llm-autotrain.benchmark.title": "Ganancias Reales de Rendimiento",
+        "llm-autotrain.benchmark.subtitle": "Mejoras medidas de nuestro pipeline interno de fine-tuning en Gemma 4 2B",
+        "llm-autotrain.process.badge": "Pipeline de Entrenamiento",
+        "llm-autotrain.process.title": "De Base a Producción",
+        "llm-autotrain.process.subtitle": "Un pipeline optimizado de 4 pasos que automatiza todo el proceso de fine-tuning",
+        "llm-autotrain.stack.badge": "Stack Tecnológico",
+        "llm-autotrain.stack.title": "Construido Con",
+        "llm-autotrain.stack.subtitle": "Impulsado por herramientas y modelos líderes de la industria",
+        "llm-autotrain.case.badge": "Caso de Estudio",
+        "llm-autotrain.case.title": "SabaTech Interno: Fine-Tuning de Gemma 4 2B",
+        "llm-autotrain.case.subtitle": "Cómo usamos nuestro propio pipeline para construir un modelo de inferencia más rápido y económico",
+        "llm-autotrain.cta.title": "¿Listo para optimizar tus modelos?",
+        "llm-autotrain.cta.desc": "Obtén una consulta gratuita sobre la configuración de un pipeline automatizado de fine-tuning para tu caso de uso.",
+        "llm-autotrain.cta.cta1": "Empezar a Entrenar",
+      },
+    };
+
+    function getCurrentLang(): string {
+      return localStorage.getItem(LANG_KEY) || "en";
+    }
+
+    function applyTranslations(lang: string): void {
+      const dict = (translations as Record<string, Record<string, string>>)[lang === "en" ? "en" : "es"] || translations.en;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key && dict[key]) el.textContent = dict[key];
+      });
+      document.documentElement.lang = lang;
+    }
+
+    function updateToggleButton(lang: string): void {
+      const btn = document.getElementById("lang-toggle");
+      const btnMobile = document.getElementById("lang-toggle-mobile");
+      const label = lang === "en" ? "EN | ES" : "ES | EN";
+      if (btn) btn.textContent = label;
+      if (btnMobile) btnMobile.textContent = label;
+    }
+
+    function toggleLang(): void {
+      const current = getCurrentLang();
+      const next = current === "en" ? "es" : "en";
+      localStorage.setItem(LANG_KEY, next);
+      applyTranslations(next);
+      updateToggleButton(next);
+    }
+
+    const currentLang = getCurrentLang();
+    if (currentLang !== "en") {
+      applyTranslations(currentLang);
+      updateToggleButton(currentLang);
+    }
+
+    document.getElementById("lang-toggle")?.addEventListener("click", toggleLang);
+    document.getElementById("lang-toggle-mobile")?.addEventListener("click", toggleLang);
+  </script>
+
+  <!-- Hero -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center">
+      <Badge variant="primary" class="mb-6" data-i18n="llm-autotrain.badge">LLM Fine-Tuning</Badge>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50">
+        <span data-i18n="llm-autotrain.hero.title1">Saba</span>{' '}
+        <span class="bg-clip-text text-transparent bg-saba-gradient" data-i18n="llm-autotrain.hero.title2">LLM Auto-Train</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" data-i18n="llm-autotrain.hero.subtitle">
+        Train smarter, not harder
+      </p>
+      <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto" data-i18n="llm-autotrain.hero.desc">
+        Automated fine-tuning pipelines that transform base LLMs into production-ready models. From dataset preparation to deployment — fully automated, measurable results.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="/contact" data-i18n="llm-autotrain.hero.cta1">Train Your Model</Button>
+        <Button variant="outline" size="lg" href="#benchmarks" data-i18n="llm-autotrain.hero.cta2">See Benchmarks</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Benchmark Results -->
+  <Section variant="dark" padding="lg" id="benchmarks">
+    <div class="text-center mb-16">
+      <Badge variant="primary" class="mb-6" data-i18n="llm-autotrain.benchmark.badge">Benchmark Results</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="llm-autotrain.benchmark.title">Real Performance Gains</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="llm-autotrain.benchmark.subtitle">
+        Measured improvements from our internal fine-tuning pipeline on Gemma 4 2B
+      </p>
+    </div>
+
+    <!-- Summary metrics -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+      <div class="text-center p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-5xl font-extrabold bg-clip-text text-transparent bg-saba-gradient mb-3">67.4%</div>
+        <p class="text-slate-300 font-semibold mb-2" data-i18n="">Faster Inference</p>
+        <p class="text-slate-400 text-sm">Latency reduction from baseline to fine-tuned</p>
+      </div>
+      <div class="text-center p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-5xl font-extrabold bg-clip-text text-transparent bg-saba-gradient mb-3">2.51x</div>
+        <p class="text-slate-300 font-semibold mb-2">Higher Throughput</p>
+        <p class="text-slate-400 text-sm">Tokens per second improvement</p>
+      </div>
+      <div class="text-center p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-5xl font-extrabold bg-clip-text text-transparent bg-saba-gradient mb-3">100%</div>
+        <p class="text-slate-300 font-semibold mb-2">Success Rate</p>
+        <p class="text-slate-400 text-sm">Zero failed inferences in benchmark runs</p>
+      </div>
+    </div>
+
+    <!-- Comparison cards -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <Card variant="elevated" class="border-2 border-slate-600/50">
+        <div class="p-8">
+          <Badge variant="default" class="mb-4">Baseline</Badge>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2">gemma4:e2b</h3>
+          <p class="text-slate-400 text-sm mb-6">Stock Gemma 4 2B via Ollama</p>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+              <span class="text-slate-400">Avg Latency</span>
+              <span class="text-2xl font-bold text-red-400">18,438ms</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+              <span class="text-slate-400">Throughput</span>
+              <span class="text-2xl font-bold text-slate-50">30.7 tok/s</span>
+            </div>
+            <div class="flex justify-between items-center py-3">
+              <span class="text-slate-400">Success Rate</span>
+              <span class="text-2xl font-bold text-slate-50">100%</span>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <Card variant="elevated" class="border-2 border-teal-brand/40 shadow-teal">
+        <div class="p-8">
+          <Badge variant="success" class="mb-4">Fine-Tuned</Badge>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2">saba-gemma4-2b</h3>
+          <p class="text-slate-400 text-sm mb-6">Custom fine-tuned by SabaTech Auto-Train</p>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+              <span class="text-slate-400">Avg Latency</span>
+              <span class="text-2xl font-bold text-code-green">6,000ms</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+              <span class="text-slate-400">Throughput</span>
+              <span class="text-2xl font-bold text-slate-50">77.0 tok/s</span>
+            </div>
+            <div class="flex justify-between items-center py-3">
+              <span class="text-slate-400">Success Rate</span>
+              <span class="text-2xl font-bold text-slate-50">100%</span>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Training Process -->
+  <Section variant="light" padding="lg" id="process">
+    <div class="text-center mb-16">
+      <Badge variant="primary" class="mb-6" data-i18n="llm-autotrain.process.badge">Training Pipeline</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="llm-autotrain.process.title">From Base to Production</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="llm-autotrain.process.subtitle">
+        A streamlined 4-step pipeline that automates the entire fine-tuning journey
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      {[
+        { step: "1", title: "Dataset Prep", desc: "Collect, clean, and format training data. Automated deduplication, filtering, and quality scoring.", icon: "📊" },
+        { step: "2", title: "Fine-Tuning", desc: "LoRA/QLoRA training on base model. Hyperparameter optimization, early stopping, and checkpointing.", icon: "⚡" },
+        { step: "3", title: "Evaluation", desc: "Automated benchmark runs against baseline. Latency, throughput, and quality metrics comparison.", icon: "📈" },
+        { step: "4", title: "Deployment", desc: "Export to GGUF/Ollama format. Push to production with zero-downtime model swap.", icon: "🚀" },
+      ].map((item) => (
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-saba-gradient text-white flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            {item.step}
+          </div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3">{item.title}</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Tech Stack -->
+  <Section variant="dark" padding="lg" id="stack">
+    <div class="text-center mb-16">
+      <Badge variant="primary" class="mb-6" data-i18n="llm-autotrain.stack.badge">Technology Stack</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="llm-autotrain.stack.title">Built With</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="llm-autotrain.stack.subtitle">
+        Powered by industry-leading tools and models
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+      {[
+        { name: "Gemma 4 2B", desc: "Base model from Google DeepMind", icon: "🧬" },
+        { name: "Unsloth", desc: "2x faster training, 50% less memory", icon: "🦥" },
+        { name: "Ollama", desc: "Local model serving & inference", icon: "🦙" },
+        { name: "Axolotl", desc: "Config-driven fine-tuning framework", icon: "🔧" },
+        { name: "Llama.cpp", desc: "GGUF quantization & inference", icon: "⚙️" },
+        { name: "OpenCode", desc: "Automated pipeline orchestration", icon: "🤖" },
+      ].map((tech) => (
+        <Card variant="elevated" hover>
+          <div class="p-6 text-center">
+            <div class="text-3xl mb-3">{tech.icon}</div>
+            <h3 class="text-lg font-bold text-slate-50 mb-2">{tech.name}</h3>
+            <p class="text-slate-400 text-sm">{tech.desc}</p>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Case Study -->
+  <Section variant="light" padding="lg" id="case-study">
+    <div class="text-center mb-16">
+      <Badge variant="primary" class="mb-6" data-i18n="llm-autotrain.case.badge">Case Study</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="llm-autotrain.case.title">SabaTech Internal: Gemma 4 2B Fine-Tune</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="llm-autotrain.case.subtitle">
+        How we used our own pipeline to build a faster, cheaper inference model
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <Card variant="elevated" class="border-2 border-teal-brand/30">
+        <div class="p-8 md:p-12">
+          <Badge variant="success" class="mb-4">Live Case Study</Badge>
+          <p class="text-teal-brand text-sm font-semibold mb-2">SabaTech (Internal)</p>
+          <h3 class="text-2xl font-bold text-slate-50 mb-4">Replacing llama.cpp Qwen with a custom fine-tuned Gemma 4 2B</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">
+            We applied our own Auto-Train pipeline to fine-tune Gemma 4 2B for our internal agent workloads. The goal: reduce inference latency and cost while maintaining quality. The baseline model (gemma4:e2b via Ollama) served as our reference point. After automated LoRA training, evaluation, and GGUF quantization, saba-gemma4-2b delivered a <span class="text-code-green font-semibold">67.4% reduction in latency</span> and <span class="text-code-green font-semibold">2.51x higher throughput</span> — all within a single automated pipeline run.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="text-center p-4 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">2</div>
+              <div class="text-xs text-slate-400">Hours Training</div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">12GB</div>
+              <div class="text-xs text-slate-400">VRAM Used</div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">Q4_K_M</div>
+              <div class="text-xs text-slate-400">Quantization</div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-slate-800/50">
+              <div class="text-2xl font-bold text-teal-brand">1</div>
+              <div class="text-xs text-slate-400">Hour Deploy</div>
+            </div>
+          </div>
+          <p class="text-slate-500 text-sm italic">"Within 2 hours of pipeline execution, we had a production-ready model with 67% better performance than stock. Zero manual intervention."</p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50" data-i18n="llm-autotrain.cta.title">Ready to optimize your models?</h2>
+      <p class="text-slate-300 text-lg mb-8 leading-relaxed" data-i18n="llm-autotrain.cta.desc">
+        Get a free consultation on setting up an automated fine-tuning pipeline for your use case.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="/contact" data-i18n="llm-autotrain.cta.cta1">Start Training</Button>
+        <Button variant="outline" size="lg" href="mailto:jmsabaris@sabatech.dev">jmsabaris@sabatech.dev</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>
