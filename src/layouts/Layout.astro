@@ -66,7 +66,14 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     )}
   </head>
   <body class="bg-midnight text-slate-50 antialiased">
-    <header class="border-b border-slate-800 bg-midnight/95 backdrop-blur-sm sticky top-0 z-50">
+    <!-- Portfolio Notice Banner -->
+    <div id="portfolio-banner" class="fixed top-0 left-0 right-0 z-[60] bg-amber-500/90 text-midnight text-xs md:text-sm text-center py-1.5 md:py-1 px-10 transition-transform duration-300">
+      <span data-i18n="banner.portfolio-notice">⚠️ This website is a personal portfolio showcasing my technical capabilities. SabaTech is a brand name, not a legal entity.</span>
+      <button id="dismiss-banner" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 hover:bg-amber-600/50 rounded" aria-label="Dismiss">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <header id="main-header" class="border-b border-slate-800 bg-midnight/95 backdrop-blur-sm sticky top-0 z-50">
       <Container>
         <nav class="flex items-center justify-between h-16 md:h-20">
           <!-- Logo: horizontal on desktop, icon-only on mobile -->
@@ -232,6 +239,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
 
       const translations = {
         en: {
+          "banner.portfolio-notice": "\u26a0\ufe0f This website is a personal portfolio showcasing my technical capabilities. SabaTech is a brand name, not a legal entity.",
           "nav.home": "Home",
           "nav.qa-framework": "QA Framework",
           "nav.security": "Security",
@@ -259,6 +267,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
           "footer.cookies": "Cookies",
         },
         es: {
+          "banner.portfolio-notice": "\u26a0\ufe0f Este sitio web es un portafolio personal para mostrar mis capacidades t\u00e9cnicas. SabaTech es un nombre comercial, no una entidad legal.",
           "nav.home": "Inicio",
           "nav.qa-framework": "Framework QA",
           "nav.security": "Seguridad",
@@ -348,6 +357,39 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
       // Bind toggle buttons
       document.getElementById("lang-toggle")?.addEventListener("click", toggleLang);
       document.getElementById("lang-toggle-mobile")?.addEventListener("click", toggleLang);
+
+      // Portfolio banner dismiss
+      const banner = document.getElementById('portfolio-banner');
+      const header = document.getElementById('main-header');
+      const dismissBtn = document.getElementById('dismiss-banner');
+
+      function updateHeaderOffset() {
+        if (!banner || banner.classList.contains('translate-y-[-100%]')) {
+          if (header) header.style.top = '0';
+        } else {
+          const bannerHeight = banner.offsetHeight;
+          if (header) header.style.top = bannerHeight + 'px';
+        }
+      }
+
+      if (banner && localStorage.getItem('portfolio-banner-dismissed')) {
+        banner.classList.add('translate-y-[-100%]');
+        if (header) header.style.top = '0';
+      } else if (banner) {
+        updateHeaderOffset();
+      }
+
+      dismissBtn?.addEventListener('click', () => {
+        banner?.classList.add('translate-y-[-100%]');
+        if (header) header.style.top = '0';
+        localStorage.setItem('portfolio-banner-dismissed', 'true');
+      });
+
+      window.addEventListener('resize', () => {
+        if (banner && !banner.classList.contains('translate-y-[-100%]')) {
+          updateHeaderOffset();
+        }
+      });
     </script>
   </body>
 </html>
