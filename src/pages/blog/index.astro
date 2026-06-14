@@ -43,11 +43,11 @@ function getReadingTime(content: string) {
                 <Card variant="elevated" hover>
                   <div class="p-8">
                     <div class="flex items-center gap-3 mb-4">
-                      <time datetime={post.data.pubDate.toISOString()} class="text-slate-500 text-sm">
+                      <time datetime={post.data.pubDate.toISOString()} class="text-slate-400 text-sm">
                         {formatDate(post.data.pubDate)}
                       </time>
-                      <span class="text-slate-600">·</span>
-                      <span class="text-slate-500 text-sm">By {post.data.author}</span>
+                      <span class="text-slate-400" aria-hidden="true">·</span>
+                      <span class="text-slate-400 text-sm">By {post.data.author}</span>
                     </div>
                     <h2 class="text-2xl font-bold text-slate-50 mb-3 group-hover:text-teal-brand transition-colors">
                       {post.data.title}

@@ -35,11 +35,11 @@ const shareTitle = encodeURIComponent(post.data.title);
       <article class="max-w-3xl mx-auto">
         <header class="mb-12">
           <div class="flex items-center gap-3 mb-4">
-            <time datetime={post.data.pubDate.toISOString()} class="text-slate-500 text-sm">
+            <time datetime={post.data.pubDate.toISOString()} class="text-slate-400 text-sm">
               {formatDate(post.data.pubDate)}
             </time>
-            <span class="text-slate-600">·</span>
-            <span class="text-slate-500 text-sm">By {post.data.author}</span>
+            <span class="text-slate-400" aria-hidden="true">·</span>
+            <span class="text-slate-400 text-sm">By {post.data.author}</span>
           </div>
           <h1 class="text-3xl md:text-5xl font-extrabold text-slate-50 mb-4 leading-tight">
             {post.data.title}
@@ -67,7 +67,7 @@ const shareTitle = encodeURIComponent(post.data.title);
         <footer class="mt-12 pt-8 border-t border-slate-700">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <a href="/blog" class="text-teal-brand hover:text-teal-hover transition-colors flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               Back to Blog
