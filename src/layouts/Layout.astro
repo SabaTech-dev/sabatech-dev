@@ -33,6 +33,8 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="color-scheme" content="dark" />
     <meta name="description" content={description} />
     <meta name="author" content="SabaTech" />
     <link rel="canonical" href={canonical} />
@@ -51,12 +53,25 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Fonts -->
+    <!-- Fonts — preconnect + preload for FCP optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+    </noscript>
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; preload-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;" />
 
     <title>{title}</title>
 
@@ -66,16 +81,20 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     )}
   </head>
   <body class="bg-midnight text-slate-50 antialiased">
+    <!-- Skip to content link for keyboard navigation / screen readers -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-brand focus:text-midnight focus:font-semibold focus:rounded-lg">
+      Skip to main content
+    </a>
     <!-- Portfolio Notice Banner -->
     <div id="portfolio-banner" class="fixed top-0 left-0 right-0 z-[60] bg-amber-500/90 text-midnight text-xs md:text-sm text-center py-1.5 md:py-1 px-10 transition-transform duration-300">
       <span data-i18n="banner.portfolio-notice">⚠️ This website is a personal portfolio showcasing my technical capabilities. SabaTech is a brand name, not a legal entity.</span>
-      <button id="dismiss-banner" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 hover:bg-amber-600/50 rounded" aria-label="Dismiss">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      <button id="dismiss-banner" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 hover:bg-amber-600/50 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-midnight" aria-label="Dismiss portfolio notice banner">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
     <header id="main-header" class="border-b border-slate-800 bg-midnight/95 backdrop-blur-sm sticky top-0 z-50">
       <Container>
-        <nav class="flex items-center justify-between h-16 md:h-20">
+        <nav class="flex items-center justify-between h-16 md:h-20" aria-label="Main navigation">
           <!-- Logo: horizontal on desktop, icon-only on mobile -->
           <div class="md:hidden">
             <Logo variant="icon-only" href="/" />
@@ -86,17 +105,17 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
 
           <!-- Desktop Nav -->
           <ul class="hidden lg:flex items-center gap-1">
-            <li><a href="/" data-i18n="nav.home" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Home</a></li>
-            <li><a href="/qa-framework" data-i18n="nav.qa-framework" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">QA Framework</a></li>
-            <li><a href="/security" data-i18n="nav.security" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Security</a></li>
-            <li><a href="/saba-agent-os" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Saba-Agent-OS</a></li>
-            <li><a href="/orquestacion" data-i18n="nav.orchestration" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Orchestration</a></li>
-            <li><a href="/saba-llm-auto-train" data-i18n="nav.llm-autotrain" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">LLM Auto-Train</a></li>
-            <li><a href="/pricing" data-i18n="nav.pricing" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Pricing</a></li>
-            <li><a href="/about" data-i18n="nav.about" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">About</a></li>
-            <li><a href="/team" data-i18n="nav.team" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Team</a></li>
-            <li><a href="/jose" data-i18n="nav.jose" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Jose</a></li>
-            <li><a href="/blog" data-i18n="nav.blog" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors">Blog</a></li>
+            <li><a href="/" data-i18n="nav.home" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Home</a></li>
+            <li><a href="/qa-framework" data-i18n="nav.qa-framework" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">QA Framework</a></li>
+            <li><a href="/security" data-i18n="nav.security" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Security</a></li>
+            <li><a href="/saba-agent-os" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Saba-Agent-OS</a></li>
+            <li><a href="/orquestacion" data-i18n="nav.orchestration" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Orchestration</a></li>
+            <li><a href="/saba-llm-auto-train" data-i18n="nav.llm-autotrain" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">LLM Auto-Train</a></li>
+            <li><a href="/pricing" data-i18n="nav.pricing" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Pricing</a></li>
+            <li><a href="/about" data-i18n="nav.about" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">About</a></li>
+            <li><a href="/team" data-i18n="nav.team" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Team</a></li>
+            <li><a href="/jose" data-i18n="nav.jose" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Jose</a></li>
+            <li><a href="/blog" data-i18n="nav.blog" class="px-3 py-2 text-sm text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand">Blog</a></li>
             <li class="ml-2 flex items-center gap-2">
               <!-- Language Toggle -->
               <button
@@ -107,7 +126,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
               >
                 EN | ES
               </button>
-              <a href="/contact" data-i18n="nav.startAudit" class="px-5 py-2 bg-teal-brand hover:bg-teal-hover text-midnight font-semibold rounded-lg transition-colors">
+              <a href="/contact" data-i18n="nav.startAudit" class="px-5 py-2 bg-teal-brand hover:bg-teal-hover text-midnight font-semibold rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand focus-visible:ring-offset-2 focus-visible:ring-offset-midnight">
                 Start Free Audit
               </a>
             </li>
@@ -128,7 +147,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
               class="p-2 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg"
               aria-label="Menu"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
@@ -159,11 +178,11 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
       </Container>
     </header>
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 
-    <footer class="border-t border-slate-800 bg-midnight">
+    <footer class="border-t border-slate-800 bg-midnight" role="contentinfo">
       <Container>
         <div class="py-12">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -173,49 +192,51 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
               <p data-i18n="footer.desc" class="text-slate-400 mb-4 max-w-md leading-relaxed">
                 Agentic QA Automation & Security for the AI Era. AI-powered security audits, automated testing, and multi-agent orchestration — protected by our AI agents.
               </p>
+              <!-- visually-hidden heading for footer accessibility structure -->
+              <h2 class="sr-only">Footer navigation</h2>
               <div class="flex gap-4">
-                <a href="https://github.com/SabaTech-dev" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-teal-brand transition-colors">
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <a href="https://github.com/SabaTech-dev" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded" aria-label="SabaTech on GitHub (opens in new tab)">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
-                <a href="https://twitter.com/LJokerL_TTV" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-teal-brand transition-colors">
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                <a href="https://twitter.com/LJokerL_TTV" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-brand focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded" aria-label="SabaTech on X/Twitter (opens in new tab)">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
                 </a>
               </div>
             </div>
 
             <!-- Links -->
             <div>
-              <h4 data-i18n="footer.services" class="font-semibold text-slate-200 mb-4">Services</h4>
+              <h3 data-i18n="footer.services" class="font-semibold text-slate-200 mb-4">Services</h3>
               <ul class="space-y-2">
-                <li><a href="/qa-framework" data-i18n="footer.services.qa" class="text-slate-500 hover:text-teal-brand transition-colors">QA Framework</a></li>
-                <li><a href="/security" data-i18n="footer.services.security" class="text-slate-500 hover:text-teal-brand transition-colors">Security Audit</a></li>
-                <li><a href="/saba-agent-os" class="text-slate-500 hover:text-teal-brand transition-colors">Saba-Agent-OS</a></li>
-                <li><a href="/orquestacion" data-i18n="footer.services.orchestration" class="text-slate-500 hover:text-teal-brand transition-colors">AI Orchestration</a></li>
-                <li><a href="/saba-llm-auto-train" data-i18n="footer.services.llm-autotrain" class="text-slate-500 hover:text-teal-brand transition-colors">LLM Auto-Train</a></li>
-                <li><a href="/pricing" data-i18n="footer.services.pricing" class="text-slate-500 hover:text-teal-brand transition-colors">Pricing</a></li>
+                <li><a href="/qa-framework" data-i18n="footer.services.qa" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">QA Framework</a></li>
+                <li><a href="/security" data-i18n="footer.services.security" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">Security Audit</a></li>
+                <li><a href="/saba-agent-os" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">Saba-Agent-OS</a></li>
+                <li><a href="/orquestacion" data-i18n="footer.services.orchestration" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">AI Orchestration</a></li>
+                <li><a href="/saba-llm-auto-train" data-i18n="footer.services.llm-autotrain" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">LLM Auto-Train</a></li>
+                <li><a href="/pricing" data-i18n="footer.services.pricing" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">Pricing</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 data-i18n="footer.company" class="font-semibold text-slate-200 mb-4">Company</h4>
+              <h3 data-i18n="footer.company" class="font-semibold text-slate-200 mb-4">Company</h3>
               <ul class="space-y-2">
-                <li><a href="/about" data-i18n="footer.company.about" class="text-slate-500 hover:text-teal-brand transition-colors">About Us</a></li>
-                <li><a href="/team" data-i18n="footer.company.team" class="text-slate-500 hover:text-teal-brand transition-colors">Team</a></li>
-                <li><a href="/blog" data-i18n="footer.company.blog" class="text-slate-500 hover:text-teal-brand transition-colors">Blog</a></li>
-                <li><a href="/contact" data-i18n="footer.company.contact" class="text-slate-500 hover:text-teal-brand transition-colors">Contact</a></li>
+                <li><a href="/about" data-i18n="footer.company.about" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">About Us</a></li>
+                <li><a href="/team" data-i18n="footer.company.team" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">Team</a></li>
+                <li><a href="/blog" data-i18n="footer.company.blog" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">Blog</a></li>
+                <li><a href="/contact" data-i18n="footer.company.contact" class="text-slate-400 hover:text-teal-brand transition-colors underline-offset-2 hover:underline">Contact</a></li>
               </ul>
             </div>
           </div>
 
           <!-- Bottom -->
           <div class="pt-8 mt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p data-i18n="footer.copyright" class="text-slate-600 text-sm">
+            <p data-i18n="footer.copyright" class="text-slate-400 text-sm">
               &copy; 2026 SabaTech. All rights reserved.
             </p>
             <div class="flex gap-6 text-sm">
-              <a href="/privacy" data-i18n="footer.privacy" class="text-slate-600 hover:text-slate-300 transition-colors">Privacy</a>
-              <a href="/terms" data-i18n="footer.terms" class="text-slate-600 hover:text-slate-300 transition-colors">Terms</a>
-              <a href="/cookies" data-i18n="footer.cookies" class="text-slate-600 hover:text-slate-300 transition-colors">Cookies</a>
+              <a href="/privacy" data-i18n="footer.privacy" class="text-slate-400 hover:text-slate-200 transition-colors underline-offset-2 hover:underline">Privacy</a>
+              <a href="/terms" data-i18n="footer.terms" class="text-slate-400 hover:text-slate-200 transition-colors underline-offset-2 hover:underline">Terms</a>
+              <a href="/cookies" data-i18n="footer.cookies" class="text-slate-400 hover:text-slate-200 transition-colors underline-offset-2 hover:underline">Cookies</a>
             </div>
           </div>
         </div>

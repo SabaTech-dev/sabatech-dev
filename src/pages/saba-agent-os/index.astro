@@ -139,7 +139,7 @@ import Badge from "../../components/Badge.astro";
       <p class="text-lg text-slate-400 mb-6 max-w-2xl mx-auto" data-i18n="sabaos.hero.subtitle">
         Open-source, self-hosted orchestration for 6 specialized AI agents — memory, security, CI/CD, and feedback loops.
       </p>
-      <p class="text-md text-slate-500 mb-12 max-w-2xl mx-auto" data-i18n="sabaos.hero.desc">
+      <p class="text-md text-slate-400 mb-12 max-w-2xl mx-auto" data-i18n="sabaos.hero.desc">
         Alfred leads 5 specialized agents in a 7-layer architecture. Code → Security → QA → Deploy — all autonomous, with human oversight at every critical decision.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -265,17 +265,17 @@ import Badge from "../../components/Badge.astro";
           <ul class="space-y-3 mb-8 flex-grow">
             {(JSON.parse(`["sabaos.pricing.free.features"]`).length > 0 ? [] : []).map((f, i) => (
               <li class="flex items-start gap-3 text-slate-400" key={i}>
-                <svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                 <span>{f}</span>
               </li>
             ))}
           </ul>
           <ul class="space-y-3 mb-8 flex-grow">
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>6 AI agents</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Workflow automation</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Task pipeline</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Basic memory</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CLI tools</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>6 AI agents</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Workflow automation</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Task pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Basic memory</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CLI tools</span></li>
           </ul>
           <Button variant="outline" href="https://github.com/SabaTech-dev/Saba-Agent-Os" class="w-full">Get Core (MIT)</Button>
         </div>
@@ -292,12 +292,12 @@ import Badge from "../../components/Badge.astro";
             <span class="text-slate-400">/one-time</span>
           </div>
           <ul class="space-y-3 mb-8 flex-grow">
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Core</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Security audit pipeline</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Advanced memory (Engram)</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CI/CD integration</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Command Center dashboard</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Priority support</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Core</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Security audit pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Advanced memory (Engram)</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CI/CD integration</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Command Center dashboard</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Priority support</span></li>
           </ul>
           <Button variant="primary" href="/contact" class="w-full">Get Premium Pack</Button>
         </div>
@@ -312,12 +312,12 @@ import Badge from "../../components/Badge.astro";
             <span class="text-4xl font-bold text-slate-50">Custom</span>
           </div>
           <ul class="space-y-3 mb-8 flex-grow">
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Premium</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Dedicated agent training</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Custom integrations</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>SLA guarantees</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>On-premise deployment</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>24/7 support</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Premium</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Dedicated agent training</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Custom integrations</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>SLA guarantees</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>On-premise deployment</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>24/7 support</span></li>
           </ul>
           <Button variant="outline" href="/contact" class="w-full">Contact Sales</Button>
         </div>
@@ -329,7 +329,7 @@ import Badge from "../../components/Badge.astro";
   <Section variant="dark" padding="lg">
     <div class="max-w-4xl mx-auto">
       <div class="rounded-2xl bg-slate-800/50 border border-slate-700 p-8 md:p-12">
-        <svg viewBox="0 0 600 400" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 600 400" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent topology diagram: Alfred CEO Agent at center connects to Coder, Security, QA, DevOps, and Research agents. Event-driven architecture with human oversight.">
           <line x1="300" y1="120" x2="120" y2="260" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
           <line x1="300" y1="120" x2="240" y2="300" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
           <line x1="300" y1="120" x2="360" y2="300" stroke="#06B6D4" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>

@@ -24,8 +24,10 @@ Agencia de tecnología especializada en desarrollo de software, seguridad inform
 
 ## 🎨 Branding
 
-- **Color principal (fondo):** `#0a0a0a` (negro)
-- **Color acento:** `#e63946` (rojo)
+- **Color principal (fondo):** `#0F172A` (midnight blue)
+- **Color acento:** `#06B6D4` (saba teal)
+- **Color secundario:** `#84CC16` (AI lime)
+- **Tipografía:** Inter (sans/display), JetBrains Mono (mono)
 - **Nombre profesional:** SabaTech
 - **Gaming/Personal:** Joker
 
@@ -65,4 +67,25 @@ Ver documentación en `CLOUDFLARE_PAGES_SETUP.md` para configuración inicial.
 ---
 
 **Mantenido por:** DevOps Agent
-**Última actualización:** 2026-05-07
+**Última actualización:** 2026-06-14
+
+## ♿ Accesibilidad (WCAG AA)
+
+El sitio cumple con WCAG 2.2 AA en todas las rutas:
+
+- Contraste mínimo 4.5:1 en todo texto sobre fondos oscuros
+- aria-label en todos los links/botones con solo iconos
+- aria-hidden en todos los SVGs decorativos (114+ elementos)
+- Orden de headings secuencial (h1→h2→h3, sin saltos)
+- Skip-to-content link para navegación por teclado
+- focus-visible en todos los elementos interactivos
+- role="img" + aria-label en SVGs informativos (charts, diagramas)
+
+## ⚡ Rendimiento
+
+- Font preload con patrón non-blocking (media=print → swap)
+- Cache-Control headers inmutables para assets con hash (1 año)
+- Preconnect a Google Fonts (fonts.googleapis.com, fonts.gstatic.com)
+- CSP con preload-src para recursos críticos
+
+Ver `AUDIT-REPORT.md` para el reporte completo de Unlighthouse.
