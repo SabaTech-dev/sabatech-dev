@@ -1,0 +1,562 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
+
+const projectJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Saba-LLM-Auto-Train",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Linux",
+  "description": "Automated LLM fine-tuning pipeline for domain-adapting Gemma-4 to SabaTech internal knowledge. QLoRA 4-bit fine-tuning with Alfred agent data.",
+  "url": "https://sabatech.dev/saba-llm-auto-train",
+  "author": {
+    "@type": "Organization",
+    "name": "SabaTech",
+    "url": "https://sabatech.dev"
+  }
+};
+---
+
+<Layout
+  title="Saba-LLM-Auto-Train — Fine-Tuning Pipeline | SabaTech"
+  description="Automated LLM fine-tuning pipeline for domain-adapting Gemma-4 to SabaTech internal knowledge. QLoRA 4-bit fine-tuning with Alfred agent data. Benchmark results and interactive report."
+  ogImage="/og-saba-llm.png"
+  jsonLd={projectJsonLd}
+>
+  <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+    en: {
+      "llmtrain.badge": "LLM Fine-Tuning Pipeline",
+      "llmtrain.hero.title1": "Saba-LLM-Auto-Train",
+      "llmtrain.hero.title2": "Domain-Adapted AI Agents",
+      "llmtrain.hero.desc": "Automated pipeline that fine-tunes Google Gemma-4 E2B with Alfred agent data using QLoRA. Our model now speaks SabaTech — understanding our tools, services, architecture, and workflows.",
+      "llmtrain.hero.cta": "View Benchmark Report",
+      "llmtrain.overview.title": "Project Overview",
+      "llmtrain.overview.desc": "Saba-LLM-Auto-Train is an end-to-end pipeline that extracts knowledge from Alfred's operational data (daily logs, memory files, tool outputs, training documents) and uses it to fine-tune a Gemma-4 LLM via QLoRA 4-bit quantization. The result: a domain-specialized model that understands the Saba Agent OS ecosystem intimately.",
+      "llmtrain.tech.title": "Technical Stack",
+      "llmtrain.tech.desc": "From data extraction to deployment — a complete MLOps pipeline",
+      "llmtrain.tech.data": "Data Pipeline",
+      "llmtrain.tech.data.desc": "Extracts instruction-formatted data from agent memory, daily notes, and wiki documents. Automatic train/val splitting.",
+      "llmtrain.tech.train": "QLoRA Training",
+      "llmtrain.tech.train.desc": "4-bit NF4 quantization, LoRA adapters on all attention + feed-forward projections. Cosine LR schedule with warmup.",
+      "llmtrain.tech.export": "Export & Deploy",
+      "llmtrain.tech.export.desc": "Merges LoRA weights, quantizes to GGUF Q4_K_M, and deploys as an Ollama model. Ready for inference.",
+      "llmtrain.tech.benchmark": "Benchmarking",
+      "llmtrain.tech.benchmark.desc": "10 domain-specific questions comparing baseline vs fine-tuned responses with detailed latency, throughput, and quality metrics.",
+      "llmtrain.results.title": "Benchmark Results",
+      "llmtrain.results.desc": "How the fine-tuned model compares to the baseline Gemma-4 E2B",
+      "llmtrain.results.success": "Success Rate",
+      "llmtrain.results.success.val": "100%",
+      "llmtrain.results.success.change": "+10% vs baseline (90%)",
+      "llmtrain.results.latency": "Avg Latency",
+      "llmtrain.results.latency.val": "50.4s",
+      "llmtrain.results.latency.change": "10× slower — but every response completes with domain knowledge",
+      "llmtrain.results.throughput": "Throughput",
+      "llmtrain.results.throughput.val": "5.1 tok/s",
+      "llmtrain.results.throughput.change": "Previously unmeasured — now stable and consistent",
+      "llmtrain.results.fails": "Failed Answers",
+      "llmtrain.results.fails.val": "0/10",
+      "llmtrain.results.fails.change": "Baseline: 1 timeout + 2 vague/non-domain responses",
+      "llmtrain.questions.title": "Model Response Quality",
+      "llmtrain.questions.desc": "Key improvements in response quality across all 10 benchmark questions",
+      "llmtrain.questions.q1": "JokerServer Config",
+      "llmtrain.questions.q1.before": "Timed out (30s)",
+      "llmtrain.questions.q1.after": "Step-by-step service creation guide with actual commands",
+      "llmtrain.questions.q2": "Agent Orchestration",
+      "llmtrain.questions.q2.before": "Generic description of orchestration",
+      "llmtrain.questions.q2.after": "Detailed breakdown with task decomposition, parallel execution",
+      "llmtrain.questions.q3": "Localhost Services",
+      "llmtrain.questions.q3.before": "\"I don't have access to your system\"",
+      "llmtrain.questions.q3.after": "Lists specific port-based endpoints with descriptions",
+      "llmtrain.questions.q4": "Security Pipeline",
+      "llmtrain.questions.q4.before": "Generic SDLC pipeline",
+      "llmtrain.questions.q4.after": "Multi-layer architecture with input validation, prompt injection detection",
+      "llmtrain.questions.q5": "Feedback Loop",
+      "llmtrain.questions.q5.before": "Basic definition",
+      "llmtrain.questions.q5.after": "Iterative process with evaluation, adaptation, self-correction",
+      "llmtrain.questions.q6": "Memory Management",
+      "llmtrain.questions.q6.before": "\"I don't have specific information\"",
+      "llmtrain.questions.q6.after": "Detailed heap/stack allocation with OpenClaw-specific patterns",
+      "llmtrain.questions.q7": "Hindsight API",
+      "llmtrain.questions.q7.before": "Generic API architecture",
+      "llmtrain.questions.q7.after": "Contextual memory engine with discrete events, narrative generation",
+      "llmtrain.questions.q8": "Coolify Deployment",
+      "llmtrain.questions.q8.before": "4-step generic process",
+      "llmtrain.questions.q8.after": "Full install-configure-deploy guide with environment variables",
+      "llmtrain.questions.q9": "Cron Jobs",
+      "llmtrain.questions.q9.before": "Basic Unix cron definition",
+      "llmtrain.questions.q9.after": "YAML-based cron configuration with multi-job example",
+      "llmtrain.questions.q10": "Engram",
+      "llmtrain.questions.q10.before": "\"Not a standard term\"",
+      "llmtrain.questions.q10.after": "Spaced repetition tool with active recall mechanics",
+      "llmtrain.config.title": "Training Configuration",
+      "llmtrain.config.base": "Base Model",
+      "llmtrain.config.base.val": "google/gemma-4-E2B-it",
+      "llmtrain.config.method": "Method",
+      "llmtrain.config.method.val": "QLoRA (4-bit NF4)",
+      "llmtrain.config.rank": "LoRA Rank",
+      "llmtrain.config.rank.val": "r=16 · α=16 · all linear projections",
+      "llmtrain.config.steps": "Training Steps",
+      "llmtrain.config.steps.val": "200 (4 epochs)",
+      "llmtrain.config.lr": "Learning Rate",
+      "llmtrain.config.lr.val": "2×10⁻⁴ · Cosine schedule · 10 warmup",
+      "llmtrain.config.time": "Training Time",
+      "llmtrain.config.time.val": "14.6 minutes",
+      "llmtrain.config.loss": "Final Loss",
+      "llmtrain.config.loss.val": "1.86 (from 14.21) · 86.9% reduction",
+      "llmtrain.config.export": "Export Format",
+      "llmtrain.config.export.val": "GGUF Q4_K_M · Ollama deployment",
+      "llmtrain.cta.title": "See the full interactive report",
+      "llmtrain.cta.desc": "Open the interactive HTML benchmark report with Chart.js visualizations, side-by-side response comparisons, training loss curves, and detailed configuration.",
+      "llmtrain.cta.btn": "Open Benchmark Report →",
+      "llmtrain.cta.note": "Report hosted locally — view on jokerserver:18789 or download",
+    },
+    es: {
+      "llmtrain.badge": "Pipeline de Fine-Tuning LLM",
+      "llmtrain.hero.title1": "Saba-LLM-Auto-Train",
+      "llmtrain.hero.title2": "Agentes IA Adaptados al Dominio",
+      "llmtrain.hero.desc": "Pipeline automatizado que fine-tunea Google Gemma-4 E2B con datos del agente Alfred usando QLoRA. Nuestro modelo ahora habla SabaTech — entendiendo nuestras herramientas, servicios, arquitectura y flujos de trabajo.",
+      "llmtrain.hero.cta": "Ver Informe de Benchmark",
+      "llmtrain.overview.title": "Resumen del Proyecto",
+      "llmtrain.overview.desc": "Saba-LLM-Auto-Train es un pipeline completo que extrae conocimiento de los datos operativos de Alfred (logs diarios, archivos de memoria, salidas de herramientas, documentos de entrenamiento) y lo utiliza para fine-tunear un LLM Gemma-4 mediante QLoRA con cuantización 4-bit. El resultado: un modelo especializado en el dominio que entiende el ecosistema Saba Agent OS en profundidad.",
+      "llmtrain.tech.title": "Stack Técnico",
+      "llmtrain.tech.desc": "Desde la extracción de datos hasta el despliegue — un pipeline MLOps completo",
+      "llmtrain.tech.data": "Pipeline de Datos",
+      "llmtrain.tech.data.desc": "Extrae datos en formato instruction de la memoria del agente, notas diarias y documentos wiki. División automática train/val.",
+      "llmtrain.tech.train": "Entrenamiento QLoRA",
+      "llmtrain.tech.train.desc": "Cuantización 4-bit NF4, adaptadores LoRA en todas las proyecciones de atención + feed-forward. Schedule LR coseno con warmup.",
+      "llmtrain.tech.export": "Exportación y Despliegue",
+      "llmtrain.tech.export.desc": "Fusiona los pesos LoRA, cuantiza a GGUF Q4_K_M y despliega como modelo Ollama. Listo para inferencia.",
+      "llmtrain.tech.benchmark": "Benchmarking",
+      "llmtrain.tech.benchmark.desc": "10 preguntas específicas del dominio comparando respuestas baseline vs fine-tuned con métricas detalladas de latencia, throughput y calidad.",
+      "llmtrain.results.title": "Resultados del Benchmark",
+      "llmtrain.results.desc": "Cómo se compara el modelo fine-tuned con el baseline Gemma-4 E2B",
+      "llmtrain.results.success": "Tasa de Éxito",
+      "llmtrain.results.success.val": "100%",
+      "llmtrain.results.success.change": "+10% vs baseline (90%)",
+      "llmtrain.results.latency": "Latencia Media",
+      "llmtrain.results.latency.val": "50.4s",
+      "llmtrain.results.latency.change": "10× más lenta — pero cada respuesta se completa con conocimiento del dominio",
+      "llmtrain.results.throughput": "Throughput",
+      "llmtrain.results.throughput.val": "5.1 tok/s",
+      "llmtrain.results.throughput.change": "Previamente no medido — ahora estable y consistente",
+      "llmtrain.results.fails": "Respuestas Fallidas",
+      "llmtrain.results.fails.val": "0/10",
+      "llmtrain.results.fails.change": "Baseline: 1 timeout + 2 respuestas vagas/fuera de dominio",
+      "llmtrain.questions.title": "Calidad de Respuestas del Modelo",
+      "llmtrain.questions.desc": "Mejoras clave en la calidad de las respuestas en las 10 preguntas del benchmark",
+      "llmtrain.questions.q1": "Config JokerServer",
+      "llmtrain.questions.q1.before": "Timeout (30s)",
+      "llmtrain.questions.q1.after": "Guía paso a paso con comandos reales",
+      "llmtrain.questions.q2": "Orquestación de Agentes",
+      "llmtrain.questions.q2.before": "Descripción genérica de orquestación",
+      "llmtrain.questions.q2.after": "Desglose detallado con descomposición de tareas, ejecución paralela",
+      "llmtrain.questions.q3": "Servicios en Localhost",
+      "llmtrain.questions.q3.before": "\"No tengo acceso a tu sistema\"",
+      "llmtrain.questions.q3.after": "Lista endpoints específicos por puerto con descripciones",
+      "llmtrain.questions.q4": "Pipeline de Seguridad",
+      "llmtrain.questions.q4.before": "Pipeline SDLC genérico",
+      "llmtrain.questions.q4.after": "Arquitectura multicapa con validación de entrada, detección de prompt injection",
+      "llmtrain.questions.q5": "Feedback Loop",
+      "llmtrain.questions.q5.before": "Definición básica",
+      "llmtrain.questions.q5.after": "Proceso iterativo con evaluación, adaptación, autocorrección",
+      "llmtrain.questions.q6": "Gestión de Memoria",
+      "llmtrain.questions.q6.before": "\"No tengo información específica\"",
+      "llmtrain.questions.q6.after": "Asignación heap/stack detallada con patrones específicos de OpenClaw",
+      "llmtrain.questions.q7": "Hindsight API",
+      "llmtrain.questions.q7.before": "Arquitectura API genérica",
+      "llmtrain.questions.q7.after": "Motor de memoria contextual con eventos discretos, generación de narrativas",
+      "llmtrain.questions.q8": "Despliegue Coolify",
+      "llmtrain.questions.q8.before": "Proceso genérico de 4 pasos",
+      "llmtrain.questions.q8.after": "Guía completa install-configure-deploy con variables de entorno",
+      "llmtrain.questions.q9": "Cron Jobs",
+      "llmtrain.questions.q9.before": "Definición básica de Unix cron",
+      "llmtrain.questions.q9.after": "Configuración YAML con ejemplo multi-job",
+      "llmtrain.questions.q10": "Engram",
+      "llmtrain.questions.q10.before": "\"No es un término estándar\"",
+      "llmtrain.questions.q10.after": "Herramienta de repetición espaciada con mecánicas de recuperación activa",
+      "llmtrain.config.title": "Configuración de Entrenamiento",
+      "llmtrain.config.base": "Modelo Base",
+      "llmtrain.config.base.val": "google/gemma-4-E2B-it",
+      "llmtrain.config.method": "Método",
+      "llmtrain.config.method.val": "QLoRA (4-bit NF4)",
+      "llmtrain.config.rank": "Rango LoRA",
+      "llmtrain.config.rank.val": "r=16 · α=16 · todas las proyecciones lineales",
+      "llmtrain.config.steps": "Pasos de Entrenamiento",
+      "llmtrain.config.steps.val": "200 (4 épocas)",
+      "llmtrain.config.lr": "Tasa de Aprendizaje",
+      "llmtrain.config.lr.val": "2×10⁻⁴ · Schedule coseno · 10 warmup",
+      "llmtrain.config.time": "Tiempo de Entrenamiento",
+      "llmtrain.config.time.val": "14.6 minutos",
+      "llmtrain.config.loss": "Pérdida Final",
+      "llmtrain.config.loss.val": "1.86 (desde 14.21) · reducción del 86.9%",
+      "llmtrain.config.export": "Formato de Exportación",
+      "llmtrain.config.export.val": "GGUF Q4_K_M · Despliegue Ollama",
+      "llmtrain.cta.title": "Ver el informe interactivo completo",
+      "llmtrain.cta.desc": "Abre el informe HTML interactivo con visualizaciones Chart.js, comparaciones de respuestas lado a lado, curvas de pérdida de entrenamiento y configuración detallada.",
+      "llmtrain.cta.btn": "Abrir Informe →",
+      "llmtrain.cta.note": "Informe alojado localmente — ver en jokerserver:18789 o descargar",
+    }
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-dark-depth py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#94A3B8 1px, transparent 1px), linear-gradient(90deg, #94A3B8 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-ai-glow pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 max-w-7xl relative">
+      <div class="text-center">
+        <Badge variant="primary" class="mb-6" data-i18n="llmtrain.badge">LLM Fine-Tuning Pipeline</Badge>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50 leading-tight">
+          <span data-i18n="llmtrain.hero.title1">Saba-LLM-Auto-Train</span><br />
+          <span class="bg-clip-text text-transparent bg-saba-gradient" data-i18n="llmtrain.hero.title2">Domain-Adapted AI Agents</span>
+        </h1>
+        <p data-i18n="llmtrain.hero.desc" class="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Automated pipeline that fine-tunes Google Gemma-4 E2B with Alfred agent data using QLoRA. Our model now speaks SabaTech — understanding our tools, services, architecture, and workflows.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button variant="primary" size="lg" href="/saba-llm-auto-train/report" data-i18n="llmtrain.hero.cta">View Benchmark Report</Button>
+          <Button variant="outline" size="lg" href="https://github.com/SabaTech-dev/saba-llm-auto-train" target="_blank">GitHub →</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <Section variant="light" padding="lg">
+    <div class="max-w-4xl mx-auto">
+      <h2 data-i18n="llmtrain.overview.title" class="text-3xl md:text-4xl font-bold mb-6 text-slate-50 text-center">Project Overview</h2>
+      <p data-i18n="llmtrain.overview.desc" class="text-slate-400 text-lg leading-relaxed text-center">
+        Saba-LLM-Auto-Train is an end-to-end pipeline that extracts knowledge from Alfred's operational data (daily logs, memory files, tool outputs, training documents) and uses it to fine-tune a Gemma-4 LLM via QLoRA 4-bit quantization. The result: a domain-specialized model that understands the Saba Agent OS ecosystem intimately.
+      </p>
+    </div>
+
+    <!-- Pipeline Steps Visual -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-12">
+      <div class="text-center p-6">
+        <div class="w-14 h-14 rounded-xl bg-teal-light flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+        </div>
+        <span class="text-xs font-mono text-teal-brand">1. Extract</span>
+        <p class="text-sm text-slate-500 mt-1">Alfred memory → JSONL</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-14 h-14 rounded-xl bg-teal-light flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <span class="text-xs font-mono text-teal-brand">2. Train</span>
+        <p class="text-sm text-slate-500 mt-1">QLoRA 4-bit NF4</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-14 h-14 rounded-xl bg-teal-light flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+          </svg>
+        </div>
+        <span class="text-xs font-mono text-teal-brand">3. Export</span>
+        <p class="text-sm text-slate-500 mt-1">GGUF Q4_K_M</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-14 h-14 rounded-xl bg-teal-light flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <span class="text-xs font-mono text-teal-brand">4. Deploy</span>
+        <p class="text-sm text-slate-500 mt-1">Ollama + Inference</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Technical Stack -->
+  <Section variant="dark" padding="lg">
+    <div class="text-center mb-16">
+      <h2 data-i18n="llmtrain.tech.title" class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Technical Stack</h2>
+      <p data-i18n="llmtrain.tech.desc" class="text-slate-400 text-lg max-w-2xl mx-auto">
+        From data extraction to deployment — a complete MLOps pipeline
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Card variant="elevated" hover>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+            </svg>
+          </div>
+          <h3 data-i18n="llmtrain.tech.data" class="text-lg font-bold mb-2 text-slate-50">Data Pipeline</h3>
+          <p data-i18n="llmtrain.tech.data.desc" class="text-sm text-slate-400 leading-relaxed">
+            Extracts instruction-formatted data from agent memory, daily notes, and wiki documents. Automatic train/val splitting.
+          </p>
+        </div>
+      </Card>
+
+      <Card variant="elevated" hover>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="llmtrain.tech.train" class="text-lg font-bold mb-2 text-slate-50">QLoRA Training</h3>
+          <p data-i18n="llmtrain.tech.train.desc" class="text-sm text-slate-400 leading-relaxed">
+            4-bit NF4 quantization, LoRA adapters on all attention + feed-forward projections. Cosine LR schedule with warmup.
+          </p>
+        </div>
+      </Card>
+
+      <Card variant="elevated" hover>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+            </svg>
+          </div>
+          <h3 data-i18n="llmtrain.tech.export" class="text-lg font-bold mb-2 text-slate-50">Export & Deploy</h3>
+          <p data-i18n="llmtrain.tech.export.desc" class="text-sm text-slate-400 leading-relaxed">
+            Merges LoRA weights, quantizes to GGUF Q4_K_M, and deploys as an Ollama model. Ready for inference.
+          </p>
+        </div>
+      </Card>
+
+      <Card variant="elevated" hover>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="llmtrain.tech.benchmark" class="text-lg font-bold mb-2 text-slate-50">Benchmarking</h3>
+          <p data-i18n="llmtrain.tech.benchmark.desc" class="text-sm text-slate-400 leading-relaxed">
+            10 domain-specific questions comparing baseline vs fine-tuned responses with detailed latency, throughput, and quality metrics.
+          </p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Benchmark Results Stats -->
+  <Section variant="light" padding="lg">
+    <div class="text-center mb-12">
+      <h2 data-i18n="llmtrain.results.title" class="text-3xl md:text-5xl font-bold mb-4 text-slate-50">Benchmark Results</h2>
+      <p data-i18n="llmtrain.results.desc" class="text-slate-400 text-lg max-w-2xl mx-auto">
+        How the fine-tuned model compares to the baseline Gemma-4 E2B
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+      <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-center hover:border-teal-brand/30 transition-colors">
+        <p class="text-4xl font-extrabold text-lime-ai mb-1" data-i18n="llmtrain.results.success.val">100%</p>
+        <p class="text-sm text-slate-400" data-i18n="llmtrain.results.success">Success Rate</p>
+        <p class="text-xs text-code-green mt-1" data-i18n="llmtrain.results.success.change">+10% vs baseline (90%)</p>
+      </div>
+      <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-center hover:border-teal-brand/30 transition-colors">
+        <p class="text-4xl font-extrabold text-alert-amber mb-1" data-i18n="llmtrain.results.latency.val">50.4s</p>
+        <p class="text-sm text-slate-400" data-i18n="llmtrain.results.latency">Avg Latency</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="llmtrain.results.latency.change">10× slower — but all complete with domain knowledge</p>
+      </div>
+      <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-center hover:border-teal-brand/30 transition-colors">
+        <p class="text-4xl font-extrabold text-teal-brand mb-1" data-i18n="llmtrain.results.throughput.val">5.1 tok/s</p>
+        <p class="text-sm text-slate-400" data-i18n="llmtrain.results.throughput">Throughput</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="llmtrain.results.throughput.change">Previously unmeasured — now stable and consistent</p>
+      </div>
+      <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-center hover:border-teal-brand/30 transition-colors">
+        <p class="text-4xl font-extrabold text-code-green mb-1" data-i18n="llmtrain.results.fails.val">0/10</p>
+        <p class="text-sm text-slate-400" data-i18n="llmtrain.results.fails">Failed Answers</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="llmtrain.results.fails.change">Baseline: 1 timeout + 2 vague/non-domain responses</p>
+      </div>
+    </div>
+
+    <!-- Quality Comparison Table -->
+    <h3 data-i18n="llmtrain.questions.title" class="text-2xl font-bold mb-2 text-slate-50 text-center">Model Response Quality</h3>
+    <p data-i18n="llmtrain.questions.desc" class="text-slate-400 text-center mb-8">Key improvements across all 10 benchmark questions</p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-slate-700">
+            <th class="text-left py-3 px-4 text-slate-400 font-medium w-1/6">Question</th>
+            <th class="text-left py-3 px-4 text-blue-400 font-medium w-5/12">Baseline (gemma4:e2b)</th>
+            <th class="text-left py-3 px-4 text-teal-brand font-medium w-5/12">Fine-tuned (saba-gemma4-2b)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q1">JokerServer Config</td>
+            <td class="py-3 px-4 text-slate-500"><span class="text-red-400">⏱️</span> <span data-i18n="llmtrain.questions.q1.before">Timed out (30s)</span></td>
+            <td class="py-3 px-4 text-slate-300"><span class="text-code-green">✓</span> <span data-i18n="llmtrain.questions.q1.after">Step-by-step service creation guide with actual commands</span></td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q2">Agent Orchestration</td>
+            <td class="py-3 px-4 text-slate-500" data-i18n="llmtrain.questions.q2.before">Generic description of orchestration</td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q2.after">Detailed breakdown with task decomposition, parallel execution</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q3">Localhost Services</td>
+            <td class="py-3 px-4 text-slate-500"><span class="text-red-400">✗</span> <span data-i18n="llmtrain.questions.q3.before">"I don't have access to your system"</span></td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q3.after">Lists specific port-based endpoints with descriptions</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q4">Security Pipeline</td>
+            <td class="py-3 px-4 text-slate-500" data-i18n="llmtrain.questions.q4.before">Generic SDLC pipeline</td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q4.after">Multi-layer architecture with input validation, prompt injection detection</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q5">Feedback Loop</td>
+            <td class="py-3 px-4 text-slate-500" data-i18n="llmtrain.questions.q5.before">Basic definition</td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q5.after">Iterative process with evaluation, adaptation, self-correction</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q6">Memory Management</td>
+            <td class="py-3 px-4 text-slate-500"><span class="text-red-400">✗</span> <span data-i18n="llmtrain.questions.q6.before">"I don't have specific information"</span></td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q6.after">Detailed heap/stack allocation with OpenClaw-specific patterns</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q7">Hindsight API</td>
+            <td class="py-3 px-4 text-slate-500" data-i18n="llmtrain.questions.q7.before">Generic API architecture</td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q7.after">Contextual memory engine with discrete events, narrative generation</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q8">Coolify Deployment</td>
+            <td class="py-3 px-4 text-slate-500" data-i18n="llmtrain.questions.q8.before">4-step generic process</td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q8.after">Full install-configure-deploy guide with environment variables</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q9">Cron Jobs</td>
+            <td class="py-3 px-4 text-slate-500" data-i18n="llmtrain.questions.q9.before">Basic Unix cron definition</td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q9.after">YAML-based cron configuration with multi-job example</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/30">
+            <td class="py-3 px-4 text-slate-300 font-medium" data-i18n="llmtrain.questions.q10">Engram</td>
+            <td class="py-3 px-4 text-slate-500"><span class="text-red-400">✗</span> <span data-i18n="llmtrain.questions.q10.before">"Not a standard term"</span></td>
+            <td class="py-3 px-4 text-slate-300" data-i18n="llmtrain.questions.q10.after">Spaced repetition tool with active recall mechanics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </Section>
+
+  <!-- Training Config -->
+  <Section variant="dark" padding="lg">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 data-i18n="llmtrain.config.title" class="text-3xl font-bold mb-8 text-slate-50">Training Configuration</h2>
+        <div class="space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.base">Base Model</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.base.val">google/gemma-4-E2B-it</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.method">Method</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.method.val">QLoRA (4-bit NF4)</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.rank">LoRA Rank</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.rank.val">r=16 · α=16 · all linear projections</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.steps">Training Steps</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.steps.val">200 (4 epochs)</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.lr">Learning Rate</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.lr.val">2×10⁻⁴ · Cosine · 10 warmup</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.time">Training Time</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.time.val">14.6 minutes</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-slate-700">
+            <span class="text-slate-400" data-i18n="llmtrain.config.loss">Final Loss</span>
+            <span class="text-lime-ai font-mono text-sm" data-i18n="llmtrain.config.loss.val">1.86 (from 14.21) · 86.9% reduction</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <span class="text-slate-400" data-i18n="llmtrain.config.export">Export Format</span>
+            <span class="text-slate-200 font-mono text-sm" data-i18n="llmtrain.config.export.val">GGUF Q4_K_M · Ollama</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loss Curve Visual (inline SVG approximation) -->
+      <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+        <h3 class="text-lg font-semibold text-slate-300 mb-4">📉 Training Loss (step 0→200)</h3>
+        <svg viewBox="0 0 400 180" class="w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Training loss chart: loss decreased from 14.21 at step 10 to 1.86 at step 200, an 86.9% reduction. Best evaluation at step 150 with loss 3.35.">
+          <!-- Grid lines -->
+          <line x1="0" y1="0" x2="400" y2="0" stroke="#334155" stroke-width="0.5"/>
+          <line x1="0" y1="45" x2="400" y2="45" stroke="#334155" stroke-width="0.5"/>
+          <line x1="0" y1="90" x2="400" y2="90" stroke="#334155" stroke-width="0.5"/>
+          <line x1="0" y1="135" x2="400" y2="135" stroke="#334155" stroke-width="0.5"/>
+          <line x1="0" y1="180" x2="400" y2="180" stroke="#334155" stroke-width="0.5"/>
+          <line x1="100" y1="0" x2="100" y2="180" stroke="#1e293b" stroke-width="0.5"/>
+          <line x1="200" y1="0" x2="200" y2="180" stroke="#1e293b" stroke-width="0.5"/>
+          <line x1="300" y1="0" x2="300" y2="180" stroke="#1e293b" stroke-width="0.5"/>
+
+          <!-- Loss curve -->
+          <polyline fill="none" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+            points="20,10 40,72 60,108 80,128 100,134 120,140 140,144 160,148 200,154 240,156 260,160 280,162 300,158 320,160 340,164 360,162 380,164 400,166"
+          />
+
+          <!-- Gradient fill under the curve -->
+          <defs>
+            <linearGradient id="lossGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.02"/>
+            </linearGradient>
+          </defs>
+          <polygon fill="url(#lossGrad)"
+            points="20,10 40,72 60,108 80,128 100,134 120,140 140,144 160,148 200,154 240,156 260,160 280,162 300,158 320,160 340,164 360,162 380,164 400,166 400,180 20,180"
+          />
+
+          <!-- Starting point dot -->
+          <circle cx="20" cy="10" r="4" fill="#EF4444"/>
+          <text x="25" y="8" fill="#EF4444" font-size="9" font-family="monospace">14.21</text>
+
+          <!-- End point dot -->
+          <circle cx="400" cy="166" r="4" fill="#22C55E"/>
+          <text x="370" y="162" fill="#22C55E" font-size="9" font-family="monospace">1.86</text>
+
+          <!-- Mid points -->
+          <circle cx="100" cy="134" r="3" fill="#F59E0B"/>
+          <circle cx="200" cy="154" r="3" fill="#F59E0B"/>
+          <circle cx="300" cy="158" r="3" fill="#F59E0B"/>
+
+          <!-- Best eval dot -->
+          <circle cx="300" cy="158" r="5" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+          <!-- Axis labels -->
+          <text x="190" y="176" fill="#64748b" font-size="8" font-family="monospace">Steps →</text>
+          <text x="2" y="95" fill="#64748b" font-size="8" font-family="monospace" transform="rotate(-90,2,95)">Loss →</text>
+        </svg>
+        <div class="flex justify-between text-xs text-slate-500 mt-2">
+          <span>step 10</span>
+          <span>step 100</span>
+          <span>step 200</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-3">Loss reduced <strong class="text-code-green">86.9%</strong> · Best eval at step 150 (<span class="text-purple-400">3.35</span>)</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 data-i18n="llmtrain.cta.title" class="text-3xl md:text-5xl font-bold mb-6 text-slate-50">See the full interactive report</h2>
+      <p data-i18n="llmtrain.cta.desc" class="text-slate-300 text-lg mb-8 leading-relaxed">
+        Open the interactive HTML benchmark report with Chart.js visualizations, side-by-side response comparisons, training loss curves, and detailed configuration.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button variant="primary" size="lg" href="/saba-llm-auto-train/report" data-i18n="llmtrain.cta.btn">Open Benchmark Report →</Button>
+        <span class="text-sm text-slate-500" data-i18n="llmtrain.cta.note">Report hosted locally — view on jokerserver or download</span>
+      </div>
+    </div>
+  </Section>
+</Layout>
