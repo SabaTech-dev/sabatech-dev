@@ -28,7 +28,15 @@ export const onRequestOptions: PagesFunction<Env> = async () => {
 
 export const onRequestPost: PagesFunction<Env> = async ({ request }) => {
 	try {
-		const data = await request.json() as { name?: string; email?: string; message?: string };
+		let data: { name?: string; email?: string; message?: string };
+		try {
+			data = await request.json();
+		} catch {
+			return new Response(
+				JSON.stringify({ error: 'Body JSON inválido' }),
+				{ status: 400, headers: { 'Content-Type': 'application/json', ...CORS_HEADERS } }
+			);
+		}
 
 		// Validación de campos requeridos
 		if (!data.name || !data.email || !data.message) {
