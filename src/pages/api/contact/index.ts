@@ -1,5 +1,8 @@
 import type { APIRoute } from 'astro';
 
+// NOTE: This file is for local dev only. Production uses the Cloudflare Pages
+// Function at functions/api/contact.ts (static build doesn't execute API routes).
+
 interface ContactFormData {
 	name: string;
 	email: string;
