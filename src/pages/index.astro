@@ -49,13 +49,13 @@ const organizationJsonLd = {
 			"home.services.security.f1": "OWASP Agentic Apps 2026",
 			"home.services.security.f2": "EU AI Act & NIST AI RMF",
 			"home.services.security.f3": "GDPR-first, EU data sovereignty",
-			"home.services.security.cta": "Learn More",
-			"home.services.orchestration.title": "AI Orchestration",
-			"home.services.orchestration.desc": "Your AI workforce for quality & security. Alfred and his team of 5 specialized agents collaborate 24/7 — with human oversight at every critical decision.",
-			"home.services.orchestration.f1": "Multi-agent coordination",
-			"home.services.orchestration.f2": "Workflow automation",
-			"home.services.orchestration.f3": "Event-driven architecture",
-			"home.services.orchestration.cta": "Learn More",
+		"home.services.security.cta": "Learn More",
+		"home.services.asistente.title": "Conversational Voice Assistant",
+		"home.services.asistente.desc": "100% offline voice assistant running on your GPU. ASR → LLM → TTS with MTP speculative decoding, sentence-by-sentence streaming and barge-in — no cloud, no leaks.",
+		"home.services.asistente.f1": "ASR → LLM → TTS pipeline, fully offline",
+		"home.services.asistente.f2": "<2s latency with MTP speculative decoding",
+		"home.services.asistente.f3": "5 TTS engines + real-time barge-in",
+		"home.services.asistente.cta": "Learn More",
 			"home.why.badge": "Why SabaTech",
 			"home.why.title": "The team no one else has.",
 			"home.why.subtitle": "A hybrid human-AI team. Joker leads strategy. Alfred coordinates 5 specialized AI agents that code, test, audit, deploy, and research 24/7. No competitor offers this.",
@@ -109,12 +109,12 @@ const organizationJsonLd = {
 			"home.services.security.f2": "EU AI Act & NIST AI RMF",
 			"home.services.security.f3": "GDPR-first, soberanía de datos en la UE",
 			"home.services.security.cta": "Más Información",
-			"home.services.orchestration.title": "Orquestación IA",
-			"home.services.orchestration.desc": "Tu fuerza laboral de IA para calidad y seguridad. Alfred y su equipo de 5 agentes especializados colaboran 24/7 — con supervisión humana en cada decisión crítica.",
-			"home.services.orchestration.f1": "Coordinación multiagente",
-			"home.services.orchestration.f2": "Automatización de flujos",
-			"home.services.orchestration.f3": "Arquitectura event-driven",
-			"home.services.orchestration.cta": "Más Información",
+			"home.services.asistente.title": "Asistente Conversacional de Voz",
+			"home.services.asistente.desc": "Asistente de voz 100% offline en tu propia GPU. ASR → LLM → TTS con MTP speculative decoding, streaming frase a frase y barge-in — sin nube, sin fugas.",
+			"home.services.asistente.f1": "Pipeline ASR → LLM → TTS, totalmente offline",
+			"home.services.asistente.f2": "Latencia <2s con MTP speculative decoding",
+			"home.services.asistente.f3": "5 motores TTS + barge-in en tiempo real",
+			"home.services.asistente.cta": "Más Información",
 			"home.why.badge": "Por Qué SabaTech",
 			"home.why.title": "El equipo que nadie más tiene.",
 			"home.why.subtitle": "Un equipo híbrido humano-IA. Joker lidera la estrategia. Alfred coordina 5 agentes de IA especializados que programan, testean, auditan, despliegan e investigan 24/7. Ningún competidor ofrece esto.",
@@ -243,34 +243,34 @@ const organizationJsonLd = {
 				</div>
 			</Card>
 
-			<Card variant="elevated" hover>
-				<div class="p-8">
-					<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
-						<svg aria-hidden="true" class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-						</svg>
-					</div>
-					<h3 data-i18n="home.services.orchestration.title" class="text-2xl font-bold mb-3 text-slate-50">AI Orchestration</h3>
-					<p data-i18n="home.services.orchestration.desc" class="text-slate-400 mb-4 leading-relaxed">
-						Your AI workforce for quality & security. Alfred and his team of 5 specialized agents collaborate 24/7 — with human oversight at every critical decision.
-					</p>
-					<ul class="space-y-2 text-sm text-slate-400 mb-6">
-						<li class="flex items-center gap-2">
-							<svg aria-hidden="true" class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							<span data-i18n="home.services.orchestration.f1">Multi-agent coordination</span>
-						</li>
-						<li class="flex items-center gap-2">
-							<svg aria-hidden="true" class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							<span data-i18n="home.services.orchestration.f2">Workflow automation</span>
-						</li>
-						<li class="flex items-center gap-2">
-							<svg aria-hidden="true" class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-							<span data-i18n="home.services.orchestration.f3">Event-driven architecture</span>
-						</li>
-					</ul>
-					<Button variant="outline" href="/orquestacion" data-i18n="home.services.orchestration.cta" class="w-full">Learn More</Button>
+		<Card variant="elevated" hover>
+			<div class="p-8">
+				<div class="w-14 h-14 rounded-lg bg-teal-light flex items-center justify-center mb-6">
+					<svg aria-hidden="true" class="w-8 h-8 text-teal-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-14 0m7 7v3m-4 0h8m-4-7a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+					</svg>
 				</div>
-			</Card>
+				<h3 data-i18n="home.services.asistente.title" class="text-2xl font-bold mb-3 text-slate-50">Conversational Voice Assistant</h3>
+				<p data-i18n="home.services.asistente.desc" class="text-slate-400 mb-4 leading-relaxed">
+					100% offline voice assistant running on your GPU. ASR → LLM → TTS with MTP speculative decoding, sentence-by-sentence streaming and barge-in — no cloud, no leaks.
+				</p>
+				<ul class="space-y-2 text-sm text-slate-400 mb-6">
+					<li class="flex items-center gap-2">
+						<svg aria-hidden="true" class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+						<span data-i18n="home.services.asistente.f1">ASR → LLM → TTS pipeline, fully offline</span>
+					</li>
+					<li class="flex items-center gap-2">
+						<svg aria-hidden="true" class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+						<span data-i18n="home.services.asistente.f2">&lt;2s latency with MTP speculative decoding</span>
+					</li>
+					<li class="flex items-center gap-2">
+						<svg aria-hidden="true" class="w-4 h-4 text-lime-ai" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+						<span data-i18n="home.services.asistente.f3">5 TTS engines + real-time barge-in</span>
+					</li>
+				</ul>
+				<Button variant="outline" href="/asistente-conversacional" data-i18n="home.services.asistente.cta" class="w-full">Learn More</Button>
+			</div>
+		</Card>
 		</div>
 	</Section>
 

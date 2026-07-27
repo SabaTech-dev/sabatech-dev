@@ -1,0 +1,386 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import Badge from "../../components/Badge.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Asistente Conversacional de Voz",
+  applicationCategory: "CommunicationsApplication",
+  operatingSystem: "Linux, Windows",
+  description: "Conversational voice assistant running 100% offline. Real-time pipeline ASR (Qwen3-ASR) → LLM (llama.cpp + Gemma 4 12B QAT + MTP) → TTS (Supertonic 3 / Kokoro / Edge / Piper / Qwen3) with WebSocket streaming and barge-in.",
+  url: "https://sabatech.dev/asistente-conversacional",
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Core",
+      price: "0",
+      priceCurrency: "EUR",
+      description: "PolyForm Noncommercial — free for research, education, hobby and public sector.",
+    },
+    {
+      "@type": "Offer",
+      name: "Enterprise",
+      priceCurrency: "EUR",
+      description: "Multi-tenant outbound deployment with concurrent calls, SIP trunking and on-premise installation.",
+    },
+  ],
+  author: { "@type": "Organization", name: "SabaTech", url: "https://sabatech.dev" },
+};
+---
+
+<Layout
+  title="Asistente Conversacional de Voz — IA 100% Offline | SabaTech"
+  description="Asistente conversacional de voz 100% offline. Pipeline en tiempo real ASR (Qwen3-ASR) → LLM (llama.cpp + Gemma 4 QAT + MTP) → TTS (Supertonic 3 / Kokoro / Edge / Piper / Qwen3) con streaming WebSocket y barge-in. Latencia <2s, ~9 GB VRAM por sesión."
+  canonicalUrl="https://sabatech.dev/asistente-conversacional"
+  jsonLd={jsonLd}
+>
+  <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+    en: {
+      "asistente.badge": "Voice POC — v2.3.1",
+      "asistente.hero.title1": "Conversational Voice Assistant",
+      "asistente.hero.title2": "100% Offline AI Voice Pipeline",
+      "asistente.hero.subtitle": "A complete real-time voice assistant running entirely on your own GPU — ASR → LLM → TTS with sentence-by-sentence streaming and instant barge-in.",
+      "asistente.hero.desc": "Qwen3-ASR transcribes, llama.cpp runs Gemma 4 12B QAT with MTP speculative decoding (148 tok/s), Supertonic 3 synthesises speech, and a WebSocket streams audio back — all without a single packet leaving your machine.",
+      "asistente.hero.cta1": "View Source on GitHub",
+      "asistente.hero.cta2": "See the Pipeline",
+      "asistente.pipeline.badge": "End-to-End Pipeline",
+      "asistente.pipeline.title": "From Microphone to Voice, On One GPU",
+      "asistente.pipeline.subtitle": "Five stages, zero cloud. Each block runs locally on an NVIDIA RTX 4080 (16 GB VRAM) and chains into the next over a WebSocket.",
+      "asistente.pipe.asr.title": "ASR — Speech to Text",
+      "asistente.pipe.asr.desc": "Qwen3-ASR 0.6B (CUDA, bfloat16, SDPA). ~880 ms to transcribe a full utterance directly on the GPU.",
+      "asistente.pipe.llm.title": "LLM — Reasoning",
+      "asistente.pipe.llm.desc": "llama.cpp + Gemma 4 12B QAT (Unsloth Dynamic 2.0) with MTP speculative decoding. 148 tok/s average, ~65 ms time-to-first-token.",
+      "asistente.pipe.tts.title": "TTS — Text to Speech",
+      "asistente.pipe.tts.desc": "Supertonic 3 ONNX in production, with Kokoro-TTS 82M, edge-tts, Piper and Qwen3-TTS as swappable fallback engines.",
+      "asistente.pipe.streaming.title": "Streaming — Sentence by Sentence",
+      "asistente.pipe.streaming.desc": "FastAPI + WebSocket binary audio. The first phrase plays while the LLM is still generating the next one — perceived latency drops from 11s to ~1.5s.",
+      "asistente.pipe.bargein.title": "Barge-in — Real-time Interruption",
+      "asistente.pipe.bargein.desc": "Silero VAD (ONNX) monitors the microphone while the assistant speaks. The moment you talk, audio is cancelled and a new turn begins.",
+      "asistente.metrics.latency": "E2E Latency (MTP)",
+      "asistente.metrics.vram": "VRAM / Session",
+      "asistente.metrics.tts": "TTS Engines",
+      "asistente.metrics.offline": "Offline",
+      "asistente.features.title": "What Makes It Different",
+      "asistente.features.subtitle": "Not a wrapper around a cloud API — a full voice stack that runs on a single GPU",
+      "asistente.features.privacy.title": "Total Privacy",
+      "asistente.features.privacy.desc": "100% offline. Audio, transcripts and models never leave your hardware. No vendor, no leak surface, full European data sovereignty.",
+      "asistente.features.pipeline.title": "Complete Pipeline",
+      "asistente.features.pipeline.desc": "ASR → LLM → TTS → streaming → barge-in, end-to-end in one codebase. No gluing five SaaS together — every stage is yours.",
+      "asistente.features.multitts.title": "Multi-TTS",
+      "asistente.features.multitts.desc": "Five interchangeable engines: Supertonic 3 (production), Kokoro 82M (lowest latency, RTF 0.02), edge-tts (online), Piper and Qwen3-TTS (offline, high quality).",
+      "asistente.features.bargein.title": "Real-time Barge-in",
+      "asistente.features.bargein.desc": "Neural Silero VAD detects the user speaking over the assistant and interrupts playback instantly — natural turn-taking, not walkie-talkie.",
+      "asistente.features.crm.title": "Integrated CRM & Signing",
+      "asistente.features.crm.desc": "Glassmorphism frontend with live chat transcript, customer CRM panel and AES digital signature via Signaturit (SMS OTP).",
+      "asistente.features.mtp.title": "MTP Speculation",
+      "asistente.features.mtp.desc": "Gemma 4 QAT + a 242 MB MTP drafter verify tokens speculatively — 148 tok/s vs 84 tok/s without MTP, a 75% speedup.",
+      "asistente.pricing.title": "Pricing",
+      "asistente.pricing.subtitle": "Open core for non-commercial use, commercial licence for production deployments",
+      "asistente.pricing.core.title": "Core",
+      "asistente.pricing.core.lic": "PolyForm Noncommercial",
+      "asistente.pricing.core.desc": "Research, education & hobby",
+      "asistente.pricing.core.price": "Free",
+      "asistente.pricing.core.features": ["Full ASR → LLM → TTS pipeline", "5 swappable TTS engines", "WebSocket streaming + barge-in", "Frontend with CRM & digital signature", "Complete source code"],
+      "asistente.pricing.enterprise.title": "Enterprise",
+      "asistente.pricing.enterprise.desc": "Multi-tenant outbound",
+      "asistente.pricing.enterprise.price": "Custom",
+      "asistente.pricing.enterprise.features": ["Everything in Core", "Native multi-tenant (PostgreSQL + Redis)", "Concurrent outbound calls (10+)", "SIP trunking / real telephony", "Dual legal compliance", "On-premise deployment"],
+      "asistente.pricing.custom.title": "Custom",
+      "asistente.pricing.custom.desc": "Tailored deployment",
+      "asistente.pricing.custom.price": "Custom",
+      "asistente.pricing.custom.features": ["Everything in Enterprise", "Custom CRM / dialer integrations", "Fine-tuned models (LoRA / QLoRA)", "Additional languages & accents", "24/7 SLA support"],
+      "asistente.pricing.cta.core": "Get Core",
+      "asistente.pricing.cta.enterprise": "Talk to Sales",
+      "asistente.pricing.cta.custom": "Contact Sales",
+      "asistente.cta.title": "Want a voice assistant that never phones home?",
+      "asistente.cta.desc": "Self-hosted. Offline. European. Clone the PolyForm Noncommercial core, or talk to us about a multi-tenant production deployment.",
+      "asistente.cta.cta1": "View on GitHub",
+      "asistente.cta.cta2": "Contact Us",
+      "asistente.cta.cta3": "Read the Roadmap",
+    },
+    es: {
+      "asistente.badge": "POC de Voz — v2.3.1",
+      "asistente.hero.title1": "Asistente Conversacional de Voz",
+      "asistente.hero.title2": "Pipeline de Voz con IA 100% Offline",
+      "asistente.hero.subtitle": "Un asistente de voz en tiempo real ejecutándose por completo en tu propia GPU — ASR → LLM → TTS con streaming frase a frase y barge-in instantáneo.",
+      "asistente.hero.desc": "Qwen3-ASR transcribe, llama.cpp ejecuta Gemma 4 12B QAT con MTP speculative decoding (148 tok/s), Supertonic 3 sintetiza la voz y un WebSocket devueve el audio — todo sin que un solo paquete salga de tu máquina.",
+      "asistente.hero.cta1": "Ver Código en GitHub",
+      "asistente.hero.cta2": "Ver el Pipeline",
+      "asistente.pipeline.badge": "Pipeline End-to-End",
+      "asistente.pipeline.title": "Del Micrófono a la Voz, en una Sola GPU",
+      "asistente.pipeline.subtitle": "Cinco etapas, cero nube. Cada bloque se ejecuta localmente en una NVIDIA RTX 4080 (16 GB VRAM) y se encadena con el siguiente por un WebSocket.",
+      "asistente.pipe.asr.title": "ASR — Voz a Texto",
+      "asistente.pipe.asr.desc": "Qwen3-ASR 0.6B (CUDA, bfloat16, SDPA). ~880 ms para transcribir una intervención completa directamente en la GPU.",
+      "asistente.pipe.llm.title": "LLM — Razonamiento",
+      "asistente.pipe.llm.desc": "llama.cpp + Gemma 4 12B QAT (Unsloth Dynamic 2.0) con MTP speculative decoding. 148 tok/s de media, ~65 ms al primer token.",
+      "asistente.pipe.tts.title": "TTS — Texto a Voz",
+      "asistente.pipe.tts.desc": "Supertonic 3 ONNX en producción, con Kokoro-TTS 82M, edge-tts, Piper y Qwen3-TTS como motores fallback intercambiables.",
+      "asistente.pipe.streaming.title": "Streaming — Frase a Frase",
+      "asistente.pipe.streaming.desc": "FastAPI + WebSocket binario. La primera frase suena mientras el LLM aún genera la siguiente — la latencia percibida cae de 11s a ~1,5s.",
+      "asistente.pipe.bargein.title": "Barge-in — Interrupción en Tiempo Real",
+      "asistente.pipe.bargein.desc": "Silero VAD (ONNX) monitoriza el micrófono mientras habla la IA. En cuanto hablas, el audio se cancela y comienza un nuevo turno.",
+      "asistente.metrics.latency": "Latencia E2E (MTP)",
+      "asistente.metrics.vram": "VRAM / Sesión",
+      "asistente.metrics.tts": "Motores TTS",
+      "asistente.metrics.offline": "Offline",
+      "asistente.features.title": "Qué lo Hace Diferente",
+      "asistente.features.subtitle": "No es un wrapper sobre una API en la nube — es un stack de voz completo que corre en una sola GPU",
+      "asistente.features.privacy.title": "Privacidad Total",
+      "asistente.features.privacy.desc": "100% offline. Audio, transcripciones y modelos nunca salen de tu hardware. Sin proveedor, sin superficie de fuga, soberanía de datos europea total.",
+      "asistente.features.pipeline.title": "Pipeline Completo",
+      "asistente.features.pipeline.desc": "ASR → LLM → TTS → streaming → barge-in, end-to-end en una sola base de código. Sin pegar cinco SaaS — cada etapa es tuya.",
+      "asistente.features.multitts.title": "Multi-TTS",
+      "asistente.features.multitts.desc": "Cinco motores intercambiables: Supertonic 3 (producción), Kokoro 82M (menor latencia, RTF 0,02), edge-tts (online), Piper y Qwen3-TTS (offline, alta calidad).",
+      "asistente.features.bargein.title": "Barge-in en Tiempo Real",
+      "asistente.features.bargein.desc": "Silero VAD neuronal detecta al usuario hablando por encima de la IA e interrumpe la reproducción al instante — turnos naturales, no walkie-talkie.",
+      "asistente.features.crm.title": "CRM y Firma Integrados",
+      "asistente.features.crm.desc": "Frontend glassmorphism con transcripción del chat en vivo, panel CRM de cliente y firma digital AES vía Signaturit (OTP por SMS).",
+      "asistente.features.mtp.title": "Speculación MTP",
+      "asistente.features.mtp.desc": "Gemma 4 QAT + un drafter MTP de 242 MB verifican tokens especulativamente — 148 tok/s frente a 84 tok/s sin MTP, un 75% más rápido.",
+      "asistente.pricing.title": "Precios",
+      "asistente.pricing.subtitle": "Core abierto para uso no comercial, licencia comercial para despliegues en producción",
+      "asistente.pricing.core.title": "Core",
+      "asistente.pricing.core.lic": "PolyForm Noncommercial",
+      "asistente.pricing.core.desc": "Investigación, educación y hobby",
+      "asistente.pricing.core.price": "Gratis",
+      "asistente.pricing.core.features": ["Pipeline completo ASR → LLM → TTS", "5 motores TTS intercambiables", "Streaming WebSocket + barge-in", "Frontend con CRM y firma digital", "Código fuente completo"],
+      "asistente.pricing.enterprise.title": "Enterprise",
+      "asistente.pricing.enterprise.desc": "Outbound multi-tenant",
+      "asistente.pricing.enterprise.price": "Personalizado",
+      "asistente.pricing.enterprise.features": ["Todo en Core", "Multi-tenant nativo (PostgreSQL + Redis)", "Llamadas salientes concurrentes (10+)", "SIP trunking / telefonía real", "Cumplimiento legal dual", "Despliegue on-premise"],
+      "asistente.pricing.custom.title": "Custom",
+      "asistente.pricing.custom.desc": "Despliegue a medida",
+      "asistente.pricing.custom.price": "Personalizado",
+      "asistente.pricing.custom.features": ["Todo en Enterprise", "Integraciones CRM / marcador a medida", "Modelos fine-tuned (LoRA / QLoRA)", "Idiomas y acentos adicionales", "Soporte SLA 24/7"],
+      "asistente.pricing.cta.core": "Obtener Core",
+      "asistente.pricing.cta.enterprise": "Hablar con Ventas",
+      "asistente.pricing.cta.custom": "Contactar Ventas",
+      "asistente.cta.title": "¿Quieres un asistente de voz que nunca llame a casa?",
+      "asistente.cta.desc": "Auto-gestionado. Offline. Europeo. Clona el core PolyForm Noncommercial, o háblanos de un despliegue multi-tenant en producción.",
+      "asistente.cta.cta1": "Ver en GitHub",
+      "asistente.cta.cta2": "Contáctanos",
+      "asistente.cta.cta3": "Leer el Roadmap",
+    },
+  })} />
+
+  <!-- Hero -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center">
+      <Badge variant="primary" class="mb-6" data-i18n="asistente.badge">Voice POC — v2.3.1</Badge>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-slate-50" data-i18n="asistente.hero.title1">
+        Conversational Voice Assistant
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" data-i18n="asistente.hero.title2">
+        100% Offline AI Voice Pipeline
+      </p>
+      <p class="text-lg text-slate-400 mb-6 max-w-2xl mx-auto" data-i18n="asistente.hero.subtitle">
+        A complete real-time voice assistant running entirely on your own GPU — ASR → LLM → TTS with sentence-by-sentence streaming and instant barge-in.
+      </p>
+      <p class="text-md text-slate-400 mb-12 max-w-2xl mx-auto" data-i18n="asistente.hero.desc">
+        Qwen3-ASR transcribes, llama.cpp runs Gemma 4 12B QAT with MTP speculative decoding (148 tok/s), Supertonic 3 synthesises speech, and a WebSocket streams audio back — all without a single packet leaving your machine.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="https://github.com/SabaTech-dev/AsistenteConversacional" data-i18n="asistente.hero.cta1">View Source on GitHub</Button>
+        <Button variant="outline" size="lg" href="#pipeline" data-i18n="asistente.hero.cta2">See the Pipeline</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Pipeline (5 stages) -->
+  <Section variant="dark" padding="lg" id="pipeline">
+    <div class="text-center mb-16">
+      <Badge variant="primary" class="mb-6" data-i18n="asistente.pipeline.badge">End-to-End Pipeline</Badge>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="asistente.pipeline.title">From Microphone to Voice, On One GPU</h2>
+      <p class="text-slate-400 text-lg max-w-3xl mx-auto" data-i18n="asistente.pipeline.subtitle">
+        Five stages, zero cloud. Each block runs locally on an NVIDIA RTX 4080 (16 GB VRAM) and chains into the next over a WebSocket.
+      </p>
+    </div>
+
+    <!-- Pipeline Visual (top = input, bottom = control) -->
+    <div class="max-w-5xl mx-auto">
+      {[
+        { step: 1, title: "asistente.pipe.asr.title", desc: "asistente.pipe.asr.desc", icon: "🎤", color: "from-purple-500 to-pink-500", status: "Qwen3-ASR 0.6B" },
+        { step: 2, title: "asistente.pipe.llm.title", desc: "asistente.pipe.llm.desc", icon: "🧠", color: "from-yellow-500 to-orange-500", status: "Gemma 4 QAT + MTP" },
+        { step: 3, title: "asistente.pipe.tts.title", desc: "asistente.pipe.tts.desc", icon: "🔊", color: "from-green-500 to-teal-500", status: "Supertonic 3 ONNX" },
+        { step: 4, title: "asistente.pipe.streaming.title", desc: "asistente.pipe.streaming.desc", icon: "⚡", color: "from-blue-500 to-cyan-500", status: "WebSocket binary" },
+        { step: 5, title: "asistente.pipe.bargein.title", desc: "asistente.pipe.bargein.desc", icon: "✋", color: "from-red-500 to-pink-500", status: "Silero VAD" },
+      ].map((stage) => (
+        <div class={`flex items-center gap-6 p-5 mb-3 rounded-xl bg-gradient-to-r ${stage.color} bg-opacity-10 border border-slate-700/50 hover:border-slate-500 transition-all`}>
+          <div class="w-12 h-12 rounded-lg bg-slate-800/80 flex items-center justify-center text-2xl shrink-0">
+            {stage.icon}
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <span class="text-sm font-mono text-slate-400">{stage.step}</span>
+              <h3 class="text-lg font-bold text-slate-50" data-i18n={stage.title}>Stage {stage.step}</h3>
+              <Badge variant="success" class="text-xs">{stage.status}</Badge>
+            </div>
+            <p class="text-slate-400 text-sm" data-i18n={stage.desc}>{stage.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Metrics -->
+  <Section variant="light" padding="lg">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">&lt;2s</div>
+        <p class="text-slate-400 text-sm" data-i18n="asistente.metrics.latency">E2E Latency (MTP)</p>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">~9 GB</div>
+        <p class="text-slate-400 text-sm" data-i18n="asistente.metrics.vram">VRAM / Session</p>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">5</div>
+        <p class="text-slate-400 text-sm" data-i18n="asistente.metrics.tts">TTS Engines</p>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div class="text-4xl md:text-5xl font-extrabold text-teal-brand mb-2">100%</div>
+        <p class="text-slate-400 text-sm" data-i18n="asistente.metrics.offline">Offline</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Features -->
+  <Section variant="dark" padding="lg" id="features">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="asistente.features.title">What Makes It Different</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="asistente.features.subtitle">Not a wrapper around a cloud API — a full voice stack that runs on a single GPU</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="asistente.features.privacy.title">Total Privacy</h3>
+          <p class="text-slate-400 text-sm" data-i18n="asistente.features.privacy.desc">100% offline. Audio, transcripts and models never leave your hardware. No vendor, no leak surface, full European data sovereignty.</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🔁</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="asistente.features.pipeline.title">Complete Pipeline</h3>
+          <p class="text-slate-400 text-sm" data-i18n="asistente.features.pipeline.desc">ASR → LLM → TTS → streaming → barge-in, end-to-end in one codebase. No gluing five SaaS together — every stage is yours.</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">🎙️</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="asistente.features.multitts.title">Multi-TTS</h3>
+          <p class="text-slate-400 text-sm" data-i18n="asistente.features.multitts.desc">Five interchangeable engines: Supertonic 3 (production), Kokoro 82M (lowest latency, RTF 0.02), edge-tts (online), Piper and Qwen3-TTS (offline, high quality).</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">✋</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="asistente.features.bargein.title">Real-time Barge-in</h3>
+          <p class="text-slate-400 text-sm" data-i18n="asistente.features.bargein.desc">Neural Silero VAD detects the user speaking over the assistant and interrupts playback instantly — natural turn-taking, not walkie-talkie.</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">📋</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="asistente.features.crm.title">Integrated CRM & Signing</h3>
+          <p class="text-slate-400 text-sm" data-i18n="asistente.features.crm.desc">Glassmorphism frontend with live chat transcript, customer CRM panel and AES digital signature via Signaturit (SMS OTP).</p>
+        </div>
+      </Card>
+      <Card variant="elevated" hover>
+        <div class="p-8 text-center">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold text-slate-50 mb-3" data-i18n="asistente.features.mtp.title">MTP Speculation</h3>
+          <p class="text-slate-400 text-sm" data-i18n="asistente.features.mtp.desc">Gemma 4 QAT + a 242 MB MTP drafter verify tokens speculatively — 148 tok/s vs 84 tok/s without MTP, a 75% speedup.</p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Pricing -->
+  <Section variant="light" padding="lg" id="pricing">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-50" data-i18n="asistente.pricing.title">Pricing</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="asistente.pricing.subtitle">Open core for non-commercial use, commercial licence for production deployments</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Core (PolyForm Noncommercial) -->
+      <Card variant="elevated">
+        <div class="p-8 flex flex-col h-full">
+          <Badge variant="success" class="mb-2 inline-block w-fit" data-i18n="asistente.pricing.core.lic">PolyForm Noncommercial</Badge>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2" data-i18n="asistente.pricing.core.title">Core</h3>
+          <p class="text-slate-400 mb-4" data-i18n="asistente.pricing.core.desc">Research, education & hobby</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-slate-50" data-i18n="asistente.pricing.core.price">Free</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Full ASR → LLM → TTS pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>5 swappable TTS engines</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>WebSocket streaming + barge-in</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Frontend with CRM & digital signature</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Complete source code</span></li>
+          </ul>
+          <Button variant="outline" href="https://github.com/SabaTech-dev/AsistenteConversacional" class="w-full" data-i18n="asistente.pricing.cta.core">Get Core</Button>
+        </div>
+      </Card>
+
+      <!-- Enterprise (Featured) -->
+      <Card variant="elevated" class="border-2 border-teal-brand shadow-teal">
+        <div class="p-8 flex flex-col h-full">
+          <Badge variant="primary" class="mb-2 inline-block w-fit">Best Value</Badge>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2" data-i18n="asistente.pricing.enterprise.title">Enterprise</h3>
+          <p class="text-slate-400 mb-4" data-i18n="asistente.pricing.enterprise.desc">Multi-tenant outbound</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-slate-50" data-i18n="asistente.pricing.enterprise.price">Custom</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Core</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Native multi-tenant (PostgreSQL + Redis)</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Concurrent outbound calls (10+)</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>SIP trunking / real telephony</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Dual legal compliance</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>On-premise deployment</span></li>
+          </ul>
+          <Button variant="primary" href="/contact" class="w-full" data-i18n="asistente.pricing.cta.enterprise">Talk to Sales</Button>
+        </div>
+      </Card>
+
+      <!-- Custom -->
+      <Card variant="elevated">
+        <div class="p-8 flex flex-col h-full">
+          <h3 class="text-2xl font-bold text-slate-50 mb-2" data-i18n="asistente.pricing.custom.title">Custom</h3>
+          <p class="text-slate-400 mb-4" data-i18n="asistente.pricing.custom.desc">Tailored deployment</p>
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-4xl font-bold text-slate-50" data-i18n="asistente.pricing.custom.price">Custom</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Enterprise</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Custom CRM / dialer integrations</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Fine-tuned models (LoRA / QLoRA)</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Additional languages & accents</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>24/7 SLA support</span></li>
+          </ul>
+          <Button variant="outline" href="/contact" class="w-full" data-i18n="asistente.pricing.cta.custom">Contact Sales</Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section variant="gradient" padding="xl">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-50" data-i18n="asistente.cta.title">Want a voice assistant that never phones home?</h2>
+      <p class="text-slate-300 text-lg mb-8 leading-relaxed" data-i18n="asistente.cta.desc">
+        Self-hosted. Offline. European. Clone the PolyForm Noncommercial core, or talk to us about a multi-tenant production deployment.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="https://github.com/SabaTech-dev/AsistenteConversacional" data-i18n="asistente.cta.cta1">View on GitHub</Button>
+        <Button variant="outline" size="lg" href="/contact" data-i18n="asistente.cta.cta2">Contact Us</Button>
+        <Button variant="outline" size="lg" href="https://github.com/SabaTech-dev/AsistenteConversacional/blob/main/roadmap.md" data-i18n="asistente.cta.cta3">Read the Roadmap</Button>
+      </div>
+    </div>
+  </Section>
+</Layout>
