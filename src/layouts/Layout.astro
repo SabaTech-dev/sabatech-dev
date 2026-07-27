@@ -53,14 +53,9 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Fonts — preconnect + preload for FCP optimization -->
+    <!-- Fonts — preconnect + async load to avoid render-blocking. font-display:swap is in the query string. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -71,7 +66,8 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
     </noscript>
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; preload-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;" />
+    <!-- CSP: preload-src is not a valid directive and was removed. prefetch-src is also deprecated, so it is intentionally omitted. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';" />
 
     <title>{title}</title>
 
@@ -122,7 +118,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
                 id="lang-toggle"
                 type="button"
                 class="px-2.5 py-1.5 text-xs font-bold text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg transition-colors border border-slate-700"
-                aria-label="Switch language"
+                aria-label="Switch language: EN | ES"
               >
                 EN | ES
               </button>
@@ -138,7 +134,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
               id="lang-toggle-mobile"
               type="button"
               class="p-2 text-xs font-bold text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded-lg border border-slate-700"
-              aria-label="Switch language"
+              aria-label="Switch language: EN | ES"
             >
               EN | ES
             </button>
@@ -435,8 +431,15 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
         const btn = document.getElementById("lang-toggle");
         const btnMobile = document.getElementById("lang-toggle-mobile");
         const label = lang === "en" ? "EN | ES" : "ES | EN";
-        if (btn) btn.textContent = label;
-        if (btnMobile) btnMobile.textContent = label;
+        const ariaLabel = `Switch language: ${label}`;
+        if (btn) {
+          btn.textContent = label;
+          btn.setAttribute("aria-label", ariaLabel);
+        }
+        if (btnMobile) {
+          btnMobile.textContent = label;
+          btnMobile.setAttribute("aria-label", ariaLabel);
+        }
       }
 
       function toggleLang(): void {
@@ -462,12 +465,18 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
       const dismissBtn = document.getElementById('dismiss-banner');
 
       function updateHeaderOffset() {
-        if (!banner || banner.classList.contains('translate-y-[-100%]')) {
-          if (header) header.style.top = '0';
-        } else {
-          const bannerHeight = banner.offsetHeight;
-          if (header) header.style.top = bannerHeight + 'px';
-        }
+        // Defer the geometry read + style write to the next frame to avoid a
+        // forced synchronous layout during the critical initial render.
+        requestAnimationFrame(() => {
+          if (!banner) return;
+          if (banner.classList.contains('translate-y-[-100%]')) {
+            if (header) header.style.top = '0';
+          } else {
+            // Read geometry once, then write — batched to prevent layout thrash.
+            const bannerHeight = banner.offsetHeight;
+            if (header) header.style.top = bannerHeight + 'px';
+          }
+        });
       }
 
       if (banner && localStorage.getItem('portfolio-banner-dismissed')) {

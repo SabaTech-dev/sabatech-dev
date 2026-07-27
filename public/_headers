@@ -1,39 +1,46 @@
 # Cache-Control headers for SabaTech static assets
-# Deployed via Cloudflare Pages or nginx
+# Deployed via Cloudflare Pages (this file) or nginx.
+#
+# Notes:
+# - `s-maxage` enables CDN (Cloudflare) edge caching.
+# - `stale-while-revalidate` lets the CDN serve a stale asset while fetching a
+#   fresh copy, eliminating latency for visitors on a cache miss.
+# - Hashed assets under /_astro/* are content-addressed and safe to cache
+#   immutably for a year.
 
-# Hashed assets — immutable, 1 year cache
+# Hashed assets — immutable, 1 year cache (browser + CDN)
 /_astro/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, stale-while-revalidate=86400, immutable
 
-# Fonts — long cache
+# Self-hosted fonts — long cache
 /fonts/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, stale-while-revalidate=86400, immutable
 
-# Images — 30 day cache
+# Images — 30 day browser cache, 1 day CDN
 /*.png
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 /*.jpg
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 /*.jpeg
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 /*.webp
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 /*.svg
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 /*.gif
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 /*.ico
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=86400, stale-while-revalidate=86400
 
-# CSS/JS — 7 day cache (non-hashed fallback)
+# CSS/JS — 7 day browser cache (non-hashed fallback), 1 day CDN
 /*.css
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=604800, s-maxage=86400, stale-while-revalidate=86400
 /*.js
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=604800, s-maxage=86400, stale-while-revalidate=86400
 
-# HTML — short cache, must-revalidate
+# HTML — short browser cache, must-revalidate; CDN revalidates frequently
 /*.html
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=300, s-maxage=600, stale-while-revalidate=60, must-revalidate
 
 # Security headers for all routes
 /*
