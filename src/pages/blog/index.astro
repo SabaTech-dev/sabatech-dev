@@ -26,12 +26,28 @@ function getReadingTime(content: string) {
 ---
 
 <Layout title="Blog — SabaTech" description="Technical articles on AI security, QA automation, DevSecOps, and multi-agent orchestration.">
+  <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+    en: {
+      "blog.title": "Blog",
+      "blog.desc": "Technical insights on AI security, QA automation, DevSecOps, and multi-agent orchestration.",
+      "blog.empty": "No posts yet. Check back soon!",
+      "blog.subscribe": "Subscribe to receive updates on AI security and QA automation.",
+      "blog.getNotified": "Get Notified",
+    },
+    es: {
+      "blog.title": "Blog",
+      "blog.desc": "Artículos técnicos sobre seguridad IA, automatización QA, DevSecOps y orquestación multiagente.",
+      "blog.empty": "Aún no hay posts. ¡Vuelve pronto!",
+      "blog.subscribe": "Suscríbete para recibir novedades sobre seguridad IA y automatización QA.",
+      "blog.getNotified": "Recibir Avisos",
+    },
+  })} />
   <Section variant="dark" padding="lg">
     <Container>
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4">Blog</h1>
-          <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4" data-i18n="blog.title">Blog</h1>
+          <p class="text-slate-400 text-lg mb-8 leading-relaxed" data-i18n="blog.desc">
             Technical insights on AI security, QA automation, DevSecOps, and multi-agent orchestration.
           </p>
         </div>
@@ -47,7 +63,7 @@ function getReadingTime(content: string) {
                         {formatDate(post.data.pubDate)}
                       </time>
                       <span class="text-slate-400" aria-hidden="true">·</span>
-                      <span class="text-slate-400 text-sm">By {post.data.author}</span>
+                      <span class="text-slate-400 text-sm"><span data-i18n="common.by">By</span> {post.data.author}</span>
                     </div>
                     <h2 class="text-2xl font-bold text-slate-50 mb-3 group-hover:text-teal-brand transition-colors">
                       {post.data.title}
@@ -65,14 +81,14 @@ function getReadingTime(content: string) {
           </div>
         ) : (
           <div class="text-center bg-slate-800/50 rounded-xl p-8 border border-slate-700">
-            <p class="text-slate-400 mb-4">No posts yet. Check back soon!</p>
+            <p class="text-slate-400 mb-4" data-i18n="blog.empty">No posts yet. Check back soon!</p>
           </div>
         )}
 
         <div class="text-center mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
-          <p class="text-slate-400 mb-4">Subscribe to receive updates on AI security and QA automation.</p>
+          <p class="text-slate-400 mb-4" data-i18n="blog.subscribe">Subscribe to receive updates on AI security and QA automation.</p>
           <Button variant="primary" size="lg" href="mailto:jmsabaris@sabatech.dev">
-            Get Notified
+            <span data-i18n="blog.getNotified">Get Notified</span>
           </Button>
         </div>
       </div>

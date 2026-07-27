@@ -4,7 +4,6 @@ import Section from "../../components/Section.astro";
 import Card from "../../components/Card.astro";
 import Button from "../../components/Button.astro";
 import Badge from "../../components/Badge.astro";
-import PricingCard from "../../components/PricingCard.astro";
 ---
 
 <Layout title="Pricing — SabaTech | QA & Security Plans">
@@ -30,6 +29,8 @@ import PricingCard from "../../components/PricingCard.astro";
 			"pricing.calc.annualCost": "Annual cost",
 			"pricing.calc.savings": "You save",
 			"pricing.calc.discountNote": "(20% off)",
+			"pricing.calc.plan.starter": "Starter — €29/dev/month",
+			"pricing.calc.plan.pro": "Pro — €59/dev/month",
 			"pricing.pro.title": "Professional Services",
 			"pricing.pro.subtitle": "Expert-led engagements to accelerate your security posture.",
 			"pricing.pro.assessment.badge": "One-time",
@@ -50,6 +51,34 @@ import PricingCard from "../../components/PricingCard.astro";
 			"pricing.cta.desc": "Start with our free tier or book a call to find the right plan for your team.",
 			"pricing.cta.cta1": "Start Free Audit",
 			"pricing.cta.cta2": "Talk to Sales",
+			"pricing.tier.free.desc": "Get started with essential QA tooling.",
+			"pricing.tier.free.f1": "1 repository",
+			"pricing.tier.free.f2": "5 tests/month",
+			"pricing.tier.free.f3": "Basic SAST scanning",
+			"pricing.tier.free.f4": "CI quality gating",
+			"pricing.tier.free.f5": "Community support",
+			"pricing.tier.free.cta": "Get Started Free",
+			"pricing.tier.starter.desc": "For growing teams that need full coverage.",
+			"pricing.tier.starter.f1": "10 repositories",
+			"pricing.tier.starter.f2": "Unlimited tests",
+			"pricing.tier.starter.f3": "SAST + SCA scanning",
+			"pricing.tier.starter.f4": "CI/CD integration",
+			"pricing.tier.starter.f5": "Slack alerts",
+			"pricing.tier.starter.cta": "Start Free Trial",
+			"pricing.tier.pro.desc": "Advanced security for serious engineering teams.",
+			"pricing.tier.pro.f1": "Unlimited repositories",
+			"pricing.tier.pro.f2": "Secrets detection",
+			"pricing.tier.pro.f3": "Custom rules engine",
+			"pricing.tier.pro.f4": "Advanced reporting",
+			"pricing.tier.pro.f5": "AI triage & remediation",
+			"pricing.tier.pro.cta": "Start Free Trial",
+			"pricing.tier.enterprise.desc": "Tailored solutions for large organizations.",
+			"pricing.tier.enterprise.f1": "DAST scanning",
+			"pricing.tier.enterprise.f2": "On-premise option",
+			"pricing.tier.enterprise.f3": "SSO & SAML",
+			"pricing.tier.enterprise.f4": "Dedicated support",
+			"pricing.tier.enterprise.f5": "SLA guarantees",
+			"pricing.tier.enterprise.cta": "Contact Sales",
 		},
 		es: {
 			"pricing.hero.title1": "Precios",
@@ -72,6 +101,8 @@ import PricingCard from "../../components/PricingCard.astro";
 			"pricing.calc.annualCost": "Coste anual",
 			"pricing.calc.savings": "Ahorras",
 			"pricing.calc.discountNote": "(20% dto.)",
+			"pricing.calc.plan.starter": "Starter — €29/dev/mes",
+			"pricing.calc.plan.pro": "Pro — €59/dev/mes",
 			"pricing.pro.title": "Servicios Profesionales",
 			"pricing.pro.subtitle": "Servicios dirigidos por expertos para acelerar tu postura de seguridad.",
 			"pricing.pro.assessment.badge": "Pago único",
@@ -92,6 +123,34 @@ import PricingCard from "../../components/PricingCard.astro";
 			"pricing.cta.desc": "Empieza con nuestro plan gratuito o reserva una llamada para encontrar el plan adecuado para tu equipo.",
 			"pricing.cta.cta1": "Iniciar Auditoría Gratuita",
 			"pricing.cta.cta2": "Hablar con Ventas",
+			"pricing.tier.free.desc": "Empieza con las herramientas QA esenciales.",
+			"pricing.tier.free.f1": "1 repositorio",
+			"pricing.tier.free.f2": "5 tests/mes",
+			"pricing.tier.free.f3": "Escaneo SAST básico",
+			"pricing.tier.free.f4": "Quality gate CI",
+			"pricing.tier.free.f5": "Soporte comunitario",
+			"pricing.tier.free.cta": "Empezar Gratis",
+			"pricing.tier.starter.desc": "Para equipos en crecimiento que necesitan cobertura total.",
+			"pricing.tier.starter.f1": "10 repositorios",
+			"pricing.tier.starter.f2": "Tests ilimitados",
+			"pricing.tier.starter.f3": "Escaneo SAST + SCA",
+			"pricing.tier.starter.f4": "Integración CI/CD",
+			"pricing.tier.starter.f5": "Alertas Slack",
+			"pricing.tier.starter.cta": "Iniciar Prueba Gratuita",
+			"pricing.tier.pro.desc": "Seguridad avanzada para equipos de ingeniería serios.",
+			"pricing.tier.pro.f1": "Repositorios ilimitados",
+			"pricing.tier.pro.f2": "Detección de secretos",
+			"pricing.tier.pro.f3": "Motor de reglas personalizadas",
+			"pricing.tier.pro.f4": "Reporting avanzado",
+			"pricing.tier.pro.f5": "Triaje y remediación IA",
+			"pricing.tier.pro.cta": "Iniciar Prueba Gratuita",
+			"pricing.tier.enterprise.desc": "Soluciones a medida para grandes organizaciones.",
+			"pricing.tier.enterprise.f1": "Escaneo DAST",
+			"pricing.tier.enterprise.f2": "Opción on-premise",
+			"pricing.tier.enterprise.f3": "SSO & SAML",
+			"pricing.tier.enterprise.f4": "Soporte dedicado",
+			"pricing.tier.enterprise.f5": "Garantías SLA",
+			"pricing.tier.enterprise.cta": "Contactar Ventas",
 		}
 	})} />
 	<!-- Hero Section -->
@@ -151,62 +210,88 @@ import PricingCard from "../../components/PricingCard.astro";
 			<p class="text-slate-400 text-lg" data-i18n="pricing.qa.subtitle">Everything you need to secure and test your AI-powered pipeline.</p>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
-			<!-- Free -->
-			<PricingCard
-				title="Free"
-				price="€0"
-				description="Get started with essential QA tooling."
-				features={["1 repository", "5 tests/month", "Basic SAST scanning", "CI quality gating", "Community support"]}
-				ctaText="Get Started Free"
-				ctaHref="/contact"
-			/>
-
-			<!-- Starter -->
-			<PricingCard
-				title="Starter"
-				price="€29"
-				period="/dev/month"
-				description="For growing teams that need full coverage."
-				features={["10 repositories", "Unlimited tests", "SAST + SCA scanning", "CI/CD integration", "Slack alerts"]}
-				ctaText="Start Free Trial"
-				ctaHref="/contact"
-			/>
-
-			<!-- Pro (Featured) -->
-			<div class="relative">
-				<div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-					<Badge variant="primary" size="md">Most Popular</Badge>
-				</div>
-				<PricingCard
-					title="Pro"
-					price="€59"
-					period="/dev/month"
-					description="Advanced security for serious engineering teams."
-					features={["Unlimited repositories", "Secrets detection", "Custom rules engine", "Advanced reporting", "AI triage & remediation"]}
-					ctaText="Start Free Trial"
-					ctaHref="/contact"
-					variant="featured"
-				/>
+	<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
+		<!-- Free -->
+		<div class="rounded-xl p-8 border border-slate-700 bg-slate-800">
+			<h3 class="text-2xl font-bold text-slate-50 mb-2">Free</h3>
+			<div class="mb-4">
+				<span class="text-4xl font-bold text-slate-50">€0</span>
 			</div>
-
-			<!-- Enterprise -->
-			<PricingCard
-				title="Enterprise"
-				price="Custom"
-				description="Tailored solutions for large organizations."
-				features={["DAST scanning", "On-premise option", "SSO & SAML", "Dedicated support", "SLA guarantees"]}
-				ctaText="Contact Sales"
-				ctaHref="/contact"
-				variant="secondary"
-			/>
+			<p class="text-slate-400 mb-6" data-i18n="pricing.tier.free.desc">Get started with essential QA tooling.</p>
+			<ul class="space-y-3 mb-8">
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.free.f1">1 repository</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.free.f2">5 tests/month</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.free.f3">Basic SAST scanning</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.free.f4">CI quality gating</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.free.f5">Community support</span></li>
+			</ul>
+			<Button variant="outline" href="/contact" class="w-full"><span data-i18n="pricing.tier.free.cta">Get Started Free</span></Button>
 		</div>
 
-		<!-- Price overrides for billing toggle -->
-		<div class="hidden">
-			<span data-monthly="€29" data-annual="€23" class="price-starter"></span>
-			<span data-monthly="€59" data-annual="€47" class="price-pro"></span>
+		<!-- Starter -->
+		<div class="rounded-xl p-8 border border-slate-700 bg-slate-800">
+			<h3 class="text-2xl font-bold text-slate-50 mb-2">Starter</h3>
+			<div class="mb-4">
+				<span class="text-4xl font-bold text-slate-50 price-starter" data-monthly="€29" data-annual="€23">€29</span>
+				<span class="text-slate-400 ml-2" data-i18n="common.devMonth">/dev/month</span>
+			</div>
+			<p class="text-slate-400 mb-6" data-i18n="pricing.tier.starter.desc">For growing teams that need full coverage.</p>
+			<ul class="space-y-3 mb-8">
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.starter.f1">10 repositories</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.starter.f2">Unlimited tests</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.starter.f3">SAST + SCA scanning</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.starter.f4">CI/CD integration</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.starter.f5">Slack alerts</span></li>
+			</ul>
+			<Button variant="outline" href="/contact" class="w-full"><span data-i18n="pricing.tier.starter.cta">Start Free Trial</span></Button>
 		</div>
+
+		<!-- Pro (Featured) -->
+		<div class="relative">
+			<div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+				<Badge variant="primary" size="md"><span data-i18n="common.mostPopular">Most Popular</span></Badge>
+			</div>
+			<div class="rounded-xl p-8 border-2 border-teal-brand bg-slate-800 shadow-teal-lg scale-105">
+				<h3 class="text-2xl font-bold text-slate-50 mb-2">Pro</h3>
+				<div class="mb-4">
+					<span class="text-4xl font-bold text-slate-50 price-pro" data-monthly="€59" data-annual="€47">€59</span>
+					<span class="text-slate-400 ml-2" data-i18n="common.devMonth">/dev/month</span>
+				</div>
+				<p class="text-slate-400 mb-6" data-i18n="pricing.tier.pro.desc">Advanced security for serious engineering teams.</p>
+				<ul class="space-y-3 mb-8">
+					<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.pro.f1">Unlimited repositories</span></li>
+					<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.pro.f2">Secrets detection</span></li>
+					<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.pro.f3">Custom rules engine</span></li>
+					<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.pro.f4">Advanced reporting</span></li>
+					<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.pro.f5">AI triage & remediation</span></li>
+				</ul>
+				<Button variant="primary" href="/contact" class="w-full"><span data-i18n="pricing.tier.pro.cta">Start Free Trial</span></Button>
+			</div>
+		</div>
+
+		<!-- Enterprise -->
+		<div class="rounded-xl p-8 border border-slate-700 bg-midnight">
+			<h3 class="text-2xl font-bold text-slate-50 mb-2">Enterprise</h3>
+			<div class="mb-4">
+				<span class="text-4xl font-bold text-slate-50">Custom</span>
+			</div>
+			<p class="text-slate-400 mb-6" data-i18n="pricing.tier.enterprise.desc">Tailored solutions for large organizations.</p>
+			<ul class="space-y-3 mb-8">
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.enterprise.f1">DAST scanning</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.enterprise.f2">On-premise option</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.enterprise.f3">SSO & SAML</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.enterprise.f4">Dedicated support</span></li>
+				<li class="flex items-start gap-3 text-slate-300"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="pricing.tier.enterprise.f5">SLA guarantees</span></li>
+			</ul>
+			<Button variant="outline" href="/contact" class="w-full"><span data-i18n="pricing.tier.enterprise.cta">Contact Sales</span></Button>
+		</div>
+	</div>
+
+	<!-- Price overrides for billing toggle -->
+	<div class="hidden">
+		<span data-monthly="€29" data-annual="€23" class="price-starter"></span>
+		<span data-monthly="€59" data-annual="€47" class="price-pro"></span>
+	</div>
 	</Section>
 
 	<!-- Interactive Calculator -->
@@ -241,8 +326,8 @@ import PricingCard from "../../components/PricingCard.astro";
 							id="calc-plan"
 							class="w-full bg-midnight border border-slate-700 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-brand focus:border-transparent"
 						>
-							<option value="29" data-annual="23">Starter — €29/dev/month</option>
-							<option value="59" data-annual="47">Pro — €59/dev/month</option>
+							<option value="29" data-annual="23" data-i18n="pricing.calc.plan.starter">Starter — €29/dev/month</option>
+							<option value="59" data-annual="47" data-i18n="pricing.calc.plan.pro">Pro — €59/dev/month</option>
 						</select>
 					</div>
 

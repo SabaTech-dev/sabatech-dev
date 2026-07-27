@@ -11,7 +11,7 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 
 <form action={action} method={method} class="space-y-6 max-w-xl mx-auto">
 	<div>
-		<label for="name" class="block text-sm font-medium text-slate-300 mb-2">
+		<label for="name" class="block text-sm font-medium text-slate-300 mb-2" data-i18n="common.form.name">
 			Name
 		</label>
 	<input
@@ -23,11 +23,12 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 		aria-required="true"
 		class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-slate-50 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-brand focus:border-transparent"
 		placeholder="Your name"
+		data-i18n-placeholder="common.form.namePlaceholder"
 	/>
 	</div>
 
 	<div>
-		<label for="email" class="block text-sm font-medium text-slate-300 mb-2">
+		<label for="email" class="block text-sm font-medium text-slate-300 mb-2" data-i18n="common.form.email">
 			Email
 		</label>
 	<input
@@ -43,7 +44,7 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 	</div>
 
 	<div>
-		<label for="message" class="block text-sm font-medium text-slate-300 mb-2">
+		<label for="message" class="block text-sm font-medium text-slate-300 mb-2" data-i18n="common.form.message">
 			Message
 		</label>
 		<textarea
@@ -53,11 +54,12 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 			required
 			class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-slate-50 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-brand focus:border-transparent resize-none"
 			placeholder="How can we help you?"
+			data-i18n-placeholder="common.form.messagePlaceholder"
 		/>
 	</div>
 
 	<Button type="submit" variant="primary" size="lg" class="w-full">
-		Send Message
+		<span data-i18n="common.form.send">Send Message</span>
 	</Button>
 	<p id="form-status" role="status" aria-live="polite" class="text-sm text-center mt-4 hidden"></p>
 </form>
@@ -68,16 +70,53 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 		if (!form) return;
 
 		const statusEl = document.getElementById('form-status');
+		const LANG_KEY = "sabatech-lang";
+		const translations = {
+			en: {
+				"common.sending": "Sending...",
+				"common.form.success": "Message sent successfully!",
+				"common.form.error": "Something went wrong. Please try again.",
+				"common.form.networkError": "Network error. Please check your connection and try again.",
+			},
+			es: {
+				"common.sending": "Enviando...",
+				"common.form.success": "¡Mensaje enviado correctamente!",
+				"common.form.error": "Algo salió mal. Inténtalo de nuevo.",
+				"common.form.networkError": "Error de red. Comprueba tu conexión e inténtalo de nuevo.",
+			},
+		};
+
+		function getCurrentLang() {
+			return localStorage.getItem(LANG_KEY) || "en";
+		}
+		function t(key) {
+			const lang = getCurrentLang();
+			const dict = translations[lang] || translations.en;
+			return dict[key] || key;
+		}
+
+		// Also support data-i18n-placeholder attributes
+		function applyFormTranslations() {
+			const lang = getCurrentLang();
+			form.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+				const key = el.getAttribute('data-i18n-placeholder');
+				// Read from global translations if available, otherwise fallback
+				if (key && window.__sabatechTranslations && window.__sabatechTranslations[lang] && window.__sabatechTranslations[lang][key]) {
+					el.placeholder = window.__sabatechTranslations[lang][key];
+				}
+			});
+		}
 
 		form.addEventListener('submit', async (e) => {
 			e.preventDefault();
 			const submitBtn = form.querySelector('[type="submit"]');
-			const originalText = submitBtn ? submitBtn.textContent : '';
+			const submitText = submitBtn ? submitBtn.querySelector('[data-i18n]') : null;
+			const originalText = submitText ? submitText.textContent : '';
 
 			try {
-				if (submitBtn) {
+				if (submitText) {
 					submitBtn.disabled = true;
-					submitBtn.textContent = 'Sending...';
+					submitText.textContent = t('common.sending');
 				}
 
 				const formData = new FormData(form);
@@ -93,27 +132,30 @@ const { action = "/api/contact", method = "POST" } = Astro.props;
 
 				if (res.ok) {
 					if (statusEl) {
-						statusEl.textContent = result.message || 'Message sent successfully!';
+						statusEl.textContent = result.message || t('common.form.success');
 						statusEl.className = 'text-sm text-center mt-4 text-code-green';
 					}
 					form.reset();
 				} else {
 					if (statusEl) {
-						statusEl.textContent = result.error || 'Something went wrong. Please try again.';
+						statusEl.textContent = result.error || t('common.form.error');
 						statusEl.className = 'text-sm text-center mt-4 text-sec-red';
 					}
 				}
 			} catch (err) {
 				if (statusEl) {
-					statusEl.textContent = 'Network error. Please check your connection and try again.';
+					statusEl.textContent = t('common.form.networkError');
 					statusEl.className = 'text-sm text-center mt-4 text-sec-red';
 				}
 			} finally {
-				if (submitBtn) {
+				if (submitText) {
 					submitBtn.disabled = false;
-					submitBtn.textContent = originalText;
+					submitText.textContent = originalText;
 				}
 			}
 		});
+
+		applyFormTranslations();
+		window.addEventListener('sabatech:lang-change', applyFormTranslations);
 	})();
 </script>

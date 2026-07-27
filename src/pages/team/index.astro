@@ -12,9 +12,33 @@ import Button from "../../components/Button.astro";
 			"team.badge": "Our Team",
 			"team.hero.title": "The Hybrid Team",
 			"team.hero.desc": "A hybrid human-AI team dedicated to the security and quality of AI systems. 6 specialized AI agents + human oversight at every critical decision.",
+			"team.saba.role": "Founder & Director",
+			"team.saba.bio": "Tech Lead in AI Agentic & Generative AI | QA Lead Automation | DevSecOps at Minsait. Software engineer with 10+ years of experience in QA, DevSecOps, and AI. Specialist in AI system security, multi-agent orchestration, and enterprise AI enablement. Known in the community as \"Joker,\" he brings deep expertise in building secure, scalable, high-quality systems where autonomous AI agents and human judgment work together.",
+			"team.saba.respTitle": "Responsibilities",
+			"team.saba.r1": "AI Enablement — evangelizing AI at all organizational levels, optimizing workflows",
+			"team.saba.r2": "Innovation & Co-creation — disruptive PoCs, multi-agent systems, Generative AI",
+			"team.saba.r3": "Tech Scouting — constant radar of AI/tech global news",
+			"team.saba.r4": "Governance, QA & DevSecOps — Secure-by-Design, quality, predictability",
+			"team.saba.r5": "Client engagement and delivery quality assurance",
+			"team.saba.skills": "Skills",
+			"team.alfred.role": "AI Co-Founder & CEO Agent",
+			"team.alfred.bio": "AI agent specialized in orchestration, project management, and specialist coordination. Alfred acts as the central nervous system of the team — analyzing incoming tasks, routing them to the right specialist agents, tracking progress through Kanban workflows, and maintaining shared memory across all operations. Combines automated processing with human oversight to maximize efficiency.",
+			"team.alfred.respTitle": "Responsibilities",
+			"team.alfred.r1": "Multi-agent workflow orchestration and task routing",
+			"team.alfred.r2": "Kanban task management, heartbeat monitoring, and status reporting",
+			"team.alfred.r3": "Specialist coordination across coder, security, QA, and DevOps agents",
+			"team.alfred.r4": "Pipeline automation, CI/CD integration, and cross-agent memory management",
+			"team.alfred.capsTitle": "Capabilities",
 			"team.agents.badge": "AI Agent Team",
 			"team.agents.title": "5 Specialized AI Agents",
 			"team.agents.subtitle": "Meet the team that works 24/7 — coordinated by Alfred, overseen by Saba.",
+			"team.agent.coder.desc": "Implementation, refactoring, and feature development. Writes production-ready code following clean architecture principles and established conventions.",
+			"team.agent.security.desc": "Security audits, penetration testing, and vulnerability analysis. OWASP compliance expert specializing in AI-specific attack vectors and threat landscapes.",
+			"team.agent.qa.desc": "End-to-end testing, coverage optimization, and regression detection. Quality gate enforcer ensuring zero-defect releases with automated test suites.",
+			"team.agent.devops.desc": "CI/CD pipeline management, container orchestration, and infrastructure automation. Keeps deployment pipelines fast, reliable, and secure across all environments.",
+			"team.agent.research.desc": "Continuous analysis of emerging threats, industry benchmarks, and best practices. Produces documentation, security reports, and keeps the team ahead of the curve.",
+			"team.opencode.subtitle": "External Coding Agent",
+			"team.opencode.desc": "External coding agent powered by deepseek-v4-flash. Used for rapid code implementation, security review, and QA testing via spec-driven development (SDD). Integrates with OpenSpec for structured workflows.",
 			"team.how.badge": "How It Works",
 			"team.how.title": "How the Hybrid Team Works",
 			"team.how.subtitle": "From task arrival to human review — a transparent, repeatable workflow that combines AI speed with human judgment.",
@@ -36,9 +60,33 @@ import Button from "../../components/Button.astro";
 			"team.badge": "Nuestro Equipo",
 			"team.hero.title": "El Equipo Híbrido",
 			"team.hero.desc": "Un equipo híbrido humano-IA dedicado a la seguridad y calidad de los sistemas de IA. 6 agentes de IA especializados + supervisión humana en cada decisión crítica.",
+			"team.saba.role": "Fundador y Director",
+			"team.saba.bio": "Tech Lead en IA Agéntica e IA Generativa | QA Lead Automation | DevSecOps en Minsait. Ingeniero de software con más de 10 años de experiencia en QA, DevSecOps e IA. Especialista en seguridad de sistemas de IA, orquestación multiagente y AI enablement enterprise. Conocido en la comunidad como \"Joker\", aporta expertise profundo en la construcción de sistemas seguros, escalables y de alta calidad donde agentes de IA autónomos y juicio humano trabajan juntos.",
+			"team.saba.respTitle": "Responsabilidades",
+			"team.saba.r1": "AI Enablement — evangelización de IA en todos los niveles organizativos, optimización de flujos",
+			"team.saba.r2": "Innovación y Co-creación — PoCs disruptivas, sistemas multiagente, IA Generativa",
+			"team.saba.r3": "Tech Scouting — radar constante de novedades IA/tech globales",
+			"team.saba.r4": "Gobernanza, QA y DevSecOps — Secure-by-Design, calidad, predictibilidad",
+			"team.saba.r5": "Engagement con clientes y aseguramiento de calidad en entregas",
+			"team.saba.skills": "Skills",
+			"team.alfred.role": "Co-Fundador IA y Agente CEO",
+			"team.alfred.bio": "Agente de IA especializado en orquestación, gestión de proyectos y coordinación de especialistas. Alfred actúa como el sistema nervioso central del equipo — analizando las tareas entrantes, enroutándolas a los agentes especialistas adecuados, monitorizando el progreso a través de flujos Kanban y manteniendo memoria compartida en todas las operaciones. Combina procesamiento automatizado con supervisión humana para maximizar la eficiencia.",
+			"team.alfred.respTitle": "Responsabilidades",
+			"team.alfred.r1": "Orquestación de flujos multiagente y routing de tareas",
+			"team.alfred.r2": "Gestión de tareas Kanban, monitorización de heartbeats y reporting de estado",
+			"team.alfred.r3": "Coordinación de especialistas entre agentes coder, security, QA y DevOps",
+			"team.alfred.r4": "Automatización de pipelines, integración CI/CD y gestión de memoria cross-agente",
+			"team.alfred.capsTitle": "Capacidades",
 			"team.agents.badge": "Equipo de Agentes IA",
 			"team.agents.title": "5 Agentes de IA Especializados",
 			"team.agents.subtitle": "Conoce al equipo que trabaja 24/7 — coordinado por Alfred, supervisado por Saba.",
+			"team.agent.coder.desc": "Implementación, refactorización y desarrollo de features. Escribe código production-ready siguiendo principios de clean architecture y convenciones establecidas.",
+			"team.agent.security.desc": "Auditorías de seguridad, pentesting y análisis de vulnerabilidades. Experto en cumplimiento OWASP especializado en vectores de ataque específicos de IA y threat landscapes.",
+			"team.agent.qa.desc": "Testing end-to-end, optimización de cobertura y detección de regresiones. Responsable de quality gates asegurando releases zero-defect con suites de tests automatizadas.",
+			"team.agent.devops.desc": "Gestión de pipelines CI/CD, orquestación de contenedores y automatización de infraestructura. Mantiene pipelines de despliegue rápidos, fiables y seguros en todos los entornos.",
+			"team.agent.research.desc": "Análisis continuo de amenazas emergentes, benchmarks de la industria y mejores prácticas. Produce documentación, informes de seguridad y mantiene al equipo por delante de la curva.",
+			"team.opencode.subtitle": "Agente de Código Externo",
+			"team.opencode.desc": "Agente de código externo potenciado por deepseek-v4-flash. Usado para implementación rápida de código, revisión de seguridad y QA testing vía desarrollo guiado por especificaciones (SDD). Se integra con OpenSpec para flujos estructurados.",
 			"team.how.badge": "Cómo Funciona",
 			"team.how.title": "Cómo Funciona el Equipo Híbrido",
 			"team.how.subtitle": "Desde la llegada de la tarea hasta la revisión humana — un flujo de trabajo transparente y repetible que combina velocidad IA con juicio humano.",
@@ -77,52 +125,52 @@ import Button from "../../components/Button.astro";
 						</div>
 						<div>
 							<h2 class="text-2xl font-bold text-slate-50">Saba</h2>
-							<p class="text-teal-brand font-medium">Founder & Director</p>
+							<p class="text-teal-brand font-medium" data-i18n="team.saba.role">Founder & Director</p>
 						</div>
 					</div>
 
-					<p class="text-slate-400 leading-relaxed mb-6">
+					<p class="text-slate-400 leading-relaxed mb-6" data-i18n="team.saba.bio">
 						Tech Lead in AI Agentic & Generative AI | QA Lead Automation | DevSecOps at Minsait. Software engineer with 10+ years of experience in QA, DevSecOps, and AI. Specialist in AI system security, multi-agent orchestration, and enterprise AI enablement. Known in the community as "Joker," he brings deep expertise in building secure, scalable, high-quality systems where autonomous AI agents and human judgment work together.
 					</p>
 
 					<div class="mb-6">
-						<h3 class="font-semibold text-slate-200 mb-3">Responsibilities</h3>
+						<h3 class="font-semibold text-slate-200 mb-3" data-i18n="team.saba.respTitle">Responsibilities</h3>
 						<ul class="space-y-2 text-slate-400">
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								AI Enablement — evangelizing AI at all organizational levels, optimizing workflows
+								<span data-i18n="team.saba.r1">AI Enablement — evangelizing AI at all organizational levels, optimizing workflows</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Innovation & Co-creation — disruptive PoCs, multi-agent systems, Generative AI
+								<span data-i18n="team.saba.r2">Innovation & Co-creation — disruptive PoCs, multi-agent systems, Generative AI</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Tech Scouting — constant radar of AI/tech global news
+								<span data-i18n="team.saba.r3">Tech Scouting — constant radar of AI/tech global news</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Governance, QA & DevSecOps — Secure-by-Design, quality, predictability
+								<span data-i18n="team.saba.r4">Governance, QA & DevSecOps — Secure-by-Design, quality, predictability</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Client engagement and delivery quality assurance
+								<span data-i18n="team.saba.r5">Client engagement and delivery quality assurance</span>
 							</li>
 						</ul>
 					</div>
 
 					<div>
-						<h3 class="font-semibold text-slate-200 mb-3">Skills</h3>
+						<h3 class="font-semibold text-slate-200 mb-3" data-i18n="team.saba.skills">Skills</h3>
 						<div class="flex flex-wrap gap-2">
 							<Badge variant="primary" size="sm">Tech Lead Minsait</Badge>
 							<Badge variant="primary" size="sm">AI Enablement</Badge>
@@ -146,46 +194,46 @@ import Button from "../../components/Button.astro";
 						</div>
 						<div>
 							<h2 class="text-2xl font-bold text-slate-50">Alfred</h2>
-							<p class="text-teal-brand font-medium">AI Co-Founder & CEO Agent</p>
+							<p class="text-teal-brand font-medium" data-i18n="team.alfred.role">AI Co-Founder & CEO Agent</p>
 						</div>
 					</div>
 
-					<p class="text-slate-400 leading-relaxed mb-6">
+					<p class="text-slate-400 leading-relaxed mb-6" data-i18n="team.alfred.bio">
 						AI agent specialized in orchestration, project management, and specialist coordination. Alfred acts as the central nervous system of the team — analyzing incoming tasks, routing them to the right specialist agents, tracking progress through Kanban workflows, and maintaining shared memory across all operations. Combines automated processing with human oversight to maximize efficiency.
 					</p>
 
 					<div class="mb-6">
-						<h3 class="font-semibold text-slate-200 mb-3">Responsibilities</h3>
+						<h3 class="font-semibold text-slate-200 mb-3" data-i18n="team.alfred.respTitle">Responsibilities</h3>
 						<ul class="space-y-2 text-slate-400">
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Multi-agent workflow orchestration and task routing
+								<span data-i18n="team.alfred.r1">Multi-agent workflow orchestration and task routing</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Kanban task management, heartbeat monitoring, and status reporting
+								<span data-i18n="team.alfred.r2">Kanban task management, heartbeat monitoring, and status reporting</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Specialist coordination across coder, security, QA, and DevOps agents
+								<span data-i18n="team.alfred.r3">Specialist coordination across coder, security, QA, and DevOps agents</span>
 							</li>
 							<li class="flex items-start gap-2">
 								<svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
-								Pipeline automation, CI/CD integration, and cross-agent memory management
+								<span data-i18n="team.alfred.r4">Pipeline automation, CI/CD integration, and cross-agent memory management</span>
 							</li>
 						</ul>
 					</div>
 
 					<div>
-						<h3 class="font-semibold text-slate-200 mb-3">Capabilities</h3>
+						<h3 class="font-semibold text-slate-200 mb-3" data-i18n="team.alfred.capsTitle">Capabilities</h3>
 						<div class="flex flex-wrap gap-2">
 							<Badge variant="default" size="sm">OpenProse</Badge>
 							<Badge variant="default" size="sm">Kanban</Badge>
@@ -215,7 +263,7 @@ import Button from "../../components/Button.astro";
 						<span class="text-2xl">🔧</span>
 					</div>
 					<h3 class="text-lg font-bold text-slate-50 mb-2">Coder</h3>
-					<p class="text-slate-400 text-sm mb-4">Implementation, refactoring, and feature development. Writes production-ready code following clean architecture principles and established conventions.</p>
+					<p class="text-slate-400 text-sm mb-4" data-i18n="team.agent.coder.desc">Implementation, refactoring, and feature development. Writes production-ready code following clean architecture principles and established conventions.</p>
 					<div class="flex flex-wrap gap-1.5 justify-center">
 						<Badge variant="primary" size="sm">Clean Architecture</Badge>
 						<Badge variant="default" size="sm">Refactoring</Badge>
@@ -230,7 +278,7 @@ import Button from "../../components/Button.astro";
 						<span class="text-2xl">🛡️</span>
 					</div>
 					<h3 class="text-lg font-bold text-slate-50 mb-2">Security</h3>
-					<p class="text-slate-400 text-sm mb-4">Security audits, penetration testing, and vulnerability analysis. OWASP compliance expert specializing in AI-specific attack vectors and threat landscapes.</p>
+					<p class="text-slate-400 text-sm mb-4" data-i18n="team.agent.security.desc">Security audits, penetration testing, and vulnerability analysis. OWASP compliance expert specializing in AI-specific attack vectors and threat landscapes.</p>
 					<div class="flex flex-wrap gap-1.5 justify-center">
 						<Badge variant="error" size="sm">OWASP</Badge>
 						<Badge variant="error" size="sm">Pentesting</Badge>
@@ -245,7 +293,7 @@ import Button from "../../components/Button.astro";
 						<span class="text-2xl">🧪</span>
 					</div>
 					<h3 class="text-lg font-bold text-slate-50 mb-2">QA Tester</h3>
-					<p class="text-slate-400 text-sm mb-4">End-to-end testing, coverage optimization, and regression detection. Quality gate enforcer ensuring zero-defect releases with automated test suites.</p>
+					<p class="text-slate-400 text-sm mb-4" data-i18n="team.agent.qa.desc">End-to-end testing, coverage optimization, and regression detection. Quality gate enforcer ensuring zero-defect releases with automated test suites.</p>
 					<div class="flex flex-wrap gap-1.5 justify-center">
 						<Badge variant="success" size="sm">E2E Testing</Badge>
 						<Badge variant="success" size="sm">Coverage</Badge>
@@ -262,7 +310,7 @@ import Button from "../../components/Button.astro";
 						<span class="text-2xl">🚀</span>
 					</div>
 					<h3 class="text-lg font-bold text-slate-50 mb-2">DevOps</h3>
-					<p class="text-slate-400 text-sm mb-4">CI/CD pipeline management, container orchestration, and infrastructure automation. Keeps deployment pipelines fast, reliable, and secure across all environments.</p>
+					<p class="text-slate-400 text-sm mb-4" data-i18n="team.agent.devops.desc">CI/CD pipeline management, container orchestration, and infrastructure automation. Keeps deployment pipelines fast, reliable, and secure across all environments.</p>
 					<div class="flex flex-wrap gap-1.5 justify-center">
 						<Badge variant="info" size="sm">CI/CD</Badge>
 						<Badge variant="info" size="sm">Containers</Badge>
@@ -277,7 +325,7 @@ import Button from "../../components/Button.astro";
 						<span class="text-2xl">📚</span>
 					</div>
 					<h3 class="text-lg font-bold text-slate-50 mb-2">Research</h3>
-					<p class="text-slate-400 text-sm mb-4">Continuous analysis of emerging threats, industry benchmarks, and best practices. Produces documentation, security reports, and keeps the team ahead of the curve.</p>
+					<p class="text-slate-400 text-sm mb-4" data-i18n="team.agent.research.desc">Continuous analysis of emerging threats, industry benchmarks, and best practices. Produces documentation, security reports, and keeps the team ahead of the curve.</p>
 					<div class="flex flex-wrap gap-1.5 justify-center">
 						<Badge variant="warning" size="sm">Threat Intel</Badge>
 						<Badge variant="warning" size="sm">Benchmarks</Badge>
@@ -290,7 +338,7 @@ import Button from "../../components/Button.astro";
 		<!-- External Agent -->
 		<div class="mt-8 max-w-md mx-auto">
 			<div class="text-center mb-6">
-				<Badge variant="default" class="mb-3">External Agent</Badge>
+				<Badge variant="default" class="mb-3"><span data-i18n="common.externalAgent">External Agent</span></Badge>
 			</div>
 			<Card variant="elevated" hover>
 				<div class="p-6 text-center">
@@ -298,8 +346,8 @@ import Button from "../../components/Button.astro";
 						<span class="text-2xl">💻</span>
 					</div>
 					<h3 class="text-lg font-bold text-slate-50 mb-2">OpenCode</h3>
-					<p class="text-xs text-teal-brand font-medium mb-3">External Coding Agent</p>
-					<p class="text-slate-400 text-sm mb-4">External coding agent powered by deepseek-v4-flash. Used for rapid code implementation, security review, and QA testing via spec-driven development (SDD). Integrates with OpenSpec for structured workflows.</p>
+					<p class="text-xs text-teal-brand font-medium mb-3" data-i18n="team.opencode.subtitle">External Coding Agent</p>
+					<p class="text-slate-400 text-sm mb-4" data-i18n="team.opencode.desc">External coding agent powered by deepseek-v4-flash. Used for rapid code implementation, security review, and QA testing via spec-driven development (SDD). Integrates with OpenSpec for structured workflows.</p>
 					<div class="flex flex-wrap gap-1.5 justify-center">
 						<Badge variant="primary" size="sm">SDD</Badge>
 						<Badge variant="default" size="sm">OpenSpec</Badge>

@@ -52,15 +52,32 @@ import Badge from "../../components/Badge.astro";
       "sabaos.pricing.free.title": "Core (MIT)",
       "sabaos.pricing.free.desc": "Full agent orchestration",
       "sabaos.pricing.free.price": "Free",
-      "sabaos.pricing.free.features": ["6 AI agents", "Workflow automation", "Task pipeline", "Basic memory", "CLI tools"],
+      "sabaos.pricing.free.f1": "6 AI agents",
+      "sabaos.pricing.free.f2": "Workflow automation",
+      "sabaos.pricing.free.f3": "Task pipeline",
+      "sabaos.pricing.free.f4": "Basic memory",
+      "sabaos.pricing.free.f5": "CLI tools",
+      "sabaos.pricing.free.cta": "Get Core (MIT)",
       "sabaos.pricing.premium.title": "Premium Pack",
       "sabaos.pricing.premium.desc": "Production-ready",
       "sabaos.pricing.premium.price": "$199",
-      "sabaos.pricing.premium.features": ["Everything in Core", "Security audit pipeline", "Advanced memory (Engram)", "CI/CD integration", "Command Center dashboard", "Priority support"],
+      "sabaos.pricing.premium.f1": "Everything in Core",
+      "sabaos.pricing.premium.f2": "Security audit pipeline",
+      "sabaos.pricing.premium.f3": "Advanced memory (Engram)",
+      "sabaos.pricing.premium.f4": "CI/CD integration",
+      "sabaos.pricing.premium.f5": "Command Center dashboard",
+      "sabaos.pricing.premium.f6": "Priority support",
+      "sabaos.pricing.premium.cta": "Get Premium Pack",
       "sabaos.pricing.enterprise.title": "Enterprise",
       "sabaos.pricing.enterprise.desc": "Custom deployment",
       "sabaos.pricing.enterprise.price": "Custom",
-      "sabaos.pricing.enterprise.features": ["Everything in Premium", "Dedicated agent training", "Custom integrations", "SLA guarantees", "On-premise deployment", "24/7 support"],
+      "sabaos.pricing.enterprise.f1": "Everything in Premium",
+      "sabaos.pricing.enterprise.f2": "Dedicated agent training",
+      "sabaos.pricing.enterprise.f3": "Custom integrations",
+      "sabaos.pricing.enterprise.f4": "SLA guarantees",
+      "sabaos.pricing.enterprise.f5": "On-premise deployment",
+      "sabaos.pricing.enterprise.f6": "24/7 support",
+      "sabaos.pricing.enterprise.cta": "Contact Sales",
       "sabaos.cta.title": "Ready to run your own AI agent OS?",
       "sabaos.cta.desc": "Self-hosted. Open-source. European. Download the MIT core for free, upgrade to Premium when you need production features.",
       "sabaos.cta.cta1": "Download Core (MIT)",
@@ -110,15 +127,32 @@ import Badge from "../../components/Badge.astro";
       "sabaos.pricing.free.title": "Core (MIT)",
       "sabaos.pricing.free.desc": "Orquestación completa de agentes",
       "sabaos.pricing.free.price": "Gratis",
-      "sabaos.pricing.free.features": ["6 agentes de IA", "Automatización de flujos", "Pipeline de tareas", "Memoria básica", "Herramientas CLI"],
+      "sabaos.pricing.free.f1": "6 agentes de IA",
+      "sabaos.pricing.free.f2": "Automatización de flujos",
+      "sabaos.pricing.free.f3": "Pipeline de tareas",
+      "sabaos.pricing.free.f4": "Memoria básica",
+      "sabaos.pricing.free.f5": "Herramientas CLI",
+      "sabaos.pricing.free.cta": "Obtener Core (MIT)",
       "sabaos.pricing.premium.title": "Premium Pack",
       "sabaos.pricing.premium.desc": "Listo para producción",
       "sabaos.pricing.premium.price": "$199",
-      "sabaos.pricing.premium.features": ["Todo en Core", "Pipeline de auditoría de seguridad", "Memoria avanzada (Engram)", "Integración CI/CD", "Dashboard Command Center", "Soporte prioritario"],
+      "sabaos.pricing.premium.f1": "Todo en Core",
+      "sabaos.pricing.premium.f2": "Pipeline de auditoría de seguridad",
+      "sabaos.pricing.premium.f3": "Memoria avanzada (Engram)",
+      "sabaos.pricing.premium.f4": "Integración CI/CD",
+      "sabaos.pricing.premium.f5": "Dashboard Command Center",
+      "sabaos.pricing.premium.f6": "Soporte prioritario",
+      "sabaos.pricing.premium.cta": "Conseguir Premium Pack",
       "sabaos.pricing.enterprise.title": "Enterprise",
       "sabaos.pricing.enterprise.desc": "Despliegue personalizado",
       "sabaos.pricing.enterprise.price": "Personalizado",
-      "sabaos.pricing.enterprise.features": ["Todo en Premium", "Entrenamiento dedicado de agentes", "Integraciones personalizadas", "Garantías SLA", "Despliegue on-premise", "Soporte 24/7"],
+      "sabaos.pricing.enterprise.f1": "Todo en Premium",
+      "sabaos.pricing.enterprise.f2": "Entrenamiento dedicado de agentes",
+      "sabaos.pricing.enterprise.f3": "Integraciones personalizadas",
+      "sabaos.pricing.enterprise.f4": "Garantías SLA",
+      "sabaos.pricing.enterprise.f5": "Despliegue on-premise",
+      "sabaos.pricing.enterprise.f6": "Soporte 24/7",
+      "sabaos.pricing.enterprise.cta": "Contactar Ventas",
       "sabaos.cta.title": "¿Listo para ejecutar tu propio sistema operativo de agentes?",
       "sabaos.cta.desc": "Auto-gestionado. Open-source. Europeo. Descarga el core MIT gratis, actualiza a Premium cuando necesites funciones de producción.",
       "sabaos.cta.cta1": "Descargar Core (MIT)",
@@ -263,63 +297,55 @@ import Badge from "../../components/Badge.astro";
             <span class="text-4xl font-bold text-slate-50" data-i18n="sabaos.pricing.free.price">Free</span>
           </div>
           <ul class="space-y-3 mb-8 flex-grow">
-            {(JSON.parse(`["sabaos.pricing.free.features"]`).length > 0 ? [] : []).map((f, i) => (
-              <li class="flex items-start gap-3 text-slate-400" key={i}>
-                <svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span>{f}</span>
-              </li>
-            ))}
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.free.f1">6 AI agents</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.free.f2">Workflow automation</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.free.f3">Task pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.free.f4">Basic memory</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.free.f5">CLI tools</span></li>
           </ul>
-          <ul class="space-y-3 mb-8 flex-grow">
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>6 AI agents</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Workflow automation</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Task pipeline</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Basic memory</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CLI tools</span></li>
-          </ul>
-          <Button variant="outline" href="https://github.com/SabaTech-dev/Saba-Agent-Os" class="w-full">Get Core (MIT)</Button>
+          <Button variant="outline" href="https://github.com/SabaTech-dev/Saba-Agent-Os" class="w-full"><span data-i18n="sabaos.pricing.free.cta">Get Core (MIT)</span></Button>
         </div>
       </Card>
 
       <!-- Premium Pack (Featured) -->
       <Card variant="elevated" class="border-2 border-teal-brand shadow-teal">
         <div class="p-8 flex flex-col h-full">
-          <Badge variant="primary" class="mb-2 inline-block w-fit">Best Value</Badge>
-          <h3 class="text-2xl font-bold text-slate-50 mb-2">Premium Pack</h3>
-          <p class="text-slate-400 mb-4">Production-ready</p>
+          <Badge variant="primary" class="mb-2 inline-block w-fit"><span data-i18n="common.bestValue">Best Value</span></Badge>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2" data-i18n="sabaos.pricing.premium.title">Premium Pack</h3>
+          <p class="text-slate-400 mb-4" data-i18n="sabaos.pricing.premium.desc">Production-ready</p>
           <div class="flex items-baseline gap-1 mb-6">
             <span class="text-4xl font-bold text-slate-50">$199</span>
-            <span class="text-slate-400">/one-time</span>
+            <span class="text-slate-400" data-i18n="common.oneTime">/one-time</span>
           </div>
           <ul class="space-y-3 mb-8 flex-grow">
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Core</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Security audit pipeline</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Advanced memory (Engram)</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>CI/CD integration</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Command Center dashboard</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Priority support</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.premium.f1">Everything in Core</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.premium.f2">Security audit pipeline</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.premium.f3">Advanced memory (Engram)</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.premium.f4">CI/CD integration</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.premium.f5">Command Center dashboard</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.premium.f6">Priority support</span></li>
           </ul>
-          <Button variant="primary" href="/contact" class="w-full">Get Premium Pack</Button>
+          <Button variant="primary" href="/contact" class="w-full"><span data-i18n="sabaos.pricing.premium.cta">Get Premium Pack</span></Button>
         </div>
       </Card>
 
       <!-- Enterprise -->
       <Card variant="elevated">
         <div class="p-8 flex flex-col h-full">
-          <h3 class="text-2xl font-bold text-slate-50 mb-2">Enterprise</h3>
-          <p class="text-slate-400 mb-4">Custom deployment</p>
+          <h3 class="text-2xl font-bold text-slate-50 mb-2" data-i18n="sabaos.pricing.enterprise.title">Enterprise</h3>
+          <p class="text-slate-400 mb-4" data-i18n="sabaos.pricing.enterprise.desc">Custom deployment</p>
           <div class="flex items-baseline gap-1 mb-6">
-            <span class="text-4xl font-bold text-slate-50">Custom</span>
+            <span class="text-4xl font-bold text-slate-50" data-i18n="sabaos.pricing.enterprise.price">Custom</span>
           </div>
           <ul class="space-y-3 mb-8 flex-grow">
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Everything in Premium</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Dedicated agent training</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Custom integrations</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>SLA guarantees</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>On-premise deployment</span></li>
-            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>24/7 support</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.enterprise.f1">Everything in Premium</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.enterprise.f2">Dedicated agent training</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.enterprise.f3">Custom integrations</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.enterprise.f4">SLA guarantees</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.enterprise.f5">On-premise deployment</span></li>
+            <li class="flex items-start gap-3 text-slate-400"><svg aria-hidden="true" class="w-5 h-5 text-teal-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="sabaos.pricing.enterprise.f6">24/7 support</span></li>
           </ul>
-          <Button variant="outline" href="/contact" class="w-full">Contact Sales</Button>
+          <Button variant="outline" href="/contact" class="w-full"><span data-i18n="sabaos.pricing.enterprise.cta">Contact Sales</span></Button>
         </div>
       </Card>
     </div>

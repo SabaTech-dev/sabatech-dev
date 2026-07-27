@@ -35,6 +35,20 @@ import Container from "../../components/Container.astro";
       "jose.pillars.p4.title": "🛡️ DevSecOps Governance",
       "jose.pillars.p4.desc": "Quality, predictability, and Secure-by-Design. QA and security strategies integrated throughout the development lifecycle.",
       "jose.experience.title": "Experience & Clients",
+      "jose.experience.defensa.desc": "Critical QA, security and automation projects",
+      "jose.experience.igualdad.desc": "Test architectures and software quality",
+      "jose.experience.adeslas.desc": "Test automation and CI/CD",
+      "jose.experience.banca.desc": "Critical systems and resilience",
+      "jose.quickinfo.location": "Spain",
+      "jose.quickinfo.experience": "5+ years experience",
+      "jose.certs.specialty1": "Specialization in QA & DevSecOps",
+      "jose.certs.specialty2": "DevSecOps specialization",
+      "jose.certs.specialty3": "International Software Testing Qualifications Board",
+      "jose.skillsTitle": "Skills",
+      "jose.languages.spanish": "Spanish",
+      "jose.languages.galician": "Galician",
+      "jose.languages.english": "English",
+      "jose.languages.native": "Native",
       "jose.certs.title": "Certifications",
       "jose.certs.item1": "Higher Technician in Web Application Development (QA & DevSecOps)",
       "jose.certs.item2": "Security & Ethical Hacking Certification (DevSecOps)",
@@ -66,6 +80,20 @@ import Container from "../../components/Container.astro";
       "jose.pillars.p4.title": "🛡️ Gobernanza DevSecOps",
       "jose.pillars.p4.desc": "Calidad, predictibilidad y Secure-by-Design. Estrategias de QA y seguridad integradas en todo el ciclo de vida del desarrollo.",
       "jose.experience.title": "Experiencia & Clientes",
+      "jose.experience.defensa.desc": "Proyectos críticos de QA, seguridad y automatización",
+      "jose.experience.igualdad.desc": "Arquitecturas de pruebas y calidad de software",
+      "jose.experience.adeslas.desc": "Automatización de pruebas y CI/CD",
+      "jose.experience.banca.desc": "Sistemas críticos y resiliencia",
+      "jose.quickinfo.location": "España",
+      "jose.quickinfo.experience": "5+ años experiencia",
+      "jose.certs.specialty1": "Especialización en QA & DevSecOps",
+      "jose.certs.specialty2": "Especialización DevSecOps",
+      "jose.certs.specialty3": "International Software Testing Qualifications Board",
+      "jose.skillsTitle": "Skills",
+      "jose.languages.spanish": "Español",
+      "jose.languages.galician": "Gallego",
+      "jose.languages.english": "Inglés",
+      "jose.languages.native": "Nativo",
       "jose.certs.title": "Certificaciones",
       "jose.certs.item1": "Técnico Superior en Desarrollo de Aplicaciones Web (QA & DevSecOps)",
       "jose.certs.item2": "Certificación de Seguridad Informática y Ethical Hacking (DevSecOps)",
@@ -158,11 +186,11 @@ import Container from "../../components/Container.astro";
         <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
             <div class="text-2xl mb-2">📍</div>
-            <p class="text-slate-300 font-semibold">España</p>
+            <p class="text-slate-300 font-semibold" data-i18n="jose.quickinfo.location">España</p>
           </div>
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
             <div class="text-2xl mb-2">📅</div>
-            <p class="text-slate-300 font-semibold">5+ años experiencia</p>
+            <p class="text-slate-300 font-semibold" data-i18n="jose.quickinfo.experience">5+ años experiencia</p>
           </div>
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
             <div class="text-2xl mb-2">🎯</div>
@@ -234,19 +262,19 @@ import Container from "../../components/Container.astro";
         <div class="grid md:grid-cols-4 gap-6 mb-12">
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-blue-500/50 transition-all">
             <h3 class="text-lg font-bold text-blue-400 mb-2">🛡️ Defensa</h3>
-            <p class="text-slate-400 text-sm">Proyectos críticos de QA, seguridad y automatización</p>
+            <p class="text-slate-400 text-sm" data-i18n="jose.experience.defensa.desc">Proyectos críticos de QA, seguridad y automatización</p>
           </div>
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-purple-500/50 transition-all">
             <h3 class="text-lg font-bold text-purple-400 mb-2">⚖️ Min. Igualdad</h3>
-            <p class="text-slate-400 text-sm">Arquitecturas de pruebas y calidad de software</p>
+            <p class="text-slate-400 text-sm" data-i18n="jose.experience.igualdad.desc">Arquitecturas de pruebas y calidad de software</p>
           </div>
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-pink-500/50 transition-all">
             <h3 class="text-lg font-bold text-pink-400 mb-2">🏥 ADESLAS</h3>
-            <p class="text-slate-400 text-sm">Automatización de pruebas y CI/CD</p>
+            <p class="text-slate-400 text-sm" data-i18n="jose.experience.adeslas.desc">Automatización de pruebas y CI/CD</p>
           </div>
           <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center group hover:border-cyan-500/50 transition-all">
             <h3 class="text-lg font-bold text-cyan-400 mb-2">🏦 Banca</h3>
-            <p class="text-slate-400 text-sm">Sistemas críticos y resiliencia</p>
+            <p class="text-slate-400 text-sm" data-i18n="jose.experience.banca.desc">Sistemas críticos y resiliencia</p>
           </div>
         </div>
       </div>
@@ -269,19 +297,19 @@ import Container from "../../components/Container.astro";
                 <h3 class="font-semibold text-blue-400 mb-2" data-i18n="jose.certs.item1">
                   Técnico Superior en Desarrollo de Aplicaciones Web (QA & DevSecOps)
                 </h3>
-                <p class="text-slate-400 text-sm">Especialización en QA & DevSecOps</p>
+                <p class="text-slate-400 text-sm" data-i18n="jose.certs.specialty1">Especialización en QA & DevSecOps</p>
               </div>
               <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
                 <h3 class="font-semibold text-purple-400 mb-2" data-i18n="jose.certs.item2">
                   Certificación de Seguridad Informática y Ethical Hacking (DevSecOps)
                 </h3>
-                <p class="text-slate-400 text-sm">DevSecOps specialization</p>
+                <p class="text-slate-400 text-sm" data-i18n="jose.certs.specialty2">DevSecOps specialization</p>
               </div>
               <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
                 <h3 class="font-semibold text-pink-400 mb-2" data-i18n="jose.certs.item3">
                   Diploma de Fundamentos en Testing ISTQB
                 </h3>
-                <p class="text-slate-400 text-sm">International Software Testing Qualifications Board</p>
+                <p class="text-slate-400 text-sm" data-i18n="jose.certs.specialty3">International Software Testing Qualifications Board</p>
               </div>
             </div>
           </div>
@@ -292,8 +320,8 @@ import Container from "../../components/Container.astro";
             <div class="space-y-4">
               <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="font-semibold text-slate-200">Español</span>
-                  <span class="text-sm text-green-400">Nativo</span>
+                  <span class="font-semibold text-slate-200" data-i18n="jose.languages.spanish">Español</span>
+                  <span class="text-sm text-green-400" data-i18n="jose.languages.native">Nativo</span>
                 </div>
                 <div class="w-full bg-slate-700 rounded-full h-2">
                   <div class="bg-gradient-to-r from-blue-400 to-green-400 h-2 rounded-full" style="width: 100%"></div>
@@ -301,8 +329,8 @@ import Container from "../../components/Container.astro";
               </div>
               <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="font-semibold text-slate-200">Gallego</span>
-                  <span class="text-sm text-green-400">Nativo</span>
+                  <span class="font-semibold text-slate-200" data-i18n="jose.languages.galician">Gallego</span>
+                  <span class="text-sm text-green-400" data-i18n="jose.languages.native">Nativo</span>
                 </div>
                 <div class="w-full bg-slate-700 rounded-full h-2">
                   <div class="bg-gradient-to-r from-blue-400 to-green-400 h-2 rounded-full" style="width: 100%"></div>
@@ -310,7 +338,7 @@ import Container from "../../components/Container.astro";
               </div>
               <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="font-semibold text-slate-200">Inglés</span>
+                  <span class="font-semibold text-slate-200" data-i18n="jose.languages.english">Inglés</span>
                   <span class="text-sm text-blue-400">B2</span>
                 </div>
                 <div class="w-full bg-slate-700 rounded-full h-2">
@@ -321,7 +349,7 @@ import Container from "../../components/Container.astro";
 
             <!-- Skills badges -->
             <div class="mt-8">
-              <h3 class="font-semibold text-slate-200 mb-3">Skills</h3>
+              <h3 class="font-semibold text-slate-200 mb-3" data-i18n="jose.skillsTitle">Skills</h3>
               <div class="flex flex-wrap gap-2">
                 <Badge variant="primary" size="sm">Tech Lead Minsait</Badge>
                 <Badge variant="primary" size="sm">AI Enablement</Badge>

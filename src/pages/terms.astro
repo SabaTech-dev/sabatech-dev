@@ -3,9 +3,22 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Términos de Servicio - SabaTech">
+	<script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
+		en: {
+			"terms.title": "Terms of Service",
+			"terms.updated": "Last updated: May 2026",
+			"terms.intro": "This is the standard Spanish legal template. An official English translation will be provided for international clients upon request.",
+		},
+		es: {
+			"terms.title": "Términos de Servicio",
+			"terms.updated": "Última actualización: Mayo 2026",
+			"terms.intro": "Plantilla legal estándar en español. Se proporcionará una traducción oficial al inglés para clientes internacionales bajo petición.",
+		}
+	})} />
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-16">
-		<h1 class="text-4xl font-bold mb-6 text-white">Términos de Servicio</h1>
-		<p class="text-gray-400 mb-8">Última actualización: Mayo 2026</p>
+		<h1 class="text-4xl font-bold mb-6 text-white" data-i18n="terms.title">Términos de Servicio</h1>
+		<p class="text-gray-400 mb-8" data-i18n="terms.updated">Última actualización: Mayo 2026</p>
+		<p class="text-gray-400 mb-8 italic" data-i18n="terms.intro">Plantilla legal estándar en español.</p>
 
 		<div class="prose prose-invert max-w-none">
 			<h2 class="text-2xl font-bold mb-4 text-white">1. Aceptación de Términos</h2>

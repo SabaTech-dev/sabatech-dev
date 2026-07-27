@@ -296,6 +296,32 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
           "footer.privacy": "Privacy",
           "footer.terms": "Terms",
           "footer.cookies": "Cookies",
+          "common.bestValue": "Best Value",
+          "common.mostPopular": "Most Popular",
+          "common.externalAgent": "External Agent",
+          "common.contactSales": "Contact Sales",
+          "common.talkSales": "Talk to Sales",
+          "common.bookAssessment": "Book Assessment",
+          "common.getStarted": "Get Started",
+          "common.oneTime": "/one-time",
+          "common.devMonth": "/dev/month",
+          "common.devYear": "/dev/year",
+          "common.audit": "/audit",
+          "common.month": "/month",
+          "common.by": "By",
+          "common.backBlog": "Back to Blog",
+          "common.shareX": "Share on X",
+          "common.shareLinkedIn": "Share on LinkedIn",
+          "common.sending": "Sending...",
+          "common.form.name": "Name",
+          "common.form.namePlaceholder": "Your name",
+          "common.form.email": "Email",
+          "common.form.message": "Message",
+          "common.form.messagePlaceholder": "How can we help you?",
+          "common.form.send": "Send Message",
+          "common.form.success": "Message sent successfully!",
+          "common.form.error": "Something went wrong. Please try again.",
+          "common.form.networkError": "Network error. Please check your connection and try again.",
         },
         es: {
           "banner.portfolio-notice": "\u26a0\ufe0f Este sitio web es un portafolio personal para mostrar mis capacidades t\u00e9cnicas. SabaTech es un nombre comercial, no una entidad legal.",
@@ -328,6 +354,32 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
           "footer.privacy": "Privacidad",
           "footer.terms": "T\u00e9rminos",
           "footer.cookies": "Cookies",
+          "common.bestValue": "Mejor Valor",
+          "common.mostPopular": "M\u00e1s Popular",
+          "common.externalAgent": "Agente Externo",
+          "common.contactSales": "Contactar Ventas",
+          "common.talkSales": "Hablar con Ventas",
+          "common.bookAssessment": "Reservar Evaluaci\u00f3n",
+          "common.getStarted": "Empezar",
+          "common.oneTime": "/pago \u00fanico",
+          "common.devMonth": "/dev/mes",
+          "common.devYear": "/dev/a\u00f1o",
+          "common.audit": "/auditor\u00eda",
+          "common.month": "/mes",
+          "common.by": "Por",
+          "common.backBlog": "Volver al Blog",
+          "common.shareX": "Compartir en X",
+          "common.shareLinkedIn": "Compartir en LinkedIn",
+          "common.sending": "Enviando...",
+          "common.form.name": "Nombre",
+          "common.form.namePlaceholder": "Tu nombre",
+          "common.form.email": "Correo electr\u00f3nico",
+          "common.form.message": "Mensaje",
+          "common.form.messagePlaceholder": "\u00bfC\u00f3mo podemos ayudarte?",
+          "common.form.send": "Enviar Mensaje",
+          "common.form.success": "\u00a1Mensaje enviado correctamente!",
+          "common.form.error": "Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo.",
+          "common.form.networkError": "Error de red. Comprueba tu conexi\u00f3n e int\u00e9ntalo de nuevo.",
         },
       };
 
@@ -346,6 +398,9 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
         Object.assign(translations[lang as "en" | "es"], pageTranslations[lang]);
       }
 
+      // Expose globally so third-party scripts (e.g. ContactForm) can access
+      window.__sabatechTranslations = translations;
+
       function getCurrentLang(): string {
         return localStorage.getItem(LANG_KEY) || "en";
       }
@@ -354,6 +409,7 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
         localStorage.setItem(LANG_KEY, lang);
         applyTranslations(lang);
         updateToggleButton(lang);
+        window.dispatchEvent(new CustomEvent("sabatech:lang-change", { detail: { lang } }));
       }
 
       function applyTranslations(lang: string): void {
@@ -364,7 +420,14 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
             el.textContent = dict[key];
           }
         });
-        // Also update the html lang attribute
+        // Also support data-i18n-placeholder for form inputs
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-placeholder");
+          if (key && dict[key]) {
+            (el as HTMLInputElement).placeholder = dict[key];
+          }
+        });
+        // Update the html lang attribute
         document.documentElement.lang = lang;
       }
 

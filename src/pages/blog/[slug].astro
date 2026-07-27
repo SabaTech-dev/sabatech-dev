@@ -39,7 +39,7 @@ const shareTitle = encodeURIComponent(post.data.title);
               {formatDate(post.data.pubDate)}
             </time>
             <span class="text-slate-400" aria-hidden="true">·</span>
-            <span class="text-slate-400 text-sm">By {post.data.author}</span>
+            <span class="text-slate-400 text-sm"><span data-i18n="common.by">By</span> {post.data.author}</span>
           </div>
           <h1 class="text-3xl md:text-5xl font-extrabold text-slate-50 mb-4 leading-tight">
             {post.data.title}
@@ -70,7 +70,7 @@ const shareTitle = encodeURIComponent(post.data.title);
               <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Back to Blog
+              <span data-i18n="common.backBlog">Back to Blog</span>
             </a>
             <div class="flex gap-3">
               <a
@@ -79,7 +79,7 @@ const shareTitle = encodeURIComponent(post.data.title);
                 rel="noopener noreferrer"
                 class="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg border border-slate-700 transition-colors"
               >
-                Share on X
+                <span data-i18n="common.shareX">Share on X</span>
               </a>
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
@@ -87,7 +87,7 @@ const shareTitle = encodeURIComponent(post.data.title);
                 rel="noopener noreferrer"
                 class="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg border border-slate-700 transition-colors"
               >
-                Share on LinkedIn
+                <span data-i18n="common.shareLinkedIn">Share on LinkedIn</span>
               </a>
             </div>
           </div>
