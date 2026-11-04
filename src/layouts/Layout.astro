@@ -24,6 +24,26 @@ const {
 const siteUrl = "https://sabatech.dev";
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
+
+// Site-wide structured data (Organization + WebSite); merged with page-level jsonLd.
+const siteJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "SabaTech",
+    url: siteUrl,
+    logo: `${siteUrl}/og-image.png`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SabaTech",
+    url: siteUrl,
+    inLanguage: ["es", "en"],
+    publisher: { "@type": "Organization", name: "SabaTech", url: siteUrl },
+  },
+];
+const jsonLdGraph = jsonLd ? [jsonLd, ...siteJsonLd] : siteJsonLd;
 ---
 
 <!DOCTYPE html>
@@ -72,8 +92,8 @@ const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
     <title>{title}</title>
 
     <!-- JSON-LD Structured Data -->
-    {jsonLd && (
-      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {jsonLdGraph && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
     )}
   </head>
   <body class="bg-midnight text-slate-50 antialiased">

@@ -10,6 +10,22 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+const blogGraphJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "SabaTech Blog",
+  url: "https://sabatech.dev/blog",
+  inLanguage: "es",
+  publisher: { "@type": "Organization", name: "SabaTech", url: "https://sabatech.dev" },
+  blogPost: posts.slice(0, 30).map((p) => ({
+    "@type": "BlogPosting",
+    headline: p.data.title,
+    description: p.data.description,
+    datePublished: p.data.pubDate.toISOString(),
+    url: `https://sabatech.dev/blog/${p.id}`,
+  })),
+};
+
 function formatDate(date: Date) {
   return date.toLocaleDateString("en-US", {
     year: "numeric",
@@ -25,7 +41,7 @@ function getReadingTime(content: string) {
 }
 ---
 
-<Layout title="Blog — SabaTech" description="Technical articles on AI security, QA automation, DevSecOps, and multi-agent orchestration.">
+<Layout title="Blog — SabaTech" description="Technical articles on AI security, QA automation, DevSecOps, and multi-agent orchestration." jsonLd={blogGraphJsonLd}>
   <script id="i18n-page-translations" type="application/json" set:html={JSON.stringify({
     en: {
       "blog.title": "Blog",
