@@ -6,7 +6,7 @@
 # Exit codes: 0 publicado/ya existía · 1 sin reporte · 2 error de git
 set -euo pipefail
 
-REPO_DIR="/home/joker/repos/sabatech.dev"
+REPO_DIR="/srv/repos/sabatech.dev"
 RADAR_DIR="/home/joker/.openclaw/workspace/reports/cron/tech-radar"
 DATE="${1:-$(date +%F)}"
 
